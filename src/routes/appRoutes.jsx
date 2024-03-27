@@ -11,7 +11,7 @@ export const appRoutes = [
     { path: "/polska", element: <PolandPage /> },
     { path: "/europa", element: <EuropePage /> },
     { path: "/świat", element: <WorldPage /> },
-    { path: "*", element: <NotFoundPage /> },
     { path: "/pogoda-45-dniowa", element: <LongTermWeatherPage /> },
     { path: "/jakość-powietrza", element: <AirQualityPage /> },
+    { path: "*", element: <NotFoundPage /> },
 ];

@@ -1,5 +1,5 @@
-import React from "react";
+import HomeContainer from "../containers/HomeContainer";
 
 export default function HomePage() {
-    return <div>Home Page</div>;
+    return <HomeContainer />;
 }

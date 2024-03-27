@@ -7,5 +7,6 @@ export const router = createBrowserRouter([
         path: "",
         element: <LayoutComponent />,
         children: appRoutes,
+        // errorElement: <div>ERROR</div>,
     },
 ]);

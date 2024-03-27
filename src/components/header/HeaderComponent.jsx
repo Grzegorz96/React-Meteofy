@@ -1,17 +1,10 @@
 import React from "react";
-import {
-    Header,
-    Logo,
-    Navbar,
-    SearchEngine,
-    SearchButton,
-    SearchWrapper,
-} from "./HeaderComponent.styles";
+import { Header, Logo, Navbar } from "./HeaderComponent.styles";
+import SearchComponent from "./SearchComponent";
 import { Link, NavLink } from "react-router-dom";
 import { navLinkStyles } from "./HeaderComponent.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faMagnifyingGlass,
     faGlobe,
     faEarthEurope,
     faCalendarDays,
@@ -25,12 +18,7 @@ export default function HeaderComponent() {
             <Link to="/">
                 <Logo />
             </Link>
-            <SearchWrapper>
-                <SearchEngine />
-                <SearchButton>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
-                </SearchButton>
-            </SearchWrapper>
+            <SearchComponent />
             <Navbar>
                 <NavLink to="/polska" style={navLinkStyles}>
                     <GiPoland />

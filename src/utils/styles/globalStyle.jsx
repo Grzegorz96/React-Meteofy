@@ -2,14 +2,28 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 html, body, #root {
-    height: 100%;
     width: 100%;
+    /* min-height: 100%; */
+    height: 100%;
     overflow: hidden;
 }
 
 ::-webkit-scrollbar {
-    display: none;
-}
+      width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background-color: #888;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+  }
+
 
 body {
     background: ${(props) =>

@@ -9,6 +9,8 @@ export const navLinkStyles = ({ isActive }) => {
 };
 
 export const Header = styled.header`
+    position: fixed;
+    top: 0;
     background-color: #66666684;
     width: 100%;
     height: 70px;
@@ -67,43 +69,4 @@ export const Navbar = styled.nav`
             font-size: 0.9rem;
         }
     }
-`;
-
-export const SearchWrapper = styled.div`
-    max-width: 330px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-
-export const SearchEngine = styled.input.attrs({
-    type: "text",
-    placeholder: "Wpisz miasto",
-    name: "search",
-})`
-    width: 100%;
-    max-width: 300px;
-    height: 30px;
-    border-radius: 5px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border: none;
-    padding: 5px;
-`;
-
-export const SearchButton = styled.button.attrs({
-    type: "button",
-})`
-    background-color: #49ebd5;
-    height: 30px;
-    width: 30px;
-    border: none;
-    border-radius: 5px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    color: ${(props) => props.theme.dark.text};
-    padding: 5px;
-    font-size: 1rem;
-    cursor: pointer;
 `;
