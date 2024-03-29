@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cityCoordsReducer from "../state/cityCoordsSlice";
+import cityDataReducer from "../state/cityDataSlice";
 
 const store = configureStore({
     reducer: {
-        cityCoords: cityCoordsReducer,
+        cityData: cityDataReducer,
     },
 });
 

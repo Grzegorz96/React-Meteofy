@@ -3,7 +3,7 @@ import { API_DATA } from "../constants/openWeatherApiData";
 
 const openWeatherOptions = (latitude, longitude) => ({
     method: "GET",
-    url: API_DATA.urls.currentWeather,
+    url: API_DATA.urls.forecastWeather,
     params: {
         lat: latitude,
         lon: longitude,
@@ -12,13 +12,15 @@ const openWeatherOptions = (latitude, longitude) => ({
     },
 });
 
-export const fetchCurrentWeather = async (latitude, longitude) => {
+export const fetchForecastWeather = async (latitude, longitude) => {
     try {
         const response = await axios.request(
             openWeatherOptions(latitude, longitude)
         );
         return response.data;
     } catch (error) {
-        throw new Error(`Error getting current weather data: ${error.message}`);
+        throw new Error(
+            `Error getting forecast weather data: ${error.message}`
+        );
     }
 };

@@ -1,11 +1,11 @@
 export const theme = {
     dark: {
-        primary: "#414141",
+        primary: "#333",
         text: "#ffffff",
     },
     light: {
         primary: "#ffffff",
-        text: "#414141",
+        text: "#333",
     },
     fontFamily: "Arial, Helvetica, sans-serif",
 };
