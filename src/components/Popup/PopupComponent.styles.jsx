@@ -1,10 +1,20 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeInFromTop = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+`;
 
 export const Popup = styled.div`
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 9999;
     display: flex;
     flex-direction: column;
@@ -16,7 +26,8 @@ export const Popup = styled.div`
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     max-width: 550px;
-    width: 100%;
+    width: 90%;
+    animation: ${fadeInFromTop} 0.8s ease forwards;
 
     svg {
         font-size: 90px;

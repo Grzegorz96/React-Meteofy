@@ -54,19 +54,19 @@ export default function CurrentWeather({ currentWeather, city }) {
                     <Text
                         $fontWeight="600"
                         $fontSize="70px"
-                        $letterSpacing="-5px"
+                        $letterSpacing="-3px"
                     >
                         {Math.round(currentWeather.main.temp)}°C
                     </Text>
                     <Wrapper $display="flex" $gap="5px">
-                        <Wrapper $display="flex" $gap="3px">
+                        <Wrapper $display="flex" $gap="4px">
                             <FaTemperatureArrowDown />
                             <Text $fontWeight="300" $fontSize="12px">
                                 {Math.round(currentWeather.main.temp_min)}°C
                             </Text>
                         </Wrapper>
                         /
-                        <Wrapper $display="flex" $gap="3px">
+                        <Wrapper $display="flex" $gap="4px">
                             <FaTemperatureArrowUp />
                             <Text $fontWeight="300" $fontSize="12px">
                                 {Math.round(currentWeather.main.temp_max)}°C
@@ -80,45 +80,57 @@ export default function CurrentWeather({ currentWeather, city }) {
                     </ParameterRow>
                     <ParameterRow>
                         <ParameterLabel>Feels like</ParameterLabel>
-                        <ParameterValue>
-                            {Math.round(currentWeather.main.feels_like)}°C
-                        </ParameterValue>
-                        <FaTemperatureHalf />
+                        <Wrapper $display="flex" $gap="4px">
+                            <ParameterValue>
+                                {Math.round(currentWeather.main.feels_like)}°C
+                            </ParameterValue>
+                            <FaTemperatureHalf />
+                        </Wrapper>
                     </ParameterRow>
                     <ParameterRow>
                         <ParameterLabel>Wind</ParameterLabel>
-                        <ParameterValue>
-                            {currentWeather.wind.speed}m/s
-                        </ParameterValue>
-                        <FaWind />
+                        <Wrapper $display="flex" $gap="4px">
+                            <ParameterValue>
+                                {currentWeather.wind.speed}m/s
+                            </ParameterValue>
+                            <FaWind />
+                        </Wrapper>
                     </ParameterRow>
                     <ParameterRow>
                         <ParameterLabel>Humidity</ParameterLabel>
-                        <ParameterValue>
-                            {currentWeather.main.humidity}%
-                        </ParameterValue>
-                        <WiHumidity />
+                        <Wrapper $display="flex" $gap="4px">
+                            <ParameterValue>
+                                {currentWeather.main.humidity}%
+                            </ParameterValue>
+                            <WiHumidity />
+                        </Wrapper>
                     </ParameterRow>
                     <ParameterRow>
                         <ParameterLabel>Pressure</ParameterLabel>
-                        <ParameterValue>
-                            {currentWeather.main.pressure}hPa
-                        </ParameterValue>
-                        <FaWeightScale />
+                        <Wrapper $display="flex" $gap="4px">
+                            <ParameterValue>
+                                {currentWeather.main.pressure}hPa
+                            </ParameterValue>
+                            <FaWeightScale />
+                        </Wrapper>
                     </ParameterRow>
                     <ParameterRow>
                         <ParameterLabel>Sunrise</ParameterLabel>
-                        <ParameterValue>
-                            {timestampToDate(currentWeather.sys.sunrise)}
-                        </ParameterValue>
-                        <FiSunrise />
+                        <Wrapper $display="flex" $gap="4px">
+                            <ParameterValue>
+                                {timestampToDate(currentWeather.sys.sunrise)}
+                            </ParameterValue>
+                            <FiSunrise />
+                        </Wrapper>
                     </ParameterRow>
                     <ParameterRow>
                         <ParameterLabel>Sunset</ParameterLabel>
-                        <ParameterValue>
-                            {timestampToDate(currentWeather.sys.sunset)}
-                        </ParameterValue>
-                        <FiSunset />
+                        <Wrapper $display="flex" $gap="4px">
+                            <ParameterValue>
+                                {timestampToDate(currentWeather.sys.sunset)}
+                            </ParameterValue>
+                            <FiSunset />
+                        </Wrapper>
                     </ParameterRow>
                 </Details>
             </Bottom>

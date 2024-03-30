@@ -10,7 +10,6 @@ export const CurrentWeatherWrapper = styled.div`
     margin: 20px auto 0 auto;
     padding: 0 20px 20px 20px;
     position: relative;
-    /* z-index: -1; */
 `;
 
 export const Text = styled.p`
@@ -28,6 +27,10 @@ export const Wrapper = styled.div`
     display: ${(props) => props.$display};
     align-items: center;
     gap: ${(props) => props.$gap};
+
+    svg {
+        font-size: 20px;
+    }
 `;
 
 export const Top = styled.div`
@@ -45,7 +48,7 @@ export const WeatherIcon = styled.img.attrs((props) => ({
 `;
 
 export const Details = styled.div`
-    width: 120px;
+    width: 150px;
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -55,6 +58,7 @@ export const Details = styled.div`
 export const ParameterRow = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 10px;
 `;
 

@@ -17,6 +17,7 @@ export default function SearchComponent() {
 
     return (
         <AsyncPaginate
+            menuPortalTarget={document.body}
             placeholder="Search for a city"
             debounceTimeout={1000}
             value={

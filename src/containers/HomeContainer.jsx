@@ -4,6 +4,7 @@ import { fetchForecastWeather } from "../api/fetchForecastWeather";
 import { useSelector, useDispatch } from "react-redux";
 import { resetCityData } from "../state/cityDataSlice";
 import CurrentWeather from "../components/home/CurrentWeather";
+import ForecastWeather from "../components/home/ForecastWeather";
 import LoaderComponent from "../components/Loader/LoaderComponent";
 import PopupComponent from "../components/Popup/PopupComponent";
 
@@ -92,6 +93,7 @@ export default function HomeContainer() {
                     city={data.city}
                 />
             )}
+            {data.forecastWeather && <ForecastWeather />}
         </>
     );
 }
