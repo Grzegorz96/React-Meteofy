@@ -82,7 +82,7 @@ export default function HomeContainer() {
 
         fetchData();
     }, [cityData]);
-    console.log(data);
+    // console.log(data);
     return (
         <>
             {data.error && <PopupComponent data={data} setData={setData} />}
@@ -93,7 +93,9 @@ export default function HomeContainer() {
                     city={data.city}
                 />
             )}
-            {data.forecastWeather && <ForecastWeather />}
+            {data.forecastWeather && (
+                <ForecastWeather forecastWeather={data.forecastWeather} />
+            )}
         </>
     );
 }

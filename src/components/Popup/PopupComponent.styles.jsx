@@ -1,17 +1,7 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+import { animated } from "@react-spring/web";
 
-const fadeInFromTop = keyframes`
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -200%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-`;
-
-export const Popup = styled.div`
+export const Popup = styled(animated.div)`
     position: fixed;
     top: 50%;
     left: 50%;
@@ -27,7 +17,6 @@ export const Popup = styled.div`
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     max-width: 550px;
     width: 90%;
-    animation: ${fadeInFromTop} 0.8s ease forwards;
 
     svg {
         font-size: 90px;

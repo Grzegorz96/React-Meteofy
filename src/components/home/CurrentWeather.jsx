@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import {
     CurrentWeatherWrapper,
     Top,
@@ -20,9 +20,9 @@ import {
 } from "react-icons/fa6";
 import { WiHumidity } from "react-icons/wi";
 import { FiSunset, FiSunrise } from "react-icons/fi";
-import { timestampToDate } from "../../utils/styles/timestampConventer";
+import { timestampToDate } from "../../utils/timestampConventer";
 
-export default function CurrentWeather({ currentWeather, city }) {
+function CurrentWeather({ currentWeather, city }) {
     return (
         <CurrentWeatherWrapper>
             <Text
@@ -137,3 +137,5 @@ export default function CurrentWeather({ currentWeather, city }) {
         </CurrentWeatherWrapper>
     );
 }
+
+export default memo(CurrentWeather);
