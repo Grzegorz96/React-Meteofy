@@ -11,16 +11,11 @@ import {
     ParameterValue,
     Wrapper,
 } from "./CurrentWeather.styles";
-import {
-    FaTemperatureArrowDown,
-    FaTemperatureArrowUp,
-    FaTemperatureHalf,
-    FaWind,
-    FaWeightScale,
-} from "react-icons/fa6";
+import { FaTemperatureHalf, FaWind, FaWeightScale } from "react-icons/fa6";
 import { WiHumidity } from "react-icons/wi";
 import { FiSunset, FiSunrise } from "react-icons/fi";
-import { timestampToDate } from "../../utils/timestampConventer";
+import { MdOutlineVisibility, MdDewPoint } from "react-icons/md";
+import { IoRainy } from "react-icons/io5";
 
 function CurrentWeather({ currentWeather, city }) {
     return (
@@ -31,7 +26,10 @@ function CurrentWeather({ currentWeather, city }) {
                 $position="absolute"
                 $top="5px"
             >
-                {`Current weather at ${timestampToDate(currentWeather.dt)}`}
+                {`Current weather at ${currentWeather.datetime.substring(
+                    0,
+                    5
+                )}`}
             </Text>
             <Top>
                 <Wrapper>
@@ -44,10 +42,10 @@ function CurrentWeather({ currentWeather, city }) {
                         {city}
                     </Text>
                     <Text $fontWeight="400" $fontSize="14px" $lineHeight="1">
-                        {currentWeather.weather[0].description}
+                        {currentWeather.conditions}
                     </Text>
                 </Wrapper>
-                <WeatherIcon $icon={currentWeather.weather[0].icon} />
+                <WeatherIcon $icon={currentWeather.icon} />
             </Top>
             <Bottom>
                 <Wrapper>
@@ -56,20 +54,20 @@ function CurrentWeather({ currentWeather, city }) {
                         $fontSize="70px"
                         $letterSpacing="-3px"
                     >
-                        {Math.round(currentWeather.main.temp)}°C
+                        {Math.round(currentWeather.temp)}°C
                     </Text>
                     <Wrapper $display="flex" $gap="5px">
                         <Wrapper $display="flex" $gap="4px">
-                            <FaTemperatureArrowDown />
+                            <FiSunrise />
                             <Text $fontWeight="300" $fontSize="12px">
-                                {Math.round(currentWeather.main.temp_min)}°C
+                                {currentWeather.sunrise.substring(0, 5)}
                             </Text>
                         </Wrapper>
                         /
                         <Wrapper $display="flex" $gap="4px">
-                            <FaTemperatureArrowUp />
+                            <FiSunset />
                             <Text $fontWeight="300" $fontSize="12px">
-                                {Math.round(currentWeather.main.temp_max)}°C
+                                {currentWeather.sunset.substring(0, 5)}
                             </Text>
                         </Wrapper>
                     </Wrapper>
@@ -82,7 +80,7 @@ function CurrentWeather({ currentWeather, city }) {
                         <ParameterLabel>Feels like</ParameterLabel>
                         <Wrapper $display="flex" $gap="4px">
                             <ParameterValue>
-                                {Math.round(currentWeather.main.feels_like)}°C
+                                {Math.round(currentWeather.feelslike)}°C
                             </ParameterValue>
                             <FaTemperatureHalf />
                         </Wrapper>
@@ -91,16 +89,25 @@ function CurrentWeather({ currentWeather, city }) {
                         <ParameterLabel>Wind</ParameterLabel>
                         <Wrapper $display="flex" $gap="4px">
                             <ParameterValue>
-                                {currentWeather.wind.speed}m/s
+                                {Math.round(currentWeather.windspeed)}km/h
                             </ParameterValue>
                             <FaWind />
+                        </Wrapper>
+                    </ParameterRow>
+                    <ParameterRow>
+                        <ParameterLabel>Precipitation</ParameterLabel>
+                        <Wrapper $display="flex" $gap="4px">
+                            <ParameterValue>
+                                {Math.round(currentWeather.precipprob)}%
+                            </ParameterValue>
+                            <IoRainy />
                         </Wrapper>
                     </ParameterRow>
                     <ParameterRow>
                         <ParameterLabel>Humidity</ParameterLabel>
                         <Wrapper $display="flex" $gap="4px">
                             <ParameterValue>
-                                {currentWeather.main.humidity}%
+                                {Math.round(currentWeather.humidity)}%
                             </ParameterValue>
                             <WiHumidity />
                         </Wrapper>
@@ -109,27 +116,27 @@ function CurrentWeather({ currentWeather, city }) {
                         <ParameterLabel>Pressure</ParameterLabel>
                         <Wrapper $display="flex" $gap="4px">
                             <ParameterValue>
-                                {currentWeather.main.pressure}hPa
+                                {Math.round(currentWeather.pressure)}hPa
                             </ParameterValue>
                             <FaWeightScale />
                         </Wrapper>
                     </ParameterRow>
                     <ParameterRow>
-                        <ParameterLabel>Sunrise</ParameterLabel>
+                        <ParameterLabel>Visibility</ParameterLabel>
                         <Wrapper $display="flex" $gap="4px">
                             <ParameterValue>
-                                {timestampToDate(currentWeather.sys.sunrise)}
+                                {Math.round(currentWeather.visibility)}km
                             </ParameterValue>
-                            <FiSunrise />
+                            <MdOutlineVisibility />
                         </Wrapper>
                     </ParameterRow>
                     <ParameterRow>
-                        <ParameterLabel>Sunset</ParameterLabel>
+                        <ParameterLabel>Dew point</ParameterLabel>
                         <Wrapper $display="flex" $gap="4px">
                             <ParameterValue>
-                                {timestampToDate(currentWeather.sys.sunset)}
+                                {Math.round(currentWeather.dew)}°C
                             </ParameterValue>
-                            <FiSunset />
+                            <MdDewPoint />
                         </Wrapper>
                     </ParameterRow>
                 </Details>

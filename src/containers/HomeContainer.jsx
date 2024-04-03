@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchCurrentWeather } from "../api/fetchCurrentWeather";
-import { fetchForecastWeather } from "../api/fetchForecastWeather";
+import { fetchWeather } from "../api/fetchCurrentAndForecastWeather";
+import { fetchReversedGecoding } from "../api/fetchReversedGeocoding";
 import { useSelector, useDispatch } from "react-redux";
 import { resetCityData } from "../state/cityDataSlice";
 import CurrentWeather from "../components/home/CurrentWeather";
@@ -14,8 +14,7 @@ export default function HomeContainer() {
 
     const [data, setData] = useState({
         city: null,
-        currentWeather: null,
-        forecastWeather: null,
+        weatherData: null,
         loading: false,
         error: null,
     });
@@ -30,6 +29,7 @@ export default function HomeContainer() {
         const fetchData = async () => {
             let latitude, longitude;
 
+            setData({ ...data, loading: true });
             if (cityData.value.latitude && cityData.value.longitude) {
                 latitude = cityData.value.latitude;
                 longitude = cityData.value.longitude;
@@ -43,37 +43,35 @@ export default function HomeContainer() {
                     });
                     latitude = position.coords.latitude;
                     longitude = position.coords.longitude;
+
+                    var cityName = await fetchReversedGecoding(
+                        latitude,
+                        longitude
+                    );
                 } catch (error) {
-                    console.error("Error getting location:", error);
                     setData({
                         ...data,
+                        loading: false,
                         error: error.message,
                     });
                     return;
                 }
             }
 
-            setData({ ...data, loading: true });
             try {
-                const [currentWeather, forecastWeather] = await Promise.all([
-                    fetchCurrentWeather(latitude, longitude),
-                    fetchForecastWeather(latitude, longitude),
-                ]);
-
+                const weatherData = await fetchWeather(latitude, longitude);
                 setData({
                     city:
                         cityData.label ||
-                        `${currentWeather.name}, ${currentWeather.sys.country}`,
-                    currentWeather: currentWeather,
-                    forecastWeather: forecastWeather,
+                        `${cityName[0]?.City}, ${cityName[0]?.CountryId}`,
+                    weatherData: weatherData,
                     loading: false,
                     error: null,
                 });
             } catch (error) {
                 setData({
                     city: null,
-                    currentWeather: null,
-                    forecastWeather: null,
+                    weatherData: null,
                     loading: false,
                     error: error.message,
                 });
@@ -82,19 +80,20 @@ export default function HomeContainer() {
 
         fetchData();
     }, [cityData]);
-    // console.log(data);
+
+    console.log(data);
     return (
         <>
             {data.error && <PopupComponent data={data} setData={setData} />}
             {data.loading && <LoaderComponent />}
-            {data.currentWeather && (
+            {data.weatherData && (
                 <CurrentWeather
-                    currentWeather={data.currentWeather}
+                    currentWeather={data.weatherData.currentConditions}
                     city={data.city}
                 />
             )}
-            {data.forecastWeather && (
-                <ForecastWeather forecastWeather={data.forecastWeather} />
+            {data.weatherData && (
+                <ForecastWeather forecastWeather={data.weatherData.days} />
             )}
         </>
     );
