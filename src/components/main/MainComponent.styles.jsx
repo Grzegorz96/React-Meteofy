@@ -10,4 +10,6 @@ export const Main = styled.main`
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
 `;

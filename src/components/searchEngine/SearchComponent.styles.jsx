@@ -1,4 +1,37 @@
-export const asyncPaginateStyles = {
+export const airPollutionInputStyle = {
+    container: (styles) => ({
+        ...styles,
+        display: "flex",
+        alignItems: "center",
+        width: "100%",
+        maxWidth: "400px",
+        position: "fixed",
+        top: "70px",
+    }),
+    control: (styles) => ({
+        ...styles,
+        width: "100%",
+        height: "40px",
+        borderRadius: "0",
+        borderBottomRightRadius: "20px",
+        borderBottomLeftRadius: "20px",
+    }),
+    placeholder: (styles) => ({
+        ...styles,
+        color: "#666666",
+        whiteSpace: "nowrap",
+        textOverflow: "ellipsis",
+        overflow: "hidden",
+    }),
+    menu: (styles) => ({
+        ...styles,
+    }),
+    option: (styles, { isFocused }) => ({
+        ...styles,
+    }),
+};
+
+export const globalInputStyle = {
     container: (styles) => ({
         ...styles,
         display: "flex",

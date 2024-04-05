@@ -1,13 +1,12 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
     ScrollContainer,
     NavigateButton,
     ScrollWrapper,
 } from "./ForecastWeather.styles";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import { HourItem, Label, WeatherIcon } from "./ForecastWeather.styles";
 
-export default function ScrollableContainer({ dayData }) {
+export default function ScrollableContainer({ children }) {
     const scrollableContainerRef = useRef(null);
 
     function handleBackButtonClick() {
@@ -22,37 +21,28 @@ export default function ScrollableContainer({ dayData }) {
         scrollableContainer.scrollLeft += 400;
     }
 
-    function handleWheelScroll(evt) {
+    useEffect(() => {
         const scrollableContainer = scrollableContainerRef.current;
-        scrollableContainer.style.scrollBehavior = "auto";
-        scrollableContainer.scrollLeft += evt.deltaY;
-    }
+        const handleWheelScroll = (evt) => {
+            evt.preventDefault();
+            scrollableContainer.style.scrollBehavior = "auto";
+            scrollableContainer.scrollLeft += evt.deltaY;
+        };
+        scrollableContainer.addEventListener("wheel", handleWheelScroll, {
+            passive: false,
+        });
+        return () => {
+            scrollableContainer.removeEventListener("wheel", handleWheelScroll);
+        };
+    }, []);
 
     return (
         <ScrollWrapper>
             <NavigateButton onClick={handleBackButtonClick} $left="15px">
                 <FaChevronLeft />
             </NavigateButton>
-            <ScrollContainer
-                ref={scrollableContainerRef}
-                onWheel={handleWheelScroll}
-            >
-                {dayData.hours.map((hourData, index) => (
-                    <HourItem key={index}>
-                        <Label>{hourData.datetime.substring(0, 5)}</Label>
-                        <Label
-                            $fontSize="10px"
-                            $fontWeight="600"
-                            $height="13px"
-                        >
-                            {hourData.precipprob >= 0.5
-                                ? `${Math.round(hourData.precipprob)}%`
-                                : null}
-                        </Label>
-                        <WeatherIcon $icon={hourData.icon} />
-                        <Label>{Math.round(hourData.temp)}°C</Label>
-                    </HourItem>
-                ))}
+            <ScrollContainer ref={scrollableContainerRef}>
+                {children}
             </ScrollContainer>
             <NavigateButton onClick={handleNextButtonClick} $right="15px">
                 <FaChevronRight />

@@ -1,38 +1,37 @@
-import { useEffect, useState } from "react";
-import { fetchWeather } from "../api/fetchCurrentAndForecastWeather";
+import React, { useEffect, useState } from "react";
+import { fetchAirPollution } from "../api/fetchAirPollution";
 import { fetchReversedGecoding } from "../api/fetchReversedGeocoding";
-import { useSelector, useDispatch } from "react-redux";
-import { resetCityData } from "../state/cityDataSlice";
-import CurrentWeather from "../components/home/CurrentWeather";
-import ForecastWeather from "../components/home/ForecastWeather";
 import LoaderComponent from "../components/loader/LoaderComponent";
 import PopupComponent from "../components/popup/PopupComponent";
+import SearchComponent from "../components/searchEngine/SearchComponent";
+import CurrentAirPollution from "../components/airPollution/CurrentAirPollution";
+import { airPollutionInputStyle } from "../components/searchEngine/SearchComponent.styles";
 
-export default function HomeContainer() {
-    const cityData = useSelector(({ cityData }) => cityData);
-    const dispatch = useDispatch();
+export default function AirPollutionContainer() {
+    const [selectedCity, setSelectedCity] = useState({
+        label: null,
+        value: { latitude: null, longitude: null },
+    });
 
     const [data, setData] = useState({
         city: null,
-        weatherData: null,
+        airPollutionData: null,
         loading: false,
         error: null,
     });
 
-    useEffect(() => {
-        return () => {
-            dispatch(resetCityData());
-        };
-    }, [dispatch]);
+    const handleOnChange = (selectedOption) => {
+        setSelectedCity(selectedOption);
+    };
 
     useEffect(() => {
         const fetchData = async () => {
             setData({ ...data, loading: true });
             let latitude, longitude, currentPosition;
 
-            if (cityData.value.latitude && cityData.value.longitude) {
-                latitude = cityData.value.latitude;
-                longitude = cityData.value.longitude;
+            if (selectedCity.value.latitude && selectedCity.value.longitude) {
+                latitude = selectedCity.value.latitude;
+                longitude = selectedCity.value.longitude;
             } else {
                 try {
                     currentPosition = await new Promise((resolve, reject) => {
@@ -55,8 +54,8 @@ export default function HomeContainer() {
             }
 
             try {
-                const [weatherData, cityName] = await Promise.all([
-                    fetchWeather(latitude, longitude),
+                const [airPollutionData, cityName] = await Promise.all([
+                    fetchAirPollution(latitude, longitude),
                     currentPosition &&
                         fetchReversedGecoding(latitude, longitude),
                 ]);
@@ -64,8 +63,8 @@ export default function HomeContainer() {
                 setData({
                     city: cityName
                         ? `${cityName[0]?.City}, ${cityName[0]?.CountryId}`
-                        : cityData.label,
-                    weatherData: weatherData,
+                        : selectedCity.label,
+                    airPollutionData: airPollutionData,
                     loading: false,
                     error: null,
                 });
@@ -80,21 +79,23 @@ export default function HomeContainer() {
         };
 
         fetchData();
-    }, [cityData]);
+    }, [selectedCity]);
 
-    console.log(data);
     return (
         <>
             {data.error && <PopupComponent data={data} setData={setData} />}
             {data.loading && <LoaderComponent />}
-            {data.weatherData && (
-                <CurrentWeather
-                    currentWeather={data.weatherData.currentConditions}
+            <SearchComponent
+                placeholder="Search for a city to check air pollution"
+                city={selectedCity}
+                handleOnChange={handleOnChange}
+                style={airPollutionInputStyle}
+            />
+            {data.airPollutionData && (
+                <CurrentAirPollution
+                    airPollutionData={data.airPollutionData.days[0]}
                     city={data.city}
                 />
-            )}
-            {data.weatherData && (
-                <ForecastWeather forecastWeather={data.weatherData.days} />
             )}
         </>
     );

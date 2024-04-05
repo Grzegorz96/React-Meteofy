@@ -14,10 +14,10 @@ import {
     AccordionItemPanel,
     AccordionItemHeading,
 } from "react-accessible-accordion";
-
 import ScrollContainer from "./ScrollableContainer";
+import HourlyItem from "./HourlyItem";
 
-export default function DailyItem({ dayData, index, forecastDays }) {
+export default function DailyItem({ index, dayData, forecastDays }) {
     return (
         <AccordionItem>
             <AccordionItemHeading>
@@ -62,7 +62,11 @@ export default function DailyItem({ dayData, index, forecastDays }) {
                         <Label>{Math.round(dayData.feelslike)}°C</Label>
                     </DailyDetailsGridItem>
                 </DailyDetailsGrid>
-                <ScrollContainer dayData={dayData} />
+                <ScrollContainer>
+                    {dayData.hours.map((hourData, index) => (
+                        <HourlyItem key={index} hourData={hourData} />
+                    ))}
+                </ScrollContainer>
             </AccordionItemPanel>
         </AccordionItem>
     );

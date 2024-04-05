@@ -7,8 +7,7 @@ export const CurrentWeatherWrapper = styled.div`
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
     color: ${({ theme }) => theme.dark.text};
     background-color: ${({ theme }) => theme.dark.primary};
-    margin: 20px auto 0 auto;
-    padding: 0 20px 20px 20px;
+    padding: 0px 20px 20px 20px;
     position: relative;
 `;
 
@@ -42,9 +41,11 @@ export const Top = styled.div`
 export const Bottom = styled(Top)``;
 
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `icons/${props.$icon}.png`,
+    src: `icons/${props.$icon}.svg`,
 }))`
     width: 100px;
+    height: 100px;
+    margin-top: 10px;
 `;
 
 export const Details = styled.div`

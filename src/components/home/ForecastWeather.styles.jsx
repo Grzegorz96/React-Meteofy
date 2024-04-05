@@ -1,26 +1,16 @@
 import styled from "styled-components";
 import { Accordion, AccordionItemButton } from "react-accessible-accordion";
 
-export const DailyItem = styled.div`
-    background-color: #f5f5f5;
-    border-radius: 15px;
-    height: 40px;
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 5px 20px;
-`;
 export const Title = styled.div`
     font-size: 20px;
     font-weight: 700;
 `;
 
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `icons/${props.$icon}.png`,
+    src: `icons/${props.$icon}.svg`,
 }))`
-    width: 40px;
+    width: 35px;
+    height: 35px;
 `;
 
 export const Day = styled.div`
@@ -29,6 +19,7 @@ export const Day = styled.div`
     font-weight: 600;
     margin-left: 15px;
 `;
+
 export const Description = styled.div`
     flex: 1 1;
     margin-right: 15px;
@@ -90,7 +81,7 @@ export const ScrollContainer = styled.div`
     }
 `;
 
-export const HourItem = styled.div`
+export const HourlyLabel = styled.div`
     height: 120px;
     min-width: 60px;
     display: flex;
