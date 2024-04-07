@@ -7,6 +7,7 @@ export const airPollutionInputStyle = {
         maxWidth: "400px",
         position: "fixed",
         top: "70px",
+        zIndex: "1",
     }),
     control: (styles) => ({
         ...styles,

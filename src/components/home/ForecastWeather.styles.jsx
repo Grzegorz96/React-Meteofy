@@ -7,7 +7,7 @@ export const Title = styled.div`
 `;
 
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `icons/${props.$icon}.svg`,
+    src: `/assets/weatherIcons/${props.$icon}.svg`,
 }))`
     width: 35px;
     height: 35px;

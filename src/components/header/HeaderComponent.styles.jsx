@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import logo from "../../assets/images/logo-weather.png";
 
 // Function to generate styles for navigation links based on the isActive prop.
 export const navLinkStyles = ({ isActive }) => {
@@ -20,7 +19,7 @@ export const Header = styled.header`
 `;
 
 export const Logo = styled.img.attrs({
-    src: logo,
+    src: "/assets/images/logo-weather.png",
     alt: "Logo Weather",
 })`
     height: 100%;
