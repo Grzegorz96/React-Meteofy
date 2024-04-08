@@ -2,14 +2,16 @@ import { CurrentAirPollutionWrapper } from "./CurrentAirPollution.styles";
 import AirPollutionBarChart from "./AirPollutionBarChart";
 import AirQualityIndexLabel from "./AirQualityIndexLabel";
 
-export default function CurrentAirPollution({ airPollutionData, city }) {
+export default function CurrentAirPollution({ currentAirPollutionData, city }) {
     return (
         <CurrentAirPollutionWrapper>
             <AirPollutionBarChart
-                airPollutionData={airPollutionData}
+                currentAirPollutionData={currentAirPollutionData}
                 city={city}
             />
-            <AirQualityIndexLabel airPollutionData={airPollutionData} />
+            <AirQualityIndexLabel
+                currentAirPollutionData={currentAirPollutionData}
+            />
         </CurrentAirPollutionWrapper>
     );
 }

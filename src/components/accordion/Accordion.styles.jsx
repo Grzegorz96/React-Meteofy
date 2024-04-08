@@ -9,8 +9,18 @@ export const Title = styled.div`
 export const WeatherIcon = styled.img.attrs((props) => ({
     src: `/assets/weatherIcons/${props.$icon}.svg`,
 }))`
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
+`;
+
+export const FaceIcon = styled.img.attrs((props) => ({
+    src: `/assets/airPollutionIcons/${props.$icon}.svg`,
+}))`
+    height: 38px;
+    height: 38px;
+    background-color: ${(props) => props.$backgroundColor};
+    border-radius: 6px;
+    border: 1px solid black;
 `;
 
 export const Day = styled.div`
@@ -42,6 +52,29 @@ export const DailyDetailsGrid = styled.div`
     grid-template-columns: auto auto;
     padding: 5px 15px;
     margin-inline: 10px;
+`;
+
+export const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-inline: 10px;
+    padding: 5px 0;
+    background-color: #f5f5f5ac;
+`;
+
+export const SelectButtonsWrapper = styled.div`
+    display: flex;
+    gap: 5px;
+`;
+
+export const SelectButton = styled.button`
+    border: 2px solid ${(props) => props.theme.dark.primary};
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
 `;
 
 export const DailyDetailsGridItem = styled.div`
@@ -109,4 +142,6 @@ export const ScrollWrapper = styled.div`
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     margin-inline: 10px;
+    width: calc(100% - 20px);
+    height: 120px;
 `;

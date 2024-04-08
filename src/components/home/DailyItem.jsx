@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
     StyledAccordionItemButton,
     WeatherIcon,
@@ -8,13 +6,13 @@ import {
     DailyDetailsGrid,
     DailyDetailsGridItem,
     Label,
-} from "./ForecastWeather.styles";
+} from "../accordion/Accordion.styles";
 import {
     AccordionItem,
     AccordionItemPanel,
     AccordionItemHeading,
 } from "react-accessible-accordion";
-import ScrollContainer from "./ScrollableContainer";
+import ScrollContainer from "../accordion/ScrollableContainer";
 import HourlyItem from "./HourlyItem";
 
 export default function DailyItem({ index, dayData, forecastDays }) {

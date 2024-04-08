@@ -6,10 +6,13 @@ import {
     Datetime,
 } from "./CurrentAirPollution.styles";
 
-export default function AirPollutionBarChart({ airPollutionData, city }) {
+export default function AirPollutionBarChart({
+    currentAirPollutionData,
+    city,
+}) {
     return (
         <CurrentAirPollutionChart>
-            <Datetime>{airPollutionData.datetime}</Datetime>
+            <Datetime>{currentAirPollutionData.datetime}</Datetime>
             <Bar
                 data={{
                     labels: ["PM1", "PM2.5", "PM10", "NO2", "SO2", "CO", "O3"],
@@ -17,13 +20,13 @@ export default function AirPollutionBarChart({ airPollutionData, city }) {
                         {
                             label: "Air Pollution Data (μg/m3)",
                             data: [
-                                airPollutionData.pm1,
-                                airPollutionData.pm2p5,
-                                airPollutionData.pm10,
-                                airPollutionData.no2,
-                                airPollutionData.so2,
-                                airPollutionData.co,
-                                airPollutionData.o3,
+                                currentAirPollutionData.pm1,
+                                currentAirPollutionData.pm2p5,
+                                currentAirPollutionData.pm10,
+                                currentAirPollutionData.no2,
+                                currentAirPollutionData.so2,
+                                currentAirPollutionData.co,
+                                currentAirPollutionData.o3,
                             ],
                             backgroundColor: [
                                 "rgba(255, 99, 132, 0.2)",

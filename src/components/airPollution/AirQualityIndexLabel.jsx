@@ -13,8 +13,8 @@ import {
     FaceFooterDescription,
 } from "./CurrentAirPollution.styles";
 
-export default function AirQualityIndexLabel({ airPollutionData }) {
-    const currentAqiUSData = getAqiUSData(airPollutionData.aqius);
+export default function AirQualityIndexLabel({ currentAirPollutionData }) {
+    const currentAqiUSData = getAqiUSData(currentAirPollutionData.aqius);
 
     return (
         <AirQualityIndex>
@@ -26,7 +26,7 @@ export default function AirQualityIndexLabel({ airPollutionData }) {
                         <FaceImg $icon={currentAqiUSData.faceIcon} />
                         <Wrapper>
                             <Label $fontSize="40px" $fontWeight="600">
-                                {airPollutionData.aqius}
+                                {currentAirPollutionData.aqius}
                             </Label>
                             <Label $fontSize="12px" $fontWeight="300">
                                 AQI US

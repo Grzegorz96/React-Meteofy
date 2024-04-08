@@ -3,7 +3,7 @@ import {
     ScrollContainer,
     NavigateButton,
     ScrollWrapper,
-} from "./ForecastWeather.styles";
+} from "./Accordion.styles";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 export default function ScrollableContainer({ children }) {

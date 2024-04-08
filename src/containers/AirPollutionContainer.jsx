@@ -5,6 +5,7 @@ import LoaderComponent from "../components/loader/LoaderComponent";
 import PopupComponent from "../components/popup/PopupComponent";
 import SearchComponent from "../components/searchEngine/SearchComponent";
 import CurrentAirPollution from "../components/airPollution/CurrentAirPollution";
+import ForecastAirPollution from "../components/airPollution/ForecastAirPollution";
 import { airPollutionInputStyle } from "../components/searchEngine/SearchComponent.styles";
 
 export default function AirPollutionContainer() {
@@ -93,8 +94,16 @@ export default function AirPollutionContainer() {
             />
             {data.airPollutionData && (
                 <CurrentAirPollution
-                    airPollutionData={data.airPollutionData.days[0]}
+                    currentAirPollutionData={data.airPollutionData.days[0]}
                     city={data.city}
+                />
+            )}
+            {data.airPollutionData && (
+                <ForecastAirPollution
+                    forecastAirPollutionData={data.airPollutionData.days.slice(
+                        0,
+                        4
+                    )}
                 />
             )}
         </>

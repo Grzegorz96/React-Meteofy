@@ -1,5 +1,5 @@
 import React from "react";
-import { HourlyLabel, Label, WeatherIcon } from "./ForecastWeather.styles";
+import { HourlyLabel, Label, WeatherIcon } from "../accordion/Accordion.styles";
 
 export default function HourlyItem({ hourData }) {
     return (
