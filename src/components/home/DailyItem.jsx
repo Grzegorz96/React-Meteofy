@@ -6,13 +6,13 @@ import {
     DailyDetailsGrid,
     DailyDetailsGridItem,
     Label,
-} from "../accordion/Accordion.styles";
+} from "../ui/Accordion/Accordion.styles";
 import {
     AccordionItem,
     AccordionItemPanel,
     AccordionItemHeading,
 } from "react-accessible-accordion";
-import ScrollContainer from "../accordion/ScrollableContainer";
+import ScrollContainer from "../ui/ScrollableContainer/ScrollableContainer";
 import HourlyItem from "./HourlyItem";
 
 export default function DailyItem({ index, dayData, forecastDays }) {

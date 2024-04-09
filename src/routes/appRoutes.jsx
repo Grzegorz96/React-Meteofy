@@ -1,10 +1,10 @@
-import HomePage from "../pages/HomePage";
-import PolandPage from "../pages/PolandPage";
-import EuropePage from "../pages/EuropePage";
-import WorldPage from "../pages/WorldPage";
-import NotFoundPage from "../pages/NotFoundPage";
-import AirPollutionPage from "../pages/AirPollutionPage";
-import LongTermWeatherPage from "../pages/LongTermWeatherPage";
+import HomePage from "../pages/Home";
+import PolandPage from "../pages/Poland";
+import EuropePage from "../pages/Europe";
+import WorldPage from "../pages/World";
+import NotFoundPage from "../pages/NotFound";
+import AirPollutionPage from "../pages/AirPollution";
+import LongTermWeatherPage from "../pages/LongTermWeather";
 
 export const appRoutes = [
     { path: "/", element: <HomePage /> },

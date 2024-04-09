@@ -1,5 +1,5 @@
-import { getAqiUSData } from "../../utils/getAqiUSData";
-import { aqiUSData } from "../../constants/aqiUSData";
+import { getAqiUSData } from "../../utils/helpers";
+import { aqiUSData } from "../../utils/constants/aqiUSData";
 import {
     AirQualityIndex,
     AirQualityIndexHeader,

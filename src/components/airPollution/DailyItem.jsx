@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
     AccordionItem,
     AccordionItemPanel,
@@ -12,14 +13,16 @@ import {
     SelectButtonsWrapper,
     SelectButton,
     Wrapper,
-} from "../accordion/Accordion.styles";
-import { getAqiUSData } from "../../utils/getAqiUSData";
-import ScrollContainer from "../accordion/ScrollableContainer";
+} from "../ui/Accordion/Accordion.styles";
+import { getAqiUSData } from "../../utils/helpers";
+import ScrollContainer from "../ui/ScrollableContainer/ScrollableContainer";
 import AirPollutionLinearChart from "./AirPollutionLinearChart";
-import { useState } from "react";
+import { POLLUTION_NAMES } from "../../utils/constants/pollutionNames";
+import { getFilteredLinearChartData } from "../../utils/charts/chartsData";
 
 export default function DailyItem({ dayData, index, forecastDays }) {
     const [selectedDataset, setSelectedDataset] = useState("PM1");
+    const filteredData = getFilteredLinearChartData(dayData, selectedDataset);
     const aqiUSData = getAqiUSData(dayData.aqius);
 
     return (
@@ -48,42 +51,24 @@ export default function DailyItem({ dayData, index, forecastDays }) {
             <AccordionItemPanel>
                 <Wrapper>
                     <SelectButtonsWrapper>
-                        <SelectButton onClick={() => setSelectedDataset("PM1")}>
-                            PM1
-                        </SelectButton>
-                        <SelectButton
-                            onClick={() => setSelectedDataset("PM2.5")}
-                        >
-                            PM2.5
-                        </SelectButton>
-                        <SelectButton
-                            onClick={() => setSelectedDataset("PM10")}
-                        >
-                            PM10
-                        </SelectButton>
-                        <SelectButton onClick={() => setSelectedDataset("NO2")}>
-                            No2
-                        </SelectButton>
-                        <SelectButton onClick={() => setSelectedDataset("SO2")}>
-                            SO2
-                        </SelectButton>
-                        <SelectButton onClick={() => setSelectedDataset("CO")}>
-                            CO
-                        </SelectButton>
-                        <SelectButton onClick={() => setSelectedDataset("O3")}>
-                            O3
-                        </SelectButton>
+                        {POLLUTION_NAMES.map((pollutionName) => (
+                            <SelectButton
+                                $active={selectedDataset === pollutionName}
+                                key={pollutionName}
+                                onClick={() =>
+                                    setSelectedDataset(pollutionName)
+                                }
+                            >
+                                {pollutionName}
+                            </SelectButton>
+                        ))}
                     </SelectButtonsWrapper>
                     <Label $fontWeight="600">
                         Hourly Air Pollution (μg/m3)
                     </Label>
                 </Wrapper>
-
                 <ScrollContainer>
-                    <AirPollutionLinearChart
-                        dayData={dayData}
-                        selectedDataset={selectedDataset}
-                    />
+                    <AirPollutionLinearChart filteredData={filteredData} />
                 </ScrollContainer>
             </AccordionItemPanel>
         </AccordionItem>

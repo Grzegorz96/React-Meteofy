@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { memo } from "react";
-import { StyledAccordion, Title } from "../accordion/Accordion.styles";
+import { StyledAccordion, Title } from "../ui/Accordion/Accordion.styles";
 import DailyItem from "./DailyItem";
-import { getForecastDays } from "../../utils/calculateForecastDays";
+import { getForecastDays } from "../../utils/helpers";
 
 function ForecastWeather({ forecastWeather }) {
     const forecastDays = getForecastDays();

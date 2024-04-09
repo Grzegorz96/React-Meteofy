@@ -5,53 +5,18 @@ import {
     CurrentAirPollutionChart,
     Datetime,
 } from "./CurrentAirPollution.styles";
+import { getChartBarData } from "../../utils/charts/chartsData";
 
 export default function AirPollutionBarChart({
     currentAirPollutionData,
     city,
 }) {
+    const data = getChartBarData(currentAirPollutionData);
     return (
         <CurrentAirPollutionChart>
             <Datetime>{currentAirPollutionData.datetime}</Datetime>
             <Bar
-                data={{
-                    labels: ["PM1", "PM2.5", "PM10", "NO2", "SO2", "CO", "O3"],
-                    datasets: [
-                        {
-                            label: "Air Pollution Data (μg/m3)",
-                            data: [
-                                currentAirPollutionData.pm1,
-                                currentAirPollutionData.pm2p5,
-                                currentAirPollutionData.pm10,
-                                currentAirPollutionData.no2,
-                                currentAirPollutionData.so2,
-                                currentAirPollutionData.co,
-                                currentAirPollutionData.o3,
-                            ],
-                            backgroundColor: [
-                                "rgba(255, 99, 132, 0.2)",
-                                "rgba(54, 162, 235, 0.2)",
-                                "rgba(255, 206, 86, 0.2)",
-                                "rgba(75, 192, 192, 0.2)",
-                                "rgba(153, 102, 255, 0.2)",
-                                "rgba(255, 159, 64, 0.2)",
-                                "rgba(156, 194, 19, 0.2)",
-                            ],
-                            borderColor: [
-                                "rgba(255, 99, 132, 1)",
-                                "rgba(54, 162, 235, 1)",
-                                "rgba(255, 206, 86, 1)",
-                                "rgba(75, 192, 192, 1)",
-                                "rgba(153, 102, 255, 1)",
-                                "rgba(255, 159, 64, 1)",
-                                "rgba(156, 194, 19, 1)",
-                            ],
-                            borderWidth: 1,
-                            borderRadius: 5,
-                            pointStyle: "star",
-                        },
-                    ],
-                }}
+                data={data}
                 height={400}
                 width={600}
                 plugins={[ChartDataLabels]}

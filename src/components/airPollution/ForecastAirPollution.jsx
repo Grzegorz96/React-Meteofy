@@ -1,5 +1,5 @@
-import { StyledAccordion, Title } from "../accordion/Accordion.styles";
-import { getForecastDays } from "../../utils/calculateForecastDays";
+import { StyledAccordion, Title } from "../ui/Accordion/Accordion.styles";
+import { getForecastDays } from "../../utils/helpers";
 import DailyItem from "./DailyItem";
 
 export default function ForecastAirPollution({ forecastAirPollutionData }) {
