@@ -1,8 +1,9 @@
+import { memo } from "react";
 import { CurrentAirPollutionWrapper } from "./CurrentAirPollution.styles";
-import AirPollutionBarChart from "./AirPollutionBarChart";
-import AirQualityIndexLabel from "./AirQualityIndexLabel";
+import AirPollutionBarChart from "../BarChart/BarChart";
+import AirQualityIndexLabel from "../AirQualityIndexLabel/AirQualityIndexLabel";
 
-export default function CurrentAirPollution({ currentAirPollutionData, city }) {
+function CurrentAirPollution({ currentAirPollutionData, city }) {
     return (
         <CurrentAirPollutionWrapper>
             <AirPollutionBarChart
@@ -15,3 +16,5 @@ export default function CurrentAirPollution({ currentAirPollutionData, city }) {
         </CurrentAirPollutionWrapper>
     );
 }
+
+export default memo(CurrentAirPollution);

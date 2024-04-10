@@ -4,7 +4,7 @@ export const ScrollContainer = styled.div`
     overflow-y: auto;
     display: flex;
     gap: 3px;
-    max-width: 100%;
+    width: 100%;
 
     &::-webkit-scrollbar {
         display: none;

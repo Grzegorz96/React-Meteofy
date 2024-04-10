@@ -13,14 +13,18 @@ import {
     SelectButtonsWrapper,
     SelectButton,
     Wrapper,
-} from "../ui/Accordion/Accordion.styles";
-import { getAqiUSData } from "../../utils/helpers";
-import ScrollContainer from "../ui/ScrollableContainer/ScrollableContainer";
-import AirPollutionLinearChart from "./AirPollutionLinearChart";
-import { POLLUTION_NAMES } from "../../utils/constants/pollutionNames";
-import { getFilteredLinearChartData } from "../../utils/charts/chartsData";
+} from "../../ui/Accordion/Accordion.styles";
+import { getAqiUSData } from "../../../utils/helpers";
+import ScrollContainer from "../../ui/ScrollableContainer/ScrollableContainer";
+import AirPollutionLinearChart from "../LinearChart/LinearChart";
+import { POLLUTION_NAMES } from "../../../utils/constants/pollutionNames";
+import { getFilteredLinearChartData } from "../../../utils/charts/chartData";
 
-export default function DailyItem({ dayData, index, forecastDays }) {
+export default function DailyAirPollutionItem({
+    dayData,
+    index,
+    forecastDays,
+}) {
     const [selectedDataset, setSelectedDataset] = useState("PM1");
     const filteredData = getFilteredLinearChartData(dayData, selectedDataset);
     const aqiUSData = getAqiUSData(dayData.aqius);

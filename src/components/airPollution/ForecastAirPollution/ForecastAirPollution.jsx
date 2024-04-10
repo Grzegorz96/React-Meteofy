@@ -1,15 +1,17 @@
-import { StyledAccordion, Title } from "../ui/Accordion/Accordion.styles";
-import { getForecastDays } from "../../utils/helpers";
-import DailyItem from "./DailyItem";
+import { memo } from "react";
+import { StyledAccordion, Title } from "../../ui/Accordion/Accordion.styles";
+import { getForecastDays } from "../../../utils/helpers";
 
-export default function ForecastAirPollution({ forecastAirPollutionData }) {
+import DailyAirPollutionItem from "../DailyAirPollutionItem/DailyAirPollutionItem";
+
+function ForecastAirPollution({ forecastAirPollutionData }) {
     const forecastDays = getForecastDays();
 
     return (
         <StyledAccordion allowZeroExpanded>
             <Title>Daily</Title>
             {forecastAirPollutionData.map((dayData, index) => (
-                <DailyItem
+                <DailyAirPollutionItem
                     key={index}
                     dayData={dayData}
                     index={index}
@@ -19,3 +21,5 @@ export default function ForecastAirPollution({ forecastAirPollutionData }) {
         </StyledAccordion>
     );
 }
+
+export default memo(ForecastAirPollution);

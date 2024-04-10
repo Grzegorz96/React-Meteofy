@@ -6,16 +6,16 @@ import {
     DailyDetailsGrid,
     DailyDetailsGridItem,
     Label,
-} from "../ui/Accordion/Accordion.styles";
+} from "../../ui/Accordion/Accordion.styles";
 import {
     AccordionItem,
     AccordionItemPanel,
     AccordionItemHeading,
 } from "react-accessible-accordion";
-import ScrollContainer from "../ui/ScrollableContainer/ScrollableContainer";
-import HourlyItem from "./HourlyItem";
+import ScrollContainer from "../../ui/ScrollableContainer/ScrollableContainer";
+import HourlyWeatherItem from "../HourlyWeatherItem/HourlyWeatherItem";
 
-export default function DailyItem({ index, dayData, forecastDays }) {
+export default function DailyWeatherItem({ index, dayData, forecastDays }) {
     return (
         <AccordionItem>
             <AccordionItemHeading>
@@ -62,7 +62,7 @@ export default function DailyItem({ index, dayData, forecastDays }) {
                 </DailyDetailsGrid>
                 <ScrollContainer>
                     {dayData.hours.map((hourData, index) => (
-                        <HourlyItem key={index} hourData={hourData} />
+                        <HourlyWeatherItem key={index} hourData={hourData} />
                     ))}
                 </ScrollContainer>
             </AccordionItemPanel>

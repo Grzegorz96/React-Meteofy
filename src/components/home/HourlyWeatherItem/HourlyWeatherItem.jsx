@@ -3,9 +3,9 @@ import {
     HourlyLabel,
     Label,
     WeatherIcon,
-} from "../ui/Accordion/Accordion.styles";
+} from "../../ui/Accordion/Accordion.styles";
 
-export default function HourlyItem({ hourData }) {
+export default function HourlyWeatherItem({ hourData }) {
     return (
         <HourlyLabel>
             <Label>{hourData.datetime.substring(0, 5)}</Label>
