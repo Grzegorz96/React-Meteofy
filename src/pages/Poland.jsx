@@ -1,5 +1,5 @@
-import React from "react";
+import PolandContainer from "../containers/Poland";
 
 export default function PolandPage() {
-    return <div>Poland Page</div>;
+    return <PolandContainer />;
 }

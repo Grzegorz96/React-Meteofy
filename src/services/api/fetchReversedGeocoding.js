@@ -1,17 +1,14 @@
 import axios from "axios";
-import { API_DATA } from "../../utils/constants/reverseGeocodingApiData";
+import { API_DATA } from "../../utils/constants/geoApifyApiData";
 
 const reversedGeocodingOptions = (latitude, longitude) => ({
     method: "GET",
     url: API_DATA.urls.reversedGeocoding,
     params: {
-        latitude: latitude,
-        longitude: longitude,
-        range: "0",
-    },
-    headers: {
-        "X-RapidAPI-Key": API_DATA.apiKey,
-        "X-RapidAPI-Host": "geocodeapi.p.rapidapi.com",
+        lat: latitude,
+        lon: longitude,
+        apiKey: API_DATA.apiKey,
+        format: "json",
     },
 });
 

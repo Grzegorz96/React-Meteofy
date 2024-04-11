@@ -51,7 +51,9 @@ export const useDataHandler = (city, dataType) => {
 
                 setData({
                     city: cityName
-                        ? `${cityName[0]?.City}, ${cityName[0]?.CountryId}`
+                        ? `${
+                              cityName.results[0]?.city
+                          }, ${cityName.results[0]?.country_code?.toUpperCase()}`
                         : city.label,
                     fetchedData: fetchedData,
                     loading: false,

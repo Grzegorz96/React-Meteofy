@@ -27,7 +27,7 @@ export default function AirPollutionContainer() {
             {data.error && <PopupComponent data={data} setData={setData} />}
             {data.loading && <LoaderComponent />}
             <SearchEngine
-                placeholder="Search for a city to check air pollution"
+                placeholder="Search AQI by city name"
                 city={selectedCity}
                 handleOnChange={handleOnChange}
                 style={airPollutionInputStyle}
