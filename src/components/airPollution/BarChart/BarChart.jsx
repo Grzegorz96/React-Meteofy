@@ -11,11 +11,11 @@ export default function AirPollutionBarChart({
 }) {
     return (
         <CurrentAirPollutionBarChart>
-            <Datetime>{currentAirPollutionData.datetime}</Datetime>
+            {/* <Datetime>{currentAirPollutionData.datetime}</Datetime> */}
             <Bar
                 data={getBarChartData(currentAirPollutionData)}
-                height={400}
-                width={600}
+                height={380}
+                width={660}
                 plugins={[ChartDataLabels]}
                 options={getBarChartOptions(city)}
             />

@@ -1,0 +1,18 @@
+export const polishCitiesData = [
+    { id: 776069, name: "Białystok", left: "78%", top: "23%" },
+    { id: 3102014, name: "Bydgoszcz", left: "37%", top: "25%" },
+    { id: 6695624, name: "Warszawa", left: "62%", top: "35%" },
+    { id: 3093133, name: "Łódź", left: "47%", top: "48%" },
+    { id: 3081368, name: "Wrocław", left: "17%", top: "56%" },
+    { id: 3088171, name: "Poznań", left: "24%", top: "38%" },
+    { id: 3083829, name: "Szczecin", left: "10%", top: "16%" },
+    { id: 3099434, name: "Gdańsk", left: "33%", top: "6%" },
+    { id: 763166, name: "Olsztyn", left: "60%", top: "13%" },
+    { id: 765876, name: "Lublin", left: "79%", top: "53%" },
+    { id: 759734, name: "Rzeszów", left: "74%", top: "75%" },
+    { id: 3096472, name: "Katowice", left: "43%", top: "66%" },
+    { id: 3094802, name: "Kraków", left: "56%", top: "77%" },
+    { id: 769250, name: "Kielce", left: "60%", top: "63%" },
+    { id: 3090048, name: "Opole", left: "30%", top: "64%" },
+    { id: 3098722, name: "Gorzów Wlkp", left: "6%", top: "37%" },
+];
