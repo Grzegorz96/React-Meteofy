@@ -1,0 +1,40 @@
+.popup-html-container {
+    width: 200px;
+    margin: 15px auto 5px !important;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+}
+
+.popup-container {
+    width: 400px;
+}
+
+.popup-title {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.popup-title p {
+    font-size: 18px;
+}
+
+.popup-icon {
+    border: none;
+    margin: 20px auto;
+    width: 110px;
+}
+
+.popup-icon img {
+    width: 100%;
+}
+
+.popup-weather-info {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #757575;
+}
+
+.popup-weather-info span {
+    color: #212121;
+}

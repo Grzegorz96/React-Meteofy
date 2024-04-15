@@ -27,7 +27,7 @@ html, body, #root {
 
 body {
     background: ${(props) =>
-        props.theme.dark.primary} url(/assets/images/theme.jpg) center/cover
+        props.theme.dark.primary} url(src/assets/images/theme.jpg) center/cover
         no-repeat;
 }
 

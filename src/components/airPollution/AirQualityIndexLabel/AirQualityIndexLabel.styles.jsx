@@ -26,7 +26,7 @@ export const AirQualityIndexHeader = styled.div`
 `;
 
 export const FaceImg = styled.img.attrs((props) => ({
-    src: `/assets/airPollutionIcons/${props.$icon}.svg`,
+    src: `src/assets/airPollutionIcons/${props.$icon}.svg`,
 }))`
     width: 80px;
     height: 80px;
@@ -72,7 +72,7 @@ export const AirQualityIndexFooter = styled.div`
 `;
 
 export const FaceFooter = styled.img.attrs((props) => ({
-    src: `/assets/airPollutionIcons/${props.$icon}.svg`,
+    src: `src/assets/airPollutionIcons/${props.$icon}.svg`,
 }))`
     width: 40px;
     height: 40px;

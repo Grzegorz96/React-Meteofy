@@ -37,7 +37,7 @@ export default function DailyWeatherItem({ index, dayData, forecastDays }) {
                 <DailyDetailsGrid>
                     <DailyDetailsGridItem>
                         <Label $grey>Pressure:</Label>
-                        <Label>{Math.round(dayData.pressure)}hPa</Label>
+                        <Label>{Math.round(dayData.pressure)} hPa</Label>
                     </DailyDetailsGridItem>
                     <DailyDetailsGridItem>
                         <Label $grey>Humidity:</Label>
@@ -49,11 +49,11 @@ export default function DailyWeatherItem({ index, dayData, forecastDays }) {
                     </DailyDetailsGridItem>
                     <DailyDetailsGridItem>
                         <Label $grey>Wind speed:</Label>
-                        <Label>{Math.round(dayData.windspeed)}km/h</Label>
+                        <Label>{Math.round(dayData.windspeed)} km/h</Label>
                     </DailyDetailsGridItem>
                     <DailyDetailsGridItem>
                         <Label $grey>Visibility:</Label>
-                        <Label>{Math.round(dayData.visibility)}km</Label>
+                        <Label>{Math.round(dayData.visibility)} km</Label>
                     </DailyDetailsGridItem>
                     <DailyDetailsGridItem>
                         <Label $grey>Feels like:</Label>

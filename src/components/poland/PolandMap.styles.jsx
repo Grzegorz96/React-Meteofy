@@ -1,16 +1,17 @@
 import styled from "styled-components";
-import { ReactSVG } from "react-svg";
+import MapSVG from "../../assets/images/poland-map.svg?react";
 
 export const MapContainer = styled.div`
     position: relative;
-    width: 750px;
+    height: 100%;
 `;
 
 export const MapItemsLayer = styled.div``;
 
-export const PolandMapSVG = styled(ReactSVG).attrs({
-    src: "/src/assets/images/poland-map.svg",
-})`
+export const PolandMapSVG = styled(MapSVG)`
+    height: 100%;
+    width: 100%;
+
     path {
         stroke: #747373;
         stroke-width: 0.5;
@@ -53,7 +54,7 @@ export const Text = styled.span`
 `;
 
 export const WeaterIcon = styled.img.attrs((props) => ({
-    src: `/assets/openWeatherIcons/${props.$icon}.png`,
+    src: `src/assets/openWeatherIcons/${props.$icon}.png`,
 }))`
     height: 38px;
     height: 38px;

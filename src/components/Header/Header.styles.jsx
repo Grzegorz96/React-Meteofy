@@ -19,7 +19,7 @@ export const Header = styled.header`
 `;
 
 export const Logo = styled.img.attrs({
-    src: "/assets/images/logo-weather.png",
+    src: "src/assets/images/logo-weather.png",
     alt: "Logo Weather",
 })`
     height: 100%;

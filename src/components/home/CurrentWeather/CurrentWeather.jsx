@@ -89,7 +89,7 @@ function CurrentWeather({ currentWeather, city }) {
                         <ParameterLabel>Wind</ParameterLabel>
                         <Wrapper $display="flex" $gap="4px">
                             <ParameterValue>
-                                {Math.round(currentWeather.windspeed)}km/h
+                                {Math.round(currentWeather.windspeed)} km/h
                             </ParameterValue>
                             <FaWind />
                         </Wrapper>
@@ -116,7 +116,7 @@ function CurrentWeather({ currentWeather, city }) {
                         <ParameterLabel>Pressure</ParameterLabel>
                         <Wrapper $display="flex" $gap="4px">
                             <ParameterValue>
-                                {Math.round(currentWeather.pressure)}hPa
+                                {Math.round(currentWeather.pressure)} hPa
                             </ParameterValue>
                             <FaWeightScale />
                         </Wrapper>
@@ -125,7 +125,7 @@ function CurrentWeather({ currentWeather, city }) {
                         <ParameterLabel>Visibility</ParameterLabel>
                         <Wrapper $display="flex" $gap="4px">
                             <ParameterValue>
-                                {Math.round(currentWeather.visibility)}km
+                                {Math.round(currentWeather.visibility)} km
                             </ParameterValue>
                             <MdOutlineVisibility />
                         </Wrapper>
