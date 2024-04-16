@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Popup, PopupText, PopupButton } from "./Popup.styles";
+import { Overlay, Popup, PopupText, PopupButton } from "./Popup.styles";
 import { FaRegCircleXmark } from "react-icons/fa6";
 import { useSpring } from "@react-spring/web";
 
 export default function PopupComponent({ data, setData }) {
     const [isOpen, setIsOpen] = useState(true);
 
-    const fadeInFromTop = useSpring({
+    const fadeInFromTopAnimation = useSpring({
         from: {
             opacity: isOpen ? 0 : 1,
             transform: isOpen
@@ -31,11 +31,16 @@ export default function PopupComponent({ data, setData }) {
     });
 
     return (
-        <Popup style={fadeInFromTop}>
-            <FaRegCircleXmark />
-            <h1>Error!</h1>
-            <PopupText>{data.error}</PopupText>
-            <PopupButton onClick={() => setIsOpen(false)}>OK</PopupButton>
-        </Popup>
+        <Overlay onClick={() => setIsOpen(false)}>
+            <Popup
+                style={fadeInFromTopAnimation}
+                onClick={(e) => e.stopPropagation()}
+            >
+                <FaRegCircleXmark />
+                <h1>Error!</h1>
+                <PopupText>{data.error}</PopupText>
+                <PopupButton onClick={() => setIsOpen(false)}>OK</PopupButton>
+            </Popup>
+        </Overlay>
     );
 }

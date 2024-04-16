@@ -1,11 +1,21 @@
 import styled from "styled-components";
 import { animated } from "@react-spring/web";
 
-export const Popup = styled(animated.div)`
+export const Overlay = styled.div`
     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    overflow: hidden;
+`;
+
+export const Popup = styled(animated.div)`
+    position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 9999;
     display: flex;
     flex-direction: column;
     align-items: center;

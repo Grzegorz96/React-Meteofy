@@ -1,3 +1,5 @@
+import EuropeContainer from "../containers/Europe";
+
 export default function EuropePage() {
-    return <div>Europe Page</div>;
+    return <EuropeContainer />;
 }

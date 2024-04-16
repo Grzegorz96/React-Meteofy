@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import PolandMap from "../components/poland/PolandMap";
+import PolandMap from "../components/PolandMap/PolandMap";
 import { fetchPolishCitiesWeather } from "../services/api/fetchPolishCitiesWeather";
 import PopupComponent from "../components/ui/Popup/Popup";
 import LoaderComponent from "../components/ui/Loader/Loader";
