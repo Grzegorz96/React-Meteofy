@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Overlay, Popup, PopupText, PopupButton } from "./Popup.styles";
+import { Overlay, Modal, ModalText, ModalButton } from "./Modal.styles";
 import { FaRegCircleXmark } from "react-icons/fa6";
 import { useSpring } from "@react-spring/web";
 
-export default function PopupComponent({ data, setData }) {
+export default function ModalComponent({ data, setData }) {
     const [isOpen, setIsOpen] = useState(true);
 
     const fadeInFromTopAnimation = useSpring({
@@ -32,15 +32,15 @@ export default function PopupComponent({ data, setData }) {
 
     return (
         <Overlay onClick={() => setIsOpen(false)}>
-            <Popup
+            <Modal
                 style={fadeInFromTopAnimation}
                 onClick={(e) => e.stopPropagation()}
             >
                 <FaRegCircleXmark />
                 <h1>Error!</h1>
-                <PopupText>{data.error}</PopupText>
-                <PopupButton onClick={() => setIsOpen(false)}>OK</PopupButton>
-            </Popup>
+                <ModalText>{data.error}</ModalText>
+                <ModalButton onClick={() => setIsOpen(false)}>OK</ModalButton>
+            </Modal>
         </Overlay>
     );
 }

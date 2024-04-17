@@ -12,7 +12,7 @@ export const Overlay = styled.div`
     overflow: hidden;
 `;
 
-export const Popup = styled(animated.div)`
+export const Modal = styled(animated.div)`
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,13 +34,13 @@ export const Popup = styled(animated.div)`
     }
 `;
 
-export const PopupText = styled.span`
+export const ModalText = styled.span`
     font-size: 20px;
     font-weight: 600;
     text-align: center;
 `;
 
-export const PopupButton = styled.button`
+export const ModalButton = styled.button`
     padding: 10px 20px;
     background-color: #7066e0;
     color: ${(props) => props.theme.dark.text};

@@ -1,16 +1,16 @@
-import { useDataHandler } from "../hooks/useDataHandler";
+import { useDataWithCitiesHandler } from "../hooks/useDataWithCitiesHandler";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { resetCityData } from "../state/cityDataSlice";
 import CurrentWeather from "../components/home/CurrentWeather/CurrentWeather";
 import ForecastWeather from "../components/home/ForecastWeather/ForecastWeather";
 import LoaderComponent from "../components/ui/Loader/Loader";
-import PopupComponent from "../components/ui/Popup/Popup";
+import ModalComponent from "../components/ui/Modal/Modal";
 
 export default function HomeContainer() {
     const cityData = useSelector(({ cityData }) => cityData);
     const dispatch = useDispatch();
-    const { data, setData } = useDataHandler(cityData, "weather");
+    const { data, setData } = useDataWithCitiesHandler(cityData, "weather");
 
     useEffect(() => {
         return () => {
@@ -20,7 +20,7 @@ export default function HomeContainer() {
 
     return (
         <>
-            {data.error && <PopupComponent data={data} setData={setData} />}
+            {data.error && <ModalComponent data={data} setData={setData} />}
             {data.loading && <LoaderComponent />}
             {data.fetchedData && (
                 <CurrentWeather

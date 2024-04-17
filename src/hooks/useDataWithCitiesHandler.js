@@ -3,7 +3,7 @@ import { fetchWeather } from "../services/api/fetchCurrentAndForecastWeather";
 import { fetchAirPollution } from "../services/api/fetchAirPollution";
 import { fetchReversedGecoding } from "../services/api/fetchReversedGeocoding";
 
-export const useDataHandler = (city, dataType) => {
+export const useDataWithCitiesHandler = (city, dataType) => {
     const [data, setData] = useState({
         city: null,
         fetchedData: null,
@@ -68,7 +68,6 @@ export const useDataHandler = (city, dataType) => {
                 });
             }
         };
-
         fetchData();
     }, [city]);
 

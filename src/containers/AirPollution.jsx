@@ -1,7 +1,7 @@
-import { useDataHandler } from "../hooks/useDataHandler";
-import React, { useState, useMemo } from "react";
+import { useDataWithCitiesHandler } from "../hooks/useDataWithCitiesHandler";
+import { useState, useMemo } from "react";
 import LoaderComponent from "../components/ui/Loader/Loader";
-import PopupComponent from "../components/ui/Popup/Popup";
+import ModalComponent from "../components/ui/Modal/Modal";
 import SearchEngine from "../components/ui/SearchEngine/SearchEngine";
 import CurrentAirPollution from "../components/airPollution/CurrentAirPollution/CurrentAirPollution";
 import ForecastAirPollution from "../components/airPollution/ForecastAirPollution/ForecastAirPollution";
@@ -12,7 +12,10 @@ export default function AirPollutionContainer() {
         label: null,
         value: { latitude: null, longitude: null },
     });
-    const { data, setData } = useDataHandler(selectedCity, "airPollution");
+    const { data, setData } = useDataWithCitiesHandler(
+        selectedCity,
+        "airPollution"
+    );
     const handleOnChange = (selectedOption) => {
         setSelectedCity(selectedOption);
     };
@@ -24,7 +27,7 @@ export default function AirPollutionContainer() {
 
     return (
         <>
-            {data.error && <PopupComponent data={data} setData={setData} />}
+            {data.error && <ModalComponent data={data} setData={setData} />}
             {data.loading && <LoaderComponent />}
             <SearchEngine
                 placeholder="Search AQI by city name"

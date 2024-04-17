@@ -1,37 +1,16 @@
-import { useState, useEffect } from "react";
 import PolandMap from "../components/PolandMap/PolandMap";
-import { fetchPolishCitiesWeather } from "../services/api/fetchPolishCitiesWeather";
-import PopupComponent from "../components/ui/Popup/Popup";
+import ModalComponent from "../components/ui/Modal/Modal";
 import LoaderComponent from "../components/ui/Loader/Loader";
+import { useDataWithMapsHandler } from "../hooks/useDataWithMapsHandler";
+import { polishCitiesData } from "../utils/constants/polishCitiesData";
 
 export default function PolandContainer() {
-    const [data, setData] = useState({
-        fetchedData: null,
-        loading: false,
-        error: null,
-    });
-
-    useEffect(() => {
-        const fetchData = async () => {
-            setData({ ...data, loading: true });
-            try {
-                const fetchedData = await fetchPolishCitiesWeather();
-                setData({ fetchedData, loading: false, error: null });
-            } catch (error) {
-                setData({
-                    fetchedData: null,
-                    loading: false,
-                    error: error.message,
-                });
-            }
-        };
-        fetchData();
-    }, []);
+    const { data, setData } = useDataWithMapsHandler(polishCitiesData);
 
     return (
         <>
+            {data.error && <ModalComponent data={data} setData={setData} />}
             {data.loading && <LoaderComponent />}
-            {data.error && <PopupComponent data={data} setData={setData} />}
             {data.fetchedData && (
                 <PolandMap fetchedCitiesData={data.fetchedData} />
             )}
