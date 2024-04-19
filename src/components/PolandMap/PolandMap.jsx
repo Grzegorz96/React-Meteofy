@@ -3,7 +3,7 @@ import {
     MapItemsLayer,
     MapContainer,
     MapItem,
-    WeaterIcon,
+    WeatherIcon,
     Temp,
     DataWrapper,
     Text,
@@ -14,7 +14,7 @@ import {
 import { polishCitiesData } from "../../utils/constants/polishCitiesData";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import "../../assets/sweetAlert2Styles/cityPopup.css";
+import "../../assets/sweetAlert2Styles/weatherCityModal.css";
 import { useSpring } from "@react-spring/web";
 const MySwal = withReactContent(Swal);
 
@@ -45,7 +45,7 @@ export default function PolandMap({ fetchedCitiesData }) {
                     width: "400px",
                     heightAuto: false,
                     iconHtml: (
-                        <WeaterIcon
+                        <WeatherIcon
                             $icon={clickedCity.weather[0].icon}
                             $width="100%"
                         />
@@ -105,9 +105,9 @@ export default function PolandMap({ fetchedCitiesData }) {
                         </>
                     ),
                     customClass: {
-                        title: "popup-title",
-                        htmlContainer: "popup-html-container",
-                        icon: "popup-icon",
+                        title: "modal-title",
+                        htmlContainer: "modal-html-container",
+                        icon: "modal-icon",
                     },
                 });
             }
@@ -131,7 +131,7 @@ export default function PolandMap({ fetchedCitiesData }) {
                                 <Temp>
                                     {Math.round(currentCity.main.temp)}°C
                                 </Temp>
-                                <WeaterIcon
+                                <WeatherIcon
                                     $icon={currentCity.weather[0].icon}
                                 />
                             </DataWrapper>

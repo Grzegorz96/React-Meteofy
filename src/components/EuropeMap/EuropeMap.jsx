@@ -1,30 +1,96 @@
-import React from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { divIcon } from "leaflet";
+import {
+    WeatherIcon,
+    Temp,
+    Paragraph,
+    WeatherInfo,
+    WeatherInfoValue,
+} from "./EuropeMap.styles";
+import MarkerClusterGroup from "react-leaflet-cluster";
+import { renderToString } from "react-dom/server";
 import "leaflet/dist/leaflet.css";
-import { Icon } from "leaflet";
 import "../../assets/reactLeafletStyles/customMarkerIcon.css";
+import "../../assets/sweetAlert2Styles/weatherCityModal.css";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+const MySwal = withReactContent(Swal);
 
-const BlockZoom = () => {
-    const map = useMap();
-    map.setMaxZoom(6); // Ustaw maksymalny zoom na 6
-    map.setMinZoom(4); // Ustaw minimalny zoom na 4
-    return null;
-};
-
-const customMarkerIcon = (weatherIcon) =>
-    new Icon({
-        iconUrl: `/src/assets/openWeatherIcons/${weatherIcon}.png`,
-        iconSize: [50, 50],
-        iconAnchor: [20, 65],
-        popupAnchor: [0, -30],
+const customMarker = (weatherIcon, temperature) =>
+    divIcon({
         className: "custom-marker-icon",
+        iconSize: [60, 40],
+        iconAnchor: [30, 60],
+        html: renderToString(
+            <>
+                <Temp>{Math.round(temperature)}°</Temp>
+                <WeatherIcon $icon={weatherIcon} />
+            </>
+        ),
     });
 
 export default function EuropeMap({ fetchedCitiesData }) {
     console.log(fetchedCitiesData);
 
+    const handleClick = (city) => {
+        MySwal.fire({
+            width: "400px",
+            heightAuto: false,
+            iconHtml: <WeatherIcon $icon={city.weather[0].icon} />,
+            title: (
+                <>
+                    {`${city.name} ${Math.round(city.main.temp)}°C`}
+                    <Paragraph>{city.weather[0].description}</Paragraph>
+                </>
+            ),
+            html: (
+                <>
+                    <WeatherInfo>
+                        feels like:
+                        <WeatherInfoValue>
+                            {`${Math.round(city.main.feels_like)}°C`}
+                        </WeatherInfoValue>
+                    </WeatherInfo>
+                    <WeatherInfo>
+                        humidity:
+                        <WeatherInfoValue>
+                            {`${Math.round(city.main.humidity)}%`}
+                        </WeatherInfoValue>
+                    </WeatherInfo>
+                    <WeatherInfo>
+                        wind:
+                        <WeatherInfoValue>
+                            {`${Math.round(city.wind.speed * 3.6)}
+                                     km/h`}
+                        </WeatherInfoValue>
+                    </WeatherInfo>
+                    <WeatherInfo>
+                        pressure:
+                        <WeatherInfoValue>
+                            {`${Math.round(city.main.pressure)}
+                                     hPa`}
+                        </WeatherInfoValue>
+                    </WeatherInfo>
+                    <WeatherInfo>
+                        clouds:
+                        <WeatherInfoValue>
+                            {`${Math.round(city.clouds.all)}%`}
+                        </WeatherInfoValue>
+                    </WeatherInfo>
+                </>
+            ),
+            customClass: {
+                title: "modal-title",
+                htmlContainer: "modal-html-container",
+                icon: "modal-icon",
+            },
+        });
+    };
+
     return (
         <MapContainer
+            minZoom={4}
+            maxZoom={13}
             dragging={true}
             center={[50, 15]}
             zoom={4}
@@ -32,6 +98,7 @@ export default function EuropeMap({ fetchedCitiesData }) {
                 [35, -25],
                 [70, 45],
             ]}
+            maxBoundsViscosity={1.0}
             style={{
                 height: "100%",
                 width: "100%",
@@ -46,22 +113,22 @@ export default function EuropeMap({ fetchedCitiesData }) {
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
                 attribution="&copy; Esri &mdash; Source: Esri"
             />
-            <BlockZoom />
-            {fetchedCitiesData.list.map((city, index) => (
-                <Marker
-                    key={index}
-                    position={[city.coord.lat, city.coord.lon]}
-                    icon={customMarkerIcon(city.weather[0].icon)}
-                >
-                    <Popup>
-                        <div>
-                            <h3>{city.name}</h3>
-                            <p>Temperatura: {city.main.temp}&deg;C</p>
-                            <p>Wilgotność: {city.main.humidity}%</p>
-                        </div>
-                    </Popup>
-                </Marker>
-            ))}
+            <MarkerClusterGroup
+                chunkedLoading={true}
+                showCoverageOnHover={false}
+            >
+                {fetchedCitiesData.list.map((city, index) => (
+                    <Marker
+                        eventHandlers={{ click: () => handleClick(city) }}
+                        key={index}
+                        position={[city.coord.lat, city.coord.lon]}
+                        icon={customMarker(
+                            city.weather[0].icon,
+                            city.main.temp
+                        )}
+                    ></Marker>
+                ))}
+            </MarkerClusterGroup>
         </MapContainer>
     );
 }

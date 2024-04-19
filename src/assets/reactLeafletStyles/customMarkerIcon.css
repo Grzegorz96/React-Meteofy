@@ -1,6 +1,11 @@
 .custom-marker-icon {
-    background-color: rgba(173, 173, 173, 0.575);
-    padding: 5px !important;
-    background-color: #c5c5c567;
+    background-color: rgba(245, 245, 245, 0.836);
     border-radius: 6px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 2px solid black;
+    padding-left: 2px;
 }

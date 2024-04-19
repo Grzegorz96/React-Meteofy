@@ -1,15 +1,15 @@
-.popup-icon {
+.modal-icon {
     border: none;
     margin: 20px auto;
     width: 110px;
 }
 
-.popup-title {
+.modal-title {
     padding-top: 10px;
     text-align: center;
 }
 
-.popup-html-container {
+.modal-html-container {
     max-width: 200px;
     width: 100%;
     margin: 15px auto 5px !important;

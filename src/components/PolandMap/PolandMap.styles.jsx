@@ -54,7 +54,7 @@ export const Text = styled.span`
     font-size: 13px;
 `;
 
-export const WeaterIcon = styled.img.attrs((props) => ({
+export const WeatherIcon = styled.img.attrs((props) => ({
     src: `src/assets/openWeatherIcons/${props.$icon}.png`,
 }))`
     width: ${({ $width }) => $width || "38px"};
