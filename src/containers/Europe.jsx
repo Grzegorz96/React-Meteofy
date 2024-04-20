@@ -6,7 +6,6 @@ import LoaderComponent from "../components/ui/Loader/Loader";
 
 export default function EuropeContainer() {
     const { data, setData } = useDataWithMapsHandler(europeCitiesData);
-    console.log(data);
 
     return (
         <>

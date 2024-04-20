@@ -30,8 +30,6 @@ const customMarker = (weatherIcon, temperature) =>
     });
 
 export default function EuropeMap({ fetchedCitiesData }) {
-    console.log(fetchedCitiesData);
-
     const handleClick = (city) => {
         MySwal.fire({
             width: "400px",
@@ -102,7 +100,6 @@ export default function EuropeMap({ fetchedCitiesData }) {
             style={{
                 height: "100%",
                 width: "100%",
-                zIndex: 0,
                 position: "absolute",
                 top: 0,
                 left: 0,

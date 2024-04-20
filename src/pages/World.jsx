@@ -1,3 +1,5 @@
+import WorldContainer from "../containers/World";
+
 export default function WorldPage() {
-    return <div>World Page</div>;
+    return <WorldContainer />;
 }
