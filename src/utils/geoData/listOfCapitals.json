@@ -1,0 +1,1586 @@
+[
+    {
+        "id": 1138958,
+        "name": "Kabul",
+        "coord": {
+            "lon": 69.172333,
+            "lat": 34.52813
+        }
+    },
+    {
+        "id": 3183875,
+        "name": "Tirana",
+        "coord": {
+            "lon": 19.81889,
+            "lat": 41.327499
+        }
+    },
+    {
+        "id": 5881241,
+        "name": "Fagatogo",
+        "coord": {
+            "lon": -170.690002,
+            "lat": -14.2825
+        }
+    },
+    {
+        "id": 3041563,
+        "name": "Andorra la Vella",
+        "coord": {
+            "lon": 1.52109,
+            "lat": 42.50779
+        }
+    },
+    {
+        "id": 188714,
+        "name": "Luanda",
+        "coord": {
+            "lon": 34.06459,
+            "lat": 0.29668
+        }
+    },
+    {
+        "id": 3573374,
+        "name": "The Valley",
+        "coord": {
+            "lon": -63.057831,
+            "lat": 18.217039
+        }
+    },
+    {
+        "id": 3435907,
+        "name": "Buenos Aires",
+        "coord": {
+            "lon": -60,
+            "lat": -36
+        }
+    },
+    {
+        "id": 616051,
+        "name": "Yerevan",
+        "coord": {
+            "lon": 44.5,
+            "lat": 40.183331
+        }
+    },
+    {
+        "id": 3513426,
+        "name": "Oranjestad",
+        "coord": {
+            "lon": -62.983238,
+            "lat": 17.482679
+        }
+    },
+    {
+        "id": 2172517,
+        "name": "Canberra",
+        "coord": {
+            "lon": 149.128067,
+            "lat": -35.283459
+        }
+    },
+    {
+        "id": 2761367,
+        "name": "Wien",
+        "coord": {
+            "lon": 16.371691,
+            "lat": 48.208199
+        }
+    },
+    {
+        "id": 587084,
+        "name": "Baku",
+        "coord": {
+            "lon": 49.89201,
+            "lat": 40.37767
+        }
+    },
+    {
+        "id": 2867037,
+        "name": "Nassau",
+        "coord": {
+            "lon": 7.8,
+            "lat": 50.316669
+        }
+    },
+    {
+        "id": 1185241,
+        "name": "Dhaka",
+        "coord": {
+            "lon": 90.40744,
+            "lat": 23.7104
+        }
+    },
+    {
+        "id": 2075807,
+        "name": "Bridgetown",
+        "coord": {
+            "lon": 116.133331,
+            "lat": -33.950001
+        }
+    },
+    {
+        "id": 625144,
+        "name": "Minsk",
+        "coord": {
+            "lon": 27.566668,
+            "lat": 53.900002
+        }
+    },
+    {
+        "id": 3582672,
+        "name": "Belmopan",
+        "coord": {
+            "lon": -88.76667,
+            "lat": 17.25
+        }
+    },
+    {
+        "id": 2392087,
+        "name": "Porto-Novo",
+        "coord": {
+            "lon": 2.60359,
+            "lat": 6.49646
+        }
+    },
+    {
+        "id": 2164025,
+        "name": "Hamilton",
+        "coord": {
+            "lon": 142.022018,
+            "lat": -37.744251
+        }
+    },
+    {
+        "id": 1252416,
+        "name": "Thimphu",
+        "coord": {
+            "lon": 89.641907,
+            "lat": 27.466089
+        }
+    },
+    {
+        "id": 1707321,
+        "name": "La Paz",
+        "coord": {
+            "lon": 120.686401,
+            "lat": 17.674601
+        }
+    },
+    {
+        "id": 3191281,
+        "name": "Sarajevo",
+        "coord": {
+            "lon": 18.35644,
+            "lat": 43.84864
+        }
+    },
+    {
+        "id": 933773,
+        "name": "Gaborone",
+        "coord": {
+            "lon": 25.90859,
+            "lat": -24.65451
+        }
+    },
+    {
+        "id": 3410315,
+        "name": "Brasília",
+        "coord": {
+            "lon": -42.694172,
+            "lat": -3.89472
+        }
+    },
+    {
+        "id": 1820906,
+        "name": "Bandar Seri Begawan",
+        "coord": {
+            "lon": 114.948059,
+            "lat": 4.94029
+        }
+    },
+    {
+        "id": 727011,
+        "name": "Sofia",
+        "coord": {
+            "lon": 23.32415,
+            "lat": 42.69751
+        }
+    },
+    {
+        "id": 2357048,
+        "name": "Ouagadougou",
+        "coord": {
+            "lon": -1.53834,
+            "lat": 12.36423
+        }
+    },
+    {
+        "id": 425378,
+        "name": "Bujumbura",
+        "coord": {
+            "lon": 29.364401,
+            "lat": -3.3822
+        }
+    },
+    {
+        "id": 1821306,
+        "name": "Phnom Penh",
+        "coord": {
+            "lon": 104.916008,
+            "lat": 11.56245
+        }
+    },
+    {
+        "id": 4276816,
+        "name": "Ottawa",
+        "coord": {
+            "lon": -95.267754,
+            "lat": 38.61557
+        }
+    },
+    {
+        "id": 3374333,
+        "name": "Praia",
+        "coord": {
+            "lon": -23.50868,
+            "lat": 14.92148
+        }
+    },
+    {
+        "id": 1271421,
+        "name": "George Town",
+        "coord": {
+            "lon": 81.849998,
+            "lat": 25.450001
+        }
+    },
+    {
+        "id": 1727211,
+        "name": "Bangui",
+        "coord": {
+            "lon": 120.767097,
+            "lat": 18.5376
+        }
+    },
+    {
+        "id": 2427123,
+        "name": "N'Djamena",
+        "coord": {
+            "lon": 15.0444,
+            "lat": 12.10672
+        }
+    },
+    {
+        "id": 2855016,
+        "name": "Peking",
+        "coord": {
+            "lon": 11.11667,
+            "lat": 52.083328
+        }
+    },
+    {
+        "id": 2078127,
+        "name": "Flying Fish Cove",
+        "coord": {
+            "lon": 105.679123,
+            "lat": -10.42172
+        }
+    },
+    {
+        "id": 7304591,
+        "name": "West Island",
+        "coord": {
+            "lon": 96.82251,
+            "lat": -12.15681
+        }
+    },
+    {
+        "id": 921772,
+        "name": "Moroni",
+        "coord": {
+            "lon": 43.255058,
+            "lat": -11.70216
+        }
+    },
+    {
+        "id": 2260535,
+        "name": "Brazzaville",
+        "coord": {
+            "lon": 15.28318,
+            "lat": -4.26583
+        }
+    },
+    {
+        "id": 4035715,
+        "name": "Avarua",
+        "coord": {
+            "lon": -159.774994,
+            "lat": -21.207781
+        }
+    },
+    {
+        "id": 2511354,
+        "name": "San José",
+        "coord": {
+            "lon": -5.71603,
+            "lat": 37.607151
+        }
+    },
+    {
+        "id": 3186886,
+        "name": "Zagreb",
+        "coord": {
+            "lon": 15.97798,
+            "lat": 45.814442
+        }
+    },
+    {
+        "id": 3564073,
+        "name": "La Habana",
+        "coord": {
+            "lon": -82.300003,
+            "lat": 23.08333
+        }
+    },
+    {
+        "id": 146268,
+        "name": "Nicosia",
+        "coord": {
+            "lon": 33.366669,
+            "lat": 35.166672
+        }
+    },
+    {
+        "id": 2618425,
+        "name": "Copenhagen",
+        "coord": {
+            "lon": 12.56553,
+            "lat": 55.675941
+        }
+    },
+    {
+        "id": 223817,
+        "name": "Djibouti",
+        "coord": {
+            "lon": 43.14468,
+            "lat": 11.58767
+        }
+    },
+    {
+        "id": 3575635,
+        "name": "Roseau",
+        "coord": {
+            "lon": -61.388081,
+            "lat": 15.30174
+        }
+    },
+    {
+        "id": 1645457,
+        "name": "Dili",
+        "coord": {
+            "lon": 125.573608,
+            "lat": -8.55861
+        }
+    },
+    {
+        "id": 3652462,
+        "name": "Quito",
+        "coord": {
+            "lon": -78.524948,
+            "lat": -0.22985
+        }
+    },
+    {
+        "id": 360630,
+        "name": "Cairo",
+        "coord": {
+            "lon": 31.24967,
+            "lat": 30.06263
+        }
+    },
+    {
+        "id": 1690681,
+        "name": "San Salvador",
+        "coord": {
+            "lon": 122.835281,
+            "lat": 11.00278
+        }
+    },
+    {
+        "id": 2643743,
+        "name": "London",
+        "coord": {
+            "lon": -0.12574,
+            "lat": 51.50853
+        }
+    },
+    {
+        "id": 908248,
+        "name": "Malabo",
+        "coord": {
+            "lon": 28.66667,
+            "lat": -13
+        }
+    },
+    {
+        "id": 343300,
+        "name": "Asmara",
+        "coord": {
+            "lon": 38.933331,
+            "lat": 15.33333
+        }
+    },
+    {
+        "id": 588409,
+        "name": "Tallinn",
+        "coord": {
+            "lon": 24.753531,
+            "lat": 59.436958
+        }
+    },
+    {
+        "id": 2148528,
+        "name": "Stanley",
+        "coord": {
+            "lon": 145.300003,
+            "lat": -40.76667
+        }
+    },
+    {
+        "id": 2611396,
+        "name": "Tórshavn",
+        "coord": {
+            "lon": -6.77164,
+            "lat": 62.009731
+        }
+    },
+    {
+        "id": 2198148,
+        "name": "Suva",
+        "coord": {
+            "lon": 178.441483,
+            "lat": -18.141609
+        }
+    },
+    {
+        "id": 2968815,
+        "name": "Paris",
+        "coord": {
+            "lon": 2.3486,
+            "lat": 48.853401
+        }
+    },
+    {
+        "id": 3028097,
+        "name": "Cayenne",
+        "coord": {
+            "lon": 1.62803,
+            "lat": 49.558578
+        }
+    },
+    {
+        "id": 4033936,
+        "name": "Papeete",
+        "coord": {
+            "lon": -149.566666,
+            "lat": -17.533331
+        }
+    },
+    {
+        "id": 2399697,
+        "name": "Libreville",
+        "coord": {
+            "lon": 9.45365,
+            "lat": 0.3925
+        }
+    },
+    {
+        "id": 2413875,
+        "name": "Banjul",
+        "coord": {
+            "lon": -16.58333,
+            "lat": 13.45
+        }
+    },
+    {
+        "id": 611717,
+        "name": "Tbilisi",
+        "coord": {
+            "lon": 44.833679,
+            "lat": 41.694111
+        }
+    },
+    {
+        "id": 2950158,
+        "name": "Berlin",
+        "coord": {
+            "lon": 10.45,
+            "lat": 54.033329
+        }
+    },
+    {
+        "id": 2306104,
+        "name": "Accra",
+        "coord": {
+            "lon": -0.1969,
+            "lat": 5.55602
+        }
+    },
+    {
+        "id": 2411585,
+        "name": "Gibraltar",
+        "coord": {
+            "lon": -5.35257,
+            "lat": 36.144741
+        }
+    },
+    {
+        "id": 3421319,
+        "name": "Nuuk",
+        "coord": {
+            "lon": -51.721569,
+            "lat": 64.183472
+        }
+    },
+    {
+        "id": 3579925,
+        "name": "Saint George's",
+        "coord": {
+            "lon": -61.748489,
+            "lat": 12.05644
+        }
+    },
+    {
+        "id": 3579732,
+        "name": "Basse-Terre",
+        "coord": {
+            "lon": -61.725479,
+            "lat": 15.99854
+        }
+    },
+    {
+        "id": 1732205,
+        "name": "Aga",
+        "coord": {
+            "lon": 120.80217,
+            "lat": 14.0965
+        }
+    },
+    {
+        "id": 2422465,
+        "name": "Conakry",
+        "coord": {
+            "lon": -13.67729,
+            "lat": 9.53795
+        }
+    },
+    {
+        "id": 2374775,
+        "name": "Bissau",
+        "coord": {
+            "lon": -15.59767,
+            "lat": 11.86357
+        }
+    },
+    {
+        "id": 2165719,
+        "name": "Georgetown",
+        "coord": {
+            "lon": 143.533325,
+            "lat": -18.299999
+        }
+    },
+    {
+        "id": 3718426,
+        "name": "Port-au-Prince",
+        "coord": {
+            "lon": -72.334999,
+            "lat": 18.539169
+        }
+    },
+    {
+        "id": 3600949,
+        "name": "Tegucigalpa",
+        "coord": {
+            "lon": -87.20681,
+            "lat": 14.0818
+        }
+    },
+    {
+        "id": 241131,
+        "name": "Victoria",
+        "coord": {
+            "lon": 55.450001,
+            "lat": -4.61667
+        }
+    },
+    {
+        "id": 3054638,
+        "name": "Budapest",
+        "coord": {
+            "lon": 19.08333,
+            "lat": 47.5
+        }
+    },
+    {
+        "id": 3413829,
+        "name": "Reykjavík",
+        "coord": {
+            "lon": -21.895411,
+            "lat": 64.135483
+        }
+    },
+    {
+        "id": 1261481,
+        "name": "New Delhi",
+        "coord": {
+            "lon": 77.23114,
+            "lat": 28.61282
+        }
+    },
+    {
+        "id": 1642911,
+        "name": "Jakarta",
+        "coord": {
+            "lon": 106.845131,
+            "lat": -6.21462
+        }
+    },
+    {
+        "id": 112931,
+        "name": "Tehran",
+        "coord": {
+            "lon": 51.421509,
+            "lat": 35.694389
+        }
+    },
+    {
+        "id": 98182,
+        "name": "Baghdad",
+        "coord": {
+            "lon": 44.400879,
+            "lat": 33.34058
+        }
+    },
+    {
+        "id": 2072525,
+        "name": "Dublin",
+        "coord": {
+            "lon": 138.350006,
+            "lat": -34.450001
+        }
+    },
+    {
+        "id": 281184,
+        "name": "Jerusalem",
+        "coord": {
+            "lon": 35.216331,
+            "lat": 31.769039
+        }
+    },
+    {
+        "id": 668737,
+        "name": "Roma",
+        "coord": {
+            "lon": 26.6,
+            "lat": 47.833328
+        }
+    },
+    {
+        "id": 2279755,
+        "name": "Yamoussoukro",
+        "coord": {
+            "lon": -5.27674,
+            "lat": 6.82055
+        }
+    },
+    {
+        "id": 2161311,
+        "name": "Kingston",
+        "coord": {
+            "lon": 147.316666,
+            "lat": -42.966671
+        }
+    },
+    {
+        "id": 1850147,
+        "name": "Tokyo",
+        "coord": {
+            "lon": 139.691711,
+            "lat": 35.689499
+        }
+    },
+    {
+        "id": 250441,
+        "name": "Amman",
+        "coord": {
+            "lon": 35.94503,
+            "lat": 31.955219
+        }
+    },
+    {
+        "id": 184742,
+        "name": "Nairobi",
+        "coord": {
+            "lon": 36.833328,
+            "lat": -1.28333
+        }
+    },
+    {
+        "id": 1528675,
+        "name": "Bishkek",
+        "coord": {
+            "lon": 74.589996,
+            "lat": 42.869999
+        }
+    },
+    {
+        "id": 1651944,
+        "name": "Vientiane",
+        "coord": {
+            "lon": 102.599998,
+            "lat": 17.966669
+        }
+    },
+    {
+        "id": 456172,
+        "name": "Riga",
+        "coord": {
+            "lon": 24.1,
+            "lat": 56.950001
+        }
+    },
+    {
+        "id": 276781,
+        "name": "Beirut",
+        "coord": {
+            "lon": 35.494419,
+            "lat": 33.888939
+        }
+    },
+    {
+        "id": 932505,
+        "name": "Maseru",
+        "coord": {
+            "lon": 27.48333,
+            "lat": -29.316669
+        }
+    },
+    {
+        "id": 2274895,
+        "name": "Monrovia",
+        "coord": {
+            "lon": -10.7969,
+            "lat": 6.30054
+        }
+    },
+    {
+        "id": 266826,
+        "name": "Tripoli",
+        "coord": {
+            "lon": 35.84972,
+            "lat": 34.436668
+        }
+    },
+    {
+        "id": 3042030,
+        "name": "Vaduz",
+        "coord": {
+            "lon": 9.52154,
+            "lat": 47.14151
+        }
+    },
+    {
+        "id": 593116,
+        "name": "Vilnius",
+        "coord": {
+            "lon": 25.2798,
+            "lat": 54.689159
+        }
+    },
+    {
+        "id": 785842,
+        "name": "Skopje",
+        "coord": {
+            "lon": 21.433331,
+            "lat": 42
+        }
+    },
+    {
+        "id": 1070940,
+        "name": "Antananarivo",
+        "coord": {
+            "lon": 47.536129,
+            "lat": -18.913679
+        }
+    },
+    {
+        "id": 927967,
+        "name": "Lilongwe",
+        "coord": {
+            "lon": 33.787251,
+            "lat": -13.96692
+        }
+    },
+    {
+        "id": 1733046,
+        "name": "Kuala Lumpur",
+        "coord": {
+            "lon": 101.686531,
+            "lat": 3.14309
+        }
+    },
+    {
+        "id": 1282027,
+        "name": "Male",
+        "coord": {
+            "lon": 73.508881,
+            "lat": 4.1748
+        }
+    },
+    {
+        "id": 2460596,
+        "name": "Bamako",
+        "coord": {
+            "lon": -8,
+            "lat": 12.65
+        }
+    },
+    {
+        "id": 2562305,
+        "name": "Valletta",
+        "coord": {
+            "lon": 14.51472,
+            "lat": 35.899719
+        }
+    },
+    {
+        "id": 3570675,
+        "name": "Fort-de-France",
+        "coord": {
+            "lon": -61.073341,
+            "lat": 14.60892
+        }
+    },
+    {
+        "id": 2377450,
+        "name": "Nouakchott",
+        "coord": {
+            "lon": -15.9785,
+            "lat": 18.08581
+        }
+    },
+    {
+        "id": 2985963,
+        "name": "Port-Louis",
+        "coord": {
+            "lon": -3.35484,
+            "lat": 47.707039
+        }
+    },
+    {
+        "id": 618426,
+        "name": "Chisinau",
+        "coord": {
+            "lon": 28.8575,
+            "lat": 47.005562
+        }
+    },
+    {
+        "id": 2028462,
+        "name": "Ulan Bator",
+        "coord": {
+            "lon": 106.88324,
+            "lat": 47.907711
+        }
+    },
+    {
+        "id": 3189077,
+        "name": "Podgorica",
+        "coord": {
+            "lon": 19.33333,
+            "lat": 42.5
+        }
+    },
+    {
+        "id": 2640194,
+        "name": "Plymouth",
+        "coord": {
+            "lon": -4.14305,
+            "lat": 50.371529
+        }
+    },
+    {
+        "id": 2538474,
+        "name": "Rabat",
+        "coord": {
+            "lon": -6.84006,
+            "lat": 33.991112
+        }
+    },
+    {
+        "id": 1040652,
+        "name": "Maputo",
+        "coord": {
+            "lon": 32.589169,
+            "lat": -25.965281
+        }
+    },
+    {
+        "id": 3352136,
+        "name": "Windhoek",
+        "coord": {
+            "lon": 17.083229,
+            "lat": -22.55941
+        }
+    },
+    {
+        "id": 2110418,
+        "name": "Yaren",
+        "coord": {
+            "lon": 166.915985,
+            "lat": -0.54724
+        }
+    },
+    {
+        "id": 1283240,
+        "name": "Kathmandu",
+        "coord": {
+            "lon": 85.316666,
+            "lat": 27.716667
+        }
+    },
+    {
+        "id": 2759794,
+        "name": "Amsterdam",
+        "coord": {
+            "lon": 4.88969,
+            "lat": 52.374031
+        }
+    },
+    {
+        "id": 2744388,
+        "name": "Willemstad",
+        "coord": {
+            "lon": 4.43889,
+            "lat": 51.691669
+        }
+    },
+    {
+        "id": 1252887,
+        "name": "Wellington",
+        "coord": {
+            "lon": 76.800003,
+            "lat": 11.36667
+        }
+    },
+    {
+        "id": 3617763,
+        "name": "Managua",
+        "coord": {
+            "lon": -86.250397,
+            "lat": 12.13282
+        }
+    },
+    {
+        "id": 2440485,
+        "name": "Niamey",
+        "coord": {
+            "lon": 2.1098,
+            "lat": 13.51366
+        }
+    },
+    {
+        "id": 2352778,
+        "name": "Abuja",
+        "coord": {
+            "lon": 7.48976,
+            "lat": 9.05735
+        }
+    },
+    {
+        "id": 4036284,
+        "name": "Alofi",
+        "coord": {
+            "lon": -169.918671,
+            "lat": -19.059521
+        }
+    },
+    {
+        "id": 2161311,
+        "name": "Kingston",
+        "coord": {
+            "lon": 147.316666,
+            "lat": -42.966671
+        }
+    },
+    {
+        "id": 1871856,
+        "name": "Pyongyang",
+        "coord": {
+            "lon": 125.92778,
+            "lat": 38.985279
+        }
+    },
+    {
+        "id": 1020340,
+        "name": "Belfast",
+        "coord": {
+            "lon": 30.03504,
+            "lat": -25.689911
+        }
+    },
+    {
+        "id": 3143244,
+        "name": "Oslo",
+        "coord": {
+            "lon": 10.74609,
+            "lat": 59.912731
+        }
+    },
+    {
+        "id": 1162015,
+        "name": "Islamabad",
+        "coord": {
+            "lon": 73.13382,
+            "lat": 33.7104
+        }
+    },
+    {
+        "id": 1559446,
+        "name": "Koror",
+        "coord": {
+            "lon": 134.473267,
+            "lat": 7.33978
+        }
+    },
+    {
+        "id": 281133,
+        "name": "Gaza",
+        "coord": {
+            "lon": 34.466671,
+            "lat": 31.5
+        }
+    },
+    {
+        "id": 2088122,
+        "name": "Port Moresby",
+        "coord": {
+            "lon": 147.179718,
+            "lat": -9.44314
+        }
+    },
+    {
+        "id": 3439389,
+        "name": "Asunción",
+        "coord": {
+            "lon": -57.63591,
+            "lat": -25.300659
+        }
+    },
+    {
+        "id": 3936452,
+        "name": "Lima",
+        "coord": {
+            "lon": -76.638893,
+            "lat": -12.00389
+        }
+    },
+    {
+        "id": 1701668,
+        "name": "Manila",
+        "coord": {
+            "lon": 120.982201,
+            "lat": 14.6042
+        }
+    },
+    {
+        "id": 4030723,
+        "name": "Adamstown",
+        "coord": {
+            "lon": -130.101471,
+            "lat": -25.065969
+        }
+    },
+    {
+        "id": 6695624,
+        "name": "Warszawa",
+        "coord": {
+            "lon": 21.04191,
+            "lat": 52.23547
+        }
+    },
+    {
+        "id": 1689236,
+        "name": "San Juan",
+        "coord": {
+            "lon": 120.458328,
+            "lat": 17.74222
+        }
+    },
+    {
+        "id": 290030,
+        "name": "Doha",
+        "coord": {
+            "lon": 51.533333,
+            "lat": 25.286667
+        }
+    },
+    {
+        "id": 935264,
+        "name": "Saint-Denis",
+        "coord": {
+            "lon": 55.450401,
+            "lat": -20.882311
+        }
+    },
+    {
+        "id": 524894,
+        "name": "Moscow",
+        "coord": {
+            "lon": 37.606667,
+            "lat": 55.761665
+        }
+    },
+    {
+        "id": 202061,
+        "name": "Kigali",
+        "coord": {
+            "lon": 30.058849,
+            "lat": -1.94995
+        }
+    },
+    {
+        "id": 2069194,
+        "name": "Jamestown",
+        "coord": {
+            "lon": 138.600006,
+            "lat": -33.200001
+        }
+    },
+    {
+        "id": 3575551,
+        "name": "Basseterre",
+        "coord": {
+            "lon": -62.726101,
+            "lat": 17.29484
+        }
+    },
+    {
+        "id": 3028258,
+        "name": "Castries",
+        "coord": {
+            "lon": 3.98222,
+            "lat": 43.679722
+        }
+    },
+    {
+        "id": 935214,
+        "name": "Saint-Pierre",
+        "coord": {
+            "lon": 55.478111,
+            "lat": -21.3393
+        }
+    },
+    {
+        "id": 3577887,
+        "name": "Kingstown",
+        "coord": {
+            "lon": -61.224751,
+            "lat": 13.15872
+        }
+    },
+    {
+        "id": 4035413,
+        "name": "Apia",
+        "coord": {
+            "lon": -171.766663,
+            "lat": -13.83333
+        }
+    },
+    {
+        "id": 3168070,
+        "name": "San Marino",
+        "coord": {
+            "lon": 12.45,
+            "lat": 43.933331
+        }
+    },
+    {
+        "id": 2410763,
+        "name": "São Tomé",
+        "coord": {
+            "lon": 6.72732,
+            "lat": 0.33654
+        }
+    },
+    {
+        "id": 108410,
+        "name": "Riyadh",
+        "coord": {
+            "lon": 46.721851,
+            "lat": 24.687731
+        }
+    },
+    {
+        "id": 2650225,
+        "name": "Edinburgh",
+        "coord": {
+            "lon": -3.19648,
+            "lat": 55.952061
+        }
+    },
+    {
+        "id": 2253350,
+        "name": "Dakar",
+        "coord": {
+            "lon": -17.33333,
+            "lat": 14.75
+        }
+    },
+    {
+        "id": 792680,
+        "name": "Belgrade",
+        "coord": {
+            "lon": 20.46513,
+            "lat": 44.804008
+        }
+    },
+    {
+        "id": 241131,
+        "name": "Victoria",
+        "coord": {
+            "lon": 55.450001,
+            "lat": -4.61667
+        }
+    },
+    {
+        "id": 2408770,
+        "name": "Freetown",
+        "coord": {
+            "lon": -13.28972,
+            "lat": 8.43194
+        }
+    },
+    {
+        "id": 1880252,
+        "name": "Singapore",
+        "coord": {
+            "lon": 103.850067,
+            "lat": 1.28967
+        }
+    },
+    {
+        "id": 3060972,
+        "name": "Bratislava",
+        "coord": {
+            "lon": 17.106741,
+            "lat": 48.148159
+        }
+    },
+    {
+        "id": 3196359,
+        "name": "Ljubljana",
+        "coord": {
+            "lon": 14.50513,
+            "lat": 46.051079
+        }
+    },
+    {
+        "id": 2108502,
+        "name": "Honiara",
+        "coord": {
+            "lon": 159.949997,
+            "lat": -9.43333
+        }
+    },
+    {
+        "id": 53654,
+        "name": "Mogadishu",
+        "coord": {
+            "lon": 45.34375,
+            "lat": 2.03711
+        }
+    },
+    {
+        "id": 964137,
+        "name": "Pretoria",
+        "coord": {
+            "lon": 28.18783,
+            "lat": -25.74486
+        }
+    },
+    {
+        "id": 1835847,
+        "name": "Seoul",
+        "coord": {
+            "lon": 127,
+            "lat": 37.583328
+        }
+    },
+    {
+        "id": 373303,
+        "name": "Juba",
+        "coord": {
+            "lon": 31.58247,
+            "lat": 4.85165
+        }
+    },
+    {
+        "id": 1704129,
+        "name": "Madrid",
+        "coord": {
+            "lon": 125.964371,
+            "lat": 9.26211
+        }
+    },
+    {
+        "id": 3383330,
+        "name": "Paramaribo",
+        "coord": {
+            "lon": -55.166821,
+            "lat": 5.86638
+        }
+    },
+    {
+        "id": 2729907,
+        "name": "Longyearbyen",
+        "coord": {
+            "lon": 15.64007,
+            "lat": 78.218597
+        }
+    },
+    {
+        "id": 934985,
+        "name": "Mbabane",
+        "coord": {
+            "lon": 31.133329,
+            "lat": -26.316669
+        }
+    },
+    {
+        "id": 2673722,
+        "name": "Stockholm",
+        "coord": {
+            "lon": 18,
+            "lat": 59.5
+        }
+    },
+    {
+        "id": 2661552,
+        "name": "Bern",
+        "coord": {
+            "lon": 7.44744,
+            "lat": 46.94809
+        }
+    },
+    {
+        "id": 170654,
+        "name": "Damascus",
+        "coord": {
+            "lon": 36.291279,
+            "lat": 33.510201
+        }
+    },
+    {
+        "id": 1221874,
+        "name": "Dushanbe",
+        "coord": {
+            "lon": 68.779053,
+            "lat": 38.535751
+        }
+    },
+    {
+        "id": 160196,
+        "name": "Dodoma",
+        "coord": {
+            "lon": 35.739471,
+            "lat": -6.17221
+        }
+    },
+    {
+        "id": 1609348,
+        "name": "Bangkok",
+        "coord": {
+            "lon": 100.71991,
+            "lat": 13.87719
+        }
+    },
+    {
+        "id": 2314302,
+        "name": "Kinshasa",
+        "coord": {
+            "lon": 15.32146,
+            "lat": -4.32459
+        }
+    },
+    {
+        "id": 2365266,
+        "name": "Lomé",
+        "coord": {
+            "lon": 1.00667,
+            "lat": 6.48861
+        }
+    },
+    {
+        "id": 2464470,
+        "name": "Tunis",
+        "coord": {
+            "lon": 10.16579,
+            "lat": 36.81897
+        }
+    },
+    {
+        "id": 323784,
+        "name": "Ankara",
+        "coord": {
+            "lon": 32.833328,
+            "lat": 39.916672
+        }
+    },
+    {
+        "id": 162183,
+        "name": "Ashgabat",
+        "coord": {
+            "lon": 58.383331,
+            "lat": 37.950001
+        }
+    },
+    {
+        "id": 3572627,
+        "name": "Cockburn Town",
+        "coord": {
+            "lon": -74.51667,
+            "lat": 24.033331
+        }
+    },
+    {
+        "id": 2110384,
+        "name": "Funafuti",
+        "coord": {
+            "lon": 179.130539,
+            "lat": -8.51719
+        }
+    },
+    {
+        "id": 232422,
+        "name": "Kampala",
+        "coord": {
+            "lon": 32.582191,
+            "lat": 0.31628
+        }
+    },
+    {
+        "id": 703448,
+        "name": "Kyiv",
+        "coord": {
+            "lon": 30.516666,
+            "lat": 50.433334
+        }
+    },
+    {
+        "id": 292968,
+        "name": "Abu Dhabi",
+        "coord": {
+            "lon": 54.366669,
+            "lat": 24.466669
+        }
+    },
+    {
+        "id": 2643743,
+        "name": "London",
+        "coord": {
+            "lon": -0.12574,
+            "lat": 51.50853
+        }
+    },
+    {
+        "id": 2634715,
+        "name": "Washington",
+        "coord": {
+            "lon": -77.009056,
+            "lat": 38.889805
+        }
+    },
+    {
+        "id": 3441575,
+        "name": "Montevideo",
+        "coord": {
+            "lon": -56.167351,
+            "lat": -34.833462
+        }
+    },
+    {
+        "id": 2135171,
+        "name": "Port-Vila",
+        "coord": {
+            "lon": 168.321884,
+            "lat": -17.73381
+        }
+    },
+    {
+        "id": 3646738,
+        "name": "Caracas",
+        "coord": {
+            "lon": -66.879189,
+            "lat": 10.48801
+        }
+    },
+    {
+        "id": 3577430,
+        "name": "Road Town",
+        "coord": {
+            "lon": -64.616669,
+            "lat": 18.41667
+        }
+    },
+    {
+        "id": 4795467,
+        "name": "Charlotte Amalie",
+        "coord": {
+            "lon": -64.930702,
+            "lat": 18.3419
+        }
+    },
+    {
+        "id": 2172349,
+        "name": "Cardiff",
+        "coord": {
+            "lon": 151.666672,
+            "lat": -32.950001
+        }
+    },
+    {
+        "id": 4034821,
+        "name": "Mata-Utu",
+        "coord": {
+            "lon": -176.17453,
+            "lat": -13.28163
+        }
+    },
+    {
+        "id": 71132,
+        "name": "Sanaa",
+        "coord": {
+            "lon": 44.4249,
+            "lat": 15.26069
+        }
+    },
+    {
+        "id": 909137,
+        "name": "Lusaka",
+        "coord": {
+            "lon": 28.28713,
+            "lat": -15.40669
+        }
+    },
+    {
+        "id": 890299,
+        "name": "Harare",
+        "coord": {
+            "lon": 31.05389,
+            "lat": -17.82935
+        }
+    }
+]

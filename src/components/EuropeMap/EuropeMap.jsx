@@ -9,6 +9,7 @@ import {
 } from "./EuropeMap.styles";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import { renderToString } from "react-dom/server";
+import { API_DATA } from "../../utils/constants/openWeatherApiData";
 import "leaflet/dist/leaflet.css";
 import "../../assets/reactLeafletStyles/customMarkerIcon.css";
 import "../../assets/sweetAlert2Styles/weatherCityModal.css";
@@ -109,6 +110,9 @@ export default function EuropeMap({ fetchedCitiesData }) {
             <TileLayer
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
                 attribution="&copy; Esri &mdash; Source: Esri"
+            />
+            <TileLayer
+                url={`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${API_DATA.apiKey}`}
             />
             <MarkerClusterGroup
                 chunkedLoading={true}

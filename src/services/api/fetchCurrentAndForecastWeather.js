@@ -10,6 +10,8 @@ const viasualCrossingWeatherOptions = (latitude, longitude) => ({
         include: "days,hours,current",
         contentType: "json",
         iconSet: "icons2",
+        elements:
+            "datetime,temp,tempmax,tempmin,precipprob,windspeed,feelslike,conditions,icon,sunrise,sunset,humidity,pressure,visibility,dew,cloudcover",
     },
 });
 
