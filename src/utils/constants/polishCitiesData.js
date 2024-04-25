@@ -1,4 +1,4 @@
-export const polishCitiesData = [
+export const polishCities = [
     { id: 776069, name: "Białystok", left: "78%", top: "23%" },
     { id: 3102014, name: "Bydgoszcz", left: "37%", top: "25%" },
     { id: 6695624, name: "Warszawa", left: "62%", top: "35%" },

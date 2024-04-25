@@ -2,10 +2,10 @@ import PolandMap from "../components/PolandMap/PolandMap";
 import ModalComponent from "../components/ui/Modal/Modal";
 import LoaderComponent from "../components/ui/Loader/Loader";
 import { useDataWithMapsHandler } from "../hooks/useDataWithMapsHandler";
-import { polishCitiesData } from "../utils/constants/polishCitiesData";
+import { polishCities } from "../utils/constants/polishCitiesData";
 
 export default function PolandContainer() {
-    const { data, setData } = useDataWithMapsHandler(polishCitiesData);
+    const { data, setData } = useDataWithMapsHandler(polishCities);
 
     return (
         <>

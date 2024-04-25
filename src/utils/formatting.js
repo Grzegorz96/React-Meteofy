@@ -1,3 +1,5 @@
+import * as THREE from "three";
+
 export function timestampToDate(timestamp) {
     const date = new Date(timestamp * 1000);
     const year = date.getFullYear();
@@ -11,12 +13,12 @@ export function timestampToDate(timestamp) {
     return `${hours}:${minutes}`;
 }
 
-export function convertLatLongToCartesian(lat, lon, radius = 3) {
+export function convertLatLongToCartesian(lat, lon, radius = 3.01) {
     var phi = (90 - lat) * (Math.PI / 180);
     var theta = (lon + 180) * (Math.PI / 180);
     var x = -(radius * Math.sin(phi) * Math.cos(theta));
     var z = radius * Math.sin(phi) * Math.sin(theta);
     var y = radius * Math.cos(phi);
 
-    return [x, y, z];
+    return new THREE.Vector3(x, y, z);
 }

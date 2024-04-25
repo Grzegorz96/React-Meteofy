@@ -11,7 +11,7 @@ import {
     WeatherInfo,
     WeatherInfoValue,
 } from "./PolandMap.styles";
-import { polishCitiesData } from "../../utils/constants/polishCitiesData";
+import { polishCities } from "../../utils/constants/polishCitiesData";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import "../../assets/sweetAlert2Styles/weatherCityModal.css";
@@ -53,7 +53,7 @@ export default function PolandMap({ fetchedCitiesData }) {
                     title: (
                         <>
                             {`${
-                                polishCitiesData.find(
+                                polishCities.find(
                                     (city) => clickedCity.id === city.id
                                 )?.name
                             }  ${Math.round(clickedCity.main.temp)}°C`}
@@ -118,7 +118,7 @@ export default function PolandMap({ fetchedCitiesData }) {
         <MapContainer>
             <MapItemsLayer>
                 {fetchedCitiesData.list.map((currentCity) => {
-                    const cityData = polishCitiesData.find(
+                    const cityData = polishCities.find(
                         (city) => currentCity.id === city.id
                     );
                     return (
