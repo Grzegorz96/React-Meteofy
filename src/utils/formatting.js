@@ -13,7 +13,7 @@ export function timestampToDate(timestamp) {
     return `${hours}:${minutes}`;
 }
 
-export function convertLatLongToCartesian(lat, lon, radius = 3.01) {
+export function convertLatLonToCartesian(lat, lon, radius) {
     var phi = (90 - lat) * (Math.PI / 180);
     var theta = (lon + 180) * (Math.PI / 180);
     var x = -(radius * Math.sin(phi) * Math.cos(theta));

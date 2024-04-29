@@ -3,6 +3,7 @@ import { CanvasContainer } from "./WorldGlobe.styles";
 import { Canvas } from "@react-three/fiber";
 import Earth from "./Earth";
 import { Stars, OrbitControls } from "@react-three/drei";
+
 export default function WorldGlobe({ fetchedCitiesData }) {
     return (
         <CanvasContainer>
@@ -24,7 +25,7 @@ export default function WorldGlobe({ fetchedCitiesData }) {
                         enableZoom={true}
                         enablePan={true}
                         enableRotate={true}
-                        zoomSpeed={0.3}
+                        zoomSpeed={0.5}
                         rotateSpeed={0.2}
                         panSpeed={0.3}
                         target={[0, 0, 0]}
