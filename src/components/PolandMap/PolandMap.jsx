@@ -7,16 +7,10 @@ import {
     Temp,
     DataWrapper,
     Text,
-    Paragraph,
-    WeatherInfo,
-    WeatherInfoValue,
 } from "./PolandMap.styles";
 import { polishCities } from "../../utils/constants/polishCitiesData";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-import "../../assets/sweetAlert2Styles/weatherCityModal.css";
 import { useSpring } from "@react-spring/web";
-const MySwal = withReactContent(Swal);
+import { openWeatherModal } from "../ui/modals/WeatherModal/WeatherModal";
 
 export default function PolandMap({ fetchedCitiesData }) {
     const extensionAnimation = useSpring({
@@ -36,80 +30,12 @@ export default function PolandMap({ fetchedCitiesData }) {
 
     const handleClick = (event) => {
         if (event.target.id) {
-            const clickedCity = fetchedCitiesData.list.find(
-                (currentCity) => event.target.id === currentCity.id.toString()
+            const selectedCity = fetchedCitiesData.list.find(
+                (currentCity) => event.target.id == currentCity.id
             );
 
-            if (clickedCity) {
-                MySwal.fire({
-                    width: "400px",
-                    heightAuto: false,
-                    iconHtml: (
-                        <WeatherIcon
-                            $icon={clickedCity.weather[0].icon}
-                            $width="100%"
-                        />
-                    ),
-                    title: (
-                        <>
-                            {`${
-                                polishCities.find(
-                                    (city) => clickedCity.id === city.id
-                                )?.name
-                            }  ${Math.round(clickedCity.main.temp)}°C`}
-                            <Paragraph>
-                                {clickedCity.weather[0].description}
-                            </Paragraph>
-                        </>
-                    ),
-                    html: (
-                        <>
-                            <WeatherInfo>
-                                feels like:
-                                <WeatherInfoValue>
-                                    {`${Math.round(
-                                        clickedCity.main.feels_like
-                                    )}°C`}
-                                </WeatherInfoValue>
-                            </WeatherInfo>
-                            <WeatherInfo>
-                                humidity:
-                                <WeatherInfoValue>
-                                    {`${Math.round(
-                                        clickedCity.main.humidity
-                                    )}%`}
-                                </WeatherInfoValue>
-                            </WeatherInfo>
-                            <WeatherInfo>
-                                wind:
-                                <WeatherInfoValue>
-                                    {`${Math.round(
-                                        clickedCity.wind.speed * 3.6
-                                    )}
-                                     km/h`}
-                                </WeatherInfoValue>
-                            </WeatherInfo>
-                            <WeatherInfo>
-                                pressure:
-                                <WeatherInfoValue>
-                                    {`${Math.round(clickedCity.main.pressure)}
-                                     hPa`}
-                                </WeatherInfoValue>
-                            </WeatherInfo>
-                            <WeatherInfo>
-                                clouds:
-                                <WeatherInfoValue>
-                                    {`${Math.round(clickedCity.clouds.all)}%`}
-                                </WeatherInfoValue>
-                            </WeatherInfo>
-                        </>
-                    ),
-                    customClass: {
-                        title: "modal-title",
-                        htmlContainer: "modal-html-container",
-                        icon: "modal-icon",
-                    },
-                });
+            if (selectedCity) {
+                openWeatherModal(selectedCity);
             }
         }
     };
@@ -129,7 +55,7 @@ export default function PolandMap({ fetchedCitiesData }) {
                         >
                             <DataWrapper>
                                 <Temp>
-                                    {Math.round(currentCity.main.temp)}°C
+                                    {Math.round(currentCity.main.temp)}°
                                 </Temp>
                                 <WeatherIcon
                                     $icon={currentCity.weather[0].icon}

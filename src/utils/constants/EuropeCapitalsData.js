@@ -148,8 +148,8 @@ export const europeCapitals = [
         name: "Oslo",
     },
     {
-        id: 756135,
-        name: "Warsaw",
+        id: 6695624,
+        name: "Warszawa",
     },
     {
         id: 2267057,

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ScrollContainer = styled.div`
+export const ScrollableContainer = styled.div`
     overflow-y: auto;
     display: flex;
     gap: 3px;

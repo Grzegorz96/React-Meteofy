@@ -1,4 +1,4 @@
-export const airPollutionInputStyle = {
+export const localInputStyle = {
     container: (styles) => ({
         ...styles,
         display: "flex",

@@ -25,39 +25,3 @@ export const getForecastDays = () => {
         WEEK_DAYS.slice(0, dayInAWeek)
     );
 };
-
-// cityList to wszystkie miasta świata
-// cityCapitals to stolice krajów
-export const creatingCapitals = () => {
-    function findCity(capital) {
-        // Wyszukaj miasto dla danej stolicy
-        const foundCity = cityList.find((city) => city.name === capital.city);
-        // Jeśli znaleziono miasto, zwróć jego informacje
-        if (foundCity) {
-            return {
-                id: foundCity.id,
-                name: foundCity.name,
-                coord: foundCity.coord,
-            };
-        }
-        // Jeśli miasto nie zostało znalezione, zwróć pusty obiekt
-        return {};
-    }
-
-    // Funkcja zwracająca informacje o miastach dla każdej stolicy
-    function getCitiesForCapitals(cityCapitals) {
-        const citiesForCapitals = [];
-        // Przejdź przez listę stolic
-        for (const capital of cityCapitals) {
-            // Wyszukaj miasto dla danej stolicy
-            const cityInfo = findCity(capital);
-            // Jeśli znaleziono miasto, dodaj jego informacje do listy
-            if (cityInfo.id) {
-                citiesForCapitals.push(cityInfo);
-            }
-        }
-        return citiesForCapitals;
-    }
-
-    return getCitiesForCapitals(cityCapitals);
-};

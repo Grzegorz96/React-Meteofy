@@ -1,21 +1,12 @@
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { divIcon } from "leaflet";
-import {
-    WeatherIcon,
-    Temp,
-    Paragraph,
-    WeatherInfo,
-    WeatherInfoValue,
-} from "./EuropeMap.styles";
+import { WeatherIcon, Temp } from "./EuropeMap.styles";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import { renderToString } from "react-dom/server";
 import { API_DATA } from "../../utils/constants/openWeatherApiData";
 import "leaflet/dist/leaflet.css";
 import "../../assets/reactLeafletStyles/customMarkerIcon.css";
-import "../../assets/sweetAlert2Styles/weatherCityModal.css";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-const MySwal = withReactContent(Swal);
+import { openWeatherModal } from "../ui/modals/WeatherModal/WeatherModal";
 
 const customMarker = (weatherIcon, temperature) =>
     divIcon({
@@ -31,61 +22,6 @@ const customMarker = (weatherIcon, temperature) =>
     });
 
 export default function EuropeMap({ fetchedCitiesData }) {
-    const handleClick = (city) => {
-        MySwal.fire({
-            width: "400px",
-            heightAuto: false,
-            iconHtml: <WeatherIcon $icon={city.weather[0].icon} />,
-            title: (
-                <>
-                    {`${city.name} ${Math.round(city.main.temp)}°C`}
-                    <Paragraph>{city.weather[0].description}</Paragraph>
-                </>
-            ),
-            html: (
-                <>
-                    <WeatherInfo>
-                        feels like:
-                        <WeatherInfoValue>
-                            {`${Math.round(city.main.feels_like)}°C`}
-                        </WeatherInfoValue>
-                    </WeatherInfo>
-                    <WeatherInfo>
-                        humidity:
-                        <WeatherInfoValue>
-                            {`${Math.round(city.main.humidity)}%`}
-                        </WeatherInfoValue>
-                    </WeatherInfo>
-                    <WeatherInfo>
-                        wind:
-                        <WeatherInfoValue>
-                            {`${Math.round(city.wind.speed * 3.6)}
-                                     km/h`}
-                        </WeatherInfoValue>
-                    </WeatherInfo>
-                    <WeatherInfo>
-                        pressure:
-                        <WeatherInfoValue>
-                            {`${Math.round(city.main.pressure)}
-                                     hPa`}
-                        </WeatherInfoValue>
-                    </WeatherInfo>
-                    <WeatherInfo>
-                        clouds:
-                        <WeatherInfoValue>
-                            {`${Math.round(city.clouds.all)}%`}
-                        </WeatherInfoValue>
-                    </WeatherInfo>
-                </>
-            ),
-            customClass: {
-                title: "modal-title",
-                htmlContainer: "modal-html-container",
-                icon: "modal-icon",
-            },
-        });
-    };
-
     return (
         <MapContainer
             minZoom={4}
@@ -120,7 +56,7 @@ export default function EuropeMap({ fetchedCitiesData }) {
             >
                 {fetchedCitiesData.list.map((city, index) => (
                     <Marker
-                        eventHandlers={{ click: () => handleClick(city) }}
+                        eventHandlers={{ click: () => openWeatherModal(city) }}
                         key={index}
                         position={[city.coord.lat, city.coord.lon]}
                         icon={customMarker(

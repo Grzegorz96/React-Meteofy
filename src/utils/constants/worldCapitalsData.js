@@ -304,11 +304,11 @@ export const worldCapitals = [
         },
     },
     {
-        id: 7874740,
+        id: 3871336,
         name: "Santiago",
         coord: {
-            lon: -70.580238,
-            lat: -33.46069,
+            lon: -70.64827,
+            lat: -33.45694,
         },
     },
     {
@@ -432,11 +432,11 @@ export const worldCapitals = [
         },
     },
     {
-        id: 6201373,
+        id: 3492908,
         name: "Santo Domingo",
         coord: {
-            lon: -69.918709,
-            lat: 18.480419,
+            lon: -69.988571,
+            lat: 18.50012,
         },
     },
     {
@@ -1048,11 +1048,11 @@ export const worldCapitals = [
         },
     },
     {
-        id: 2081550,
+        id: 2081986,
         name: "Palikir",
         coord: {
-            lon: 158.205597,
-            lat: 6.964,
+            lon: 158.161087,
+            lat: 6.92477,
         },
     },
     {

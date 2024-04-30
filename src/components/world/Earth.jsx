@@ -1,25 +1,14 @@
-import { convertLatLonToCartesian } from "../../utils/formatting";
-import WeatherBoard from "./WeatherBoard";
+import { useLayoutEffect } from "react";
+import { useThree } from "@react-three/fiber";
 import { useTexture, Sphere } from "@react-three/drei";
+import WeatherBoard from "./WeatherBoard";
+import { openWeatherModal } from "../ui/modals/WeatherModal/WeatherModal";
 import EarthDayMap from "../../assets/textures/8k-earth-day-map.jpg";
 import EarthCloudsMap from "../../assets/textures/8k-earth-clouds.jpg";
 import NormalMap from "../../assets/textures/8k-earth-normal-map.jpg";
 import SpecularMap from "../../assets/textures/8k-earth-specular-map.jpg";
-import { useEffect } from "react";
 import { offsetlist } from "../../utils/constants/offsetlist";
-import { useThree } from "@react-three/fiber";
-
-import "../../assets/sweetAlert2Styles/weatherCityModal.css";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-const MySwal = withReactContent(Swal);
-import {
-    WeatherIcon,
-    Temp,
-    Paragraph,
-    WeatherInfo,
-    WeatherInfoValue,
-} from "../EuropeMap/EuropeMap.styles";
+import { convertLatLonToCartesian } from "../../utils/formatting";
 
 export default function Earth({ fetchedCitiesData }) {
     const [colorMap, cloudsMap, normalMap, specularMap] = useTexture([
@@ -29,9 +18,9 @@ export default function Earth({ fetchedCitiesData }) {
         SpecularMap,
     ]);
 
-    const { camera, raycaster } = useThree();
+    const { camera, raycaster, pointer, scene } = useThree();
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         camera.layers.enable(1);
     }, []);
 
@@ -49,60 +38,21 @@ export default function Earth({ fetchedCitiesData }) {
         );
     };
 
-    const handleClick = (city) => {
-        MySwal.fire({
-            width: "400px",
-            heightAuto: false,
-            iconHtml: <WeatherIcon $icon={city.weather[0].icon} />,
-            title: (
-                <>
-                    {`${city.name} ${Math.round(city.main.temp)}°C`}
-                    <Paragraph>{city.weather[0].description}</Paragraph>
-                </>
-            ),
-            html: (
-                <>
-                    <WeatherInfo>
-                        feels like:
-                        <WeatherInfoValue>
-                            {`${Math.round(city.main.feels_like)}°C`}
-                        </WeatherInfoValue>
-                    </WeatherInfo>
-                    <WeatherInfo>
-                        humidity:
-                        <WeatherInfoValue>
-                            {`${Math.round(city.main.humidity)}%`}
-                        </WeatherInfoValue>
-                    </WeatherInfo>
-                    <WeatherInfo>
-                        wind:
-                        <WeatherInfoValue>
-                            {`${Math.round(city.wind.speed * 3.6)}
-                                     km/h`}
-                        </WeatherInfoValue>
-                    </WeatherInfo>
-                    <WeatherInfo>
-                        pressure:
-                        <WeatherInfoValue>
-                            {`${Math.round(city.main.pressure)}
-                                     hPa`}
-                        </WeatherInfoValue>
-                    </WeatherInfo>
-                    <WeatherInfo>
-                        clouds:
-                        <WeatherInfoValue>
-                            {`${Math.round(city.clouds.all)}%`}
-                        </WeatherInfoValue>
-                    </WeatherInfo>
-                </>
-            ),
-            customClass: {
-                title: "modal-title",
-                htmlContainer: "modal-html-container",
-                icon: "modal-icon",
-            },
-        });
-    };
+    function handleEvent(evt, capital, weatherBoardRef, setHovered) {
+        evt.stopPropagation();
+        raycaster.setFromCamera(pointer, camera);
+        const intersects = raycaster.intersectObjects(scene.children, true);
+        if (
+            intersects.length > 0 &&
+            intersects[0].object === weatherBoardRef.current
+        ) {
+            if (evt.type === "click") {
+                openWeatherModal(capital);
+            } else if (evt.type === "pointermove") {
+                setHovered(true);
+            }
+        }
+    }
 
     return (
         <group>
@@ -127,8 +77,7 @@ export default function Earth({ fetchedCitiesData }) {
                         key={capital.id}
                         position={setOffset(capital)}
                         capital={capital}
-                        raycaster={raycaster}
-                        handleClick={handleClick}
+                        handleEvent={handleEvent}
                     />
                 ))}
             </Sphere>

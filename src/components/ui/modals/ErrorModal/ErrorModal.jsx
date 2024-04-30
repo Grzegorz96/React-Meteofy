@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Overlay, Modal, ModalText, ModalButton } from "./Modal.styles";
+import { Overlay, Modal, ModalText, ModalButton } from "./ErrorModal.styles";
 import { FaRegCircleXmark } from "react-icons/fa6";
 import { useSpring } from "@react-spring/web";
 
-export default function ModalComponent({ data, setData }) {
+export default function ErrorModal({ data, setData }) {
     const [isOpen, setIsOpen] = useState(true);
 
     const fadeInFromTopAnimation = useSpring({

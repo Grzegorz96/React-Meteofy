@@ -15,7 +15,7 @@ import {
     Wrapper,
 } from "../../ui/Accordion/Accordion.styles";
 import { getAqiUSData } from "../../../utils/helpers";
-import ScrollContainer from "../../ui/ScrollableContainer/ScrollableContainer";
+import ScrollContainer from "../../ui/ScrollContainer/ScrollContainer";
 import AirPollutionLinearChart from "../LinearChart/LinearChart";
 import { POLLUTION_NAMES } from "../../../utils/constants/pollutionNames";
 import { getFilteredLinearChartData } from "../../../utils/charts/chartData";

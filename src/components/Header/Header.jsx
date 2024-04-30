@@ -49,9 +49,9 @@ export default function HeaderComponent() {
                     <FontAwesomeIcon icon={faGlobe} />
                     World
                 </NavLink>
-                <NavLink to="/long-term-forecast" style={navLinkStyles}>
+                <NavLink to="/long-term-weather" style={navLinkStyles}>
                     <FontAwesomeIcon icon={faCalendarDays} />
-                    Long term forecast
+                    Long term weather
                 </NavLink>
                 <NavLink to="/air-pollution" style={navLinkStyles}>
                     <FontAwesomeIcon icon={faListCheck} />

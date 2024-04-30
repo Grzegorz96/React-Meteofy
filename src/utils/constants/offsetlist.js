@@ -1,5 +1,5 @@
 export const offsetlist = [
-    { id: 6201373, lon: 0.1, lat: -0.4 },
+    { id: 3492908, lon: 0.2, lat: -0.3 },
     { id: 3374036, lon: 0.1, lat: -0.8 },
     { id: 3576812, lon: 1.49, lat: -0.1 },
     { id: 3570675, lon: 1.4, lat: 0.88 },

@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import {
-    ScrollContainer,
+    ScrollableContainer,
     NavigateButton,
     ScrollWrapper,
-} from "./ScrollableContainer.styles";
+} from "./ScrollContainer.styles";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
-export default function ScrollableContainer({ children }) {
+export default function ScrollContainer({ children }) {
     const scrollableContainerRef = useRef(null);
 
     function handleBackButtonClick() {
@@ -41,9 +41,9 @@ export default function ScrollableContainer({ children }) {
             <NavigateButton onClick={handleBackButtonClick} $left="15px">
                 <FaChevronLeft />
             </NavigateButton>
-            <ScrollContainer ref={scrollableContainerRef}>
+            <ScrollableContainer ref={scrollableContainerRef}>
                 {children}
-            </ScrollContainer>
+            </ScrollableContainer>
             <NavigateButton onClick={handleNextButtonClick} $right="15px">
                 <FaChevronRight />
             </NavigateButton>

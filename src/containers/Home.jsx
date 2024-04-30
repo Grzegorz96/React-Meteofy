@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { resetCityData } from "../state/cityDataSlice";
 import CurrentWeather from "../components/home/CurrentWeather/CurrentWeather";
 import ForecastWeather from "../components/home/ForecastWeather/ForecastWeather";
-import LoaderComponent from "../components/ui/Loader/Loader";
-import ModalComponent from "../components/ui/Modal/Modal";
+import Loader from "../components/ui/Loader/Loader";
+import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
 
 export default function HomeContainer() {
     const cityData = useSelector(({ cityData }) => cityData);
@@ -20,8 +20,8 @@ export default function HomeContainer() {
 
     return (
         <>
-            {data.error && <ModalComponent data={data} setData={setData} />}
-            {data.loading && <LoaderComponent />}
+            {data.error && <ErrorModal data={data} setData={setData} />}
+            {data.loading && <Loader />}
             {data.fetchedData && (
                 <CurrentWeather
                     currentWeather={data.fetchedData.currentConditions}

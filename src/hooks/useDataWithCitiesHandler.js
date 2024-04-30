@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchWeather } from "../services/api/fetchCurrentAndForecastWeather";
 import { fetchAirPollution } from "../services/api/fetchAirPollution";
 import { fetchReversedGecoding } from "../services/api/fetchReversedGeocoding";
+import { fetchSeasonalWeather } from "../services/api/fetchLongTermWeather";
 
 export const useDataWithCitiesHandler = (city, dataType) => {
     const [data, setData] = useState({
@@ -44,7 +45,9 @@ export const useDataWithCitiesHandler = (city, dataType) => {
                 const [fetchedData, cityName] = await Promise.all([
                     dataType === "weather"
                         ? fetchWeather(latitude, longitude)
-                        : fetchAirPollution(latitude, longitude),
+                        : dataType === "airPollution"
+                        ? fetchAirPollution(latitude, longitude)
+                        : fetchSeasonalWeather(latitude, longitude),
                     currentPosition &&
                         fetchReversedGecoding(latitude, longitude),
                 ]);

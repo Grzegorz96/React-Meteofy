@@ -7,14 +7,14 @@ export const Title = styled.div`
 `;
 
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `src/assets/visualCrossingWeatherIcons/${props.$icon}.svg`,
+    src: `/src/assets/visualCrossingWeatherIcons/${props.$icon}.svg`,
 }))`
     width: 40px;
     height: 40px;
 `;
 
 export const FaceIcon = styled.img.attrs((props) => ({
-    src: `src/assets/airPollutionIcons/${props.$icon}.svg`,
+    src: `/src/assets/airPollutionIcons/${props.$icon}.svg`,
 }))`
     height: 38px;
     height: 38px;

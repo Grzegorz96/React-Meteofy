@@ -1,11 +1,11 @@
 import { useDataWithCitiesHandler } from "../hooks/useDataWithCitiesHandler";
 import { useState, useMemo } from "react";
-import LoaderComponent from "../components/ui/Loader/Loader";
-import ModalComponent from "../components/ui/Modal/Modal";
+import Loader from "../components/ui/Loader/Loader";
+import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
 import SearchEngine from "../components/ui/SearchEngine/SearchEngine";
 import CurrentAirPollution from "../components/airPollution/CurrentAirPollution/CurrentAirPollution";
 import ForecastAirPollution from "../components/airPollution/ForecastAirPollution/ForecastAirPollution";
-import { airPollutionInputStyle } from "../components/ui/SearchEngine/SearchEngine.styles";
+import { localInputStyle } from "../components/ui/SearchEngine/SearchEngine.styles";
 
 export default function AirPollutionContainer() {
     const [selectedCity, setSelectedCity] = useState({
@@ -16,9 +16,6 @@ export default function AirPollutionContainer() {
         selectedCity,
         "airPollution"
     );
-    const handleOnChange = (selectedOption) => {
-        setSelectedCity(selectedOption);
-    };
 
     const forecastData = useMemo(
         () => data.fetchedData?.days.slice(0, 4),
@@ -27,14 +24,16 @@ export default function AirPollutionContainer() {
 
     return (
         <>
-            {data.error && <ModalComponent data={data} setData={setData} />}
-            {data.loading && <LoaderComponent />}
             <SearchEngine
                 placeholder="Search AQI by city name"
                 city={selectedCity}
-                handleOnChange={handleOnChange}
-                style={airPollutionInputStyle}
+                handleOnChange={(selectedOption) => {
+                    setSelectedCity(selectedOption);
+                }}
+                style={localInputStyle}
             />
+            {data.error && <ErrorModal data={data} setData={setData} />}
+            {data.loading && <Loader />}
             {data.fetchedData && (
                 <CurrentAirPollution
                     currentAirPollutionData={data.fetchedData.days[0]}

@@ -41,7 +41,7 @@ export const Top = styled.div`
 export const Bottom = styled(Top)``;
 
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `src/assets/visualCrossingWeatherIcons/${props.$icon}.svg`,
+    src: `/src/assets/visualCrossingWeatherIcons/${props.$icon}.svg`,
 }))`
     width: 100px;
     height: 100px;

@@ -12,7 +12,7 @@ import {
     AccordionItemPanel,
     AccordionItemHeading,
 } from "react-accessible-accordion";
-import ScrollContainer from "../../ui/ScrollableContainer/ScrollableContainer";
+import ScrollContainer from "../../ui/ScrollContainer/ScrollContainer";
 import HourlyWeatherItem from "../HourlyWeatherItem/HourlyWeatherItem";
 
 export default function DailyWeatherItem({ index, dayData, forecastDays }) {

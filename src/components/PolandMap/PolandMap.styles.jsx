@@ -32,16 +32,20 @@ export const MapItem = styled.div`
     top: ${(props) => props.$top};
     text-align: center;
     pointer-events: none;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 `;
 
 export const DataWrapper = styled.div`
     background-color: #c5c5c567;
     border-radius: 6px;
-    padding: 5px;
+    padding-left: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
 `;
 
 export const Temp = styled.span`
@@ -55,23 +59,7 @@ export const Text = styled.span`
 `;
 
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `src/assets/openWeatherIcons/${props.$icon}.png`,
+    src: `/src/assets/openWeatherIcons/${props.$icon}.png`,
 }))`
-    width: ${({ $width }) => $width || "38px"};
-`;
-
-export const Paragraph = styled.p`
-    font-size: 18px;
-`;
-
-export const WeatherInfo = styled.div`
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    color: #757575;
-`;
-
-export const WeatherInfoValue = styled.span`
-    font-weight: bold;
-    color: #212121;
+    width: 38px;
 `;

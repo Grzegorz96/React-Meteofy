@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { CanvasContainer } from "./WorldGlobe.styles";
 import { Canvas } from "@react-three/fiber";
-import Earth from "./Earth";
+import Earth from "../Earth";
 import { Stars, OrbitControls } from "@react-three/drei";
 
 export default function WorldGlobe({ fetchedCitiesData }) {
