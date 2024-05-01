@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchWeather } from "../services/api/fetchCurrentAndForecastWeather";
 import { fetchAirPollution } from "../services/api/fetchAirPollution";
 import { fetchReversedGecoding } from "../services/api/fetchReversedGeocoding";
-import { fetchSeasonalWeather } from "../services/api/fetchLongTermWeather";
+import { fetchLongTermWeather } from "../services/api/fetchLongTermWeather";
 
 export const useDataWithCitiesHandler = (city, dataType) => {
     const [data, setData] = useState({
@@ -43,11 +43,21 @@ export const useDataWithCitiesHandler = (city, dataType) => {
 
             try {
                 const [fetchedData, cityName] = await Promise.all([
-                    dataType === "weather"
-                        ? fetchWeather(latitude, longitude)
-                        : dataType === "airPollution"
-                        ? fetchAirPollution(latitude, longitude)
-                        : fetchSeasonalWeather(latitude, longitude),
+                    (() => {
+                        switch (dataType) {
+                            case "weather":
+                                return fetchWeather(latitude, longitude);
+                            case "airPollution":
+                                return fetchAirPollution(latitude, longitude);
+                            case "longTermWeather":
+                                return fetchLongTermWeather(
+                                    latitude,
+                                    longitude
+                                );
+                            default:
+                                throw new Error("Invalid data type");
+                        }
+                    })(),
                     currentPosition &&
                         fetchReversedGecoding(latitude, longitude),
                 ]);

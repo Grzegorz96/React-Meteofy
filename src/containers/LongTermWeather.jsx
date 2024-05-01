@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
 import Loader from "../components/ui/Loader/Loader";
 import SearchEngine from "../components/ui/SearchEngine/SearchEngine";
 import { localInputStyle } from "../components/ui/SearchEngine/SearchEngine.styles";
 import { useDataWithCitiesHandler } from "../hooks/useDataWithCitiesHandler";
+import LongTermWeatherLinearChart from "../components/longTermWeather/LinearChart/LinearChart";
 
 export default function LongTermWeatherContainer() {
     const [selectedCity, setSelectedCity] = useState({
@@ -15,8 +16,17 @@ export default function LongTermWeatherContainer() {
         selectedCity,
         "longTermWeather"
     );
+    const seasonalData = useMemo(() => {
+        const { daily } = data.fetchedData || {};
+        if (!daily) return;
 
-    console.log(data);
+        return Object.fromEntries(
+            Object.entries(daily).filter(
+                ([key]) => key.includes("member01") || key === "time"
+            )
+        );
+    }, [data.fetchedData]);
+
     return (
         <>
             <SearchEngine
@@ -29,9 +39,9 @@ export default function LongTermWeatherContainer() {
             />
             {data.error && <ErrorModal data={data} setData={setData} />}
             {data.loading && <Loader />}
-            {/* {data.fetchedData && (
-                <PolandMap fetchedCitiesData={data.fetchedData} />
-            )} */}
+            {data.fetchedData && (
+                <LongTermWeatherLinearChart seasonalData={seasonalData} />
+            )}
         </>
     );
 }

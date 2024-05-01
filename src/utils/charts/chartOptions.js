@@ -1,4 +1,4 @@
-export function getBarChartOptions(city) {
+export function getAirPollutionBarChartOptions(city) {
     return {
         plugins: {
             legend: {
@@ -44,7 +44,7 @@ export function getBarChartOptions(city) {
     };
 }
 
-export const linearChartOptions = {
+export const airPollutionlinearChartOptions = {
     layout: {
         padding: {
             top: 15,

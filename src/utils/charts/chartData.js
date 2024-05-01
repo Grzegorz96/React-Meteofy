@@ -1,6 +1,6 @@
 import { POLLUTION_NAMES } from "../constants/pollutionNames";
 
-export function getBarChartData(currentAirPollutionData) {
+export function getAirPollutionBarChartData(currentAirPollutionData) {
     return {
         labels: POLLUTION_NAMES,
         datasets: [
@@ -40,7 +40,10 @@ export function getBarChartData(currentAirPollutionData) {
     };
 }
 
-export function getFilteredLinearChartData(dayData, selectedDataset) {
+export function getAirPollutionFilteredLinearChartData(
+    dayData,
+    selectedDataset
+) {
     return {
         labels: dayData.hours.map(({ datetime }) => datetime.substring(0, 5)),
         datasets: [

@@ -7,13 +7,13 @@ const openMeteoOptions = (latitude, longitude) => ({
     params: {
         latitude: latitude,
         longitude: longitude,
-        daily: "temperature_2m_max",
         past_days: "92",
-        forecast_days: "155",
+        forecast_days: "123",
+        daily: "temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max",
     },
 });
 
-export const fetchSeasonalWeather = async (latitude, longitude) => {
+export const fetchLongTermWeather = async (latitude, longitude) => {
     try {
         const response = await axios.request(
             openMeteoOptions(latitude, longitude)

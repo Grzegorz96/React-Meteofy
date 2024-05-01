@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CurrentAirPollutionBarChart = styled.div`
+export const AirPollutionBarChartWrapper = styled.div`
     width: 100%;
     max-width: 700px;
     height: 400px;

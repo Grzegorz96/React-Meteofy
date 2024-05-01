@@ -18,7 +18,7 @@ import { getAqiUSData } from "../../../utils/helpers";
 import ScrollContainer from "../../ui/ScrollContainer/ScrollContainer";
 import AirPollutionLinearChart from "../LinearChart/LinearChart";
 import { POLLUTION_NAMES } from "../../../utils/constants/pollutionNames";
-import { getFilteredLinearChartData } from "../../../utils/charts/chartData";
+import { getAirPollutionFilteredLinearChartData } from "../../../utils/charts/chartData";
 
 export default function DailyAirPollutionItem({
     dayData,
@@ -26,7 +26,10 @@ export default function DailyAirPollutionItem({
     forecastDays,
 }) {
     const [selectedDataset, setSelectedDataset] = useState("PM1");
-    const filteredData = getFilteredLinearChartData(dayData, selectedDataset);
+    const filteredData = getAirPollutionFilteredLinearChartData(
+        dayData,
+        selectedDataset
+    );
     const aqiUSData = getAqiUSData(dayData.aqius);
 
     return (
