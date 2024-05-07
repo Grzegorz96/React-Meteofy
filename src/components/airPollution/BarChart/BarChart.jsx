@@ -4,6 +4,7 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 import { AirPollutionBarChartWrapper, Datetime } from "./BarChart.styles";
 import { getAirPollutionBarChartData } from "../../../utils/charts/chartData";
 import { getAirPollutionBarChartOptions } from "../../../utils/charts/chartOptions";
+import { format } from "date-fns";
 
 export default function AirPollutionBarChart({
     currentAirPollutionData,
@@ -11,7 +12,9 @@ export default function AirPollutionBarChart({
 }) {
     return (
         <AirPollutionBarChartWrapper>
-            <Datetime>{currentAirPollutionData.datetime}</Datetime>
+            <Datetime>
+                {format(currentAirPollutionData.datetime, "MMMM d, yyyy")}
+            </Datetime>
             <Bar
                 data={getAirPollutionBarChartData(currentAirPollutionData)}
                 height={380}

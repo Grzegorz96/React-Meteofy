@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_DATA } from "../../utils/constants/geoApifyApiData";
+import { API_DATA } from "../../utils/constants/api/geoApifyApiData";
 
 const reversedGeocodingOptions = (latitude, longitude) => ({
     method: "GET",

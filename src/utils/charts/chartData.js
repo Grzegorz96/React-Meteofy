@@ -5,7 +5,6 @@ export function getAirPollutionBarChartData(currentAirPollutionData) {
         labels: POLLUTION_NAMES,
         datasets: [
             {
-                label: "Air Pollution Data (μg/m3)",
                 data: [
                     currentAirPollutionData.pm1,
                     currentAirPollutionData.pm2p5,
@@ -71,6 +70,31 @@ export function getAirPollutionFilteredLinearChartData(
                         }
                     }
                 ),
+                borderWidth: 2,
+                pointRadius: 3,
+                pointHoverRadius: 3,
+                pointHitRadius: 5,
+            },
+        ],
+    };
+}
+
+export function getLongTermWeatherFilteredLinearChartData(
+    seasonalData,
+    selectedDataset
+) {
+    return {
+        labels: seasonalData.time,
+        datasets: [
+            {
+                label: selectedDataset.label,
+                data: seasonalData[selectedDataset.value].map((data) =>
+                    Math.round(data)
+                ),
+                borderWidth: 1.5,
+                pointRadius: 1.5,
+                pointHoverRadius: 5,
+                pointHitRadius: 5,
             },
         ],
     };

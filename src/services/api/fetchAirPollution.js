@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_DATA } from "../../utils/constants/visualCrossingWeatherApiData";
+import { API_DATA } from "../../utils/constants/api/visualCrossingWeatherApiData";
 
 const viasualCrossingWeatherOptions = (latitude, longitude) => ({
     method: "GET",

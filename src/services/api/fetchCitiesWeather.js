@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_DATA } from "../../utils/constants/openWeatherApiData";
+import { API_DATA } from "../../utils/constants/api/openWeatherApiData";
 
 const openWeatherOptions = (cityObjects) => {
     return {

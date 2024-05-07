@@ -1,7 +1,7 @@
 import React from "react";
 import WorldGlobe from "../components/world/WorldGlobe/WorldGlobe";
 import { useDataWithMapsHandler } from "../hooks/useDataWithMapsHandler";
-import { worldCapitals } from "../utils/constants/worldCapitalsData";
+import { worldCapitals } from "../utils/citiesConfig/worldCapitalsData";
 import Loader from "../components/ui/Loader/Loader";
 import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
 

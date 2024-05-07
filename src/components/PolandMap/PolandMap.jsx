@@ -8,7 +8,7 @@ import {
     DataWrapper,
     Text,
 } from "./PolandMap.styles";
-import { polishCities } from "../../utils/constants/polishCitiesData";
+import { polishCities } from "../../utils/citiesConfig/polishCitiesData";
 import { useSpring } from "@react-spring/web";
 import { openWeatherModal } from "../ui/modals/WeatherModal/WeatherModal";
 

@@ -1,6 +1,16 @@
 export function getAirPollutionBarChartOptions(city) {
     return {
         plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function () {
+                        return `${"Air Pollution Data:"}`;
+                    },
+                    label: function (context) {
+                        return `${context.label}: ${context.parsed.y} μg/m³`;
+                    },
+                },
+            },
             legend: {
                 display: false,
             },
@@ -22,7 +32,7 @@ export function getAirPollutionBarChartOptions(city) {
                 color: "#a1a1a1",
                 offset: 0,
                 formatter: function (value) {
-                    return value.toString() + " μg/m³";
+                    return `${value} μg/m³`;
                 },
             },
         },
@@ -51,6 +61,13 @@ export const airPollutionlinearChartOptions = {
         },
     },
     plugins: {
+        tooltip: {
+            callbacks: {
+                label: function (context) {
+                    return `${context.dataset.label}: ${context.parsed.y} μg/m³`;
+                },
+            },
+        },
         legend: {
             display: false,
         },
@@ -81,3 +98,64 @@ export const airPollutionlinearChartOptions = {
     responsive: false,
     maintainAspectRatio: false,
 };
+
+export function getLongTermWeatherLinearChartOptions(selectedDataset, city) {
+    return {
+        tension: 0.4,
+        responsive: true,
+        maintainAspectRatio: true,
+        scales: {
+            y: {
+                ticks: {
+                    callback: function (value) {
+                        return `${value}${
+                            selectedDataset.unit === "°C"
+                                ? selectedDataset.unit
+                                : " " + selectedDataset.unit
+                        }`;
+                    },
+                    color: "#ffffff",
+                },
+                beginAtZero: true,
+            },
+            x: {
+                type: "time",
+                time: {
+                    unit: "month",
+                    tooltipFormat: "MMMM d, yyyy",
+                },
+                beginAtZero: true,
+                ticks: {
+                    color: "#ffffff",
+                },
+            },
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: `${selectedDataset.label} in ${city}`,
+                font: {
+                    size: 20,
+                },
+            },
+            tooltip: {
+                callbacks: {
+                    label: function (context) {
+                        return `${context.dataset.label}: ${context.parsed.y}${
+                            selectedDataset.unit === "°C"
+                                ? selectedDataset.unit
+                                : " " + selectedDataset.unit
+                        }`;
+                    },
+                },
+            },
+            legend: {
+                display: false,
+            },
+            currentTimePosition: {
+                lineThickness: 1,
+                color: "#ffffff",
+            },
+        },
+    };
+}

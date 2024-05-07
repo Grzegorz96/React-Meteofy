@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_DATA } from "../../utils/constants/geoDbApiData";
+import { API_DATA } from "../../utils/constants/api/geoDbApiData";
 
 const geoApiOptions = (inputValue, page) => ({
     method: "GET",

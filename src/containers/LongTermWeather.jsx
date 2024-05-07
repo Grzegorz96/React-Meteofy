@@ -4,7 +4,7 @@ import Loader from "../components/ui/Loader/Loader";
 import SearchEngine from "../components/ui/SearchEngine/SearchEngine";
 import { localInputStyle } from "../components/ui/SearchEngine/SearchEngine.styles";
 import { useDataWithCitiesHandler } from "../hooks/useDataWithCitiesHandler";
-import LongTermWeatherLinearChart from "../components/longTermWeather/LinearChart/LinearChart";
+import LongTermWeatherMain from "../components/longTermWeather/LongTermWeatherMain/LongTermWeatherMain";
 
 export default function LongTermWeatherContainer() {
     const [selectedCity, setSelectedCity] = useState({
@@ -40,7 +40,10 @@ export default function LongTermWeatherContainer() {
             {data.error && <ErrorModal data={data} setData={setData} />}
             {data.loading && <Loader />}
             {data.fetchedData && (
-                <LongTermWeatherLinearChart seasonalData={seasonalData} />
+                <LongTermWeatherMain
+                    seasonalData={seasonalData}
+                    city={data.city}
+                />
             )}
         </>
     );

@@ -7,7 +7,7 @@ import EarthDayMap from "../../assets/textures/8k-earth-day-map.jpg";
 import EarthCloudsMap from "../../assets/textures/8k-earth-clouds.jpg";
 import NormalMap from "../../assets/textures/8k-earth-normal-map.jpg";
 import SpecularMap from "../../assets/textures/8k-earth-specular-map.jpg";
-import { offsetlist } from "../../utils/constants/offsetlist";
+import { offsetlist } from "../../utils/citiesConfig/offsetlist";
 import { convertLatLonToCartesian } from "../../utils/formatting";
 
 export default function Earth({ fetchedCitiesData }) {

@@ -3,7 +3,7 @@ import { divIcon } from "leaflet";
 import { WeatherIcon, Temp } from "./EuropeMap.styles";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import { renderToString } from "react-dom/server";
-import { API_DATA } from "../../utils/constants/openWeatherApiData";
+import { API_DATA } from "../../utils/constants/api/openWeatherApiData";
 import "leaflet/dist/leaflet.css";
 import "../../assets/reactLeafletStyles/customMarkerIcon.css";
 import { openWeatherModal } from "../ui/modals/WeatherModal/WeatherModal";
