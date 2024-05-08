@@ -25,3 +25,11 @@ export const getForecastDays = () => {
         WEEK_DAYS.slice(0, dayInAWeek)
     );
 };
+
+export const getDefaultDateRange = () => {
+    const startDate = new Date();
+    startDate.setHours(0, 0, 0, 0);
+    const endDate = new Date(startDate);
+    endDate.setDate(startDate.getDate() + 45);
+    return [startDate, endDate];
+};

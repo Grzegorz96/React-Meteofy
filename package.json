@@ -39,6 +39,7 @@
     "react-select": "^5.8.0",
     "react-select-async-paginate": "^0.7.3",
     "react-spinners": "^0.13.8",
+    "rsuite": "^5.60.1",
     "styled-components": "^6.1.8",
     "sweetalert2": "^11.10.7",
     "sweetalert2-react-content": "^5.0.7",

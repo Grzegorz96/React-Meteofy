@@ -1,3 +1,6 @@
+import { marker } from "leaflet";
+import { min } from "lodash";
+
 export function getAirPollutionBarChartOptions(city) {
     return {
         plugins: {
@@ -99,7 +102,11 @@ export const airPollutionlinearChartOptions = {
     maintainAspectRatio: false,
 };
 
-export function getLongTermWeatherLinearChartOptions(selectedDataset, city) {
+export function getLongTermWeatherLinearChartOptions(
+    selectedDataset,
+    selectedDateRange,
+    city
+) {
     return {
         tension: 0.4,
         responsive: true,
@@ -128,6 +135,8 @@ export function getLongTermWeatherLinearChartOptions(selectedDataset, city) {
                 ticks: {
                     color: "#ffffff",
                 },
+                min: selectedDateRange[0],
+                max: selectedDateRange[1],
             },
         },
         plugins: {

@@ -7,6 +7,7 @@ import { getLongTermWeatherLinearChartOptions } from "../../../utils/charts/char
 export default function LongTermWeatherLinearChart({
     filteredData,
     selectedDataset,
+    selectedDateRange,
     city,
 }) {
     return (
@@ -15,6 +16,7 @@ export default function LongTermWeatherLinearChart({
             plugins={[currentTimePosition]}
             options={getLongTermWeatherLinearChartOptions(
                 selectedDataset,
+                selectedDateRange,
                 city
             )}
         />
