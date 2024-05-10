@@ -27,9 +27,9 @@ export const PolandMapSVG = styled(animated(MapSVG))`
 
 export const MapItem = styled.div`
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     left: ${(props) => props.$left};
-    top: ${(props) => props.$top};
+    bottom: ${(props) => props.$bottom};
     text-align: center;
     pointer-events: none;
     display: flex;

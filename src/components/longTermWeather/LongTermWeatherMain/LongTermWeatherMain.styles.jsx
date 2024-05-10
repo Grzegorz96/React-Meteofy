@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DateRangePicker } from "rsuite";
 
 export const LongTermWeatherWrapper = styled.div`
     border-radius: 6px;
@@ -21,4 +22,12 @@ export const InputWrapper = styled.div`
     gap: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #e0e0e0;
+`;
+
+export const DateRangePickerStyled = styled(DateRangePicker)`
+    width: 320px;
+
+    div {
+        height: 38px;
+    }
 `;

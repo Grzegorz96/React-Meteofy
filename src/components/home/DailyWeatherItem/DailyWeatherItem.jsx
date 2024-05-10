@@ -15,7 +15,12 @@ import {
 import ScrollContainer from "../../ui/ScrollContainer/ScrollContainer";
 import HourlyWeatherItem from "../HourlyWeatherItem/HourlyWeatherItem";
 
-export default function DailyWeatherItem({ index, dayData, forecastDays }) {
+export default function DailyWeatherItem({
+    index,
+    dayData,
+    forecastDays,
+    scrollableContainerRef,
+}) {
     return (
         <AccordionItem>
             <AccordionItemHeading>
@@ -60,7 +65,9 @@ export default function DailyWeatherItem({ index, dayData, forecastDays }) {
                         <Label>{Math.round(dayData.feelslike)}°C</Label>
                     </DailyDetailsGridItem>
                 </DailyDetailsGrid>
-                <ScrollContainer>
+                <ScrollContainer
+                    scrollableContainerRef={scrollableContainerRef}
+                >
                     {dayData.hours.map((hourData, index) => (
                         <HourlyWeatherItem key={index} hourData={hourData} />
                     ))}

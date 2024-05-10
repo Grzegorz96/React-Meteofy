@@ -33,3 +33,8 @@ export const getDefaultDateRange = () => {
     endDate.setDate(startDate.getDate() + 45);
     return [startDate, endDate];
 };
+
+export const requestCityDelay = {
+    lastRequestTime: 0,
+    minRequestInterval: 1300,
+};

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import {
     ScrollableContainer,
     NavigateButton,
@@ -6,9 +6,7 @@ import {
 } from "./ScrollContainer.styles";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
-export default function ScrollContainer({ children }) {
-    const scrollableContainerRef = useRef(null);
-
+export default function ScrollContainer({ children, scrollableContainerRef }) {
     function handleBackButtonClick() {
         const scrollableContainer = scrollableContainerRef.current;
         scrollableContainer.style.scrollBehavior = "smooth";

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { API_DATA } from "../../utils/constants/api/geoDbApiData";
+import { requestCityDelay } from "../../utils/helpers";
 
 const geoApiOptions = (inputValue, page) => ({
     method: "GET",
@@ -17,29 +18,53 @@ const geoApiOptions = (inputValue, page) => ({
     },
 });
 
-export const loadOptions = async (inputValue, _, { page }) => {
-    try {
-        const response = await axios.request(geoApiOptions(inputValue, page));
-        return {
-            options: response.data.data.map((city) => {
-                return {
-                    label: `${city.name}, ${city.countryCode}`,
-                    value: {
-                        latitude: city.latitude,
-                        longitude: city.longitude,
-                    },
-                };
-            }),
-            hasMore: response.data.metadata.totalCount > 10,
-            additional: {
-                page: page + 1,
-            },
-        };
-    } catch (error) {
-        console.error(error);
+export const loadOptions = async (inputValue, loadOptions, { page }) => {
+    const currentTime = Date.now();
+    if (
+        currentTime - requestCityDelay.lastRequestTime >
+        requestCityDelay.minRequestInterval
+    ) {
+        try {
+            requestCityDelay.lastRequestTime = currentTime;
+            const response = await axios.request(
+                geoApiOptions(inputValue, page)
+            );
+
+            return {
+                options: response.data.data.map((city) => {
+                    return {
+                        label: `${city.name}, ${city.countryCode}`,
+                        value: {
+                            latitude: city.latitude,
+                            longitude: city.longitude,
+                        },
+                    };
+                }),
+                hasMore:
+                    response.data.metadata.totalCount -
+                        (response.data.metadata.currentOffset + 10) >
+                    0,
+                additional: {
+                    page: page + 1,
+                },
+            };
+        } catch (error) {
+            console.error(error);
+            return {
+                options: [],
+                hasMore: false,
+                additional: {
+                    page: page,
+                },
+            };
+        }
+    } else {
         return {
             options: [],
-            hasMore: false,
+            hasMore: true,
+            additional: {
+                page: page,
+            },
         };
     }
 };

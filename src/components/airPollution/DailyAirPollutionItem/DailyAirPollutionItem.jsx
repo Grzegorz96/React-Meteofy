@@ -24,6 +24,7 @@ export default function DailyAirPollutionItem({
     dayData,
     index,
     forecastDays,
+    scrollableContainerRef,
 }) {
     const [selectedDataset, setSelectedDataset] = useState("PM1");
     const filteredData = getAirPollutionFilteredLinearChartData(
@@ -62,9 +63,12 @@ export default function DailyAirPollutionItem({
                             <SelectButton
                                 $active={selectedDataset === pollutionName}
                                 key={pollutionName}
-                                onClick={() =>
-                                    setSelectedDataset(pollutionName)
-                                }
+                                onClick={() => {
+                                    scrollableContainerRef.current.style.scrollBehavior =
+                                        "smooth";
+                                    scrollableContainerRef.current.scrollLeft = 0;
+                                    setSelectedDataset(pollutionName);
+                                }}
                             >
                                 {pollutionName}
                             </SelectButton>
@@ -74,7 +78,9 @@ export default function DailyAirPollutionItem({
                         Hourly Air Pollution (μg/m3)
                     </Label>
                 </Wrapper>
-                <ScrollContainer>
+                <ScrollContainer
+                    scrollableContainerRef={scrollableContainerRef}
+                >
                     <AirPollutionLinearChart filteredData={filteredData} />
                 </ScrollContainer>
             </AccordionItemPanel>

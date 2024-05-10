@@ -35,6 +35,7 @@ export default function EuropeMap({ fetchedCitiesData }) {
             ]}
             maxBoundsViscosity={1.0}
             style={{
+                zIndex: 1,
                 height: "100%",
                 width: "100%",
                 position: "absolute",

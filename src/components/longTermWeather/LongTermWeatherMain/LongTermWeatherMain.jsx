@@ -1,8 +1,8 @@
 import Select from "react-select";
-import { DateRangePicker } from "rsuite";
+import { DateRangePickerStyled } from "./LongTermWeatherMain.styles";
 import "rsuite/DateRangePicker/styles/index.css";
 import LongTermWeatherLinearChart from "../LinearChart/LinearChart";
-import { useState, useMemo } from "react";
+import { useState, useMemo, memo } from "react";
 import {
     LongTermWeatherWrapper,
     InputWrapper,
@@ -10,26 +10,9 @@ import {
 import { getLongTermWeatherFilteredLinearChartData } from "../../../utils/charts/chartData";
 import { selectOptions } from "../../../utils/constants/selectOptions";
 import { getDefaultDateRange } from "../../../utils/helpers";
+import { customSelectStyles } from "../../../utils/styles/selectStyle";
 
-const datepickerStyle = { width: "250px" };
-
-export const customSelectStyles = {
-    // Styles for each option in the dropdown menu.
-    option: (provided) => ({
-        ...provided,
-        cursor: "pointer",
-    }),
-
-    // Styles for the control (outer container) of the Select component.
-    control: (provided) => ({
-        ...provided,
-        borderRadius: "6px",
-        cursor: "pointer",
-        width: "200px",
-    }),
-};
-
-export default function LongTermWeatherMain({ seasonalData, city }) {
+function LongTermWeatherMain({ seasonalData, city }) {
     const [selectedDataset, setSelectedDataset] = useState(selectOptions[0]);
     const [selectedDateRange, setSelectedDateRange] =
         useState(getDefaultDateRange);
@@ -58,8 +41,8 @@ export default function LongTermWeatherMain({ seasonalData, city }) {
                     onChange={setSelectedDataset}
                     value={selectedDataset}
                 />
-                <DateRangePicker
-                    style={datepickerStyle}
+                <DateRangePickerStyled
+                    showOneCalendar
                     character=" - "
                     format="MMMM d, yyyy"
                     value={selectedDateRange}
@@ -83,3 +66,5 @@ export default function LongTermWeatherMain({ seasonalData, city }) {
         </LongTermWeatherWrapper>
     );
 }
+
+export default memo(LongTermWeatherMain);
