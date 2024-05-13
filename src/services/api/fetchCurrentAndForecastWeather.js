@@ -5,7 +5,7 @@ const viasualCrossingWeatherOptions = (latitude, longitude) => ({
     method: "GET",
     url: `${API_DATA.url}/${latitude},${longitude}`,
     params: {
-        key: API_DATA.apiKey,
+        key: import.meta.env.VITE_VISUAL_CROSSING_API_KEY,
         unitGroup: API_DATA.units.metric,
         include: "days,hours,current",
         contentType: "json",

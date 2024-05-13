@@ -7,7 +7,7 @@ const reversedGeocodingOptions = (latitude, longitude) => ({
     params: {
         lat: latitude,
         lon: longitude,
-        apiKey: API_DATA.apiKey,
+        apiKey: import.meta.env.VITE_GEO_APIFY_API_KEY,
         format: "json",
     },
 });

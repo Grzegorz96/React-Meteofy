@@ -1,4 +1,4 @@
-export const europeCapitals = [
+export const europeCapitalsData = [
     {
         id: 3183875,
         name: "Tirana",

@@ -7,7 +7,7 @@ import EarthDayMap from "../../assets/textures/8k-earth-day-map.jpg";
 import EarthCloudsMap from "../../assets/textures/8k-earth-clouds.jpg";
 import NormalMap from "../../assets/textures/8k-earth-normal-map.jpg";
 import SpecularMap from "../../assets/textures/8k-earth-specular-map.jpg";
-import { offsetlist } from "../../utils/citiesConfig/offsetlist";
+import { worldCapitalsOffset } from "../../utils/citiesConfig/worldCapitalsOffset";
 import { convertLatLonToCartesian } from "../../utils/formatting";
 
 export default function Earth({ fetchedCitiesData }) {
@@ -25,7 +25,9 @@ export default function Earth({ fetchedCitiesData }) {
     }, []);
 
     const setOffset = (capital) => {
-        const cityToOffset = offsetlist.find((city) => city.id === capital.id);
+        const cityToOffset = worldCapitalsOffset.find(
+            (city) => city.id === capital.id
+        );
         return convertLatLonToCartesian(
             cityToOffset?.lat
                 ? capital.coord.lat + cityToOffset.lat

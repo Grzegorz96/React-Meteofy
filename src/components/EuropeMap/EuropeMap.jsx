@@ -3,7 +3,6 @@ import { divIcon } from "leaflet";
 import { WeatherIcon, Temp } from "./EuropeMap.styles";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import { renderToString } from "react-dom/server";
-import { API_DATA } from "../../utils/constants/api/openWeatherApiData";
 import "leaflet/dist/leaflet.css";
 import "../../assets/reactLeafletStyles/customMarkerIcon.css";
 import { openWeatherModal } from "../ui/modals/WeatherModal/WeatherModal";
@@ -49,16 +48,20 @@ export default function EuropeMap({ fetchedCitiesData }) {
                 attribution="&copy; Esri &mdash; Source: Esri"
             />
             <TileLayer
-                url={`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${API_DATA.apiKey}`}
+                url={`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${
+                    import.meta.env.VITE_OPEN_WEATHER_API_KEY
+                }`}
             />
             <MarkerClusterGroup
                 chunkedLoading={true}
                 showCoverageOnHover={false}
             >
-                {fetchedCitiesData.list.map((city, index) => (
+                {fetchedCitiesData.list.map((city) => (
                     <Marker
-                        eventHandlers={{ click: () => openWeatherModal(city) }}
-                        key={index}
+                        eventHandlers={{
+                            click: () => openWeatherModal(city),
+                        }}
+                        key={city.id}
                         position={[city.coord.lat, city.coord.lon]}
                         icon={customMarker(
                             city.weather[0].icon,

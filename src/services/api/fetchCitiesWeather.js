@@ -6,7 +6,7 @@ const openWeatherOptions = (cityObjects) => {
         method: "GET",
         url: API_DATA.url,
         params: {
-            appid: API_DATA.apiKey,
+            appid: import.meta.env.VITE_OPEN_WEATHER_API_KEY,
             units: API_DATA.units.metric,
             id: cityObjects.map((city) => city.id).join(","),
             contentType: "json",

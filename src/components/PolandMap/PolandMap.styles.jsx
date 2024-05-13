@@ -1,17 +1,10 @@
 import styled from "styled-components";
-import MapSVG from "../../assets/images/poland-map.svg?react";
 import { animated } from "@react-spring/web";
 
-export const MapContainer = styled.div`
-    position: relative;
-    height: 100%;
-`;
-
-export const MapItemsLayer = styled.div``;
-
-export const PolandMapSVG = styled(animated(MapSVG))`
-    height: 100%;
-    width: 100%;
+export const PolandMapSVG = styled(animated.svg)`
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
 
     path {
         stroke: #747373;
@@ -26,12 +19,8 @@ export const PolandMapSVG = styled(animated(MapSVG))`
 `;
 
 export const MapItem = styled.div`
-    position: absolute;
-    z-index: 1;
-    left: ${(props) => props.$left};
-    bottom: ${(props) => props.$bottom};
+    width: 100%;
     text-align: center;
-    pointer-events: none;
     display: flex;
     gap: 3px;
     align-items: center;
@@ -50,16 +39,16 @@ export const DataWrapper = styled.div`
 
 export const Temp = styled.span`
     font-weight: bold;
-    font-size: 16px;
+    font-size: 11px;
 `;
 
 export const Text = styled.span`
     font-weight: bold;
-    font-size: 13px;
+    font-size: 10px;
 `;
 
 export const WeatherIcon = styled.img.attrs((props) => ({
     src: `/src/assets/openWeatherIcons/${props.$icon}.png`,
 }))`
-    width: 38px;
+    width: 28px;
 `;

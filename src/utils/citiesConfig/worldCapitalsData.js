@@ -1,4 +1,12 @@
-export const worldCapitals = [
+export const worldCapitalsData = [
+    {
+        id: 2507480,
+        name: "Algiers",
+        coord: {
+            lon: 3.04197,
+            lat: 36.752499,
+        },
+    },
     {
         id: 1138958,
         name: "Kabul",
@@ -336,11 +344,11 @@ export const worldCapitals = [
         },
     },
     {
-        id: 3688685,
+        id: 3688689,
         name: "Bogotá",
         coord: {
-            lon: -74.183327,
-            lat: 4.25,
+            lon: -74.081749,
+            lat: 4.60971,
         },
     },
     {
@@ -385,7 +393,7 @@ export const worldCapitals = [
     },
     {
         id: 3564073,
-        name: "La Habana",
+        name: "Havana",
         coord: {
             lon: -82.300003,
             lat: 23.08333,
@@ -400,11 +408,11 @@ export const worldCapitals = [
         },
     },
     {
-        id: 3067695,
-        name: "Praha",
+        id: 3067696,
+        name: "Prague",
         coord: {
-            lon: 14.46667,
-            lat: 50.083328,
+            lon: 14.42076,
+            lat: 50.088039,
         },
     },
     {
@@ -656,11 +664,11 @@ export const worldCapitals = [
         },
     },
     {
-        id: 3598128,
-        name: "Ciudad de Guatemala",
+        id: 3598132,
+        name: "Guatemala City",
         coord: {
-            lon: -90.75972,
-            lat: 14.52639,
+            lon: -90.513268,
+            lat: 14.64072,
         },
     },
     {
@@ -768,11 +776,11 @@ export const worldCapitals = [
         },
     },
     {
-        id: 7778677,
+        id: 2964574,
         name: "Dublin",
         coord: {
-            lon: -6.24922,
-            lat: 53.355122,
+            lon: -6.26719,
+            lat: 53.34399,
         },
     },
     {
@@ -1008,11 +1016,11 @@ export const worldCapitals = [
         },
     },
     {
-        id: 3570675,
+        id: 6690660,
         name: "Fort-de-France",
         coord: {
-            lon: -61.073341,
-            lat: 14.60892,
+            lon: -61.069401,
+            lat: 14.6072,
         },
     },
     {
@@ -1304,11 +1312,11 @@ export const worldCapitals = [
         },
     },
     {
-        id: 3936452,
+        id: 3936456,
         name: "Lima",
         coord: {
-            lon: -76.638893,
-            lat: -12.00389,
+            lon: -77.028236,
+            lat: -12.04318,
         },
     },
     {
@@ -1616,11 +1624,11 @@ export const worldCapitals = [
         },
     },
     {
-        id: 2673722,
+        id: 2673730,
         name: "Stockholm",
         coord: {
-            lon: 18,
-            lat: 59.5,
+            lon: 18.064899,
+            lat: 59.332581,
         },
     },
     {
@@ -1712,11 +1720,11 @@ export const worldCapitals = [
         },
     },
     {
-        id: 323784,
+        id: 323786,
         name: "Ankara",
         coord: {
-            lon: 32.833328,
-            lat: 39.916672,
+            lon: 32.854271,
+            lat: 39.919868,
         },
     },
     {
@@ -1784,11 +1792,11 @@ export const worldCapitals = [
         },
     },
     {
-        id: 1484839,
-        name: "Toshkent",
+        id: 1512569,
+        name: "Tashkent",
         coord: {
-            lon: 69.25,
-            lat: 41.333328,
+            lon: 69.21627,
+            lat: 41.264648,
         },
     },
     {

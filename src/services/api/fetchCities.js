@@ -6,7 +6,7 @@ const geoApiOptions = (inputValue, page) => ({
     method: "GET",
     url: API_DATA.urls.cities,
     headers: {
-        "X-RapidAPI-Key": API_DATA.apiKey,
+        "X-RapidAPI-Key": import.meta.env.VITE_GEO_DB_API_KEY,
         "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
     },
     params: {
