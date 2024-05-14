@@ -7,20 +7,20 @@ import "leaflet/dist/leaflet.css";
 import "../../assets/reactLeafletStyles/customMarkerIcon.css";
 import { openWeatherModal } from "../ui/modals/WeatherModal/WeatherModal";
 
-const customMarker = (weatherIcon, temperature) =>
-    divIcon({
-        className: "custom-marker-icon",
-        iconSize: [60, 40],
-        iconAnchor: [30, 60],
-        html: renderToString(
-            <>
-                <Temp>{Math.round(temperature)}°</Temp>
-                <WeatherIcon $icon={weatherIcon} />
-            </>
-        ),
-    });
-
 export default function EuropeMap({ fetchedCitiesData }) {
+    const customMarker = (weatherIcon, temperature) =>
+        divIcon({
+            className: "custom-marker-icon",
+            iconSize: [60, 40],
+            iconAnchor: [30, 60],
+            html: renderToString(
+                <>
+                    <Temp>{Math.round(temperature)}°</Temp>
+                    <WeatherIcon $icon={weatherIcon} />
+                </>
+            ),
+        });
+
     return (
         <MapContainer
             minZoom={4}

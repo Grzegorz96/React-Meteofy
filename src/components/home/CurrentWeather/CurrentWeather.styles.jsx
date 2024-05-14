@@ -1,18 +1,58 @@
 import styled from "styled-components";
 
 export const CurrentWeatherWrapper = styled.div`
-    width: 100%;
-    max-width: 350px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     border-radius: 6px;
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
     color: ${({ theme }) => theme.dark.text};
     background-color: ${({ theme }) => theme.dark.primary};
-    padding: 0px 20px 20px 20px;
-    position: relative;
+    padding: 15px;
+    gap: 15px;
+    max-width: 800px;
+`;
+
+export const WeatherIcon = styled.img.attrs((props) => ({
+    src: `/src/assets/visualCrossingWeatherIcons/${props.$icon}.svg`,
+}))`
+    width: 80px;
+    height: 80px;
+`;
+
+export const Wrapper = styled.div`
+    background-color: #242424;
+    display: flex;
+    flex-direction: ${(props) => props.$flexDirection || "row"};
+    align-items: ${(props) => props.$alignItems || "center"};
+    justify-content: ${(props) => props.$justifyContent || "center"};
+    border-radius: 4px;
+    gap: ${(props) => props.$gap || "15px"};
+    padding: 5px;
+    width: ${(props) => props.$width};
+    max-width: ${(props) => props.$maxWidth};
+`;
+
+export const TopWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #e02d2d;
+    @media (max-width: 720px) {
+        flex-direction: row;
+    }
+`;
+
+export const Details = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    background-color: #e02d2d;
 `;
 
 export const Text = styled.p`
-    color: ${({ theme }) => theme.dark.text};
+    color: ${(props) => props.color || props.theme.dark.text};
     font-weight: ${(props) => props.$fontWeight};
     font-size: ${(props) => props.$fontSize};
     line-height: ${(props) => props.$lineHeight};
@@ -20,58 +60,4 @@ export const Text = styled.p`
     margin: ${(props) => props.$margin};
     position: ${(props) => props.$position};
     top: ${(props) => props.$top};
-`;
-
-export const Wrapper = styled.div`
-    display: ${(props) => props.$display};
-    align-items: center;
-    gap: ${(props) => props.$gap};
-
-    svg {
-        font-size: 20px;
-    }
-`;
-
-export const Top = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`;
-
-export const Bottom = styled(Top)``;
-
-export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `/src/assets/visualCrossingWeatherIcons/${props.$icon}.svg`,
-}))`
-    width: 100px;
-    height: 100px;
-    margin-top: 10px;
-`;
-
-export const Details = styled.div`
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    margin-left: 20px;
-`;
-
-export const ParameterRow = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-`;
-
-export const ParameterLabel = styled.span`
-    text-align: left;
-    font-weight: 400;
-    font-size: 12px;
-    border-bottom: ${(props) =>
-        props.$borderBottom && `1px solid ${props.theme.dark.text}`};
-`;
-
-export const ParameterValue = styled(ParameterLabel)`
-    text-align: right;
-    font-weight: 600;
 `;

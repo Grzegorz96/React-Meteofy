@@ -97,7 +97,7 @@ export const worldCapitalsData = [
     },
     {
         id: 2761367,
-        name: "Wien",
+        name: "Vienna",
         coord: {
             lon: 16.371691,
             lat: 48.208199,
@@ -152,8 +152,8 @@ export const worldCapitalsData = [
         },
     },
     {
-        id: 6693370,
-        name: "Bruxelles",
+        id: 2800866,
+        name: "Brussels",
         coord: {
             lon: 4.34664,
             lat: 50.84877,
@@ -600,11 +600,11 @@ export const worldCapitalsData = [
         },
     },
     {
-        id: 2950158,
+        id: 2950159,
         name: "Berlin",
         coord: {
-            lon: 10.45,
-            lat: 54.033329,
+            lon: 13.41053,
+            lat: 52.524368,
         },
     },
     {
@@ -1088,11 +1088,11 @@ export const worldCapitalsData = [
         },
     },
     {
-        id: 3189077,
+        id: 3193044,
         name: "Podgorica",
         coord: {
-            lon: 19.33333,
-            lat: 42.5,
+            lon: 19.263611,
+            lat: 42.441109,
         },
     },
     {
@@ -1632,11 +1632,11 @@ export const worldCapitalsData = [
         },
     },
     {
-        id: 2661552,
-        name: "Bern",
+        id: 7285212,
+        name: "Berne",
         coord: {
-            lon: 7.44744,
-            lat: 46.94809,
+            lon: 7.40645,
+            lat: 46.947609,
         },
     },
     {

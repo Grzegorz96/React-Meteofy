@@ -34,15 +34,16 @@ export default function PolandMap({ fetchedCitiesData }) {
                 viewBox="0 0 440 420"
                 preserveAspectRatio="xMidYMid meet"
             >
-                {fetchedCitiesData.list.map((currentCity) => {
-                    const cityData = polishCitiesData.find(
-                        (polishCity) => polishCity.id === currentCity.id
-                    );
+                <g>
+                    {fetchedCitiesData.list.map((currentCity) => {
+                        const cityData = polishCitiesData.find(
+                            (polishCity) => polishCity.id === currentCity.id
+                        );
 
-                    if (cityData) {
-                        return (
-                            <g key={cityData.id}>
+                        if (cityData) {
+                            return (
                                 <path
+                                    key={cityData.id}
                                     id={cityData.id}
                                     title={cityData.title}
                                     d={cityData.d}
@@ -50,7 +51,20 @@ export default function PolandMap({ fetchedCitiesData }) {
                                         openWeatherModal(currentCity)
                                     }
                                 />
+                            );
+                        }
+                    })}
+                </g>
+                <g>
+                    {fetchedCitiesData.list.map((currentCity) => {
+                        const cityData = polishCitiesData.find(
+                            (polishCity) => polishCity.id === currentCity.id
+                        );
+
+                        if (cityData) {
+                            return (
                                 <foreignObject
+                                    key={cityData.id}
                                     style={{
                                         pointerEvents: "none",
                                     }}
@@ -76,10 +90,10 @@ export default function PolandMap({ fetchedCitiesData }) {
                                         <Text>{currentCity.name}</Text>
                                     </MapItem>
                                 </foreignObject>
-                            </g>
-                        );
-                    }
-                })}
+                            );
+                        }
+                    })}
+                </g>
             </PolandMapSVG>
         </>
     );

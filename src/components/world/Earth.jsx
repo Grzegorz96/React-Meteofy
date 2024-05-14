@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useEffect, memo } from "react";
 import { useThree } from "@react-three/fiber";
 import { useTexture, Sphere } from "@react-three/drei";
 import WeatherBoard from "./WeatherBoard";
@@ -10,7 +10,8 @@ import SpecularMap from "../../assets/textures/8k-earth-specular-map.jpg";
 import { worldCapitalsOffset } from "../../utils/citiesConfig/worldCapitalsOffset";
 import { convertLatLonToCartesian } from "../../utils/formatting";
 
-export default function Earth({ fetchedCitiesData }) {
+function Earth({ fetchedCitiesData, setIsLoading }) {
+    const { camera, raycaster, pointer, scene } = useThree();
     const [colorMap, cloudsMap, normalMap, specularMap] = useTexture([
         EarthDayMap,
         EarthCloudsMap,
@@ -18,10 +19,9 @@ export default function Earth({ fetchedCitiesData }) {
         SpecularMap,
     ]);
 
-    const { camera, raycaster, pointer, scene } = useThree();
-
-    useLayoutEffect(() => {
+    useEffect(() => {
         camera.layers.enable(1);
+        setIsLoading(false);
     }, []);
 
     const setOffset = (capital) => {
@@ -86,3 +86,5 @@ export default function Earth({ fetchedCitiesData }) {
         </group>
     );
 }
+
+export default memo(Earth);
