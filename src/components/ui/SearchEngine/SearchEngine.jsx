@@ -5,7 +5,7 @@ export default function SearchEngine({
     placeholder,
     city,
     handleOnChange,
-    style,
+    styles,
 }) {
     return (
         <AsyncPaginate
@@ -14,7 +14,7 @@ export default function SearchEngine({
             debounceTimeout={1000}
             value={city.value.latitude && city.value.longitude ? city : null}
             onChange={handleOnChange}
-            styles={style}
+            styles={styles}
             loadOptions={loadOptions}
             additional={{ page: 1 }}
         />

@@ -33,8 +33,8 @@ export default function DailyWeatherItem({
                     </Day>
                     <Description>{dayData.conditions}</Description>
                     <Label $grey>
-                        {Math.round(dayData.tempmin)}°C /
-                        {Math.round(dayData.tempmax)}°C
+                        {Math.round(dayData.tempmax)}°C/
+                        {Math.round(dayData.tempmin)}°C
                     </Label>
                 </StyledAccordionItemButton>
             </AccordionItemHeading>

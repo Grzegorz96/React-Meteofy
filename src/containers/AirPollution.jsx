@@ -5,7 +5,7 @@ import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
 import SearchEngine from "../components/ui/SearchEngine/SearchEngine";
 import CurrentAirPollution from "../components/airPollution/CurrentAirPollution/CurrentAirPollution";
 import ForecastAirPollution from "../components/airPollution/ForecastAirPollution/ForecastAirPollution";
-import { localInputStyle } from "../components/ui/SearchEngine/SearchEngine.styles";
+import { localInputStyles } from "../components/ui/SearchEngine/SearchEngine.styles";
 
 export default function AirPollutionContainer() {
     const [selectedCity, setSelectedCity] = useState({
@@ -30,7 +30,7 @@ export default function AirPollutionContainer() {
                 handleOnChange={(selectedOption) => {
                     setSelectedCity(selectedOption);
                 }}
-                style={localInputStyle}
+                styles={localInputStyles}
             />
             {data.error && <ErrorModal data={data} setData={setData} />}
             {data.loading && <Loader />}

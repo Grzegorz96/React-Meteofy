@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
 import Loader from "../components/ui/Loader/Loader";
 import SearchEngine from "../components/ui/SearchEngine/SearchEngine";
-import { localInputStyle } from "../components/ui/SearchEngine/SearchEngine.styles";
+import { localInputStyles } from "../components/ui/SearchEngine/SearchEngine.styles";
 import { useDataWithCitiesHandler } from "../hooks/useDataWithCitiesHandler";
 import LongTermWeatherMain from "../components/longTermWeather/LongTermWeatherMain/LongTermWeatherMain";
 
@@ -30,12 +30,12 @@ export default function LongTermWeatherContainer() {
     return (
         <>
             <SearchEngine
-                placeholder="Search city"
+                placeholder="Search long term weather by city name"
                 city={selectedCity}
                 handleOnChange={(selectedOption) => {
                     setSelectedCity(selectedOption);
                 }}
-                style={localInputStyle}
+                styles={localInputStyles}
             />
             {data.error && <ErrorModal data={data} setData={setData} />}
             {data.loading && <Loader />}

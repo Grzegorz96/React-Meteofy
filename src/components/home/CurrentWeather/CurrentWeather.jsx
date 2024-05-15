@@ -1,11 +1,17 @@
 import { memo } from "react";
 import {
     CurrentWeatherWrapper,
-    Wrapper,
+    MainWrapper,
+    SecondWrapper,
+    DetailsWrapper,
+    Detail,
+    DetailValue,
     WeatherIcon,
     Text,
-    TopWrapper,
-    Details,
+    TempInfo,
+    SunInfo,
+    SunItems,
+    SunValue,
 } from "./CurrentWeather.styles";
 import { FaTemperatureHalf, FaWind, FaWeightScale } from "react-icons/fa6";
 import { WiHumidity } from "react-icons/wi";
@@ -16,9 +22,9 @@ import { IoRainy, IoCloud } from "react-icons/io5";
 function CurrentWeather({ currentWeather, city }) {
     return (
         <CurrentWeatherWrapper>
-            <Wrapper $gap="5px" $flexDirection="column" $width="65%">
-                <Text $fontWeight="bold" $fontSize="10px" $top="5px">
-                    {`Current weather at ${currentWeather.datetime.substring(
+            <MainWrapper $gap="5px" $flexDirection="column" $width="65%">
+                <Text $fontWeight="600" $fontSize="10px" color="grey">
+                    {`Weather conditions at ${currentWeather.datetime.substring(
                         0,
                         5
                     )} local time`}
@@ -31,174 +37,131 @@ function CurrentWeather({ currentWeather, city }) {
                 >
                     {city}
                 </Text>
-                <Text $fontWeight="400" $fontSize="12px" $lineHeight="1">
+                <Text $fontWeight="300" $fontSize="12px" $lineHeight="1">
                     {currentWeather.conditions}
                 </Text>
-            </Wrapper>
-            <TopWrapper>
-                <Wrapper>
+            </MainWrapper>
+            <SecondWrapper>
+                <TempInfo>
                     <Text
                         $fontWeight="600"
-                        $fontSize="50px"
+                        $fontSize="45px"
                         $letterSpacing="-1px"
                     >
                         {Math.round(currentWeather.temp)}°C
                     </Text>
                     <WeatherIcon $icon={currentWeather.icon} />
-                </Wrapper>
-                <Wrapper
-                    $flexDirection="column"
-                    $alignItems="flex-start"
-                    $justifyContent="flex-start"
-                    $gap="5px"
-                >
+                </TempInfo>
+                <SunInfo>
                     <Text $fontWeight="600" $fontSize="10px" color="grey">
                         Sunrise & Sunset
                     </Text>
-                    <Wrapper
-                        $gap="0"
-                        $justifyContent="space-between"
-                        $width="100%"
-                    >
-                        <Wrapper $gap="5px">
+                    <SunItems>
+                        <SunValue>
                             <FiSunrise fontSize={25} />
                             <Text $fontWeight="300" $fontSize="18px">
                                 {currentWeather.sunrise.substring(0, 5)}
                             </Text>
-                        </Wrapper>
-                        <Wrapper $gap="5px">
+                        </SunValue>
+                        <SunValue>
                             <FiSunset fontSize={25} />
                             <Text $fontWeight="300" $fontSize="18px">
                                 {currentWeather.sunset.substring(0, 5)}
                             </Text>
-                        </Wrapper>
-                    </Wrapper>
-                </Wrapper>
-            </TopWrapper>
-            <Details>
-                <Wrapper
-                    $flexDirection="column"
-                    $justifyContent="flex-start"
-                    $alignItems="flex-start"
-                >
+                        </SunValue>
+                    </SunItems>
+                </SunInfo>
+            </SecondWrapper>
+            <DetailsWrapper>
+                <Detail>
                     <Text $fontWeight="600" $fontSize="10px" color="grey">
                         Feels like
                     </Text>
-                    <Wrapper $gap="5px">
+                    <DetailValue>
                         <FaTemperatureHalf fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
                             {Math.round(currentWeather.feelslike)}°C
                         </Text>
-                    </Wrapper>
-                </Wrapper>
-                <Wrapper
-                    $flexDirection="column"
-                    $justifyContent="flex-start"
-                    $alignItems="flex-start"
-                >
+                    </DetailValue>
+                </Detail>
+                <Detail>
                     <Text $fontWeight="600" $fontSize="10px" color="grey">
                         Wind
                     </Text>
-                    <Wrapper $gap="5px">
+                    <DetailValue>
                         <FaWind fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
                             {Math.round(currentWeather.windspeed)} km/h
                         </Text>
-                    </Wrapper>
-                </Wrapper>
-                <Wrapper
-                    $flexDirection="column"
-                    $justifyContent="flex-start"
-                    $alignItems="flex-start"
-                >
+                    </DetailValue>
+                </Detail>
+                <Detail>
                     <Text $fontWeight="600" $fontSize="10px" color="grey">
                         Precipitation
                     </Text>
-                    <Wrapper $gap="5px">
+                    <DetailValue>
                         <IoRainy fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
                             {Math.round(currentWeather.precipprob)}%
                         </Text>
-                    </Wrapper>
-                </Wrapper>
-
-                <Wrapper
-                    $flexDirection="column"
-                    $justifyContent="flex-start"
-                    $alignItems="flex-start"
-                >
+                    </DetailValue>
+                </Detail>
+                <Detail>
                     <Text $fontWeight="600" $fontSize="10px" color="grey">
                         Humidity
                     </Text>
-                    <Wrapper $gap="5px">
+                    <DetailValue>
                         <WiHumidity fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
                             {Math.round(currentWeather.humidity)}%
                         </Text>
-                    </Wrapper>
-                </Wrapper>
-                <Wrapper
-                    $flexDirection="column"
-                    $justifyContent="flex-start"
-                    $alignItems="flex-start"
-                >
+                    </DetailValue>
+                </Detail>
+                <Detail>
                     <Text $fontWeight="600" $fontSize="10px" color="grey">
                         Pressure
                     </Text>
-                    <Wrapper $gap="5px">
+                    <DetailValue>
                         <FaWeightScale fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
                             {Math.round(currentWeather.pressure)} hPa
                         </Text>
-                    </Wrapper>
-                </Wrapper>
-                <Wrapper
-                    $flexDirection="column"
-                    $justifyContent="flex-start"
-                    $alignItems="flex-start"
-                >
+                    </DetailValue>
+                </Detail>
+                <Detail>
                     <Text $fontWeight="600" $fontSize="10px" color="grey">
                         Visibility
                     </Text>
-                    <Wrapper $gap="5px">
+                    <DetailValue>
                         <MdOutlineVisibility fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
                             {Math.round(currentWeather.visibility)} km
                         </Text>
-                    </Wrapper>
-                </Wrapper>
-
-                <Wrapper
-                    $flexDirection="column"
-                    $justifyContent="flex-start"
-                    $alignItems="flex-start"
-                >
+                    </DetailValue>
+                </Detail>
+                <Detail>
                     <Text $fontWeight="600" $fontSize="10px" color="grey">
                         Dew point
                     </Text>
-                    <Wrapper $gap="5px">
+                    <DetailValue>
                         <MdDewPoint fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
                             {Math.round(currentWeather.dew)}°C
                         </Text>
-                    </Wrapper>
-                </Wrapper>
-                <Wrapper
-                    $flexDirection="column"
-                    $justifyContent="flex-start"
-                    $alignItems="flex-start"
-                >
+                    </DetailValue>
+                </Detail>
+                <Detail>
                     <Text $fontWeight="600" $fontSize="10px" color="grey">
                         Clouds
                     </Text>
-                    <Wrapper $gap="5px">
+                    <DetailValue>
                         <IoCloud fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
                             {Math.round(currentWeather.cloudcover)}%
                         </Text>
-                    </Wrapper>
-                </Wrapper>
-            </Details>
+                    </DetailValue>
+                </Detail>
+            </DetailsWrapper>
         </CurrentWeatherWrapper>
     );
 }

@@ -10,7 +10,7 @@ import {
 import { getLongTermWeatherFilteredLinearChartData } from "../../../utils/charts/chartData";
 import { selectOptions } from "../../../utils/constants/selectOptions";
 import { getDefaultDateRange } from "../../../utils/helpers";
-import { customSelectStyles } from "../../../utils/styles/selectStyle";
+import { customSelectStyles } from "../../../utils/styles/selectStyles";
 
 function LongTermWeatherMain({ seasonalData, city }) {
     const [selectedDataset, setSelectedDataset] = useState(selectOptions[0]);

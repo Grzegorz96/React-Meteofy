@@ -1,4 +1,6 @@
+import { fill } from "lodash";
 import { POLLUTION_NAMES } from "../constants/pollutionNames";
+import { context } from "@react-three/fiber";
 
 export function getAirPollutionBarChartData(currentAirPollutionData) {
     return {
@@ -95,6 +97,28 @@ export function getLongTermWeatherFilteredLinearChartData(
                 pointRadius: 1.5,
                 pointHoverRadius: 5,
                 pointHitRadius: 5,
+                borderColor: "#36a2eb",
+
+                backgroundColor: (context) => {
+                    const chart = context.chart;
+                    const { ctx, chartArea } = chart;
+                    if (!chartArea) {
+                        return null;
+                    }
+
+                    const gradient = ctx.createLinearGradient(
+                        chartArea.left,
+                        chartArea.bottom,
+                        chartArea.left,
+                        chartArea.top
+                    );
+
+                    gradient.addColorStop(0, "rgba(255, 255, 255, 0.01)");
+                    gradient.addColorStop(1, "rgba(255, 255, 255, 0.5)");
+
+                    return gradient;
+                },
+                fill: "start",
             },
         ],
     };

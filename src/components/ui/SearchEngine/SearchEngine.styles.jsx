@@ -1,4 +1,4 @@
-export const localInputStyle = {
+export const localInputStyles = {
     container: (styles) => ({
         ...styles,
         display: "flex",
@@ -32,7 +32,7 @@ export const localInputStyle = {
     }),
 };
 
-export const globalInputStyle = {
+export const globalInputStyles = {
     container: (styles) => ({
         ...styles,
         display: "flex",
