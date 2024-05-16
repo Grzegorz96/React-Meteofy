@@ -1,24 +1,42 @@
-import styled from "styled-components";
+export const sideBarStyles = {
+    bmBurgerButton: {
+        position: "relative",
+        width: "40px",
+        height: "35px",
+        right: "15px",
+        top: "17.5px",
+        marginLeft: "17.5px",
+    },
 
-export const HamburgerBox = styled.button`
-    height: 100%;
-    background-color: red;
-    width: 200px;
-    border: none;
-`;
-
-export const SideBar = styled.aside`
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #66666684;
-    height: 100vh;
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    transform: ${({ isOpen }) =>
-        isOpen ? "translateX(0)" : "translateX(-100%)"};
-    transition: 0.3s linear;
-`;
+    bmBurgerBars: {
+        background: "#373a47",
+    },
+    bmCrossButton: {
+        top: "15px",
+        right: "10px",
+        height: "40px",
+        width: "40px",
+    },
+    bmCross: {
+        right: "4px",
+        background: "#bdc3c7",
+        height: "30px",
+    },
+    bmMenuWrap: {
+        top: 0,
+        position: "fixed",
+        height: "100%",
+    },
+    bmMenu: {
+        background: "#373a47",
+        paddingTop: "70px",
+    },
+    bmMorphShape: {
+        fill: "#373a47",
+    },
+    bmOverlay: {
+        background: "rgba(0, 0, 0, 0.3)",
+        left: 0,
+        top: 0,
+    },
+};

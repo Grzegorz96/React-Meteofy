@@ -1,15 +1,22 @@
 import styled from "styled-components";
 
+export const navLinkStyles = ({ isActive }) => {
+    return {
+        color: isActive ? "#49ebd5" : "#ffffff",
+    };
+};
+
 export const Navigate = styled.nav`
     display: flex;
-    height: 100%;
+    flex-direction: ${({ $isMobile }) => ($isMobile ? "column" : "row")};
+    align-items: ${({ $isMobile }) => $isMobile && "center"};
     max-width: 1000px;
     width: 100%;
 
     a {
         text-decoration: none;
         width: 100%;
-        max-width: 200px;
+        max-width: ${({ $isMobile }) => ($isMobile ? "100%" : "200px")};
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -32,15 +39,31 @@ export const Navigate = styled.nav`
 
         &.active::before {
             content: "";
-            height: 5px;
-            width: 100%;
             background-color: #49ebd5;
             position: absolute;
-            bottom: 0;
+            height: ${({ $isMobile }) => ($isMobile ? "100%" : "5px")};
+            width: ${({ $isMobile }) => ($isMobile ? "5px" : "100%")};
+            ${({ $isMobile }) => ($isMobile ? "left: 0;" : "bottom: 0;")}
         }
 
-        @media screen and (max-width: 1000px) {
+        @media (max-width: 1000px) {
             font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 850px) {
+            font-size: 0.7rem;
+        }
+
+        @media (max-width: 800px) {
+            font-size: 0.6rem;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
         }
     }
 `;

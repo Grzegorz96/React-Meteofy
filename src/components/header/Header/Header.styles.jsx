@@ -3,12 +3,14 @@ import styled from "styled-components";
 export const Header = styled.header`
     position: fixed;
     top: 0;
+    left: 0;
     background-color: #66666684;
     width: 100%;
     height: 70px;
     display: flex;
     gap: 10px;
     justify-content: space-between;
+    z-index: 1000;
 `;
 
 export const Logo = styled.img.attrs({

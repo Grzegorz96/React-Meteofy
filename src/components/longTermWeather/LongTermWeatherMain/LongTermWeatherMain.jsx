@@ -1,16 +1,16 @@
 import Select from "react-select";
-import { DateRangePickerStyled } from "./LongTermWeatherMain.styles";
-import "rsuite/DateRangePicker/styles/index.css";
-import LongTermWeatherLinearChart from "../LinearChart/LinearChart";
-import { useState, useMemo, memo } from "react";
 import {
     LongTermWeatherWrapper,
     InputWrapper,
+    customSelectStyles,
+    DateRangePickerStyled,
 } from "./LongTermWeatherMain.styles";
+import "rsuite/DateRangePicker/styles/index.css";
+import LongTermWeatherLinearChart from "../LinearChart/LinearChart";
+import { useState, useMemo, memo } from "react";
 import { getLongTermWeatherFilteredLinearChartData } from "../../../utils/charts/chartData";
 import { selectOptions } from "../../../utils/constants/selectOptions";
 import { getDefaultDateRange } from "../../../utils/helpers";
-import { customSelectStyles } from "../../../utils/styles/selectStyles";
 
 function LongTermWeatherMain({ seasonalData, city }) {
     const [selectedDataset, setSelectedDataset] = useState(selectOptions[0]);

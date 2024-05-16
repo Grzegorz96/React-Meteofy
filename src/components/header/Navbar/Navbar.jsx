@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Navigate } from "./Navbar.styles";
+import { Navigate, navLinkStyles } from "./Navbar.styles";
 import { GiPoland } from "react-icons/gi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,11 +8,13 @@ import {
     faCalendarDays,
     faListCheck,
 } from "@fortawesome/free-solid-svg-icons";
-import { navLinkStyles } from "../../../utils/styles/navLinkStyles";
 
-export default function Navbar() {
+export default function Navbar({ isMobile, setIsOpen }) {
     return (
-        <Navigate>
+        <Navigate
+            $isMobile={isMobile}
+            onClick={isMobile ? () => setIsOpen(false) : null}
+        >
             <NavLink to="/poland" style={navLinkStyles}>
                 <GiPoland />
                 Poland
