@@ -1,28 +1,59 @@
 import styled from "styled-components";
 
 export const AirQualityIndex = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     color: ${({ theme }) => theme.dark.text};
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
     background-color: ${({ theme }) => theme.dark.primary};
-    border-radius: 6px;
-    width: 300px;
+    border-radius: 0 6px 6px 0;
+    grid-area: airQualityIndex;
+    display: grid;
+    row-gap: 10px;
+    grid-template-areas:
+        "airQualityIndexHeader"
+        "airQualityIndexDescription"
+        "airQualityIndexFooter";
+
+    @media (max-width: 900px) {
+        row-gap: 0px;
+        border-radius: 6px 6px 0 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "airQualityIndexHeader airQualityIndexFooter"
+            "airQualityIndexDescription airQualityIndexFooter";
+    }
+
+    @media (max-width: 545px) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "airQualityIndexHeader"
+            "airQualityIndexDescription"
+            "airQualityIndexFooter";
+    }
 `;
 
 export const AirQualityIndexHeader = styled.div`
     display: flex;
     justify-content: space-between;
+    min-width: 288px;
     width: 100%;
+    height: 100px;
     gap: 10px;
     align-items: center;
     padding: 10px 0;
     background-color: ${(props) => props.$backqroundColor};
-    border-radius: 6px 6px 0 0;
+    border-radius: 0 6px 0 0;
     text-align: center;
     transition: background-color 0.5s ease-in-out;
+    grid-area: airQualityIndexHeader;
+
+    @media (max-width: 900px) {
+        border-radius: 6px 0 0 0;
+    }
+
+    @media (max-width: 545px) {
+        border-radius: 6px 6px 0 0;
+        min-width: auto;
+    }
 `;
 
 export const FaceImg = styled.img.attrs((props) => ({
@@ -44,9 +75,18 @@ export const Wrapper = styled.div`
 `;
 
 export const AirQualityIndexDescription = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
     padding: 15px;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
+    grid-area: airQualityIndexDescription;
+
+    @media (max-width: 700px) {
+        font-size: 12px;
+    }
 `;
 
 export const ErrorInfo = styled.div`
@@ -55,7 +95,7 @@ export const ErrorInfo = styled.div`
     align-items: center;
     height: 100%;
     width: 100%;
-    padding-inline: 20px;
+    padding: 20px;
     text-align: center;
 `;
 
@@ -69,6 +109,12 @@ export const AirQualityIndexFooter = styled.div`
     align-items: center;
     border-top: 1px solid ${({ theme }) => theme.dark.text};
     border-radius: 0 0 6px 6px;
+    grid-area: airQualityIndexFooter;
+
+    @media (max-width: 900px) {
+        border-top: none;
+        padding-right: 5px;
+    }
 `;
 
 export const FaceFooter = styled.img.attrs((props) => ({

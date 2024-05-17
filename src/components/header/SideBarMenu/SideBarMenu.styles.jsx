@@ -3,9 +3,7 @@ export const sideBarStyles = {
         position: "relative",
         width: "40px",
         height: "35px",
-        right: "15px",
-        top: "17.5px",
-        marginLeft: "17.5px",
+        marginRight: "10px",
     },
 
     bmBurgerBars: {

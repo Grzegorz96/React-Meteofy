@@ -1,3 +1,5 @@
+import { transform } from "lodash";
+
 export const localInputStyles = {
     container: (styles) => ({
         ...styles,
@@ -16,6 +18,7 @@ export const localInputStyles = {
         borderRadius: "0",
         borderBottomRightRadius: "20px",
         borderBottomLeftRadius: "20px",
+        marginInline: "20px",
     }),
     placeholder: (styles) => ({
         ...styles,
@@ -39,11 +42,13 @@ export const globalInputStyles = {
         alignItems: "center",
         width: "100%",
         maxWidth: "400px",
+        flexShrink: "2",
+        minWidth: "150px",
     }),
     control: (styles) => ({
         ...styles,
-        width: "100%",
         height: "40px",
+        width: "100%",
     }),
     placeholder: (styles) => ({
         ...styles,
@@ -54,6 +59,7 @@ export const globalInputStyles = {
     }),
     menu: (styles) => ({
         ...styles,
+        top: "15px",
         // borderRadius: "5px",
         // border: "none",
         // boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.1)",

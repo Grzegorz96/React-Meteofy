@@ -1,8 +1,7 @@
-import { Header, Logo } from "./Header.styles";
+import { Header, Logo, StyledLink } from "./Header.styles";
 import SideBarMenu from "../SideBarMenu/SideBarMenu";
 import SearchEngine from "../../ui/SearchEngine/SearchEngine";
 import Navbar from "../Navbar/Navbar";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setCityData } from "../../../state/cityDataSlice";
 import { useNavigate } from "react-router-dom";
@@ -21,9 +20,9 @@ export default function HeaderComponent() {
 
     return (
         <Header>
-            <Link to="/">
+            <StyledLink to="/">
                 <Logo />
-            </Link>
+            </StyledLink>
             <SearchEngine
                 placeholder={"Search for a city"}
                 city={cityData}

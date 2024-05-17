@@ -12,11 +12,13 @@ export const Navigate = styled.nav`
     align-items: ${({ $isMobile }) => $isMobile && "center"};
     max-width: 1000px;
     width: 100%;
+    flex-shrink: 3;
 
     a {
         text-decoration: none;
         width: 100%;
         max-width: ${({ $isMobile }) => ($isMobile ? "100%" : "200px")};
+        height: ${({ $isMobile }) => !$isMobile && "70px"};
         display: flex;
         flex-direction: column;
         justify-content: center;

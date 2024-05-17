@@ -1,6 +1,3 @@
-import { marker } from "leaflet";
-import { min } from "lodash";
-
 export function getAirPollutionBarChartOptions(city) {
     return {
         plugins: {
@@ -54,6 +51,14 @@ export function getAirPollutionBarChartOptions(city) {
         },
         responsive: true,
         maintainAspectRatio: false,
+        layout: {
+            padding: {
+                top: 5,
+                left: 15,
+                right: 15,
+                bottom: 15,
+            },
+        },
     };
 }
 

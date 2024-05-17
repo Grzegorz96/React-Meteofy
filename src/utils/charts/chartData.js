@@ -1,6 +1,4 @@
-import { fill } from "lodash";
 import { POLLUTION_NAMES } from "../constants/pollutionNames";
-import { context } from "@react-three/fiber";
 
 export function getAirPollutionBarChartData(currentAirPollutionData) {
     return {

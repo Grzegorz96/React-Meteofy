@@ -17,8 +17,6 @@ export default function AirPollutionBarChart({
             </Datetime>
             <Bar
                 data={getAirPollutionBarChartData(currentAirPollutionData)}
-                height={380}
-                width={660}
                 plugins={[ChartDataLabels]}
                 options={getAirPollutionBarChartOptions(city)}
             />

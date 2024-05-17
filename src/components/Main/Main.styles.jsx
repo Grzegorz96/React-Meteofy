@@ -13,4 +13,8 @@ export const Main = styled.main`
     gap: 10px;
     overflow-y: auto;
     overflow-x: hidden;
+
+    @media (max-width: 768px) {
+        padding: 10px;
+    }
 `;
