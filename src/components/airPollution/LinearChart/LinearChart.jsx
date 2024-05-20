@@ -2,15 +2,16 @@ import { Chart as _ } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { airPollutionlinearChartOptions } from "../../../utils/charts/chartOptions";
+import { LinearChartWrapper } from "./LinearChart.styles";
 
 export default function AirPollutionLinearChart({ filteredData }) {
     return (
-        <Line
-            data={filteredData}
-            plugins={[ChartDataLabels]}
-            options={airPollutionlinearChartOptions}
-            width={822}
-            height={120}
-        />
+        <LinearChartWrapper>
+            <Line
+                data={filteredData}
+                plugins={[ChartDataLabels]}
+                options={airPollutionlinearChartOptions}
+            />
+        </LinearChartWrapper>
     );
 }

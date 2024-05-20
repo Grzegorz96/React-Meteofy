@@ -14,7 +14,7 @@ export default function HourlyWeatherItem({ hourData }) {
                     ? `${Math.round(hourData.precipprob)}%`
                     : null}
             </Label>
-            <WeatherIcon $icon={hourData.icon} />
+            <WeatherIcon $icon={hourData.icon} width={"40px"} height={"40px"} />
             <Label>{Math.round(hourData.temp)}°C</Label>
         </HourlyLabel>
     );

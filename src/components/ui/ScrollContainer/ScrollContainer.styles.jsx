@@ -20,6 +20,14 @@ export const NavigateButton = styled.button`
     cursor: pointer;
     font-size: 20px;
     border: 2px solid ${(props) => props.theme.dark.primary};
+
+    @media (max-width: 550px) {
+        font-size: 13px;
+    }
+
+    @media (max-width: 500px) {
+        display: none;
+    }
 `;
 
 export const ScrollWrapper = styled.div`
@@ -31,4 +39,14 @@ export const ScrollWrapper = styled.div`
     margin-inline: 10px;
     width: calc(100% - 20px);
     height: 120px;
+    overflow: hidden;
+
+    @media (max-width: 550px) {
+        height: 100px;
+    }
+
+    @media (max-width: 500px) {
+        height: 90px;
+        padding-inline: 5px;
+    }
 `;

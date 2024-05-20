@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Accordion, AccordionItemButton } from "react-accessible-accordion";
 
 export const Title = styled.div`
@@ -9,8 +9,17 @@ export const Title = styled.div`
 export const WeatherIcon = styled.img.attrs((props) => ({
     src: `/src/assets/visualCrossingWeatherIcons/${props.$icon}.svg`,
 }))`
-    width: 40px;
-    height: 40px;
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};
+
+    ${(props) =>
+        props.width === "40px" &&
+        css`
+            @media (max-width: 550px) {
+                width: 30px;
+                height: 30px;
+            }
+        `}
 `;
 
 export const FaceIcon = styled.img.attrs((props) => ({
@@ -28,13 +37,19 @@ export const Day = styled.div`
     color: ${({ theme }) => theme.dark.primary};
     flex: 1 1;
     font-weight: 600;
-    margin-left: 15px;
+
+    @media (max-width: 370px) {
+        font-size: 10px;
+    }
 `;
 
 export const Description = styled.div`
     flex: 1 1;
-    margin-right: 15px;
     text-align: right;
+
+    @media (max-width: 370px) {
+        font-size: 10px;
+    }
 `;
 
 export const StyledAccordion = styled(Accordion)`
@@ -45,14 +60,21 @@ export const StyledAccordion = styled(Accordion)`
 export const DailyDetailsGrid = styled.div`
     background-color: #f5f5f5ac;
     grid-row-gap: 0;
-    grid-column-gap: 15px;
+    grid-column-gap: 30px;
     row-gap: 0;
-    column-gap: 30px;
     display: grid;
     flex: 1 1;
     grid-template-columns: auto auto;
     padding: 5px 15px;
     margin-inline: 10px;
+
+    @media (max-width: 500px) {
+        grid-column-gap: 10px;
+    }
+
+    @media (max-width: 400px) {
+        grid-template-columns: auto;
+    }
 `;
 
 export const Wrapper = styled.div`
@@ -64,11 +86,23 @@ export const Wrapper = styled.div`
     margin-inline: 10px;
     padding: 5px 0;
     background-color: #f5f5f5ac;
+
+    @media (max-width: 600px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 12px;
+    }
 `;
 
 export const SelectButtonsWrapper = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 5px;
+    margin-inline: 5px;
 `;
 
 export const SelectButton = styled.button`
@@ -80,7 +114,21 @@ export const SelectButton = styled.button`
     font-weight: 600;
     padding: 7px;
     border-radius: 10px;
+    width: 60px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 600px) {
+        font-size: 12px;
+        width: 50px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 10px;
+        width: 40px;
+    }
 `;
 
 export const DailyDetailsGridItem = styled.div`
@@ -88,6 +136,10 @@ export const DailyDetailsGridItem = styled.div`
     align-items: center;
     justify-content: space-between;
     height: 30px;
+
+    @media (max-width: 550px) {
+        font-size: 14px;
+    }
 `;
 
 export const Label = styled.div`
@@ -95,6 +147,7 @@ export const Label = styled.div`
     font-size: ${(props) => props.$fontSize};
     font-weight: ${(props) => props.$fontWeight};
     height: ${(props) => props.$height};
+    text-align: center;
 `;
 
 export const StyledAccordionItemButton = styled(AccordionItemButton)`
@@ -107,14 +160,31 @@ export const StyledAccordionItemButton = styled(AccordionItemButton)`
     cursor: pointer;
     font-size: 14px;
     padding: 5px 20px;
+    gap: 10px;
+
+    @media (max-width: 500px) {
+        padding: 5px 10px;
+    }
+
+    @media (max-width: 450px) {
+        font-size: 12px;
+    }
+
+    @media (max-width: 280px) {
+        gap: 5px;
+    }
 `;
 
 export const HourlyLabel = styled.div`
-    height: 120px;
     min-width: 60px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
+
+    @media (max-width: 550px) {
+        font-size: 14px;
+    }
 `;

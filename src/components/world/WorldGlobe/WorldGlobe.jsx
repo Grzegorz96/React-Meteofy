@@ -28,7 +28,7 @@ export default function WorldGlobe({ fetchedCitiesData }) {
                             fade={true}
                         />
                         <OrbitControls
-                            maxDistance={6}
+                            maxDistance={8}
                             minDistance={3.5}
                             enableZoom={true}
                             enablePan={true}

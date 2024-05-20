@@ -103,7 +103,7 @@ export const airPollutionlinearChartOptions = {
             },
         },
     },
-    responsive: false,
+    responsive: true,
     maintainAspectRatio: false,
 };
 
@@ -126,7 +126,7 @@ export function getLongTermWeatherLinearChartOptions(
                                 : " " + selectedDataset.unit
                         }`;
                     },
-                    color: "#ffffff",
+                    color: "#a1a1a1",
                 },
                 beginAtZero: true,
             },
@@ -138,7 +138,7 @@ export function getLongTermWeatherLinearChartOptions(
                 },
                 beginAtZero: true,
                 ticks: {
-                    color: "#ffffff",
+                    color: "#a1a1a1",
                 },
                 min: selectedDateRange[0],
                 max: selectedDateRange[1],

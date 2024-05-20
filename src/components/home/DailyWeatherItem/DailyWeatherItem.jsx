@@ -25,7 +25,11 @@ export default function DailyWeatherItem({
         <AccordionItem>
             <AccordionItemHeading>
                 <StyledAccordionItemButton>
-                    <WeatherIcon $icon={dayData.icon} />
+                    <WeatherIcon
+                        $icon={dayData.icon}
+                        width={"30px"}
+                        height={"30px"}
+                    />
                     <Day>
                         {`${dayData.datetime.substring(5)} ${
                             forecastDays[index % forecastDays.length]
@@ -40,6 +44,10 @@ export default function DailyWeatherItem({
             </AccordionItemHeading>
             <AccordionItemPanel>
                 <DailyDetailsGrid>
+                    <DailyDetailsGridItem>
+                        <Label $grey>Feels like:</Label>
+                        <Label>{Math.round(dayData.feelslike)}°C</Label>
+                    </DailyDetailsGridItem>
                     <DailyDetailsGridItem>
                         <Label $grey>Pressure:</Label>
                         <Label>{Math.round(dayData.pressure)} hPa</Label>
@@ -59,10 +67,6 @@ export default function DailyWeatherItem({
                     <DailyDetailsGridItem>
                         <Label $grey>Visibility:</Label>
                         <Label>{Math.round(dayData.visibility)} km</Label>
-                    </DailyDetailsGridItem>
-                    <DailyDetailsGridItem>
-                        <Label $grey>Feels like:</Label>
-                        <Label>{Math.round(dayData.feelslike)}°C</Label>
                     </DailyDetailsGridItem>
                 </DailyDetailsGrid>
                 <ScrollContainer

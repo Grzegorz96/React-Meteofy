@@ -51,8 +51,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
                         return (
                             date <
                                 new Date().setDate(new Date().getDate() - 93) ||
-                            date >
-                                new Date().setDate(new Date().getDate() + 116)
+                            date > new Date().setDate(new Date().getDate() + 91)
                         );
                     }}
                 />

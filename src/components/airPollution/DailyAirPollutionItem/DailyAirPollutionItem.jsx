@@ -26,11 +26,12 @@ export default function DailyAirPollutionItem({
     forecastDays,
     scrollableContainerRef,
 }) {
-    const [selectedDataset, setSelectedDataset] = useState("PM1");
+    const [selectedDataset, setSelectedDataset] = useState(POLLUTION_NAMES[0]);
     const filteredData = getAirPollutionFilteredLinearChartData(
         dayData,
         selectedDataset
     );
+
     const aqiUSData = getAqiUSData(dayData.aqius);
 
     return (
@@ -38,22 +39,16 @@ export default function DailyAirPollutionItem({
             <AccordionItemHeading>
                 <StyledAccordionItemButton>
                     <FaceIcon
-                        $icon={aqiUSData.faceIcon}
-                        $backgroundColor={aqiUSData.aqiColor}
+                        $icon={aqiUSData?.faceIcon}
+                        $backgroundColor={aqiUSData?.aqiColor}
                     />
                     <Day>
                         {`${dayData.datetime.substring(5)} ${
                             forecastDays[index % forecastDays.length]
                         }`}
                     </Day>
-                    {aqiUSData && (
-                        <>
-                            <Description>
-                                {aqiUSData.levelsOfConcern}
-                            </Description>
-                            <Label $grey>{`AQI US ${dayData.aqius}`}</Label>
-                        </>
-                    )}
+                    <Description>{aqiUSData?.levelsOfConcern}</Description>
+                    <Label $grey>{`AQI US ${dayData.aqius}`}</Label>
                 </StyledAccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
