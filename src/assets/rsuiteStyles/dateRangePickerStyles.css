@@ -1,0 +1,16 @@
+.rs-btn-link {
+    font-size: 12px;
+}
+
+.rs-picker-popup {
+    margin-top: 15px;
+}
+
+.rs-date-range-input {
+    color: #000000;
+    font-size: 16px;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}

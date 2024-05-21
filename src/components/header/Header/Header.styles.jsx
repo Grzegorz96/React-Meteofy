@@ -2,9 +2,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Header = styled.header`
-    position: fixed;
-    top: 0;
-    left: 0;
     background-color: #66666684;
     width: 100%;
     height: 70px;
@@ -19,14 +16,15 @@ export const StyledLink = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 260px;
+    max-width: 210px;
     flex-shrink: 1;
     margin-left: 10px;
 `;
 
 export const Logo = styled.img.attrs({
-    src: "/src/assets/images/logo-weather.png",
+    src: "src/assets/images/logo-meteofy.png",
     alt: "Logo Weather",
 })`
+    height: auto;
     width: 100%;
 `;

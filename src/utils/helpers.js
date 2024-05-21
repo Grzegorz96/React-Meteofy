@@ -1,5 +1,6 @@
 import { aqiUSData } from "./constants/aqiUSData";
 import { WEEK_DAYS } from "./constants/weekDays";
+import { startOfDay, addDays } from "date-fns";
 
 export function getAqiUSData(aqiValue) {
     if (aqiValue === null || isNaN(aqiValue)) {
@@ -27,11 +28,7 @@ export const getForecastDays = () => {
 };
 
 export const getDefaultDateRange = () => {
-    const startDate = new Date();
-    startDate.setHours(0, 0, 0, 0);
-    const endDate = new Date(startDate);
-    endDate.setDate(startDate.getDate() + 45);
-    return [startDate, endDate];
+    return [startOfDay(new Date()), startOfDay(addDays(new Date(), 44))];
 };
 
 export const requestCityDelay = {

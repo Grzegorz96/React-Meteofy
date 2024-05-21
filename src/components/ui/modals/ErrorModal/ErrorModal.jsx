@@ -39,7 +39,17 @@ export default function ErrorModal({ data, setData }) {
                 <FaRegCircleXmark />
                 <h1>Error!</h1>
                 <ModalText>{data.error}</ModalText>
-                <ModalButton onClick={() => setIsOpen(false)}>OK</ModalButton>
+                <ModalButton
+                    onClick={() => setIsOpen(false)}
+                    autoFocus
+                    onKeyDown={(e) => {
+                        if (e.key === "Tab") {
+                            e.preventDefault();
+                        }
+                    }}
+                >
+                    OK
+                </ModalButton>
             </Modal>
         </Overlay>
     );

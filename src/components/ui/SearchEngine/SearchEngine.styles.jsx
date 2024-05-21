@@ -41,9 +41,8 @@ export const globalInputStyles = {
         display: "flex",
         alignItems: "center",
         width: "100%",
-        maxWidth: "400px",
         flexShrink: "2",
-        minWidth: "150px",
+        minWidth: "140px",
     }),
     control: (styles) => ({
         ...styles,
@@ -70,5 +69,11 @@ export const globalInputStyles = {
         // backgroundColor: isFocused ? "#49ebd5" : "#ffffff",
         // color: isFocused ? "#ffffff" : "#414141",
         // cursor: "pointer",
+    }),
+    singleValue: (styles) => ({
+        ...styles,
+        "@media (max-width: 450px)": {
+            fontSize: "12px",
+        },
     }),
 };
