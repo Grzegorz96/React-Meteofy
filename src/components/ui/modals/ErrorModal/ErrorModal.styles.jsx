@@ -31,6 +31,16 @@ export const Modal = styled(animated.div)`
     svg {
         font-size: 90px;
         color: #f27474;
+
+        @media (max-width: 768px) {
+            font-size: 70px;
+        }
+    }
+`;
+
+export const ModalTitle = styled.h1`
+    @media (max-width: 768px) {
+        font-size: 28px;
     }
 `;
 
@@ -38,6 +48,10 @@ export const ModalText = styled.span`
     font-size: 20px;
     font-weight: 600;
     text-align: center;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
 `;
 
 export const ModalButton = styled.button`
@@ -49,9 +63,13 @@ export const ModalButton = styled.button`
     font-size: 16px;
     cursor: pointer;
     font-weight: 500;
-    transition: 0.3s linear;
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0);
+
+    &:focus {
+        outline: 3px solid #b7b2ef;
+    }
+
     &:hover {
-        background-color: #0056b3;
+        background-color: #655cc9;
     }
 `;

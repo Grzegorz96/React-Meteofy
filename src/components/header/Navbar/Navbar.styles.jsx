@@ -31,6 +31,11 @@ export const Navigate = styled.nav`
         padding: 5px;
         transition: 0.3s linear;
 
+        &:focus {
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
         &:hover {
             background-color: rgba(152, 125, 251, 0.541);
         }

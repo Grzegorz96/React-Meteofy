@@ -7,4 +7,8 @@
     align-items: center;
     overflow: hidden;
     padding-left: 4px;
+
+    &:focus-visible {
+        outline: 2px solid #333;
+    }
 }

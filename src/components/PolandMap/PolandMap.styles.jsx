@@ -11,7 +11,9 @@ export const PolandMapSVG = styled(animated.svg)`
         stroke-width: 0.5;
         fill: #eeeeee;
         cursor: pointer;
+        outline: none;
 
+        &:focus-visible,
         &:hover {
             fill: #ffffff;
         }

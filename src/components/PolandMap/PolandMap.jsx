@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
     PolandMapSVG,
     MapItem,
@@ -7,10 +8,19 @@ import {
     Text,
 } from "./PolandMap.styles";
 import { useSpring } from "@react-spring/web";
-import { openWeatherModal } from "../ui/modals/WeatherModal/WeatherModal";
+import {
+    openWeatherModal,
+    closeWeatherModal,
+} from "../ui/modals/WeatherModal/WeatherModal";
 import { polishCitiesData } from "../../utils/citiesConfig/polishCitiesData";
 
 export default function PolandMap({ fetchedCitiesData }) {
+    useEffect(() => {
+        return () => {
+            closeWeatherModal();
+        };
+    }, []);
+
     const extensionAnimation = useSpring({
         from: {
             transform: "scale(0.7)",
@@ -43,6 +53,7 @@ export default function PolandMap({ fetchedCitiesData }) {
                         if (cityData) {
                             return (
                                 <path
+                                    tabIndex={0}
                                     key={cityData.id}
                                     id={cityData.id}
                                     title={cityData.title}
@@ -50,6 +61,12 @@ export default function PolandMap({ fetchedCitiesData }) {
                                     onClick={() =>
                                         openWeatherModal(currentCity)
                                     }
+                                    onKeyDown={(e) => {
+                                        if (e.key === "Enter") {
+                                            e.preventDefault();
+                                            openWeatherModal(currentCity);
+                                        }
+                                    }}
                                 />
                             );
                         }

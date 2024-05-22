@@ -2,7 +2,10 @@ import { useEffect, memo } from "react";
 import { useThree } from "@react-three/fiber";
 import { useTexture, Sphere } from "@react-three/drei";
 import WeatherBoard from "./WeatherBoard";
-import { openWeatherModal } from "../ui/modals/WeatherModal/WeatherModal";
+import {
+    openWeatherModal,
+    closeWeatherModal,
+} from "../ui/modals/WeatherModal/WeatherModal";
 import EarthDayMap from "../../assets/textures/8k-earth-day-map.jpg";
 import EarthCloudsMap from "../../assets/textures/8k-earth-clouds.jpg";
 import NormalMap from "../../assets/textures/8k-earth-normal-map.jpg";
@@ -22,6 +25,10 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
     useEffect(() => {
         camera.layers.enable(1);
         setIsLoading(false);
+
+        return () => {
+            closeWeatherModal();
+        };
     }, []);
 
     const setOffset = (capital) => {

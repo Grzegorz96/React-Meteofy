@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { Overlay, Modal, ModalText, ModalButton } from "./ErrorModal.styles";
+import {
+    Overlay,
+    Modal,
+    ModalText,
+    ModalButton,
+    ModalTitle,
+} from "./ErrorModal.styles";
 import { FaRegCircleXmark } from "react-icons/fa6";
 import { useSpring } from "@react-spring/web";
 
@@ -37,7 +43,7 @@ export default function ErrorModal({ data, setData }) {
                 onClick={(e) => e.stopPropagation()}
             >
                 <FaRegCircleXmark />
-                <h1>Error!</h1>
+                <ModalTitle>Error!</ModalTitle>
                 <ModalText>{data.error}</ModalText>
                 <ModalButton
                     onClick={() => setIsOpen(false)}

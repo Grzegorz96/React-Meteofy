@@ -6,7 +6,7 @@ import {
     DateRangePickerStyled,
 } from "./LongTermWeatherMain.styles";
 import "rsuite/dist/rsuite-no-reset.min.css";
-import "../../../assets/rsuiteStyles/dateRangePickerStyles.css";
+import "../../../assets/CSS/rsuiteStyles/dateRangePickerStyles.css";
 import LongTermWeatherLinearChart from "../LinearChart/LinearChart";
 import { useState, useMemo, memo } from "react";
 import { getLongTermWeatherFilteredLinearChartData } from "../../../utils/charts/chartData";

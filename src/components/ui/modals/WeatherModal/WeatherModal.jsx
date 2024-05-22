@@ -4,7 +4,7 @@ import {
     WeatherInfo,
     WeatherInfoValue,
 } from "./WeatherModal.styles";
-import "../../../../assets/sweetAlert2Styles/weatherCityModal.css";
+import "../../../../assets/CSS/sweetAlert2Styles/weatherCityModal.css";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
@@ -60,6 +60,11 @@ export const openWeatherModal = (city) => {
             title: "modal-title",
             htmlContainer: "modal-html-container",
             icon: "modal-icon",
+            popup: "modal-popup",
         },
     });
+};
+
+export const closeWeatherModal = () => {
+    MySwal.close();
 };

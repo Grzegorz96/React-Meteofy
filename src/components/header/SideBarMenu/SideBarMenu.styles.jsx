@@ -1,11 +1,12 @@
+import { zhCN } from "date-fns/locale";
+
 export const sideBarStyles = {
     bmBurgerButton: {
         position: "relative",
-        width: "40px",
-        height: "35px",
+        width: "35px",
+        height: "30px",
         marginRight: "10px",
     },
-
     bmBurgerBars: {
         background: "#373a47",
     },
@@ -16,7 +17,8 @@ export const sideBarStyles = {
         width: "40px",
     },
     bmCross: {
-        right: "4px",
+        top: "-1px",
+        right: "4.5px",
         background: "#bdc3c7",
         height: "30px",
     },
@@ -36,5 +38,6 @@ export const sideBarStyles = {
         background: "rgba(0, 0, 0, 0.3)",
         left: 0,
         top: 0,
+        zIndex: 1070,
     },
 };

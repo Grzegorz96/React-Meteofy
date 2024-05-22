@@ -120,6 +120,11 @@ export const SelectButton = styled.button`
     justify-content: center;
     align-items: center;
 
+    &:focus-visible {
+        box-shadow: 0 0 0 2px ${(props) => props.theme.dark.primary};
+        outline: none;
+    }
+
     @media (max-width: 600px) {
         font-size: 12px;
         width: 50px;
@@ -161,6 +166,10 @@ export const StyledAccordionItemButton = styled(AccordionItemButton)`
     font-size: 14px;
     padding: 5px 20px;
     gap: 10px;
+
+    &:focus-visible {
+        outline: 2px solid ${(props) => props.theme.dark.primary};
+    }
 
     @media (max-width: 500px) {
         padding: 5px 10px;

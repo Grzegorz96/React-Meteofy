@@ -16,14 +16,20 @@ export const StyledLink = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 210px;
+    max-width: 220px;
     flex-shrink: 1;
     margin-left: 10px;
+
+    &:focus-visible {
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 6px;
+    }
 `;
 
 export const Logo = styled.img.attrs({
     src: "src/assets/images/logo-meteofy.png",
-    alt: "Logo Weather",
+    alt: "Logo Meteofy",
 })`
     height: auto;
     width: 100%;

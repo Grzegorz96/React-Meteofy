@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const ScrollableContainer = styled.div`
+export const ScrollableContainer = styled.div.attrs({
+    tabIndex: 0,
+})`
     overflow-y: auto;
     display: flex;
     gap: 3px;
@@ -8,6 +10,12 @@ export const ScrollableContainer = styled.div`
 
     &::-webkit-scrollbar {
         display: none;
+    }
+
+    &:focus-visible {
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
     }
 `;
 
@@ -20,6 +28,11 @@ export const NavigateButton = styled.button`
     cursor: pointer;
     font-size: 20px;
     border: 2px solid ${(props) => props.theme.dark.primary};
+
+    &:focus-visible {
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
 
     @media (max-width: 550px) {
         font-size: 13px;

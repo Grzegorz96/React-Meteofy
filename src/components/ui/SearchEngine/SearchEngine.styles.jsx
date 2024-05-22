@@ -1,5 +1,3 @@
-import { transform } from "lodash";
-
 export const localInputStyles = {
     container: (styles) => ({
         ...styles,
@@ -19,6 +17,7 @@ export const localInputStyles = {
         borderBottomRightRadius: "20px",
         borderBottomLeftRadius: "20px",
         marginInline: "20px",
+        cursor: "pointer",
     }),
     placeholder: (styles) => ({
         ...styles,
@@ -30,8 +29,9 @@ export const localInputStyles = {
     menu: (styles) => ({
         ...styles,
     }),
-    option: (styles, { isFocused }) => ({
+    option: (styles) => ({
         ...styles,
+        cursor: "pointer",
     }),
 };
 
@@ -42,12 +42,14 @@ export const globalInputStyles = {
         alignItems: "center",
         width: "100%",
         flexShrink: "2",
-        minWidth: "140px",
+        minWidth: "146px",
+        maxWidth: "400px",
     }),
     control: (styles) => ({
         ...styles,
         height: "40px",
         width: "100%",
+        cursor: "pointer",
     }),
     placeholder: (styles) => ({
         ...styles,
@@ -55,20 +57,17 @@ export const globalInputStyles = {
         whiteSpace: "nowrap",
         textOverflow: "ellipsis",
         overflow: "hidden",
+        "@media (max-width: 450px)": {
+            fontSize: "12px",
+        },
     }),
     menu: (styles) => ({
         ...styles,
         top: "15px",
-        // borderRadius: "5px",
-        // border: "none",
-        // boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.1)",
-        // width: "100%",
     }),
-    option: (styles, { isFocused }) => ({
+    option: (styles) => ({
         ...styles,
-        // backgroundColor: isFocused ? "#49ebd5" : "#ffffff",
-        // color: isFocused ? "#ffffff" : "#414141",
-        // cursor: "pointer",
+        cursor: "pointer",
     }),
     singleValue: (styles) => ({
         ...styles,

@@ -1,13 +1,23 @@
+import { useEffect } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { divIcon } from "leaflet";
 import { WeatherIcon, Temp } from "./EuropeMap.styles";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import { renderToString } from "react-dom/server";
 import "leaflet/dist/leaflet.css";
-import "../../assets/reactLeafletStyles/customMarkerIcon.css";
-import { openWeatherModal } from "../ui/modals/WeatherModal/WeatherModal";
+import "../../assets/CSS/reactLeafletStyles/customMarkerIcon.css";
+import {
+    openWeatherModal,
+    closeWeatherModal,
+} from "../ui/modals/WeatherModal/WeatherModal";
 
 export default function EuropeMap({ fetchedCitiesData }) {
+    useEffect(() => {
+        return () => {
+            closeWeatherModal();
+        };
+    }, []);
+
     const customMarker = (weatherIcon, temperature) =>
         divIcon({
             className: "custom-marker-icon",
@@ -60,6 +70,12 @@ export default function EuropeMap({ fetchedCitiesData }) {
                     <Marker
                         eventHandlers={{
                             click: () => openWeatherModal(city),
+                            keydown: (e) => {
+                                if (e.originalEvent.key === "Enter") {
+                                    e.originalEvent.preventDefault();
+                                    openWeatherModal(city);
+                                }
+                            },
                         }}
                         key={city.id}
                         position={[city.coord.lat, city.coord.lon]}
