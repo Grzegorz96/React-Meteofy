@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const AirQualityIndex = styled.div`
-    color: ${({ theme }) => theme.dark.text};
+    color: ${({ theme }) => theme.textPrimary};
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
-    background-color: ${({ theme }) => theme.dark.primary};
+    background-color: ${({ theme }) => theme.secondary};
     border-radius: 0 6px 6px 0;
     grid-area: airQualityIndex;
     display: grid;
@@ -107,7 +107,7 @@ export const AirQualityIndexFooter = styled.div`
     width: 100%;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid ${({ theme }) => theme.dark.text};
+    border-top: 1px solid ${({ theme }) => theme.textPrimary};
     border-radius: 0 0 6px 6px;
     grid-area: airQualityIndexFooter;
 

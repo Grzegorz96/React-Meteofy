@@ -47,7 +47,7 @@ export const customSelectStyles = {
 export const LongTermWeatherWrapper = styled.div`
     border-radius: 6px;
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
-    background-color: ${({ theme }) => theme.dark.primary};
+    background-color: ${({ theme }) => theme.secondary};
     padding: 10px 20px 20px 20px;
     display: flex;
     flex-direction: column;

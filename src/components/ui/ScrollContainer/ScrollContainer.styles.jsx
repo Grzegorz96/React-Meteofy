@@ -27,7 +27,9 @@ export const NavigateButton = styled.button`
     border-bottom-right-radius: ${(props) => props.$right};
     cursor: pointer;
     font-size: 20px;
-    border: 2px solid ${(props) => props.theme.dark.primary};
+    border: 2px solid ${({ theme }) => theme.textSecondary};
+    background-color: ${({ theme }) => theme.secondary};
+    color: ${({ theme }) => theme.textSecondary};
 
     &:focus-visible {
         outline: none;
@@ -46,7 +48,7 @@ export const NavigateButton = styled.button`
 export const ScrollWrapper = styled.div`
     display: flex;
     gap: 5px;
-    background-color: #f5f5f5ac;
+    background-color: ${(props) => props.theme.secondary};
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     margin-inline: 10px;

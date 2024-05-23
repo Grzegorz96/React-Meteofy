@@ -1,9 +1,9 @@
-import { NotFoundWrapper, LinkStyled } from "./NotFound.styles";
+import { NotFoundWrapper, LinkStyled, Title } from "./NotFound.styles";
 
 export default function NotFound() {
     return (
         <NotFoundWrapper>
-            <h1>404 - Not Found!</h1>
+            <Title>404 - Not Found!</Title>
             <LinkStyled to="/">Go to Home</LinkStyled>
         </NotFoundWrapper>
     );

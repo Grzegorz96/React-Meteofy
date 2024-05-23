@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Header = styled.header`
-    background-color: #66666684;
+    background-color: ${(props) => props.theme.header};
     width: 100%;
     height: 70px;
     display: flex;
@@ -28,7 +28,7 @@ export const StyledLink = styled(Link)`
 `;
 
 export const Logo = styled.img.attrs({
-    src: "src/assets/images/logo-meteofy.png",
+    src: "/src/assets/images/logo-meteofy.png",
     alt: "Logo Meteofy",
 })`
     height: auto;

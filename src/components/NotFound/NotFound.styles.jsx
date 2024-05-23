@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NotFoundWrapper = styled.div`
-    padding: 40px;
+    padding: 25px;
     margin: auto auto;
     display: flex;
     flex-direction: column;
@@ -15,11 +15,18 @@ export const NotFoundWrapper = styled.div`
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 `;
 
+export const Title = styled.h1`
+    text-align: center;
+
+    @media (max-width: 350px) {
+        font-size: 24px;
+    }
+`;
+
 export const LinkStyled = styled(Link)`
     text-decoration: none;
     background-color: #7066e0;
     padding: 10px 20px;
-    transition: 0.3s linear;
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0);
     cursor: pointer;
     font-size: 16px;
@@ -27,8 +34,13 @@ export const LinkStyled = styled(Link)`
     border: none;
     border-radius: 5px;
     font-weight: 500;
+    text-align: center;
+
+    &:focus {
+        outline: 3px solid #b7b2ef;
+    }
 
     &:hover {
-        background-color: #0056b3;
+        background-color: #655cc9;
     }
 `;

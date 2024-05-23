@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const AirPollutionBarChartWrapper = styled.div`
     border-radius: 6px 0 0 6px;
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
-    background-color: ${({ theme }) => theme.dark.primary};
+    background-color: ${({ theme }) => theme.secondary};
     grid-area: airPollutionBarChart;
     height: 371px;
     position: relative;

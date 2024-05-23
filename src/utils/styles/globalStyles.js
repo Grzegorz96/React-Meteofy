@@ -25,9 +25,7 @@ html, body, #root {
 
 
 body {
-    background: ${(props) =>
-        props.theme.dark.primary} url(/src/assets/images/theme.jpg) center/cover
-        no-repeat;
+    background: ${(props) => props.theme.primary};
 }
 
 * {

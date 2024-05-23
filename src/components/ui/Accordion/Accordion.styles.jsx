@@ -4,6 +4,7 @@ import { Accordion, AccordionItemButton } from "react-accessible-accordion";
 export const Title = styled.div`
     font-size: 20px;
     font-weight: 700;
+    color: ${({ theme }) => theme.textPrimary};
 `;
 
 export const WeatherIcon = styled.img.attrs((props) => ({
@@ -34,7 +35,7 @@ export const FaceIcon = styled.img.attrs((props) => ({
 `;
 
 export const Day = styled.div`
-    color: ${({ theme }) => theme.dark.primary};
+    color: ${({ theme }) => theme.textPrimary};
     flex: 1 1;
     font-weight: 600;
 
@@ -44,6 +45,7 @@ export const Day = styled.div`
 `;
 
 export const Description = styled.div`
+    color: ${({ theme }) => theme.textPrimary};
     flex: 1 1;
     text-align: right;
 
@@ -58,7 +60,7 @@ export const StyledAccordion = styled(Accordion)`
 `;
 
 export const DailyDetailsGrid = styled.div`
-    background-color: #f5f5f5ac;
+    background-color: ${({ theme }) => theme.secondary};
     grid-row-gap: 0;
     grid-column-gap: 30px;
     row-gap: 0;
@@ -85,7 +87,7 @@ export const Wrapper = styled.div`
     gap: 10px;
     margin-inline: 10px;
     padding: 5px 0;
-    background-color: #f5f5f5ac;
+    background-color: ${({ theme }) => theme.secondary};
 
     @media (max-width: 600px) {
         font-size: 14px;
@@ -107,10 +109,11 @@ export const SelectButtonsWrapper = styled.div`
 
 export const SelectButton = styled.button`
     background-color: ${({ $active, theme }) =>
-        $active ? theme.dark.primary : theme.dark.text};
+        $active ? theme.textSecondary : theme.textPrimary};
     color: ${({ $active, theme }) =>
-        $active ? theme.dark.text : theme.dark.primary};
-    border: 2px solid ${(props) => props.theme.dark.primary};
+        $active ? theme.textPrimary : theme.primary};
+    border: 2px solid ${({ theme }) => theme.secondary};
+
     font-weight: 600;
     padding: 7px;
     border-radius: 10px;
@@ -121,8 +124,7 @@ export const SelectButton = styled.button`
     align-items: center;
 
     &:focus-visible {
-        box-shadow: 0 0 0 2px ${(props) => props.theme.dark.primary};
-        outline: none;
+        outline: 2px solid ${({ theme }) => theme.textPrimary};
     }
 
     @media (max-width: 600px) {
@@ -148,7 +150,8 @@ export const DailyDetailsGridItem = styled.div`
 `;
 
 export const Label = styled.div`
-    color: ${(props) => (props.$grey ? "#757575" : "#212121")};
+    color: ${(props) =>
+        props.$grey ? props.theme.textSecondary : props.theme.textPrimary};
     font-size: ${(props) => props.$fontSize};
     font-weight: ${(props) => props.$fontWeight};
     height: ${(props) => props.$height};
@@ -156,7 +159,7 @@ export const Label = styled.div`
 `;
 
 export const StyledAccordionItemButton = styled(AccordionItemButton)`
-    background-color: #f5f5f5;
+    background-color: ${({ theme }) => theme.secondary};
     border-radius: 15px;
     height: 40px;
     margin-top: 5px;
@@ -168,7 +171,7 @@ export const StyledAccordionItemButton = styled(AccordionItemButton)`
     gap: 10px;
 
     &:focus-visible {
-        outline: 2px solid ${(props) => props.theme.dark.primary};
+        outline: 2px solid ${({ theme }) => theme.textPrimary};
     }
 
     @media (max-width: 500px) {

@@ -14,6 +14,6 @@ export const AirQualityIndexMainDescriptionWrapper = styled.div`
 
 export const AirQualityIndexMainDescriptionText = styled.h3`
     font-size: ${(props) => props.$fontSize};
-    color: ${({ theme }) => theme.dark.primary};
+    color: ${({ theme }) => theme.textPrimary};
     margin-bottom: ${(props) => props.$marginBottom};
 `;
