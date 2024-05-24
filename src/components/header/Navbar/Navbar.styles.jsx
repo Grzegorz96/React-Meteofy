@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const navLinkStyles = ({ isActive }) => {
     return {
-        color: isActive ? "#49ebd5" : "#ffffff",
+        color: isActive ? "#03dac6" : "#ffffff",
     };
 };
 
@@ -25,7 +25,7 @@ export const Navigate = styled.nav`
         align-items: center;
         gap: 5px;
         position: relative;
-        background-color: rgba(153, 125, 251, 255);
+        background-color: ${({ theme }) => theme.navLinks};
         font-weight: bold;
         white-space: nowrap;
         padding: 5px;
@@ -46,7 +46,7 @@ export const Navigate = styled.nav`
 
         &.active::before {
             content: "";
-            background-color: #49ebd5;
+            background-color: #03dac6;
             position: absolute;
             height: ${({ $isMobile }) => ($isMobile ? "100%" : "5px")};
             width: ${({ $isMobile }) => ($isMobile ? "5px" : "100%")};

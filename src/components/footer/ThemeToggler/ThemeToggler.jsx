@@ -3,25 +3,28 @@ import {
     Toggler,
     SwitcherElement,
 } from "./ThemeToggler.styles";
-import useLocalStorage from "use-local-storage";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleThemeMode } from "../../../state/themeDataSlice";
 
 export default function ThemeToggler() {
-    const preference = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-    ).matches;
-
-    const [isDarkMode, setIsDarkMode] = useLocalStorage(
-        "isDarkMode",
-        preference
-    );
+    const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
+    const dispatch = useDispatch();
 
     return (
         <TogglerContainer>
             <Toggler
-                onChange={() => setIsDarkMode(!isDarkMode)}
+                onChange={() => {
+                    dispatch(toggleThemeMode());
+                }}
                 checked={isDarkMode}
             />
-            <SwitcherElement $isDarkMode={isDarkMode} />
+            <SwitcherElement
+                onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                        dispatch(toggleThemeMode());
+                    }
+                }}
+            />
         </TogglerContainer>
     );
 }

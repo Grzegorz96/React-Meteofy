@@ -5,6 +5,7 @@ export const Title = styled.div`
     font-size: 20px;
     font-weight: 700;
     color: ${({ theme }) => theme.textPrimary};
+    transition: color 0.25s ease-in-out;
 `;
 
 export const WeatherIcon = styled.img.attrs((props) => ({
@@ -35,7 +36,6 @@ export const FaceIcon = styled.img.attrs((props) => ({
 `;
 
 export const Day = styled.div`
-    color: ${({ theme }) => theme.textPrimary};
     flex: 1 1;
     font-weight: 600;
 
@@ -45,7 +45,6 @@ export const Day = styled.div`
 `;
 
 export const Description = styled.div`
-    color: ${({ theme }) => theme.textPrimary};
     flex: 1 1;
     text-align: right;
 
@@ -61,6 +60,7 @@ export const StyledAccordion = styled(Accordion)`
 
 export const DailyDetailsGrid = styled.div`
     background-color: ${({ theme }) => theme.secondary};
+    transition: background-color 0.25s ease-in-out;
     grid-row-gap: 0;
     grid-column-gap: 30px;
     row-gap: 0;
@@ -156,10 +156,13 @@ export const Label = styled.div`
     font-weight: ${(props) => props.$fontWeight};
     height: ${(props) => props.$height};
     text-align: center;
+    transition: color 0.25s ease-in-out;
 `;
 
 export const StyledAccordionItemButton = styled(AccordionItemButton)`
     background-color: ${({ theme }) => theme.secondary};
+    color: ${({ theme }) => theme.textPrimary};
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
     border-radius: 15px;
     height: 40px;
     margin-top: 5px;

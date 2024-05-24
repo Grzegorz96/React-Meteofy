@@ -3,54 +3,61 @@ import {
     WeatherIcon,
     WeatherInfo,
     WeatherInfoValue,
+    Title,
 } from "./WeatherModal.styles";
 import "../../../../assets/CSS/sweetAlert2Styles/weatherCityModal.css";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
+import { darkTheme, lightTheme } from "../../../../utils/styles/theme";
 
-export const openWeatherModal = (city) => {
+export const openWeatherModal = (city, isDarkMode) => {
     MySwal.fire({
         width: "400px",
+        background: isDarkMode ? darkTheme.secondary : lightTheme.secondary,
         heightAuto: false,
         iconHtml: <WeatherIcon $icon={city.weather[0].icon} />,
         title: (
             <>
-                {`${city.name} ${Math.round(city.main.temp)}°C`}
-                <Paragraph>{city.weather[0].description}</Paragraph>
+                <Title $isDarkMode={isDarkMode}>
+                    {`${city.name} ${Math.round(city.main.temp)}°C`}
+                </Title>
+                <Paragraph $isDarkMode={isDarkMode}>
+                    {city.weather[0].description}
+                </Paragraph>
             </>
         ),
         html: (
             <>
-                <WeatherInfo>
+                <WeatherInfo $isDarkMode={isDarkMode}>
                     feels like:
-                    <WeatherInfoValue>
+                    <WeatherInfoValue $isDarkMode={isDarkMode}>
                         {`${Math.round(city.main.feels_like)}°C`}
                     </WeatherInfoValue>
                 </WeatherInfo>
-                <WeatherInfo>
+                <WeatherInfo $isDarkMode={isDarkMode}>
                     humidity:
-                    <WeatherInfoValue>
+                    <WeatherInfoValue $isDarkMode={isDarkMode}>
                         {`${Math.round(city.main.humidity)}%`}
                     </WeatherInfoValue>
                 </WeatherInfo>
-                <WeatherInfo>
+                <WeatherInfo $isDarkMode={isDarkMode}>
                     wind:
-                    <WeatherInfoValue>
+                    <WeatherInfoValue $isDarkMode={isDarkMode}>
                         {`${Math.round(city.wind.speed * 3.6)}
                                  km/h`}
                     </WeatherInfoValue>
                 </WeatherInfo>
-                <WeatherInfo>
+                <WeatherInfo $isDarkMode={isDarkMode}>
                     pressure:
-                    <WeatherInfoValue>
+                    <WeatherInfoValue $isDarkMode={isDarkMode}>
                         {`${Math.round(city.main.pressure)}
                                  hPa`}
                     </WeatherInfoValue>
                 </WeatherInfo>
-                <WeatherInfo>
+                <WeatherInfo $isDarkMode={isDarkMode}>
                     clouds:
-                    <WeatherInfoValue>
+                    <WeatherInfoValue $isDarkMode={isDarkMode}>
                         {`${Math.round(city.clouds.all)}%`}
                     </WeatherInfoValue>
                 </WeatherInfo>

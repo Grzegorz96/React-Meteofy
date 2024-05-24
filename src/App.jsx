@@ -4,13 +4,13 @@ import { router } from "./routes/router.jsx";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./utils/styles/globalStyles.js";
 import { darkTheme, lightTheme } from "./utils/styles/theme.js";
+import { useSelector } from "react-redux";
 
 function App() {
-    const [theme, setTheme] = useState("light");
-    const isDarkTheme = theme === "dark";
+    const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
 
     return (
-        <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+        <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
             <GlobalStyles />
             <RouterProvider router={router} />
         </ThemeProvider>

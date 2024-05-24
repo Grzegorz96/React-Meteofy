@@ -19,6 +19,9 @@ export const Toggler = styled.input.attrs({
 
 export const SwitcherElement = styled.label.attrs({
     htmlFor: "themeToggler",
+    tabIndex: 0,
+    role: "switch",
+    "aria-label": "Switch between dark and light mode",
 })`
     display: flex;
     align-items: center;
@@ -33,13 +36,12 @@ export const SwitcherElement = styled.label.attrs({
         background-color: ${({ theme }) => theme.primary};
         transition: background-color 0.25s ease-in-out;
     }
-    /* "#f0e056" */
+
     &::after {
         content: "";
         height: 16px;
         width: 16px;
         border-radius: 1em;
-
         background-color: ${({ theme }) => theme.textPrimary};
         position: absolute;
         left: 2px;

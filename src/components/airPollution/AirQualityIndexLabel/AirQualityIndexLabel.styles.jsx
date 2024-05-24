@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const AirQualityIndex = styled.div`
     color: ${({ theme }) => theme.textPrimary};
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+    box-shadow: 0 0 10px 0 ${({ theme }) => theme.shadow};
     background-color: ${({ theme }) => theme.secondary};
     border-radius: 0 6px 6px 0;
     grid-area: airQualityIndex;

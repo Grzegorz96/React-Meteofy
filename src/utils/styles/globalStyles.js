@@ -26,6 +26,7 @@ html, body, #root {
 
 body {
     background: ${(props) => props.theme.primary};
+    transition: background-color 0.25s ease-in-out;
 }
 
 * {

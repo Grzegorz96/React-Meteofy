@@ -29,6 +29,7 @@ export const NavigateButton = styled.button`
     font-size: 20px;
     border: 2px solid ${({ theme }) => theme.textSecondary};
     background-color: ${({ theme }) => theme.secondary};
+    transition: background-color 0.25s ease-in-out;
     color: ${({ theme }) => theme.textSecondary};
 
     &:focus-visible {
@@ -49,6 +50,7 @@ export const ScrollWrapper = styled.div`
     display: flex;
     gap: 5px;
     background-color: ${(props) => props.theme.secondary};
+    transition: background-color 0.25s ease-in-out;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     margin-inline: 10px;

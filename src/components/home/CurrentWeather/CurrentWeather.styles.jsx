@@ -8,9 +8,11 @@ export const CurrentWeatherWrapper = styled.div`
         "main main second"
         "details details details";
     border-radius: 6px;
-    box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+    box-shadow: 0 0 10px 0 ${({ theme }) => theme.shadow};
     color: ${({ theme }) => theme.textPrimary};
     background-color: ${({ theme }) => theme.primary};
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out,
+        box-shadow 0.25s ease-in-out;
     padding: 15px;
     gap: 10px;
     max-width: 800px;
@@ -30,6 +32,7 @@ export const CurrentWeatherWrapper = styled.div`
 
 const Wrapper = styled.div`
     background-color: ${({ theme }) => theme.secondary};
+    transition: background-color 0.25s ease-in-out;
     display: flex;
     border-radius: 4px;
 `;
@@ -130,7 +133,7 @@ export const WeatherIcon = styled.img.attrs((props) => ({
 `;
 
 export const Text = styled.p`
-    color: ${(props) => props.color || props.theme.textPrimary};
+    color: ${(props) => props.$grey && props.theme.textSecondary};
     font-weight: ${(props) => props.$fontWeight};
     font-size: ${(props) => props.$fontSize};
     line-height: ${(props) => props.$lineHeight};

@@ -23,7 +23,7 @@ function CurrentWeather({ currentWeather, city }) {
     return (
         <CurrentWeatherWrapper>
             <MainWrapper $gap="5px" $flexDirection="column" $width="65%">
-                <Text $fontWeight="600" $fontSize="10px" color="grey">
+                <Text $fontWeight="600" $fontSize="10px" $grey>
                     {`Weather conditions at ${currentWeather.datetime.substring(
                         0,
                         5
@@ -53,7 +53,7 @@ function CurrentWeather({ currentWeather, city }) {
                     <WeatherIcon $icon={currentWeather.icon} />
                 </TempInfo>
                 <SunInfo>
-                    <Text $fontWeight="600" $fontSize="10px" color="grey">
+                    <Text $fontWeight="600" $fontSize="10px" $grey>
                         Sunrise & Sunset
                     </Text>
                     <SunItems>
@@ -74,7 +74,7 @@ function CurrentWeather({ currentWeather, city }) {
             </SecondWrapper>
             <DetailsWrapper>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" color="grey">
+                    <Text $fontWeight="600" $fontSize="10px" $grey>
                         Feels like
                     </Text>
                     <DetailValue>
@@ -85,7 +85,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" color="grey">
+                    <Text $fontWeight="600" $fontSize="10px" $grey>
                         Wind
                     </Text>
                     <DetailValue>
@@ -96,7 +96,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" color="grey">
+                    <Text $fontWeight="600" $fontSize="10px" $grey>
                         Precipitation
                     </Text>
                     <DetailValue>
@@ -107,7 +107,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" color="grey">
+                    <Text $fontWeight="600" $fontSize="10px" $grey>
                         Humidity
                     </Text>
                     <DetailValue>
@@ -118,7 +118,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" color="grey">
+                    <Text $fontWeight="600" $fontSize="10px" $grey>
                         Pressure
                     </Text>
                     <DetailValue>
@@ -129,7 +129,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" color="grey">
+                    <Text $fontWeight="600" $fontSize="10px" $grey>
                         Visibility
                     </Text>
                     <DetailValue>
@@ -140,7 +140,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" color="grey">
+                    <Text $fontWeight="600" $fontSize="10px" $grey>
                         Dew point
                     </Text>
                     <DetailValue>
@@ -151,7 +151,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" color="grey">
+                    <Text $fontWeight="600" $fontSize="10px" $grey>
                         Clouds
                     </Text>
                     <DetailValue>
