@@ -1,6 +1,7 @@
 import { useEffect, memo } from "react";
 import { useThree } from "@react-three/fiber";
 import { useTexture, Sphere } from "@react-three/drei";
+import { useSelector } from "react-redux";
 import WeatherBoard from "./WeatherBoard";
 import {
     openWeatherModal,
@@ -14,6 +15,7 @@ import { worldCapitalsOffset } from "../../utils/citiesConfig/worldCapitalsOffse
 import { convertLatLonToCartesian } from "../../utils/formatting";
 
 function Earth({ fetchedCitiesData, setIsLoading }) {
+    const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
     const { camera, raycaster, pointer, scene } = useThree();
     const [colorMap, cloudsMap, normalMap, specularMap] = useTexture([
         EarthDayMap,
@@ -23,12 +25,14 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
     ]);
 
     useEffect(() => {
-        camera.layers.enable(1);
-        setIsLoading(false);
-
         return () => {
             closeWeatherModal();
         };
+    }, [isDarkMode]);
+
+    useEffect(() => {
+        camera.layers.enable(1);
+        setIsLoading(false);
     }, []);
 
     const setOffset = (capital) => {
@@ -56,7 +60,7 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
             intersects[0].object === weatherBoardRef.current
         ) {
             if (evt.type === "click") {
-                openWeatherModal(capital);
+                openWeatherModal(capital, isDarkMode);
             } else if (evt.type === "pointermove") {
                 setHovered(true);
             }

@@ -1,4 +1,6 @@
-export function getAirPollutionBarChartOptions(city) {
+import { darkTheme, lightTheme } from "../styles/theme";
+
+export function getAirPollutionBarChartOptions(city, isDarkMode) {
     return {
         plugins: {
             tooltip: {
@@ -10,6 +12,11 @@ export function getAirPollutionBarChartOptions(city) {
                         return `${context.label}: ${context.parsed.y} μg/m³`;
                     },
                 },
+                backgroundColor: isDarkMode
+                    ? darkTheme.tooltip
+                    : lightTheme.tooltip,
+                titleColor: isDarkMode ? darkTheme.primary : lightTheme.primary,
+                bodyColor: isDarkMode ? darkTheme.primary : lightTheme.primary,
             },
             legend: {
                 display: false,
@@ -20,6 +27,9 @@ export function getAirPollutionBarChartOptions(city) {
                 font: {
                     size: 20,
                 },
+                color: isDarkMode
+                    ? darkTheme.textPrimary
+                    : lightTheme.textPrimary,
             },
             datalabels: {
                 anchor: "end",
@@ -29,7 +39,9 @@ export function getAirPollutionBarChartOptions(city) {
                     weight: "bold",
                     size: 12,
                 },
-                color: "#a1a1a1",
+                color: isDarkMode
+                    ? darkTheme.textSecondary
+                    : lightTheme.textSecondary,
                 offset: 0,
                 formatter: function (value) {
                     return `${value} μg/m³`;
@@ -40,12 +52,16 @@ export function getAirPollutionBarChartOptions(city) {
             y: {
                 beginAtZero: true,
                 ticks: {
-                    color: "#a1a1a1",
+                    color: isDarkMode
+                        ? darkTheme.textSecondary
+                        : lightTheme.textSecondary,
                 },
             },
             x: {
                 ticks: {
-                    color: "#a1a1a1",
+                    color: isDarkMode
+                        ? darkTheme.textSecondary
+                        : lightTheme.textSecondary,
                 },
             },
         },
@@ -62,55 +78,63 @@ export function getAirPollutionBarChartOptions(city) {
     };
 }
 
-export const airPollutionlinearChartOptions = {
-    layout: {
-        padding: {
-            top: 15,
+export const getAirPollutionlinearChartOptions = (isDarkMode) => {
+    return {
+        layout: {
+            padding: {
+                top: 15,
+            },
         },
-    },
-    plugins: {
-        tooltip: {
-            callbacks: {
-                label: function (context) {
-                    return `${context.dataset.label}: ${context.parsed.y} μg/m³`;
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    label: function (context) {
+                        return `${context.dataset.label}: ${context.parsed.y} μg/m³`;
+                    },
                 },
+                backgroundColor: isDarkMode
+                    ? darkTheme.tooltip
+                    : lightTheme.tooltip,
+                titleColor: isDarkMode ? darkTheme.primary : lightTheme.primary,
+                bodyColor: isDarkMode ? darkTheme.primary : lightTheme.primary,
             },
-        },
-        legend: {
-            display: false,
-        },
-        datalabels: {
-            anchor: "end",
-            align: "top",
-            clamp: true,
-            font: {
-                weight: "bold",
-                size: 12,
+            legend: {
+                display: false,
             },
-            offset: -4,
-        },
-    },
-    scales: {
-        y: {
-            beginAtZero: true,
-        },
-        x: {
-            ticks: {
+            datalabels: {
+                anchor: "end",
+                align: "top",
+                clamp: true,
                 font: {
-                    size: 10,
                     weight: "bold",
+                    size: 12,
+                },
+                offset: -4,
+            },
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+            },
+            x: {
+                ticks: {
+                    font: {
+                        size: 10,
+                        weight: "bold",
+                    },
                 },
             },
         },
-    },
-    responsive: true,
-    maintainAspectRatio: false,
+        responsive: true,
+        maintainAspectRatio: false,
+    };
 };
 
 export function getLongTermWeatherLinearChartOptions(
     selectedDataset,
     selectedDateRange,
-    city
+    city,
+    isDarkMode
 ) {
     return {
         tension: 0.4,
@@ -126,7 +150,9 @@ export function getLongTermWeatherLinearChartOptions(
                                 : " " + selectedDataset.unit
                         }`;
                     },
-                    color: "#a1a1a1",
+                    color: isDarkMode
+                        ? darkTheme.textSecondary
+                        : lightTheme.textSecondary,
                 },
                 beginAtZero: true,
             },
@@ -138,7 +164,9 @@ export function getLongTermWeatherLinearChartOptions(
                 },
                 beginAtZero: true,
                 ticks: {
-                    color: "#a1a1a1",
+                    color: isDarkMode
+                        ? darkTheme.textSecondary
+                        : lightTheme.textSecondary,
                 },
                 min: selectedDateRange[0],
                 max: selectedDateRange[1],
@@ -151,6 +179,9 @@ export function getLongTermWeatherLinearChartOptions(
                 font: {
                     size: 20,
                 },
+                color: isDarkMode
+                    ? darkTheme.textPrimary
+                    : lightTheme.textPrimary,
             },
             tooltip: {
                 callbacks: {
@@ -162,13 +193,20 @@ export function getLongTermWeatherLinearChartOptions(
                         }`;
                     },
                 },
+                backgroundColor: isDarkMode
+                    ? darkTheme.tooltip
+                    : lightTheme.tooltip,
+                titleColor: isDarkMode ? darkTheme.primary : lightTheme.primary,
+                bodyColor: isDarkMode ? darkTheme.primary : lightTheme.primary,
             },
             legend: {
                 display: false,
             },
             currentTimePosition: {
                 lineThickness: 1,
-                color: "#ffffff",
+                color: isDarkMode
+                    ? darkTheme.textPrimary
+                    : lightTheme.textPrimary,
             },
         },
     };

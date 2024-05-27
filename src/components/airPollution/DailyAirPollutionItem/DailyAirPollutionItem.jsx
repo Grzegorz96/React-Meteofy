@@ -12,7 +12,7 @@ import {
     FaceIcon,
     SelectButtonsWrapper,
     SelectButton,
-    Wrapper,
+    DailyDetailsFlex,
 } from "../../ui/Accordion/Accordion.styles";
 import { getAqiUSData } from "../../../utils/helpers";
 import ScrollContainer from "../../ui/ScrollContainer/ScrollContainer";
@@ -52,7 +52,7 @@ export default function DailyAirPollutionItem({
                 </StyledAccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
-                <Wrapper>
+                <DailyDetailsFlex>
                     <SelectButtonsWrapper>
                         {POLLUTION_NAMES.map((pollutionName) => (
                             <SelectButton
@@ -72,7 +72,7 @@ export default function DailyAirPollutionItem({
                     <Label $fontWeight="600">
                         Hourly Air Pollution (μg/m3)
                     </Label>
-                </Wrapper>
+                </DailyDetailsFlex>
                 <ScrollContainer
                     scrollableContainerRef={scrollableContainerRef}
                 >

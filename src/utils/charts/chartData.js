@@ -81,7 +81,8 @@ export function getAirPollutionFilteredLinearChartData(
 
 export function getLongTermWeatherFilteredLinearChartData(
     seasonalData,
-    selectedDataset
+    selectedDataset,
+    isDarkMode
 ) {
     return {
         labels: seasonalData.time,
@@ -111,8 +112,19 @@ export function getLongTermWeatherFilteredLinearChartData(
                         chartArea.top
                     );
 
-                    gradient.addColorStop(0, "rgba(255, 255, 255, 0.01)");
-                    gradient.addColorStop(1, "rgba(255, 255, 255, 0.5)");
+                    gradient.addColorStop(
+                        0,
+                        isDarkMode
+                            ? "rgba(255, 255, 255, 0.01)"
+                            : "rgba(0, 0, 0, 0.01)"
+                    );
+
+                    gradient.addColorStop(
+                        1,
+                        isDarkMode
+                            ? "rgba(255, 255, 255, 0.5)"
+                            : "rgba(0, 0, 0, 0.5)"
+                    );
 
                     return gradient;
                 },

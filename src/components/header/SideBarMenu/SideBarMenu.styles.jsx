@@ -1,5 +1,3 @@
-import { zhCN } from "date-fns/locale";
-
 export const sideBarStyles = {
     bmBurgerButton: {
         position: "relative",
@@ -35,7 +33,7 @@ export const sideBarStyles = {
         fill: "#373a47",
     },
     bmOverlay: {
-        background: "rgba(0, 0, 0, 0.3)",
+        background: "rgba(0, 0, 0, 0.4)",
         left: 0,
         top: 0,
         zIndex: 1070,

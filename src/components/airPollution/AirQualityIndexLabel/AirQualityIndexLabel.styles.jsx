@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 export const AirQualityIndex = styled.div`
+    z-index: 1;
     color: ${({ theme }) => theme.textPrimary};
-    box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
     box-shadow: 0 0 10px 0 ${({ theme }) => theme.shadow};
     background-color: ${({ theme }) => theme.secondary};
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out,
+        box-shadow 0.25s ease-in-out;
     border-radius: 0 6px 6px 0;
     grid-area: airQualityIndex;
     display: grid;
@@ -109,6 +111,7 @@ export const AirQualityIndexFooter = styled.div`
     justify-content: center;
     align-items: center;
     border-top: 1px solid ${({ theme }) => theme.textPrimary};
+    transition: border-top 0.25s ease-in-out;
     border-radius: 0 0 6px 6px;
     grid-area: airQualityIndexFooter;
 

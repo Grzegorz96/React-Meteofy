@@ -13,6 +13,7 @@ export const darkTheme = {
     textPrimary: "#e3e3e3",
     navLinks: "#bb86fc",
     shadow: "rgb(255 255 255 / 30%)",
+    tooltip: "rgba(255, 255, 255, 0.75)",
 };
 
 export const lightTheme = {
@@ -22,4 +23,5 @@ export const lightTheme = {
     textPrimary: "#000000",
     navLinks: "#6200ee",
     shadow: "rgb(0 0 0 / 30%)",
+    tooltip: "rgba(0, 0, 0, 0.75)",
 };

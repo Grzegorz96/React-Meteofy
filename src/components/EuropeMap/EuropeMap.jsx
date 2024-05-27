@@ -10,13 +10,16 @@ import {
     openWeatherModal,
     closeWeatherModal,
 } from "../ui/modals/WeatherModal/WeatherModal";
+import { useSelector } from "react-redux";
 
 export default function EuropeMap({ fetchedCitiesData }) {
+    const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
+
     useEffect(() => {
         return () => {
             closeWeatherModal();
         };
-    }, []);
+    }, [isDarkMode]);
 
     const customMarker = (weatherIcon, temperature) =>
         divIcon({
@@ -69,11 +72,11 @@ export default function EuropeMap({ fetchedCitiesData }) {
                 {fetchedCitiesData.list.map((city) => (
                     <Marker
                         eventHandlers={{
-                            click: () => openWeatherModal(city),
+                            click: () => openWeatherModal(city, isDarkMode),
                             keydown: (e) => {
                                 if (e.originalEvent.key === "Enter") {
                                     e.originalEvent.preventDefault();
-                                    openWeatherModal(city);
+                                    openWeatherModal(city, isDarkMode);
                                 }
                             },
                         }}

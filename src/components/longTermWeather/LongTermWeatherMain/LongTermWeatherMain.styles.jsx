@@ -48,6 +48,7 @@ export const LongTermWeatherWrapper = styled.div`
     border-radius: 6px;
     box-shadow: 0 0 10px 0 ${({ theme }) => theme.shadow};
     background-color: ${({ theme }) => theme.secondary};
+    transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
     padding: 10px 20px 20px 20px;
     display: flex;
     flex-direction: column;
@@ -70,7 +71,8 @@ export const InputWrapper = styled.div`
     align-items: center;
     gap: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid ${({ theme }) => theme.textPrimary};
+    transition: border-bottom 0.25s ease-in-out;
 `;
 
 export const DateRangePickerStyled = styled(DateRangePicker)`

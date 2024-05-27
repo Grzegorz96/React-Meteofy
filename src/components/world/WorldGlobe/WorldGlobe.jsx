@@ -4,13 +4,14 @@ import { Canvas } from "@react-three/fiber";
 import Earth from "../Earth";
 import { Stars, OrbitControls } from "@react-three/drei";
 import Loader from "../../ui/Loader/Loader";
+import { darkTheme } from "../../../utils/styles/theme";
 
 export default function WorldGlobe({ fetchedCitiesData }) {
     const [isLoading, setIsLoading] = useState(true);
 
     return (
         <>
-            {isLoading && <Loader color="#fff" />}
+            {isLoading && <Loader color={darkTheme.textPrimary} />}
             <CanvasContainer>
                 <Canvas>
                     <Suspense fallback={null}>

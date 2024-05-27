@@ -22,7 +22,7 @@ export default function PolandMap({ fetchedCitiesData }) {
         return () => {
             closeWeatherModal();
         };
-    }, []);
+    }, [isDarkMode]);
 
     const extensionAnimation = useSpring({
         from: {

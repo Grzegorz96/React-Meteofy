@@ -16,5 +16,6 @@ export const LoaderText = styled.span`
     font-size: 20px;
     font-weight: 600;
     text-align: center;
-    color: ${({ $color }) => $color};
+    color: ${({ color }) => color};
+    transition: color 0.25s ease-in-out;
 `;

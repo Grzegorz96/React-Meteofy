@@ -10,17 +10,20 @@ import "../../../assets/CSS/rsuiteStyles/dateRangePickerStyles.css";
 import LongTermWeatherLinearChart from "../LinearChart/LinearChart";
 import { useState, useMemo, memo } from "react";
 import { getLongTermWeatherFilteredLinearChartData } from "../../../utils/charts/chartData";
+import { getLongTermWeatherLinearChartOptions } from "../../../utils/charts/chartOptions";
 import { selectOptions } from "../../../utils/constants/selectOptions";
 import { getDefaultDateRange } from "../../../utils/helpers";
 import { ranges } from "../../../utils/constants/dateRangePickerRanges";
 import { startOfDay, addDays, subDays } from "date-fns";
 import { useMediaQuery } from "react-responsive";
+import { useSelector } from "react-redux";
 
 function LongTermWeatherMain({ seasonalData, city }) {
     const moveRangesToBottom = useMediaQuery({ query: "(max-width: 400px)" });
     const [selectedDataset, setSelectedDataset] = useState(selectOptions[0]);
     const [selectedDateRange, setSelectedDateRange] =
         useState(getDefaultDateRange);
+    const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
 
     const changeDateRange = (value) => {
         if (value) {
@@ -33,9 +36,19 @@ function LongTermWeatherMain({ seasonalData, city }) {
     const filteredData = useMemo(() => {
         return getLongTermWeatherFilteredLinearChartData(
             seasonalData,
-            selectedDataset
+            selectedDataset,
+            isDarkMode
         );
-    }, [seasonalData, selectedDataset]);
+    }, [seasonalData, selectedDataset, isDarkMode]);
+
+    const options = useMemo(() => {
+        return getLongTermWeatherLinearChartOptions(
+            selectedDataset,
+            selectedDateRange,
+            city,
+            isDarkMode
+        );
+    }, [selectedDataset, selectedDateRange, city, isDarkMode]);
 
     return (
         <LongTermWeatherWrapper>
@@ -64,9 +77,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
             </InputWrapper>
             <LongTermWeatherLinearChart
                 filteredData={filteredData}
-                selectedDataset={selectedDataset}
-                selectedDateRange={selectedDateRange}
-                city={city}
+                options={options}
             />
         </LongTermWeatherWrapper>
     );

@@ -79,7 +79,7 @@ export const DailyDetailsGrid = styled.div`
     }
 `;
 
-export const Wrapper = styled.div`
+export const DailyDetailsFlex = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,6 +88,7 @@ export const Wrapper = styled.div`
     margin-inline: 10px;
     padding: 5px 0;
     background-color: ${({ theme }) => theme.secondary};
+    transition: background-color 0.25s ease-in-out;
 
     @media (max-width: 600px) {
         font-size: 14px;
@@ -113,7 +114,8 @@ export const SelectButton = styled.button`
     color: ${({ $active, theme }) =>
         $active ? theme.textPrimary : theme.primary};
     border: 2px solid ${({ theme }) => theme.secondary};
-
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out,
+        border-color 0.25s ease-in-out;
     font-weight: 600;
     padding: 7px;
     border-radius: 10px;

@@ -7,7 +7,7 @@ export const localInputStyles = {
         maxWidth: "400px",
         position: "fixed",
         top: "70px",
-        zIndex: "1",
+        zIndex: "2",
     }),
     control: (styles) => ({
         ...styles,
