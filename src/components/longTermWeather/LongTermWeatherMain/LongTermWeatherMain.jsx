@@ -4,6 +4,7 @@ import {
     InputWrapper,
     customSelectStyles,
     DateRangePickerStyled,
+    dateRangePickerMenu,
 } from "./LongTermWeatherMain.styles";
 import "rsuite/dist/rsuite-no-reset.min.css";
 import "../../../assets/CSS/rsuiteStyles/dateRangePickerStyles.css";
@@ -54,12 +55,13 @@ function LongTermWeatherMain({ seasonalData, city }) {
         <LongTermWeatherWrapper>
             <InputWrapper>
                 <Select
-                    styles={customSelectStyles}
+                    styles={customSelectStyles(isDarkMode)}
                     options={selectOptions}
                     onChange={setSelectedDataset}
                     value={selectedDataset}
                 />
                 <DateRangePickerStyled
+                    menuStyle={dateRangePickerMenu(isDarkMode)}
                     placement="bottom"
                     showOneCalendar
                     character=" - "

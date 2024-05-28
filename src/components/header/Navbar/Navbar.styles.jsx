@@ -25,13 +25,13 @@ export const Navigate = styled.nav`
         align-items: center;
         gap: 5px;
         position: relative;
-        background-color: ${({ theme }) => theme.navLinks};
+        background-color: ${({ theme }) => theme.navLink};
         font-weight: bold;
         white-space: nowrap;
         padding: 5px;
         transition: 0.3s linear;
 
-        &:focus {
+        &:focus-visible {
             outline: none;
             background-color: rgba(0, 0, 0, 0.3);
         }

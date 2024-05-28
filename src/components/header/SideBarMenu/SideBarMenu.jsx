@@ -1,11 +1,13 @@
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { slide as Menu } from "react-burger-menu";
 import { sideBarStyles } from "./SideBarMenu.styles";
 import Navbar from "../Navbar/Navbar";
-import { useState } from "react";
 import "../../../assets/CSS/reactBurgerMenuStyles/buttonsPseudoclases.css";
 
 export default function SideBarMenu() {
     const [isOpen, setIsOpen] = useState(false);
+    const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
 
     return (
         <>
@@ -13,7 +15,7 @@ export default function SideBarMenu() {
                 right
                 isOpen={isOpen}
                 onStateChange={(state) => setIsOpen(state.isOpen)}
-                styles={sideBarStyles}
+                styles={sideBarStyles(isDarkMode)}
                 burgerButtonClassName="burger-button"
                 crossButtonClassName="cross-button"
             >

@@ -11,15 +11,15 @@ html, body, #root {
       width: 12px;
   }
 
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
       background-color: #f1f1f1;
   }
 
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
       background-color: #888;
   }
 
-  ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
       background-color: #555;
   }
 

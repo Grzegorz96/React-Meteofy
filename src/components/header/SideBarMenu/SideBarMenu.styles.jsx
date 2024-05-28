@@ -1,4 +1,6 @@
-export const sideBarStyles = {
+import { darkTheme, lightTheme } from "../../../utils/styles/theme";
+
+export const sideBarStyles = (isDarkMode) => ({
     bmBurgerButton: {
         position: "relative",
         width: "35px",
@@ -6,7 +8,10 @@ export const sideBarStyles = {
         marginRight: "10px",
     },
     bmBurgerBars: {
-        background: "#373a47",
+        backgroundColor: isDarkMode
+            ? darkTheme.textPrimary
+            : lightTheme.textPrimary,
+        transition: "background-color 0.25s ease-in-out",
     },
     bmCrossButton: {
         top: "15px",
@@ -17,7 +22,10 @@ export const sideBarStyles = {
     bmCross: {
         top: "-1px",
         right: "4.5px",
-        background: "#bdc3c7",
+        backgroundColor: isDarkMode
+            ? darkTheme.textPrimary
+            : lightTheme.textPrimary,
+        transition: "background-color 0.25s ease-in-out",
         height: "30px",
     },
     bmMenuWrap: {
@@ -26,11 +34,11 @@ export const sideBarStyles = {
         height: "100%",
     },
     bmMenu: {
-        background: "#373a47",
+        backgroundColor: isDarkMode
+            ? darkTheme.secondary
+            : lightTheme.secondary,
+        transition: "background-color 0.25s ease-in-out",
         paddingTop: "70px",
-    },
-    bmMorphShape: {
-        fill: "#373a47",
     },
     bmOverlay: {
         background: "rgba(0, 0, 0, 0.4)",
@@ -38,4 +46,4 @@ export const sideBarStyles = {
         top: 0,
         zIndex: 1070,
     },
-};
+});

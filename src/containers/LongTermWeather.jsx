@@ -16,6 +16,7 @@ export default function LongTermWeatherContainer() {
         selectedCity,
         "longTermWeather"
     );
+
     const seasonalData = useMemo(() => {
         const { daily } = data.fetchedData || {};
         if (!daily) return;

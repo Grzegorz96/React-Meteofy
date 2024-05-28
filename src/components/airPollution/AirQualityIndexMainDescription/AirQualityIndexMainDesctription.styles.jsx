@@ -16,4 +16,5 @@ export const AirQualityIndexMainDescriptionText = styled.h3`
     font-size: ${(props) => props.$fontSize};
     color: ${({ theme }) => theme.textPrimary};
     margin-bottom: ${(props) => props.$marginBottom};
+    transition: color 0.25s ease-in-out;
 `;
