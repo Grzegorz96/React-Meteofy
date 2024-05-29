@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TogglerContainer = styled.div`
     position: relative;
     margin-left: 5px;
-    height: 100%;
+    height: 16px;
 `;
 
 export const Toggler = styled.input.attrs({
@@ -13,7 +13,7 @@ export const Toggler = styled.input.attrs({
     display: none;
 
     &:checked + label::after {
-        transform: translateX(20px);
+        transform: translateX(24px);
     }
 `;
 
@@ -27,6 +27,9 @@ export const SwitcherElement = styled.label.attrs({
     align-items: center;
     cursor: pointer;
     height: 100%;
+    outline: 0px solid ${({ theme }) => theme.textPrimary};
+    border-radius: 1em;
+    transition: outline-color 0.25s ease-in-out;
 
     &::before {
         content: "";
@@ -39,13 +42,17 @@ export const SwitcherElement = styled.label.attrs({
 
     &::after {
         content: "";
-        height: 16px;
-        width: 16px;
+        height: 12px;
+        width: 12px;
         border-radius: 1em;
         background-color: ${({ theme }) => theme.textPrimary};
         position: absolute;
         left: 2px;
         transition: background-color 0.25s ease-in-out,
             transform 0.25s ease-in-out;
+    }
+
+    &:focus-visible {
+        outline: 2px solid ${({ theme }) => theme.textPrimary};
     }
 `;

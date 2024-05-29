@@ -7,6 +7,8 @@ export const ScrollableContainer = styled.div.attrs({
     display: flex;
     gap: 3px;
     width: 100%;
+    border-radius: 10px;
+    transition: background-color 0.25s ease-in-out;
 
     &::-webkit-scrollbar {
         display: none;
@@ -14,8 +16,7 @@ export const ScrollableContainer = styled.div.attrs({
 
     &:focus-visible {
         outline: none;
-        background-color: rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
+        background-color: ${({ theme }) => theme.backgroundFocus};
     }
 `;
 
@@ -29,12 +30,13 @@ export const NavigateButton = styled.button`
     font-size: 20px;
     border: 2px solid ${({ theme }) => theme.textSecondary};
     background-color: ${({ theme }) => theme.secondary};
-    transition: background-color 0.25s ease-in-out;
     color: ${({ theme }) => theme.textSecondary};
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out,
+        border 0.25s ease-in-out;
 
     &:focus-visible {
         outline: none;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: ${({ theme }) => theme.backgroundFocus};
     }
 
     @media (max-width: 550px) {

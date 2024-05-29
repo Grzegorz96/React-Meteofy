@@ -62,6 +62,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
                 />
                 <DateRangePickerStyled
                     menuStyle={dateRangePickerMenu(isDarkMode)}
+                    menuClassName={isDarkMode ? "dark-mode-menu" : null}
                     placement="bottom"
                     showOneCalendar
                     character=" - "

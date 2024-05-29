@@ -1,14 +1,29 @@
-.burger-button {
+.burger-button-dark {
     :focus-visible {
-        outline: 2px solid #ffffff;
-        outline-offset: 6px;
+        outline: 2px solid #e3e3e3;
+        outline-offset: 5px;
+        border-radius: 3px;
+    }
+}
+
+.burger-button-light {
+    :focus-visible {
+        outline: 2px solid #000000;
+        outline-offset: 5px;
+        border-radius: 3px;
+    }
+}
+
+.cross-button-dark {
+    :focus-visible {
+        outline: 2px solid #e3e3e3;
         border-radius: 6px;
     }
 }
 
-.cross-button {
+.cross-button-light {
     :focus-visible {
-        outline: 2px solid #ffffff;
+        outline: 2px solid #000000;
         border-radius: 6px;
     }
 }

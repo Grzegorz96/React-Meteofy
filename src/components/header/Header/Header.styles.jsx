@@ -19,11 +19,12 @@ export const StyledLink = styled(Link)`
     max-width: 220px;
     flex-shrink: 1;
     margin-left: 10px;
+    transition: background-color 0.25s ease-in-out;
+    border-radius: 6px;
 
     &:focus-visible {
         outline: none;
-        background-color: rgba(0, 0, 0, 0.3);
-        border-radius: 6px;
+        background-color: ${({ theme }) => theme.backgroundFocus};
     }
 `;
 

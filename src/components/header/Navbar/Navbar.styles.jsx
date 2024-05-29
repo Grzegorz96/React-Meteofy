@@ -29,15 +29,15 @@ export const Navigate = styled.nav`
         font-weight: bold;
         white-space: nowrap;
         padding: 5px;
-        transition: 0.3s linear;
+        transition: background-color 0.25s ease-in-out;
 
         &:focus-visible {
             outline: none;
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: ${({ theme }) => theme.backgroundFocus};
         }
 
         &:hover {
-            background-color: rgba(152, 125, 251, 0.541);
+            background-color: ${({ theme }) => theme.navLinkHover};
         }
 
         svg {

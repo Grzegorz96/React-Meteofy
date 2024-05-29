@@ -1,7 +1,109 @@
 .rs-btn-link {
     font-size: 12px;
+    padding: 2px 5px;
+    margin-inline: 2px;
+
+    &:focus-visible {
+        background-color: #5e5e5e;
+        text-decoration: none;
+        outline: none;
+    }
 }
 
-/* .rs-picker-popup {
-    margin-top: 15px;
-} */
+.dark-mode-menu {
+    .rs-calendar-month-dropdown {
+        background-color: #121212;
+
+        .rs-calendar-month-dropdown-cell {
+            color: #e3e3e3;
+        }
+
+        .disabled {
+            .rs-calendar-month-dropdown-cell-content {
+                color: #5e5e5e;
+            }
+        }
+
+        .rs-calendar-month-dropdown-year {
+            color: #e3e3e3;
+        }
+
+        .rs-calendar-month-dropdown-year-active {
+            color: #1675e0;
+        }
+    }
+    .rs-calendar-btn-close {
+        background-color: #121212;
+    }
+
+    .rs-picker-daterange-content {
+        .rs-picker-header-date {
+            color: #e3e3e3;
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: #5e5e5e;
+            }
+        }
+
+        .rs-picker-header-character {
+            color: #e3e3e3;
+        }
+
+        .rs-btn-icon {
+            color: #e3e3e3;
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: #5e5e5e;
+            }
+        }
+
+        .rs-calendar-header-title {
+            color: #e3e3e3;
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: #5e5e5e;
+            }
+        }
+
+        .rs-calendar-table-cell-in-range::before {
+            background-color: rgb(95, 95, 95);
+        }
+
+        .rs-calendar-table-cell {
+            .rs-calendar-table-cell-content {
+                .rs-calendar-table-cell-day {
+                    color: #e3e3e3;
+                }
+            }
+        }
+
+        .rs-calendar-table-cell-disabled {
+            .rs-calendar-table-cell-content {
+                color: #5e5e5e;
+                .rs-calendar-table-cell-day {
+                    color: #5e5e5e;
+                }
+            }
+        }
+
+        .rs-calendar-table-cell-un-same-month {
+            .rs-calendar-table-cell-content {
+                .rs-calendar-table-cell-day {
+                    color: #5e5e5e;
+                }
+            }
+        }
+
+        .rs-calendar-header-error {
+            color: #f44336;
+
+            &:focus {
+                background-color: #f44336;
+                color: #e3e3e3;
+            }
+        }
+    }
+}

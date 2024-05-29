@@ -16,8 +16,12 @@ export default function SideBarMenu() {
                 isOpen={isOpen}
                 onStateChange={(state) => setIsOpen(state.isOpen)}
                 styles={sideBarStyles(isDarkMode)}
-                burgerButtonClassName="burger-button"
-                crossButtonClassName="cross-button"
+                burgerButtonClassName={
+                    isDarkMode ? "burger-button-dark" : "burger-button-light"
+                }
+                crossButtonClassName={
+                    isDarkMode ? "cross-button-dark" : "cross-button-light"
+                }
             >
                 <Navbar isMobile={true} setIsOpen={setIsOpen} />
             </Menu>

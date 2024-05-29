@@ -114,6 +114,7 @@ export const InputWrapper = styled.div`
 
 export const dateRangePickerMenu = (isDarkMode) => ({
     marginTop: "15px",
+    zIndex: 0,
     backgroundColor: isDarkMode ? darkTheme.secondary : lightTheme.secondary,
     border: `1px solid ${
         isDarkMode ? darkTheme.textSecondary : lightTheme.textSecondary
@@ -130,18 +131,14 @@ export const DateRangePickerStyled = styled(DateRangePicker)`
         max-width: 264px;
     }
 
-    .rs-picker-popup {
-        background-color: ${({ theme }) => theme.secondary};
-    }
-
     .rs-input-group {
         height: 38px;
         background-color: ${({ theme }) => theme.secondary};
+        border: none;
+        outline: none;
+        box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.textSecondary};
         transition: background-color 0.25s ease-in-out,
             box-shadow 0.25s ease-in-out;
-        border: none;
-
-        box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.textSecondary};
 
         @media (max-width: 768px) {
             height: 32px;
@@ -162,15 +159,19 @@ export const DateRangePickerStyled = styled(DateRangePicker)`
 
         .rs-input-group-addon {
             background-color: ${({ theme }) => theme.secondary};
-            color: ${({ theme }) => theme.textPrimary};
-            transition: background-color 0.25s ease-in-out,
-                color 0.25s ease-in-out;
+            transition: background-color 0.25s ease-in-out;
             font-size: 16px;
             border-radius: 0 6px 6px 0;
 
-            @media (max-width: 768px) {
-                font-size: 14px;
+            .rs-icon {
+                color: ${({ theme }) => theme.textPrimary};
+                transition: color 0.25s ease-in-out;
             }
         }
+    }
+
+    .rs-input-group-focus {
+        outline: none !important;
+        box-shadow: 0px 0px 0px 3px ${({ theme }) => theme.textSecondary};
     }
 `;
