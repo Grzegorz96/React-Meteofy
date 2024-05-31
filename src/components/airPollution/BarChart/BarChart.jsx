@@ -5,13 +5,14 @@ import { AirPollutionBarChartWrapper, Datetime } from "./BarChart.styles";
 import { getAirPollutionBarChartData } from "../../../utils/charts/chartData";
 import { getAirPollutionBarChartOptions } from "../../../utils/charts/chartOptions";
 import { format } from "date-fns";
-import { useSelector } from "react-redux";
+import { useTheme } from "styled-components";
 
 export default function AirPollutionBarChart({
     currentAirPollutionData,
     city,
 }) {
-    const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
+    const theme = useTheme();
+
     return (
         <AirPollutionBarChartWrapper>
             <Datetime>
@@ -20,7 +21,7 @@ export default function AirPollutionBarChart({
             <Bar
                 data={getAirPollutionBarChartData(currentAirPollutionData)}
                 plugins={[ChartDataLabels]}
-                options={getAirPollutionBarChartOptions(city, isDarkMode)}
+                options={getAirPollutionBarChartOptions(city, theme)}
             />
         </AirPollutionBarChartWrapper>
     );

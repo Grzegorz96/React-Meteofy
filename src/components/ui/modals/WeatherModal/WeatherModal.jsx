@@ -8,61 +8,65 @@ import {
 import "../../../../assets/CSS/sweetAlert2Styles/weatherCityModal.css";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { darkTheme, lightTheme } from "../../../../utils/styles/theme";
-const MySwal = withReactContent(Swal);
 
-export const openWeatherModal = (city, isDarkMode) => {
+export const openWeatherModal = (city, theme) => {
+    const MySwal = withReactContent(Swal);
+
     MySwal.fire({
         width: "400px",
-        background: isDarkMode ? darkTheme.secondary : lightTheme.secondary,
+        background: theme.secondary,
         heightAuto: false,
         iconHtml: <WeatherIcon $icon={city.weather[0].icon} />,
         title: (
             <>
-                <Title $isDarkMode={isDarkMode}>
+                <Title $theme={theme}>
                     {`${city.name} ${Math.round(city.main.temp)}°C`}
                 </Title>
-                <Paragraph $isDarkMode={isDarkMode}>
+                <Paragraph $theme={theme}>
                     {city.weather[0].description}
                 </Paragraph>
             </>
         ),
         html: (
             <>
-                <WeatherInfo $isDarkMode={isDarkMode}>
+                <WeatherInfo $theme={theme}>
                     feels like:
-                    <WeatherInfoValue $isDarkMode={isDarkMode}>
+                    <WeatherInfoValue $theme={theme}>
                         {`${Math.round(city.main.feels_like)}°C`}
                     </WeatherInfoValue>
                 </WeatherInfo>
-                <WeatherInfo $isDarkMode={isDarkMode}>
+                <WeatherInfo $theme={theme}>
                     humidity:
-                    <WeatherInfoValue $isDarkMode={isDarkMode}>
+                    <WeatherInfoValue $theme={theme}>
                         {`${Math.round(city.main.humidity)}%`}
                     </WeatherInfoValue>
                 </WeatherInfo>
-                <WeatherInfo $isDarkMode={isDarkMode}>
+                <WeatherInfo $theme={theme}>
                     wind:
-                    <WeatherInfoValue $isDarkMode={isDarkMode}>
+                    <WeatherInfoValue $theme={theme}>
                         {`${Math.round(city.wind.speed * 3.6)}
                                  km/h`}
                     </WeatherInfoValue>
                 </WeatherInfo>
-                <WeatherInfo $isDarkMode={isDarkMode}>
+                <WeatherInfo $theme={theme}>
                     pressure:
-                    <WeatherInfoValue $isDarkMode={isDarkMode}>
+                    <WeatherInfoValue $theme={theme}>
                         {`${Math.round(city.main.pressure)}
                                  hPa`}
                     </WeatherInfoValue>
                 </WeatherInfo>
-                <WeatherInfo $isDarkMode={isDarkMode}>
+                <WeatherInfo $theme={theme}>
                     clouds:
-                    <WeatherInfoValue $isDarkMode={isDarkMode}>
+                    <WeatherInfoValue $theme={theme}>
                         {`${Math.round(city.clouds.all)}%`}
                     </WeatherInfoValue>
                 </WeatherInfo>
             </>
         ),
+        didOpen: () => {
+            const confirmButton = Swal.getConfirmButton();
+            if (confirmButton) confirmButton.style.color = theme.textPrimary;
+        },
         customClass: {
             title: "modal-title",
             htmlContainer: "modal-html-container",
@@ -73,5 +77,7 @@ export const openWeatherModal = (city, isDarkMode) => {
 };
 
 export const closeWeatherModal = () => {
+    const MySwal = withReactContent(Swal);
+
     MySwal.close();
 };

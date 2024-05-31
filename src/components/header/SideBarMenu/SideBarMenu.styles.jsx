@@ -1,49 +1,61 @@
-import { darkTheme, lightTheme } from "../../../utils/styles/theme";
+import styled from "styled-components";
 
-export const sideBarStyles = (isDarkMode) => ({
-    bmBurgerButton: {
-        position: "relative",
-        width: "35px",
-        height: "30px",
-        marginRight: "10px",
-    },
-    bmBurgerBars: {
-        backgroundColor: isDarkMode
-            ? darkTheme.textPrimary
-            : lightTheme.textPrimary,
-        transition: "background-color 0.25s ease-in-out",
-    },
-    bmCrossButton: {
-        top: "15px",
-        right: "10px",
-        height: "40px",
-        width: "40px",
-    },
-    bmCross: {
-        top: "-1px",
-        right: "4.5px",
-        backgroundColor: isDarkMode
-            ? darkTheme.textPrimary
-            : lightTheme.textPrimary,
-        transition: "background-color 0.25s ease-in-out",
-        height: "30px",
-    },
-    bmMenuWrap: {
-        top: 0,
-        position: "fixed",
-        height: "100%",
-    },
-    bmMenu: {
-        backgroundColor: isDarkMode
-            ? darkTheme.secondary
-            : lightTheme.secondary,
-        transition: "background-color 0.25s ease-in-out",
-        paddingTop: "70px",
-    },
-    bmOverlay: {
-        background: "rgba(0, 0, 0, 0.4)",
-        left: 0,
-        top: 0,
-        zIndex: 1070,
-    },
-});
+export const StyledBurgerMenu = styled.div`
+    margin-right: 10px;
+
+    .bm-burger-button {
+        position: relative;
+        width: 35px;
+        height: 30px;
+
+        :focus-visible {
+            outline: 2px solid ${({ theme }) => theme.textPrimary};
+            outline-offset: 5px;
+            border-radius: 3px;
+        }
+    }
+
+    .bm-burger-bars {
+        background-color: ${({ theme }) => theme.textPrimary};
+        transition: background-color 0.25s ease-in-out;
+    }
+
+    .bm-cross-button {
+        top: 15px !important;
+        right: 10px !important;
+        height: 40px !important;
+        width: 40px !important;
+
+        :focus-visible {
+            outline: 2px solid ${({ theme }) => theme.textPrimary};
+            border-radius: 6px;
+        }
+    }
+
+    .bm-cross {
+        top: -1px;
+        right: 4.5px;
+        background-color: ${({ theme }) => theme.textPrimary};
+        transition: background-color 0.25s ease-in-out;
+        height: 30px !important;
+    }
+
+    .bm-menu-wrap {
+        top: 0;
+        position: fixed;
+        height: 100%;
+    }
+
+    .bm-menu {
+        background-color: ${({ theme }) => theme.secondary};
+        transition: background-color 0.25s ease-in-out;
+        padding-top: 70px;
+    }
+
+    .bm-overlay {
+        background: ${({ theme }) => theme.overlay};
+        left: 0;
+        top: 0;
+        z-index: 1070 !important;
+    }
+`;

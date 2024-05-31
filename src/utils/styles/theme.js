@@ -1,8 +1,9 @@
 const theme = {
-    header: "#66666684",
-    footer: "#66666684",
+    header: "rgba(102, 102, 102, 0.40)",
+    footer: "rgba(102, 102, 102, 0.40)",
     fontFamily: "Arial, Helvetica, sans-serif",
     backgroundFocus: "rgba(0, 0, 0, 0.3)",
+    overlay: "rgba(0, 0, 0, 0.4) !important",
     textSecondary: "#818181",
 };
 

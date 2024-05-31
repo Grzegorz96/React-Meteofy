@@ -7,15 +7,17 @@ export const PolandMapSVG = styled(animated.svg)`
     margin: auto;
 
     path {
-        stroke: #747373;
+        stroke: ${({ theme }) => theme.textSecondary};
         stroke-width: 0.5;
-        fill: #eeeeee;
+        fill: ${({ theme }) => theme.secondary};
         cursor: pointer;
         outline: none;
+        transition: fill 0.25s ease-in-out, stroke 0.25s ease-in-out;
 
         &:focus-visible,
         &:hover {
-            fill: #ffffff;
+            fill: ${({ theme }) => theme.primary};
+            transition: none;
         }
     }
 `;
@@ -31,22 +33,27 @@ export const MapItem = styled.div`
 `;
 
 export const DataWrapper = styled.div`
-    background-color: #c5c5c567;
+    background-color: ${({ theme }) => theme.textSecondary + "30"};
     border-radius: 6px;
     padding-left: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.25s ease-in-out;
 `;
 
 export const Temp = styled.span`
     font-weight: bold;
     font-size: 11px;
+    color: ${({ theme }) => theme.textPrimary};
+    transition: color 0.25s ease-in-out;
 `;
 
 export const Text = styled.span`
     font-weight: bold;
     font-size: 10px;
+    color: ${({ theme }) => theme.textPrimary};
+    transition: color 0.25s ease-in-out;
 `;
 
 export const WeatherIcon = styled.img.attrs((props) => ({

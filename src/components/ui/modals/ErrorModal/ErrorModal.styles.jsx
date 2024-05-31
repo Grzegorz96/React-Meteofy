@@ -68,7 +68,7 @@ export const ModalButton = styled.button`
     font-weight: 500;
 
     &:focus {
-        outline: 3px solid #b7b2ef;
+        outline: 3px solid #7066e099;
     }
 
     &:hover {

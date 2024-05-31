@@ -7,6 +7,7 @@ export const Footer = styled.footer`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: background-color 0.25s ease-in-out;
 `;
 
 export const PageName = styled.img.attrs({

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const navLinkStyles = ({ isActive }) => {
     return {
-        color: isActive ? "#03dac6" : "#ffffff",
+        color: isActive ? "#00ffe5" : "#ffffff",
     };
 };
 

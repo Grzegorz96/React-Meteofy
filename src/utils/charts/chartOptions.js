@@ -1,6 +1,6 @@
 import { darkTheme, lightTheme } from "../styles/theme";
 
-export function getAirPollutionBarChartOptions(city, isDarkMode) {
+export function getAirPollutionBarChartOptions(city, theme) {
     return {
         plugins: {
             tooltip: {
@@ -12,11 +12,9 @@ export function getAirPollutionBarChartOptions(city, isDarkMode) {
                         return `${context.label}: ${context.parsed.y} μg/m³`;
                     },
                 },
-                backgroundColor: isDarkMode
-                    ? darkTheme.tooltip
-                    : lightTheme.tooltip,
-                titleColor: isDarkMode ? darkTheme.primary : lightTheme.primary,
-                bodyColor: isDarkMode ? darkTheme.primary : lightTheme.primary,
+                backgroundColor: theme.tooltip,
+                titleColor: theme.primary,
+                bodyColor: theme.primary,
             },
             legend: {
                 display: false,
@@ -27,9 +25,7 @@ export function getAirPollutionBarChartOptions(city, isDarkMode) {
                 font: {
                     size: 20,
                 },
-                color: isDarkMode
-                    ? darkTheme.textPrimary
-                    : lightTheme.textPrimary,
+                color: theme.textPrimary,
             },
             datalabels: {
                 anchor: "end",
@@ -39,9 +35,7 @@ export function getAirPollutionBarChartOptions(city, isDarkMode) {
                     weight: "bold",
                     size: 12,
                 },
-                color: isDarkMode
-                    ? darkTheme.textSecondary
-                    : lightTheme.textSecondary,
+                color: theme.textSecondary,
                 offset: 0,
                 formatter: function (value) {
                     return `${value} μg/m³`;
@@ -52,16 +46,12 @@ export function getAirPollutionBarChartOptions(city, isDarkMode) {
             y: {
                 beginAtZero: true,
                 ticks: {
-                    color: isDarkMode
-                        ? darkTheme.textSecondary
-                        : lightTheme.textSecondary,
+                    color: theme.textSecondary,
                 },
             },
             x: {
                 ticks: {
-                    color: isDarkMode
-                        ? darkTheme.textSecondary
-                        : lightTheme.textSecondary,
+                    color: theme.textSecondary,
                 },
             },
         },
@@ -78,7 +68,7 @@ export function getAirPollutionBarChartOptions(city, isDarkMode) {
     };
 }
 
-export const getAirPollutionlinearChartOptions = (isDarkMode) => {
+export const getAirPollutionlinearChartOptions = (theme) => {
     return {
         layout: {
             padding: {
@@ -92,11 +82,9 @@ export const getAirPollutionlinearChartOptions = (isDarkMode) => {
                         return `${context.dataset.label}: ${context.parsed.y} μg/m³`;
                     },
                 },
-                backgroundColor: isDarkMode
-                    ? darkTheme.tooltip
-                    : lightTheme.tooltip,
-                titleColor: isDarkMode ? darkTheme.primary : lightTheme.primary,
-                bodyColor: isDarkMode ? darkTheme.primary : lightTheme.primary,
+                backgroundColor: theme.tooltip,
+                titleColor: theme.primary,
+                bodyColor: theme.primary,
             },
             legend: {
                 display: false,
@@ -109,12 +97,15 @@ export const getAirPollutionlinearChartOptions = (isDarkMode) => {
                     weight: "bold",
                     size: 12,
                 },
-                offset: -4,
+                offset: -3,
             },
         },
         scales: {
             y: {
                 beginAtZero: true,
+                ticks: {
+                    color: theme.textSecondary,
+                },
             },
             x: {
                 ticks: {
@@ -122,6 +113,7 @@ export const getAirPollutionlinearChartOptions = (isDarkMode) => {
                         size: 10,
                         weight: "bold",
                     },
+                    color: theme.textSecondary,
                 },
             },
         },
