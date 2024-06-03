@@ -1,6 +1,6 @@
 import { AsyncPaginate } from "react-select-async-paginate";
 import { loadOptions } from "../../../services/api/fetchCities";
-import { useSelector } from "react-redux";
+import { useTheme } from "styled-components";
 
 export default function SearchEngine({
     placeholder,
@@ -8,7 +8,7 @@ export default function SearchEngine({
     handleOnChange,
     styles,
 }) {
-    const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
+    const theme = useTheme();
 
     return (
         <AsyncPaginate
@@ -17,7 +17,7 @@ export default function SearchEngine({
             debounceTimeout={1000}
             value={city.value.latitude && city.value.longitude ? city : null}
             onChange={handleOnChange}
-            styles={styles(isDarkMode)}
+            styles={styles(theme)}
             loadOptions={loadOptions}
             additional={{ page: 1 }}
         />

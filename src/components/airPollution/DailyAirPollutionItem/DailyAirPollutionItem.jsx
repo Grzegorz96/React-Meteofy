@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import {
     AccordionItem,
     AccordionItemPanel,
@@ -19,11 +19,10 @@ import ScrollContainer from "../../ui/ScrollContainer/ScrollContainer";
 import AirPollutionLinearChart from "../LinearChart/LinearChart";
 import { POLLUTION_NAMES } from "../../../utils/constants/pollutionNames";
 import { getAirPollutionFilteredLinearChartData } from "../../../utils/charts/chartData";
+import { format } from "date-fns";
 
 export default function DailyAirPollutionItem({
     dayData,
-    index,
-    forecastDays,
     scrollableContainerRef,
 }) {
     const [selectedDataset, setSelectedDataset] = useState(POLLUTION_NAMES[0]);
@@ -32,7 +31,10 @@ export default function DailyAirPollutionItem({
         selectedDataset
     );
 
-    const aqiUSData = getAqiUSData(dayData.aqius);
+    const aqiUSData = useMemo(
+        () => getAqiUSData(dayData.aqius),
+        [dayData.aqius]
+    );
 
     return (
         <AccordionItem>
@@ -42,11 +44,7 @@ export default function DailyAirPollutionItem({
                         $icon={aqiUSData?.faceIcon}
                         $backgroundColor={aqiUSData?.aqiColor}
                     />
-                    <Day>
-                        {`${dayData.datetime.substring(5)} ${
-                            forecastDays[index % forecastDays.length]
-                        }`}
-                    </Day>
+                    <Day>{format(dayData.datetime, "MM-dd EEEE")}</Day>
                     <Description>{aqiUSData?.levelsOfConcern}</Description>
                     <Label $grey>{`AQI US ${dayData.aqius}`}</Label>
                 </StyledAccordionItemButton>

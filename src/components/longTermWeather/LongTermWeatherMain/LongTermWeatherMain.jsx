@@ -17,14 +17,14 @@ import { getDefaultDateRange } from "../../../utils/helpers";
 import { ranges } from "../../../utils/constants/dateRangePickerRanges";
 import { startOfDay, addDays, subDays } from "date-fns";
 import { useMediaQuery } from "react-responsive";
-import { useSelector } from "react-redux";
+import { useTheme } from "styled-components";
 
 function LongTermWeatherMain({ seasonalData, city }) {
+    const theme = useTheme();
     const moveRangesToBottom = useMediaQuery({ query: "(max-width: 400px)" });
     const [selectedDataset, setSelectedDataset] = useState(selectOptions[0]);
     const [selectedDateRange, setSelectedDateRange] =
         useState(getDefaultDateRange);
-    const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
 
     const changeDateRange = (value) => {
         if (value) {
@@ -34,35 +34,39 @@ function LongTermWeatherMain({ seasonalData, city }) {
         }
     };
 
-    const filteredData = useMemo(() => {
-        return getLongTermWeatherFilteredLinearChartData(
-            seasonalData,
-            selectedDataset,
-            isDarkMode
-        );
-    }, [seasonalData, selectedDataset, isDarkMode]);
+    const filteredData = useMemo(
+        () =>
+            getLongTermWeatherFilteredLinearChartData(
+                seasonalData,
+                selectedDataset,
+                theme
+            ),
+        [seasonalData, selectedDataset, theme]
+    );
 
-    const options = useMemo(() => {
-        return getLongTermWeatherLinearChartOptions(
-            selectedDataset,
-            selectedDateRange,
-            city,
-            isDarkMode
-        );
-    }, [selectedDataset, selectedDateRange, city, isDarkMode]);
+    const options = useMemo(
+        () =>
+            getLongTermWeatherLinearChartOptions(
+                selectedDataset,
+                selectedDateRange,
+                city,
+                theme
+            ),
+        [selectedDataset, selectedDateRange, city, theme]
+    );
 
     return (
         <LongTermWeatherWrapper>
             <InputWrapper>
                 <Select
-                    styles={customSelectStyles(isDarkMode)}
+                    styles={customSelectStyles(theme)}
                     options={selectOptions}
                     onChange={setSelectedDataset}
                     value={selectedDataset}
                 />
                 <DateRangePickerStyled
-                    menuStyle={dateRangePickerMenu(isDarkMode)}
-                    menuClassName={isDarkMode ? "dark-mode-menu" : null}
+                    menuStyle={dateRangePickerMenu(theme)}
+                    menuClassName={theme.isDarkMode ? "dark-mode-menu" : null}
                     placement="bottom"
                     showOneCalendar
                     character=" - "

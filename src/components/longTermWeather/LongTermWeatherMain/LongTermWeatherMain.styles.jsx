@@ -2,39 +2,27 @@ import styled from "styled-components";
 import { DateRangePicker } from "rsuite";
 import { darkTheme, lightTheme } from "../../../utils/styles/theme";
 
-export const customSelectStyles = (isDarkMode) => ({
+export const customSelectStyles = (theme) => ({
     // Styles for each option in the dropdown menu.
     option: (provided, state) => ({
         ...provided,
         cursor: "pointer",
-        color: state.isSelected
-            ? isDarkMode
-                ? lightTheme.textPrimary
-                : darkTheme.textPrimary
-            : "none",
+        color: state.isSelected ? theme.textPrimary : "none",
         backgroundColor:
             state.isFocused || state.isSelected
-                ? isDarkMode
-                    ? darkTheme.textSecondary
-                    : lightTheme.textSecondary
+                ? theme.textSecondary
                 : provided.backgroundColor,
 
         ":active": {
-            backgroundColor: isDarkMode
-                ? darkTheme.textSecondary
-                : lightTheme.textSecondary,
+            backgroundColor: theme.textSecondary,
         },
     }),
     menu: (provided) => ({
         ...provided,
         marginTop: "15px",
-        backgroundColor: isDarkMode
-            ? darkTheme.secondary
-            : lightTheme.secondary,
-        color: isDarkMode ? darkTheme.textPrimary : lightTheme.textPrimary,
-        border: `1px solid ${
-            isDarkMode ? darkTheme.textSecondary : lightTheme.textSecondary
-        }`,
+        backgroundColor: theme.secondary,
+        color: theme.textPrimary,
+        border: `1px solid ${theme.textSecondary}`,
         transition:
             "background-color 0.25s ease-in-out, border 0.25s ease-in-out, color 0.25s ease-in-out",
     }),
@@ -44,12 +32,10 @@ export const customSelectStyles = (isDarkMode) => ({
         width: "200px",
         borderRadius: "6px",
         cursor: "pointer",
-        backgroundColor: isDarkMode
-            ? darkTheme.secondary
-            : lightTheme.secondary,
+        backgroundColor: theme.secondary,
         border: "none",
         boxShadow: `0px ${state.isFocused ? "0px 0px 3px" : "0px 0px 2px"} ${
-            isDarkMode ? darkTheme.textSecondary : lightTheme.textSecondary
+            theme.textSecondary
         }`,
         transition:
             "background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out",
@@ -60,7 +46,7 @@ export const customSelectStyles = (isDarkMode) => ({
     }),
     singleValue: (provided) => ({
         ...provided,
-        color: isDarkMode ? darkTheme.textPrimary : lightTheme.textPrimary,
+        color: theme.textPrimary,
         transition: "color 0.25s ease-in-out",
         fontSize: "16px",
         "@media (max-width: 768px)": {
@@ -112,13 +98,11 @@ export const InputWrapper = styled.div`
     transition: border-bottom 0.25s ease-in-out;
 `;
 
-export const dateRangePickerMenu = (isDarkMode) => ({
+export const dateRangePickerMenu = (theme) => ({
     marginTop: "15px",
     zIndex: 0,
-    backgroundColor: isDarkMode ? darkTheme.secondary : lightTheme.secondary,
-    border: `1px solid ${
-        isDarkMode ? darkTheme.textSecondary : lightTheme.textSecondary
-    }`,
+    backgroundColor: theme.secondary,
+    border: `1px solid ${theme.textSecondary}`,
     transition: "background-color 0.25s ease-in-out, border 0.25s ease-in-out",
 });
 

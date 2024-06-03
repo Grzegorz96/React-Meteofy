@@ -1,14 +1,11 @@
 import React from "react";
 import { ClipLoader } from "react-spinners";
 import { LoaderWrapper, LoaderText } from "./Loader.styles";
-import { useSelector } from "react-redux";
-import { darkTheme, lightTheme } from "../../../utils/styles/theme";
+import { useTheme } from "styled-components";
 
 export default function Loader({ color }) {
-    const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
-
-    const currentColor =
-        color || isDarkMode ? darkTheme.textPrimary : lightTheme.textPrimary;
+    const theme = useTheme();
+    const currentColor = color || theme.textPrimary;
 
     return (
         <LoaderWrapper>

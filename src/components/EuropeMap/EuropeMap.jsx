@@ -6,6 +6,7 @@ import MarkerClusterGroup from "react-leaflet-cluster";
 import { renderToString } from "react-dom/server";
 import "leaflet/dist/leaflet.css";
 import "../../assets/CSS/reactLeafletStyles/customMarkerIcon.css";
+import "../../assets/CSS/reactLeafletStyles/customControlZoom.css";
 import {
     openWeatherModal,
     closeWeatherModal,
@@ -16,14 +17,30 @@ export default function EuropeMap({ fetchedCitiesData }) {
     const theme = useTheme();
 
     useEffect(() => {
+        const mapContainer = document.querySelector(".leaflet-container");
+
+        mapContainer.style.setProperty(
+            "--elements-background-color",
+            theme.isDarkMode
+                ? "rgba(0, 0, 0, 0.75)"
+                : "rgba(255, 255, 255, 0.75)"
+        );
+
+        mapContainer.style.setProperty(
+            "--elements-hover-background-color",
+            theme.backgroundFocus
+        );
+
+        mapContainer.style.setProperty("--elements-color", theme.textPrimary);
+
         return () => {
             closeWeatherModal();
         };
     }, [theme]);
 
-    const customMarker = (weatherIcon, temperature) =>
-        divIcon({
-            className: "custom-marker-icon",
+    const customMarker = (weatherIcon, temperature) => {
+        return divIcon({
+            className: "marker-icon",
             iconSize: [60, 40],
             iconAnchor: [30, 60],
             html: renderToString(
@@ -33,9 +50,18 @@ export default function EuropeMap({ fetchedCitiesData }) {
                 </>
             ),
         });
+    };
 
     return (
         <MapContainer
+            style={{
+                height: "100%",
+                width: "100%",
+                position: "absolute",
+                top: "0",
+                left: "0",
+                overflow: "hidden",
+            }}
             minZoom={4}
             maxZoom={13}
             dragging={true}
@@ -46,16 +72,6 @@ export default function EuropeMap({ fetchedCitiesData }) {
                 [70, 45],
             ]}
             maxBoundsViscosity={1.0}
-            contro
-            style={{
-                zIndex: 1,
-                height: "100%",
-                width: "100%",
-                position: "absolute",
-                top: 0,
-                left: 0,
-                overflow: "hidden",
-            }}
         >
             <TileLayer
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
@@ -87,7 +103,7 @@ export default function EuropeMap({ fetchedCitiesData }) {
                             city.weather[0].icon,
                             city.main.temp
                         )}
-                    ></Marker>
+                    />
                 ))}
             </MarkerClusterGroup>
         </MapContainer>

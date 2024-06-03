@@ -14,13 +14,9 @@ import {
 } from "react-accessible-accordion";
 import ScrollContainer from "../../ui/ScrollContainer/ScrollContainer";
 import HourlyWeatherItem from "../HourlyWeatherItem/HourlyWeatherItem";
+import { format } from "date-fns";
 
-export default function DailyWeatherItem({
-    index,
-    dayData,
-    forecastDays,
-    scrollableContainerRef,
-}) {
+export default function DailyWeatherItem({ dayData, scrollableContainerRef }) {
     return (
         <AccordionItem>
             <AccordionItemHeading>
@@ -30,11 +26,7 @@ export default function DailyWeatherItem({
                         width={"30px"}
                         height={"30px"}
                     />
-                    <Day>
-                        {`${dayData.datetime.substring(5)} ${
-                            forecastDays[index % forecastDays.length]
-                        }`}
-                    </Day>
+                    <Day>{format(dayData.datetime, "MM-dd EEEE")}</Day>
                     <Description>{dayData.conditions}</Description>
                     <Label $grey>
                         {Math.round(dayData.tempmax)}°C/

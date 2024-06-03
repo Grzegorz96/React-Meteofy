@@ -1,0 +1,34 @@
+.leaflet-control-zoom {
+    padding: 1px;
+
+    .leaflet-control-zoom-in {
+        background-color: var(--elements-background-color);
+        color: var(--elements-color);
+        transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+
+        &:hover,
+        &:focus-visible {
+            background-color: var(--elements-hover-background-color);
+            outline: none;
+            transition: none;
+        }
+    }
+
+    .leaflet-control-zoom-out {
+        background-color: var(--elements-background-color);
+        color: var(--elements-color);
+        transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+
+        &:hover,
+        &:focus-visible {
+            background-color: var(--elements-hover-background-color);
+            outline: none;
+            transition: none;
+        }
+    }
+
+    .leaflet-disabled {
+        background-color: var(--elements-background-color) !important;
+        color: #818181 !important;
+    }
+}

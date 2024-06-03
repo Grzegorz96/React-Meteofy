@@ -13,16 +13,16 @@ import {
     closeWeatherModal,
 } from "../ui/modals/WeatherModal/WeatherModal";
 import { polishCitiesData } from "../../utils/citiesConfig/polishCitiesData";
-import { useSelector } from "react-redux";
+import { useTheme } from "styled-components";
 
 export default function PolandMap({ fetchedCitiesData }) {
-    const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
+    const theme = useTheme();
 
     useEffect(() => {
         return () => {
             closeWeatherModal();
         };
-    }, [isDarkMode]);
+    }, [theme]);
 
     const extensionAnimation = useSpring({
         from: {
@@ -62,17 +62,14 @@ export default function PolandMap({ fetchedCitiesData }) {
                                     title={cityData.title}
                                     d={cityData.d}
                                     onClick={() =>
-                                        openWeatherModal(
-                                            currentCity,
-                                            isDarkMode
-                                        )
+                                        openWeatherModal(currentCity, theme)
                                     }
                                     onKeyDown={(e) => {
                                         if (e.key === "Enter") {
                                             e.preventDefault();
                                             openWeatherModal(
                                                 currentCity,
-                                                isDarkMode
+                                                theme
                                             );
                                         }
                                     }}

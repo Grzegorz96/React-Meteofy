@@ -1,5 +1,4 @@
 import { aqiUSData } from "./constants/aqiUSData";
-import { WEEK_DAYS } from "./constants/weekDays";
 import { startOfDay, addDays } from "date-fns";
 
 export function getAqiUSData(aqiValue) {
@@ -18,14 +17,6 @@ export function getAqiUSData(aqiValue) {
         return aqiValue >= data.aqiUSLevel[0] && aqiValue <= data.aqiUSLevel[1];
     });
 }
-
-export const getForecastDays = () => {
-    const dayInAWeek = new Date().getDay();
-
-    return WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
-        WEEK_DAYS.slice(0, dayInAWeek)
-    );
-};
 
 export const getDefaultDateRange = () => {
     return [startOfDay(new Date()), startOfDay(addDays(new Date(), 44))];

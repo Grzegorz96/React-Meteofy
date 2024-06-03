@@ -1,10 +1,8 @@
 import { memo, useRef } from "react";
 import DailyWeatherItem from "../DailyWeatherItem/DailyWeatherItem";
-import { getForecastDays } from "../../../utils/helpers";
 import CustomAccordion from "../../ui/Accordion/Accordion";
 
 function ForecastWeather({ forecastWeather }) {
-    const forecastDays = getForecastDays();
     const listOfRefs = [];
 
     return (
@@ -15,9 +13,7 @@ function ForecastWeather({ forecastWeather }) {
                 return (
                     <DailyWeatherItem
                         key={index}
-                        index={index}
                         dayData={dayData}
-                        forecastDays={forecastDays}
                         scrollableContainerRef={scrollableContainerRef}
                     />
                 );

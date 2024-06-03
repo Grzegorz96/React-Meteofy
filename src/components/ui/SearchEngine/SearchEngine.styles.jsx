@@ -1,6 +1,4 @@
-import { darkTheme, lightTheme } from "../../../utils/styles/theme";
-
-export const globalInputStyles = (isDarkMode) => ({
+export const globalInputStyles = (theme) => ({
     container: (styles) => ({
         ...styles,
         display: "flex",
@@ -13,29 +11,40 @@ export const globalInputStyles = (isDarkMode) => ({
     }),
     control: (styles, state) => ({
         ...styles,
-        backgroundColor: isDarkMode
-            ? darkTheme.secondary
-            : lightTheme.secondary,
+        backgroundColor: theme.secondary,
         boxShadow: state.isFocused
-            ? `0 0 0 2px ${
-                  isDarkMode
-                      ? darkTheme.textSecondary
-                      : lightTheme.textSecondary
-              }`
+            ? `0 0 0 2px ${theme.textSecondary}`
             : "none",
         border: "none",
         height: "40px",
         width: "100%",
         cursor: "pointer",
+        color: theme.textPrimary,
         transition:
             "box-shadow 0.25s ease-in-out, background-color 0.25s ease-in-out",
+    }),
+    input: (styles) => ({
+        ...styles,
+        color: theme.textPrimary,
+        transition: "color 0.25s ease-in-out",
+        "@media (max-width: 450px)": {
+            fontSize: "12px",
+        },
     }),
     placeholder: (styles) => ({
         ...styles,
         whiteSpace: "nowrap",
         textOverflow: "ellipsis",
         overflow: "hidden",
-        color: isDarkMode ? darkTheme.textSecondary : lightTheme.textSecondary,
+        color: theme.textSecondary,
+        transition: "color 0.25s ease-in-out",
+        "@media (max-width: 450px)": {
+            fontSize: "12px",
+        },
+    }),
+    singleValue: (styles) => ({
+        ...styles,
+        color: theme.textPrimary,
         transition: "color 0.25s ease-in-out",
         "@media (max-width: 450px)": {
             fontSize: "12px",
@@ -44,53 +53,33 @@ export const globalInputStyles = (isDarkMode) => ({
     menu: (styles) => ({
         ...styles,
         zIndex: "3",
-        backgroundColor: isDarkMode
-            ? darkTheme.secondary
-            : lightTheme.secondary,
-        color: isDarkMode ? darkTheme.textPrimary : lightTheme.textPrimary,
+        backgroundColor: theme.secondary,
+        color: theme.textPrimary,
         overflow: "hidden",
-        border: `1px solid ${
-            isDarkMode ? darkTheme.textSecondary : lightTheme.textSecondary
-        }`,
+        border: `1px solid ${theme.textSecondary}`,
         transition:
             "background-color 0.25s ease-in-out, border 0.25s ease-in-out, color 0.25s ease-in-out",
     }),
     option: (styles, state) => ({
         ...styles,
         cursor: "pointer",
-        color: state.isSelected
-            ? isDarkMode
-                ? lightTheme.textPrimary
-                : darkTheme.textPrimary
-            : "none",
+        color: state.isSelected ? theme.textPrimary : styles.color,
         backgroundColor:
             state.isFocused || state.isSelected
-                ? isDarkMode
-                    ? darkTheme.textSecondary
-                    : lightTheme.textSecondary
+                ? theme.textSecondary
                 : styles.backgroundColor,
 
         ":active": {
-            backgroundColor: isDarkMode
-                ? darkTheme.textSecondary
-                : lightTheme.textSecondary,
+            backgroundColor: theme.textSecondary,
         },
 
-        "@media (max-width: 450px)": {
-            fontSize: "12px",
-        },
-    }),
-    singleValue: (styles) => ({
-        ...styles,
-        color: isDarkMode ? darkTheme.textPrimary : lightTheme.textPrimary,
-        transition: "color 0.25s ease-in-out",
         "@media (max-width: 450px)": {
             fontSize: "12px",
         },
     }),
 });
 
-export const localInputStyles = (isDarkMode) => ({
+export const localInputStyles = (theme) => ({
     container: (styles) => ({
         ...styles,
         display: "flex",
@@ -104,9 +93,7 @@ export const localInputStyles = (isDarkMode) => ({
     }),
     control: (styles, state) => ({
         ...styles,
-        backgroundColor: isDarkMode
-            ? darkTheme.secondary
-            : lightTheme.secondary,
+        backgroundColor: theme.secondary,
         width: "90%",
         height: "40px",
         borderRadius: "0",
@@ -115,58 +102,50 @@ export const localInputStyles = (isDarkMode) => ({
         cursor: "pointer",
         boxShadow: `0px ${
             state.isFocused ? "1.5px 1px 1.5px" : "1px 1px 1px"
-        } ${isDarkMode ? darkTheme.textSecondary : lightTheme.textSecondary}`,
+        } ${theme.textSecondary}`,
         border: "none",
         transition:
             "box-shadow 0.25s ease-in-out, background-color 0.25s ease-in-out",
     }),
+    input: (styles) => ({
+        ...styles,
+        color: theme.textPrimary,
+        transition: "color 0.25s ease-in-out",
+    }),
     placeholder: (styles) => ({
         ...styles,
-        color: isDarkMode ? darkTheme.textSecondary : lightTheme.textSecondary,
+        color: theme.textSecondary,
         transition: "color 0.25s ease-in-out",
         whiteSpace: "nowrap",
         textOverflow: "ellipsis",
         overflow: "hidden",
     }),
+    singleValue: (styles) => ({
+        ...styles,
+        color: theme.textPrimary,
+        transition: "color 0.25s ease-in-out",
+    }),
     menu: (styles) => ({
         ...styles,
         width: "90%",
         overflow: "hidden",
-        backgroundColor: isDarkMode
-            ? darkTheme.secondary
-            : lightTheme.secondary,
-        color: isDarkMode ? darkTheme.textPrimary : lightTheme.textPrimary,
-        border: `1px solid ${
-            isDarkMode ? darkTheme.textSecondary : lightTheme.textSecondary
-        }`,
+        backgroundColor: theme.secondary,
+        color: theme.textPrimary,
+        border: `1px solid ${theme.textSecondary}`,
         transition:
             "background-color 0.25s ease-in-out, border 0.25s ease-in-out, color 0.25s ease-in-out",
     }),
     option: (styles, state) => ({
         ...styles,
         cursor: "pointer",
-        color: state.isSelected
-            ? isDarkMode
-                ? lightTheme.textPrimary
-                : darkTheme.textPrimary
-            : "none",
+        color: state.isSelected ? theme.textPrimary : styles.color,
         backgroundColor:
             state.isFocused || state.isSelected
-                ? isDarkMode
-                    ? darkTheme.textSecondary
-                    : lightTheme.textSecondary
+                ? theme.textSecondary
                 : styles.backgroundColor,
 
         ":active": {
-            backgroundColor: isDarkMode
-                ? darkTheme.textSecondary
-                : lightTheme.textSecondary,
+            backgroundColor: theme.textSecondary,
         },
-    }),
-
-    singleValue: (styles) => ({
-        ...styles,
-        color: isDarkMode ? darkTheme.textPrimary : lightTheme.textPrimary,
-        transition: "color 0.25s ease-in-out",
     }),
 });

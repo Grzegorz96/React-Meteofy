@@ -1,5 +1,3 @@
-import { darkTheme, lightTheme } from "../styles/theme";
-
 export function getAirPollutionBarChartOptions(city, theme) {
     return {
         plugins: {
@@ -126,7 +124,7 @@ export function getLongTermWeatherLinearChartOptions(
     selectedDataset,
     selectedDateRange,
     city,
-    isDarkMode
+    theme
 ) {
     return {
         tension: 0.4,
@@ -142,9 +140,7 @@ export function getLongTermWeatherLinearChartOptions(
                                 : " " + selectedDataset.unit
                         }`;
                     },
-                    color: isDarkMode
-                        ? darkTheme.textSecondary
-                        : lightTheme.textSecondary,
+                    color: theme.textSecondary,
                 },
                 beginAtZero: true,
             },
@@ -156,9 +152,7 @@ export function getLongTermWeatherLinearChartOptions(
                 },
                 beginAtZero: true,
                 ticks: {
-                    color: isDarkMode
-                        ? darkTheme.textSecondary
-                        : lightTheme.textSecondary,
+                    color: theme.textSecondary,
                 },
                 min: selectedDateRange[0],
                 max: selectedDateRange[1],
@@ -171,9 +165,7 @@ export function getLongTermWeatherLinearChartOptions(
                 font: {
                     size: 20,
                 },
-                color: isDarkMode
-                    ? darkTheme.textPrimary
-                    : lightTheme.textPrimary,
+                color: theme.textPrimary,
             },
             tooltip: {
                 callbacks: {
@@ -185,20 +177,16 @@ export function getLongTermWeatherLinearChartOptions(
                         }`;
                     },
                 },
-                backgroundColor: isDarkMode
-                    ? darkTheme.tooltip
-                    : lightTheme.tooltip,
-                titleColor: isDarkMode ? darkTheme.primary : lightTheme.primary,
-                bodyColor: isDarkMode ? darkTheme.primary : lightTheme.primary,
+                backgroundColor: theme.tooltip,
+                titleColor: theme.primary,
+                bodyColor: theme.primary,
             },
             legend: {
                 display: false,
             },
             currentTimePosition: {
                 lineThickness: 1,
-                color: isDarkMode
-                    ? darkTheme.textPrimary
-                    : lightTheme.textPrimary,
+                color: theme.textPrimary,
             },
         },
     };

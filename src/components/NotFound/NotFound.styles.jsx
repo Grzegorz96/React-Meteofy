@@ -39,7 +39,7 @@ export const LinkStyled = styled(Link)`
     text-align: center;
 
     &:focus {
-        outline: 3px solid #b7b2ef;
+        outline: 3px solid #7066e099;
     }
 
     &:hover {
