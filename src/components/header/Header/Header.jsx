@@ -13,10 +13,6 @@ export default function HeaderComponent() {
     const cityData = useSelector(({ cityData }) => cityData);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const handleOnChange = (searchedData) => {
-        dispatch(setCityData(searchedData));
-        navigate("/");
-    };
 
     return (
         <Header>
@@ -26,7 +22,10 @@ export default function HeaderComponent() {
             <SearchEngine
                 placeholder={"Search for a city"}
                 city={cityData}
-                handleOnChange={handleOnChange}
+                handleOnChange={(searchedData) => {
+                    dispatch(setCityData(searchedData));
+                    navigate("/");
+                }}
                 styles={globalInputStyles}
             />
             {isMobile ? <SideBarMenu /> : <Navbar />}

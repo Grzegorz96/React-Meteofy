@@ -16,14 +16,14 @@ export const openWeatherModal = (city, theme) => {
         width: "400px",
         background: theme.secondary,
         heightAuto: false,
-        iconHtml: <WeatherIcon $icon={city.weather[0].icon} />,
+        iconHtml: <WeatherIcon $icon={city?.weather[0]?.icon} />,
         title: (
             <>
                 <Title $theme={theme}>
-                    {`${city.name} ${Math.round(city.main.temp)}°C`}
+                    {`${city?.name} ${Math.round(city?.main?.temp)}°C`}
                 </Title>
                 <Paragraph $theme={theme}>
-                    {city.weather[0].description}
+                    {city?.weather[0]?.description}
                 </Paragraph>
             </>
         ),
@@ -32,33 +32,33 @@ export const openWeatherModal = (city, theme) => {
                 <WeatherInfo $theme={theme}>
                     feels like:
                     <WeatherInfoValue $theme={theme}>
-                        {`${Math.round(city.main.feels_like)}°C`}
+                        {`${Math.round(city?.main?.feels_like)}°C`}
                     </WeatherInfoValue>
                 </WeatherInfo>
                 <WeatherInfo $theme={theme}>
                     humidity:
                     <WeatherInfoValue $theme={theme}>
-                        {`${Math.round(city.main.humidity)}%`}
+                        {`${Math.round(city?.main?.humidity)}%`}
                     </WeatherInfoValue>
                 </WeatherInfo>
                 <WeatherInfo $theme={theme}>
                     wind:
                     <WeatherInfoValue $theme={theme}>
-                        {`${Math.round(city.wind.speed * 3.6)}
+                        {`${Math.round(city?.wind?.speed * 3.6)}
                                  km/h`}
                     </WeatherInfoValue>
                 </WeatherInfo>
                 <WeatherInfo $theme={theme}>
                     pressure:
                     <WeatherInfoValue $theme={theme}>
-                        {`${Math.round(city.main.pressure)}
+                        {`${Math.round(city?.main?.pressure)}
                                  hPa`}
                     </WeatherInfoValue>
                 </WeatherInfo>
                 <WeatherInfo $theme={theme}>
                     clouds:
                     <WeatherInfoValue $theme={theme}>
-                        {`${Math.round(city.clouds.all)}%`}
+                        {`${Math.round(city?.clouds?.all)}%`}
                     </WeatherInfoValue>
                 </WeatherInfo>
             </>

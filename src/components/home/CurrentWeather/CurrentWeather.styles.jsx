@@ -93,7 +93,6 @@ export const SunValue = styled.div`
 
 export const DetailsWrapper = styled.div`
     grid-area: details;
-
     display: grid;
     grid-template-columns: repeat(8, auto);
     gap: 10px;

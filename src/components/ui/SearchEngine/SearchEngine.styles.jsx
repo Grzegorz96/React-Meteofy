@@ -52,13 +52,16 @@ export const globalInputStyles = (theme) => ({
     }),
     menu: (styles) => ({
         ...styles,
-        zIndex: "3",
         backgroundColor: theme.secondary,
         color: theme.textPrimary,
         overflow: "hidden",
         border: `1px solid ${theme.textSecondary}`,
         transition:
             "background-color 0.25s ease-in-out, border 0.25s ease-in-out, color 0.25s ease-in-out",
+    }),
+    menuPortal: (styles) => ({
+        ...styles,
+        zIndex: "400",
     }),
     option: (styles, state) => ({
         ...styles,
@@ -82,21 +85,22 @@ export const globalInputStyles = (theme) => ({
 export const localInputStyles = (theme) => ({
     container: (styles) => ({
         ...styles,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
         width: "100%",
         maxWidth: "400px",
         position: "fixed",
         top: "70px",
         zIndex: "2",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
     }),
     control: (styles, state) => ({
         ...styles,
         backgroundColor: theme.secondary,
-        width: "90%",
         height: "40px",
+        width: "100%",
         borderRadius: "0",
+        marginInline: "20px",
         borderBottomRightRadius: "20px",
         borderBottomLeftRadius: "20px",
         cursor: "pointer",
@@ -127,13 +131,16 @@ export const localInputStyles = (theme) => ({
     }),
     menu: (styles) => ({
         ...styles,
-        width: "90%",
         overflow: "hidden",
         backgroundColor: theme.secondary,
         color: theme.textPrimary,
         border: `1px solid ${theme.textSecondary}`,
         transition:
             "background-color 0.25s ease-in-out, border 0.25s ease-in-out, color 0.25s ease-in-out",
+    }),
+    menuPortal: (styles) => ({
+        ...styles,
+        zIndex: "2",
     }),
     option: (styles, state) => ({
         ...styles,

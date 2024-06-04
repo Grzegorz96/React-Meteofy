@@ -17,7 +17,7 @@ export const useDataWithCitiesHandler = (city, dataType) => {
             setData({ ...data, loading: true });
             let latitude, longitude, currentPosition;
 
-            if (city.value.latitude && city.value.longitude) {
+            if (city) {
                 latitude = city.value.latitude;
                 longitude = city.value.longitude;
             } else {

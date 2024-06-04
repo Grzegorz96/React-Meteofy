@@ -12,10 +12,10 @@ export default function SearchEngine({
 
     return (
         <AsyncPaginate
-            // menuPortalTarget={document.body}
+            menuPortalTarget={document.body}
             placeholder={placeholder}
             debounceTimeout={1000}
-            value={city.value.latitude && city.value.longitude ? city : null}
+            value={city}
             onChange={handleOnChange}
             styles={styles(theme)}
             loadOptions={loadOptions}

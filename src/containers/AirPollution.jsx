@@ -8,10 +8,8 @@ import ForecastAirPollution from "../components/airPollution/ForecastAirPollutio
 import { localInputStyles } from "../components/ui/SearchEngine/SearchEngine.styles";
 
 export default function AirPollutionContainer() {
-    const [selectedCity, setSelectedCity] = useState({
-        label: null,
-        value: { latitude: null, longitude: null },
-    });
+    const [selectedCity, setSelectedCity] = useState(null);
+
     const { data, setData } = useDataWithCitiesHandler(
         selectedCity,
         "airPollution"

@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const getInitialThemeMode = () => {
-    const preference = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-    ).matches;
     const storedIsDarkMode = localStorage.getItem("isDarkMode");
 
     if (storedIsDarkMode === null) {
+        const preference = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+        ).matches;
+
         localStorage.setItem("isDarkMode", preference);
         return preference;
     }

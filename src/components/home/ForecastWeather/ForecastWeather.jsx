@@ -7,7 +7,7 @@ function ForecastWeather({ forecastWeather }) {
 
     return (
         <CustomAccordion listOfRefs={listOfRefs}>
-            {forecastWeather.map((dayData, index) => {
+            {forecastWeather?.map((dayData, index) => {
                 const scrollableContainerRef = useRef(null);
                 listOfRefs.push(scrollableContainerRef);
                 return (

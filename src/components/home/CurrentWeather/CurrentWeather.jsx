@@ -13,18 +13,19 @@ import {
     SunItems,
     SunValue,
 } from "./CurrentWeather.styles";
-import { FaTemperatureHalf, FaWind, FaWeightScale } from "react-icons/fa6";
+import { FaTemperatureHalf, FaWind } from "react-icons/fa6";
 import { WiHumidity } from "react-icons/wi";
 import { FiSunset, FiSunrise } from "react-icons/fi";
 import { MdOutlineVisibility, MdDewPoint } from "react-icons/md";
 import { IoRainy, IoCloud } from "react-icons/io5";
+import { CgCompressRight } from "react-icons/cg";
 
 function CurrentWeather({ currentWeather, city }) {
     return (
         <CurrentWeatherWrapper>
             <MainWrapper $gap="5px" $flexDirection="column" $width="65%">
                 <Text $fontWeight="600" $fontSize="10px" $grey>
-                    {`Weather conditions at ${currentWeather.datetime.substring(
+                    {`Weather conditions at ${currentWeather?.datetime?.substring(
                         0,
                         5
                     )} local time`}
@@ -38,7 +39,7 @@ function CurrentWeather({ currentWeather, city }) {
                     {city}
                 </Text>
                 <Text $fontWeight="300" $fontSize="12px" $lineHeight="1">
-                    {currentWeather.conditions}
+                    {currentWeather?.conditions}
                 </Text>
             </MainWrapper>
             <SecondWrapper>
@@ -48,9 +49,9 @@ function CurrentWeather({ currentWeather, city }) {
                         $fontSize="45px"
                         $letterSpacing="-1px"
                     >
-                        {Math.round(currentWeather.temp)}°C
+                        {Math.round(currentWeather?.temp)}°C
                     </Text>
-                    <WeatherIcon $icon={currentWeather.icon} />
+                    <WeatherIcon $icon={currentWeather?.icon} />
                 </TempInfo>
                 <SunInfo>
                     <Text $fontWeight="600" $fontSize="10px" $grey>
@@ -60,13 +61,13 @@ function CurrentWeather({ currentWeather, city }) {
                         <SunValue>
                             <FiSunrise fontSize={25} />
                             <Text $fontWeight="300" $fontSize="18px">
-                                {currentWeather.sunrise.substring(0, 5)}
+                                {currentWeather?.sunrise?.substring(0, 5)}
                             </Text>
                         </SunValue>
                         <SunValue>
                             <FiSunset fontSize={25} />
                             <Text $fontWeight="300" $fontSize="18px">
-                                {currentWeather.sunset.substring(0, 5)}
+                                {currentWeather?.sunset?.substring(0, 5)}
                             </Text>
                         </SunValue>
                     </SunItems>
@@ -80,7 +81,7 @@ function CurrentWeather({ currentWeather, city }) {
                     <DetailValue>
                         <FaTemperatureHalf fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
-                            {Math.round(currentWeather.feelslike)}°C
+                            {Math.round(currentWeather?.feelslike)}°C
                         </Text>
                     </DetailValue>
                 </Detail>
@@ -91,7 +92,7 @@ function CurrentWeather({ currentWeather, city }) {
                     <DetailValue>
                         <FaWind fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
-                            {Math.round(currentWeather.windspeed)} km/h
+                            {Math.round(currentWeather?.windspeed)} km/h
                         </Text>
                     </DetailValue>
                 </Detail>
@@ -102,7 +103,7 @@ function CurrentWeather({ currentWeather, city }) {
                     <DetailValue>
                         <IoRainy fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
-                            {Math.round(currentWeather.precipprob)}%
+                            {Math.round(currentWeather?.precipprob)}%
                         </Text>
                     </DetailValue>
                 </Detail>
@@ -113,7 +114,7 @@ function CurrentWeather({ currentWeather, city }) {
                     <DetailValue>
                         <WiHumidity fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
-                            {Math.round(currentWeather.humidity)}%
+                            {Math.round(currentWeather?.humidity)}%
                         </Text>
                     </DetailValue>
                 </Detail>
@@ -122,9 +123,9 @@ function CurrentWeather({ currentWeather, city }) {
                         Pressure
                     </Text>
                     <DetailValue>
-                        <FaWeightScale fontSize={20} />
+                        <CgCompressRight fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
-                            {Math.round(currentWeather.pressure)} hPa
+                            {Math.round(currentWeather?.pressure)} hPa
                         </Text>
                     </DetailValue>
                 </Detail>
@@ -135,7 +136,7 @@ function CurrentWeather({ currentWeather, city }) {
                     <DetailValue>
                         <MdOutlineVisibility fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
-                            {Math.round(currentWeather.visibility)} km
+                            {Math.round(currentWeather?.visibility)} km
                         </Text>
                     </DetailValue>
                 </Detail>
@@ -146,7 +147,7 @@ function CurrentWeather({ currentWeather, city }) {
                     <DetailValue>
                         <MdDewPoint fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
-                            {Math.round(currentWeather.dew)}°C
+                            {Math.round(currentWeather?.dew)}°C
                         </Text>
                     </DetailValue>
                 </Detail>
@@ -157,7 +158,7 @@ function CurrentWeather({ currentWeather, city }) {
                     <DetailValue>
                         <IoCloud fontSize={20} />
                         <Text $fontWeight="300" $fontSize="14px">
-                            {Math.round(currentWeather.cloudcover)}%
+                            {Math.round(currentWeather?.cloudcover)}%
                         </Text>
                     </DetailValue>
                 </Detail>

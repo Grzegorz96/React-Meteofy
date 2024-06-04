@@ -48,9 +48,9 @@ export default function PolandMap({ fetchedCitiesData }) {
                 preserveAspectRatio="xMidYMid meet"
             >
                 <g>
-                    {fetchedCitiesData.list.map((currentCity) => {
+                    {fetchedCitiesData?.map((currentCity) => {
                         const cityData = polishCitiesData.find(
-                            (polishCity) => polishCity.id === currentCity.id
+                            (polishCity) => polishCity.id === currentCity?.id
                         );
 
                         if (cityData) {
@@ -79,9 +79,9 @@ export default function PolandMap({ fetchedCitiesData }) {
                     })}
                 </g>
                 <g>
-                    {fetchedCitiesData.list.map((currentCity) => {
+                    {fetchedCitiesData?.map((currentCity) => {
                         const cityData = polishCitiesData.find(
-                            (polishCity) => polishCity.id === currentCity.id
+                            (polishCity) => polishCity.id === currentCity?.id
                         );
 
                         if (cityData) {
@@ -100,17 +100,18 @@ export default function PolandMap({ fetchedCitiesData }) {
                                         <DataWrapper>
                                             <Temp>
                                                 {Math.round(
-                                                    currentCity.main.temp
+                                                    currentCity?.main?.temp
                                                 )}
                                                 °
                                             </Temp>
                                             <WeatherIcon
                                                 $icon={
-                                                    currentCity.weather[0].icon
+                                                    currentCity?.weather[0]
+                                                        ?.icon
                                                 }
                                             />
                                         </DataWrapper>
-                                        <Text>{currentCity.name}</Text>
+                                        <Text>{currentCity?.name}</Text>
                                     </MapItem>
                                 </foreignObject>
                             );

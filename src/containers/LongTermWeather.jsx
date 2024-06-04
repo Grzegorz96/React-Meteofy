@@ -7,10 +7,7 @@ import { useDataWithCitiesHandler } from "../hooks/useDataWithCitiesHandler";
 import LongTermWeatherMain from "../components/longTermWeather/LongTermWeatherMain/LongTermWeatherMain";
 
 export default function LongTermWeatherContainer() {
-    const [selectedCity, setSelectedCity] = useState({
-        label: null,
-        value: { latitude: null, longitude: null },
-    });
+    const [selectedCity, setSelectedCity] = useState(null);
 
     const { data, setData } = useDataWithCitiesHandler(
         selectedCity,

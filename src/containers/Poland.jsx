@@ -11,8 +11,8 @@ export default function PolandContainer() {
         <>
             {data.error && <ErrorModal data={data} setData={setData} />}
             {data.loading && <Loader />}
-            {data.fetchedData && (
-                <PolandMap fetchedCitiesData={data.fetchedData} />
+            {data.fetchedData?.list && (
+                <PolandMap fetchedCitiesData={data.fetchedData.list} />
             )}
         </>
     );

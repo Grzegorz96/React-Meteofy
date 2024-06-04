@@ -22,13 +22,13 @@ export default function HomeContainer() {
         <>
             {data.error && <ErrorModal data={data} setData={setData} />}
             {data.loading && <Loader />}
-            {data.fetchedData && (
+            {data.fetchedData?.currentConditions && data.city && (
                 <CurrentWeather
                     currentWeather={data.fetchedData.currentConditions}
                     city={data.city}
                 />
             )}
-            {data.fetchedData && (
+            {data.fetchedData?.days && (
                 <ForecastWeather forecastWeather={data.fetchedData.days} />
             )}
         </>

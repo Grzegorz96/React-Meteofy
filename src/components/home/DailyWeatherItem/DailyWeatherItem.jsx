@@ -22,15 +22,18 @@ export default function DailyWeatherItem({ dayData, scrollableContainerRef }) {
             <AccordionItemHeading>
                 <StyledAccordionItemButton>
                     <WeatherIcon
-                        $icon={dayData.icon}
+                        $icon={dayData?.icon}
                         width={"30px"}
                         height={"30px"}
                     />
-                    <Day>{format(dayData.datetime, "MM-dd EEEE")}</Day>
-                    <Description>{dayData.conditions}</Description>
+                    <Day>
+                        {dayData?.datetime &&
+                            format(dayData.datetime, "MM-dd EEEE")}
+                    </Day>
+                    <Description>{dayData?.conditions}</Description>
                     <Label $grey>
-                        {Math.round(dayData.tempmax)}°C/
-                        {Math.round(dayData.tempmin)}°C
+                        {Math.round(dayData?.tempmax)}°C/
+                        {Math.round(dayData?.tempmin)}°C
                     </Label>
                 </StyledAccordionItemButton>
             </AccordionItemHeading>
@@ -38,33 +41,33 @@ export default function DailyWeatherItem({ dayData, scrollableContainerRef }) {
                 <DailyDetailsGrid>
                     <DailyDetailsGridItem>
                         <Label $grey>Feels like:</Label>
-                        <Label>{Math.round(dayData.feelslike)}°C</Label>
+                        <Label>{Math.round(dayData?.feelslike)}°C</Label>
                     </DailyDetailsGridItem>
                     <DailyDetailsGridItem>
                         <Label $grey>Pressure:</Label>
-                        <Label>{Math.round(dayData.pressure)} hPa</Label>
+                        <Label>{Math.round(dayData?.pressure)} hPa</Label>
                     </DailyDetailsGridItem>
                     <DailyDetailsGridItem>
                         <Label $grey>Humidity:</Label>
-                        <Label>{Math.round(dayData.humidity)}%</Label>
+                        <Label>{Math.round(dayData?.humidity)}%</Label>
                     </DailyDetailsGridItem>
                     <DailyDetailsGridItem>
                         <Label $grey>Clouds:</Label>
-                        <Label>{Math.round(dayData.cloudcover)}%</Label>
+                        <Label>{Math.round(dayData?.cloudcover)}%</Label>
                     </DailyDetailsGridItem>
                     <DailyDetailsGridItem>
                         <Label $grey>Wind speed:</Label>
-                        <Label>{Math.round(dayData.windspeed)} km/h</Label>
+                        <Label>{Math.round(dayData?.windspeed)} km/h</Label>
                     </DailyDetailsGridItem>
                     <DailyDetailsGridItem>
                         <Label $grey>Visibility:</Label>
-                        <Label>{Math.round(dayData.visibility)} km</Label>
+                        <Label>{Math.round(dayData?.visibility)} km</Label>
                     </DailyDetailsGridItem>
                 </DailyDetailsGrid>
                 <ScrollContainer
                     scrollableContainerRef={scrollableContainerRef}
                 >
-                    {dayData.hours.map((hourData, index) => (
+                    {dayData?.hours?.map((hourData, index) => (
                         <HourlyWeatherItem key={index} hourData={hourData} />
                     ))}
                 </ScrollContainer>
