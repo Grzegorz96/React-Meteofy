@@ -17,7 +17,7 @@ export default function AirPollutionContainer() {
 
     const forecastData = useMemo(
         () => data.fetchedData?.days.slice(0, 4),
-        [data.fetchedData]
+        [data.fetchedData?.days]
     );
 
     return (
@@ -32,13 +32,13 @@ export default function AirPollutionContainer() {
             />
             {data.error && <ErrorModal data={data} setData={setData} />}
             {data.loading && <Loader />}
-            {data.fetchedData && (
+            {data.fetchedData?.days && data.city && (
                 <CurrentAirPollution
                     currentAirPollutionData={data.fetchedData.days[0]}
                     city={data.city}
                 />
             )}
-            {data.fetchedData && (
+            {data.fetchedData?.days && (
                 <ForecastAirPollution forecastAirPollutionData={forecastData} />
             )}
         </>

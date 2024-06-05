@@ -57,7 +57,7 @@ export const Text = styled.span`
 `;
 
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `/src/assets/openWeatherIcons/${props.$icon}.png`,
+    src: `/src/assets/openWeatherIcons/${props.$icon ?? "unknown"}.png`,
 }))`
     width: 28px;
 `;

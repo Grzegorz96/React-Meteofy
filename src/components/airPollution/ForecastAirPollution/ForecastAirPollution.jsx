@@ -7,7 +7,7 @@ function ForecastAirPollution({ forecastAirPollutionData }) {
 
     return (
         <CustomAccordion listOfRefs={listOfRefs}>
-            {forecastAirPollutionData.map((dayData, index) => {
+            {forecastAirPollutionData?.map((dayData, index) => {
                 const scrollableContainerRef = useRef(null);
                 listOfRefs.push(scrollableContainerRef);
                 return (

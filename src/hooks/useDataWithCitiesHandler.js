@@ -65,8 +65,8 @@ export const useDataWithCitiesHandler = (city, dataType) => {
                 setData({
                     city: cityName
                         ? `${
-                              cityName.results[0]?.city
-                          }, ${cityName.results[0]?.country_code?.toUpperCase()}`
+                              cityName.results?.[0]?.city
+                          }, ${cityName.results?.[0]?.country_code?.toUpperCase()}`
                         : city.label,
                     fetchedData: fetchedData,
                     loading: false,

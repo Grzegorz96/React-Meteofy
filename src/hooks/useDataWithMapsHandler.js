@@ -25,8 +25,8 @@ export const useDataWithMapsHandler = (cityObjects) => {
 
                 const fetchedData = results.reduce(
                     (accumulator, current) => ({
-                        cnt: accumulator.cnt + current.cnt,
-                        list: accumulator.list.concat(current.list),
+                        cnt: accumulator.cnt + current?.cnt,
+                        list: accumulator.list.concat(current?.list),
                     }),
                     { cnt: 0, list: [] }
                 );

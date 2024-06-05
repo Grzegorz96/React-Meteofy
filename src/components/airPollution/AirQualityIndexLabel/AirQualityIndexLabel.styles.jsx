@@ -100,6 +100,8 @@ export const ErrorInfo = styled.div`
     width: 100%;
     padding: 20px;
     text-align: center;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
 `;
 
 export const AirQualityIndexFooter = styled.div`

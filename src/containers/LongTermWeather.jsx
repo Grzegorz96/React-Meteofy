@@ -23,7 +23,7 @@ export default function LongTermWeatherContainer() {
                 ([key]) => key.includes("member01") || key === "time"
             )
         );
-    }, [data.fetchedData]);
+    }, [data.fetchedData?.daily]);
 
     return (
         <>
@@ -37,7 +37,7 @@ export default function LongTermWeatherContainer() {
             />
             {data.error && <ErrorModal data={data} setData={setData} />}
             {data.loading && <Loader />}
-            {data.fetchedData && (
+            {data.fetchedData?.daily && data.city && (
                 <LongTermWeatherMain
                     seasonalData={seasonalData}
                     city={data.city}

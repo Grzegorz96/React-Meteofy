@@ -11,8 +11,8 @@ export default function EuropeContainer() {
         <>
             {data.error && <ErrorModal data={data} setData={setData} />}
             {data.loading && <Loader />}
-            {data.fetchedData && (
-                <EuropeMap fetchedCitiesData={data.fetchedData} />
+            {data.fetchedData?.list && (
+                <EuropeMap fetchedCitiesData={data.fetchedData.list} />
             )}
         </>
     );

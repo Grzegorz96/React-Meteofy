@@ -96,7 +96,6 @@ export const DetailsWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(8, auto);
     gap: 10px;
-    justify-content: center;
 
     @media (max-width: 810px) {
         grid-template-columns: repeat(4, 1fr);
@@ -125,7 +124,9 @@ export const DetailValue = styled.div`
 `;
 
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `/src/assets/visualCrossingWeatherIcons/${props.$icon}.svg`,
+    src: `/src/assets/visualCrossingWeatherIcons/${
+        props.$icon ?? "unknown"
+    }.svg`,
 }))`
     width: 80px;
     height: 80px;

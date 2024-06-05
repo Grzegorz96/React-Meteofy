@@ -36,7 +36,9 @@ export function getAirPollutionBarChartOptions(city, theme) {
                 color: theme.textSecondary,
                 offset: 0,
                 formatter: function (value) {
-                    return `${value} μg/m³`;
+                    return value === null || value === undefined
+                        ? "NA"
+                        : `${value} μg/m³`;
                 },
             },
         },

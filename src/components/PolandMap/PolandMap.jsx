@@ -100,18 +100,20 @@ export default function PolandMap({ fetchedCitiesData }) {
                                         <DataWrapper>
                                             <Temp>
                                                 {Math.round(
-                                                    currentCity?.main?.temp
+                                                    currentCity?.main?.temp ?? 0
                                                 )}
                                                 °
                                             </Temp>
                                             <WeatherIcon
                                                 $icon={
-                                                    currentCity?.weather[0]
+                                                    currentCity?.weather?.[0]
                                                         ?.icon
                                                 }
                                             />
                                         </DataWrapper>
-                                        <Text>{currentCity?.name}</Text>
+                                        <Text>
+                                            {currentCity?.name ?? "Error"}
+                                        </Text>
                                     </MapItem>
                                 </foreignObject>
                             );

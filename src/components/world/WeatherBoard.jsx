@@ -5,7 +5,9 @@ export default function WeatherBoard({ position, capital, handleEvent }) {
     const [hovered, setHovered] = useState(false);
     useCursor(hovered, "pointer");
     const texture = useTexture(
-        `/src/assets/openWeatherIcons/${capital.weather[0].icon}.png`
+        `/src/assets/openWeatherIcons/${
+            capital?.weather?.[0]?.icon ?? "unknown"
+        }.png`
     );
     const weatherBoardRef = useRef();
     useLayoutEffect(() => {
@@ -27,7 +29,7 @@ export default function WeatherBoard({ position, capital, handleEvent }) {
             }}
             args={[0.12, 0.08, 0.005]}
             position={position}
-            name={`weather-board-${capital.name}`}
+            name={`weather-board-${capital?.name}`}
         >
             <meshStandardMaterial
                 color={hovered ? "#1dbb25" : "#81832c"}
@@ -61,7 +63,7 @@ export default function WeatherBoard({ position, capital, handleEvent }) {
                 position={[0.03, 0.008, -0.003]}
                 rotation={[0, Math.PI, 0]}
             >
-                {Math.round(capital.main.temp)}°
+                {Math.round(capital?.main?.temp ?? 0)}°
             </Text>
             <Text
                 layers={1}
@@ -73,7 +75,7 @@ export default function WeatherBoard({ position, capital, handleEvent }) {
                 position={[0, -0.025, -0.003]}
                 rotation={[0, Math.PI, 0]}
             >
-                {capital.name}
+                {capital?.name ?? "Error"}
             </Text>
         </Box>
     );

@@ -7,12 +7,13 @@ import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
 
 export default function WorldContainer() {
     const { data, setData } = useDataWithMapsHandler(worldCapitalsData);
+
     return (
         <>
             {data.error && <ErrorModal data={data} setData={setData} />}
             {data.loading && <Loader />}
-            {data.fetchedData && (
-                <WorldGlobe fetchedCitiesData={data.fetchedData} />
+            {data.fetchedData?.list && (
+                <WorldGlobe fetchedCitiesData={data.fetchedData.list} />
             )}
         </>
     );

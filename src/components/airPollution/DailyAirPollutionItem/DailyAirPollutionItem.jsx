@@ -32,8 +32,8 @@ export default function DailyAirPollutionItem({
     );
 
     const aqiUSData = useMemo(
-        () => getAqiUSData(dayData.aqius),
-        [dayData.aqius]
+        () => getAqiUSData(dayData?.aqius),
+        [dayData?.aqius]
     );
 
     return (
@@ -44,9 +44,13 @@ export default function DailyAirPollutionItem({
                         $icon={aqiUSData?.faceIcon}
                         $backgroundColor={aqiUSData?.aqiColor}
                     />
-                    <Day>{format(dayData.datetime, "MM-dd EEEE")}</Day>
+                    <Day>
+                        {dayData?.datetime
+                            ? format(dayData.datetime, "MM-dd EEEE")
+                            : "Error"}
+                    </Day>
                     <Description>{aqiUSData?.levelsOfConcern}</Description>
-                    <Label $grey>{`AQI US ${dayData.aqius}`}</Label>
+                    <Label $grey>{`AQI US ${dayData?.aqius ?? "Error"}`}</Label>
                 </StyledAccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>

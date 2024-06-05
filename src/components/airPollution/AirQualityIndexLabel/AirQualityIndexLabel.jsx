@@ -14,7 +14,7 @@ import {
 } from "./AirQualityIndexLabel.styles";
 
 export default function AirQualityIndexLabel({ currentAirPollutionData }) {
-    const currentAqiUSData = getAqiUSData(currentAirPollutionData.aqius);
+    const currentAqiUSData = getAqiUSData(currentAirPollutionData?.aqius);
 
     return (
         <AirQualityIndex>

@@ -16,7 +16,9 @@ export default function AirPollutionBarChart({
     return (
         <AirPollutionBarChartWrapper>
             <Datetime>
-                {format(currentAirPollutionData.datetime, "MMMM d, yyyy")}
+                {currentAirPollutionData?.datetime
+                    ? format(currentAirPollutionData.datetime, "MMMM d, yyyy")
+                    : "Error with getting data"}
             </Datetime>
             <Bar
                 data={getAirPollutionBarChartData(currentAirPollutionData)}

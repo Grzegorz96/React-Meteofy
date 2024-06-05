@@ -37,16 +37,16 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
 
     const setOffset = (capital) => {
         const cityToOffset = worldCapitalsOffset.find(
-            (city) => city.id === capital.id
+            (city) => city.id === capital?.id
         );
         return convertLatLonToCartesian(
             cityToOffset?.lat
-                ? capital.coord.lat + cityToOffset.lat
-                : capital.coord.lat,
+                ? capital?.coord?.lat + cityToOffset.lat
+                : capital?.coord?.lat,
 
             cityToOffset?.lon
-                ? capital.coord.lon + cityToOffset.lon
-                : capital.coord.lon,
+                ? capital?.coord?.lon + cityToOffset.lon
+                : capital?.coord?.lon,
             3.01
         );
     };
@@ -85,9 +85,9 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
                     metalness={0.3}
                     roughness={0.7}
                 />
-                {fetchedCitiesData.list.map((capital) => (
+                {fetchedCitiesData?.map((capital, index) => (
                     <WeatherBoard
-                        key={capital.id}
+                        key={capital?.id ?? index}
                         position={setOffset(capital)}
                         capital={capital}
                         handleEvent={handleEvent}

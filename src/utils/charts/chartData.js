@@ -6,13 +6,13 @@ export function getAirPollutionBarChartData(currentAirPollutionData) {
         datasets: [
             {
                 data: [
-                    currentAirPollutionData.pm1,
-                    currentAirPollutionData.pm2p5,
-                    currentAirPollutionData.pm10,
-                    currentAirPollutionData.no2,
-                    currentAirPollutionData.so2,
-                    currentAirPollutionData.co,
-                    currentAirPollutionData.o3,
+                    currentAirPollutionData?.pm1,
+                    currentAirPollutionData?.pm2p5,
+                    currentAirPollutionData?.pm10,
+                    currentAirPollutionData?.no2,
+                    currentAirPollutionData?.so2,
+                    currentAirPollutionData?.co,
+                    currentAirPollutionData?.o3,
                 ],
                 backgroundColor: [
                     "rgba(255, 99, 132, 0.2)",
@@ -44,11 +44,11 @@ export function getAirPollutionFilteredLinearChartData(
     selectedDataset
 ) {
     return {
-        labels: dayData.hours.map(({ datetime }) => datetime.substring(0, 5)),
+        labels: dayData?.hours?.map(({ datetime }) => datetime.substring(0, 5)),
         datasets: [
             {
                 label: selectedDataset,
-                data: dayData.hours.map(
+                data: dayData?.hours?.map(
                     ({ pm1, pm2p5, pm10, no2, so2, co, o3 }) => {
                         switch (selectedDataset) {
                             case "PM1":
@@ -85,11 +85,11 @@ export function getLongTermWeatherFilteredLinearChartData(
     theme
 ) {
     return {
-        labels: seasonalData.time,
+        labels: seasonalData?.time,
         datasets: [
             {
                 label: selectedDataset.label,
-                data: seasonalData[selectedDataset.value].map((data) =>
+                data: seasonalData?.[selectedDataset.value]?.map((data) =>
                     Math.round(data)
                 ),
                 borderWidth: 1.5,

@@ -9,7 +9,9 @@ export const Title = styled.div`
 `;
 
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `/src/assets/visualCrossingWeatherIcons/${props.$icon}.svg`,
+    src: `/src/assets/visualCrossingWeatherIcons/${
+        props.$icon ?? "unknown"
+    }.svg`,
 }))`
     width: ${(props) => props.width};
     height: ${(props) => props.height};
@@ -25,11 +27,11 @@ export const WeatherIcon = styled.img.attrs((props) => ({
 `;
 
 export const FaceIcon = styled.img.attrs((props) => ({
-    src: `/src/assets/airPollutionIcons/${props.$icon}.svg`,
+    src: `/src/assets/airPollutionIcons/${props.$icon ?? "ic-face-orange"}.svg`,
 }))`
     height: 38px;
     height: 38px;
-    background-color: ${(props) => props.$backgroundColor};
+    background-color: ${(props) => props.$backgroundColor ?? "red"};
     border-radius: 6px;
     border: 1px solid black;
     transition: background-color 0.5s ease-in-out;

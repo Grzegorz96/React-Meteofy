@@ -1,4 +1,3 @@
-import React from "react";
 import {
     HourlyLabel,
     Label,
@@ -8,14 +7,18 @@ import {
 export default function HourlyWeatherItem({ hourData }) {
     return (
         <HourlyLabel>
-            <Label>{hourData.datetime.substring(0, 5)}</Label>
+            <Label>{hourData?.datetime?.substring(0, 5) ?? "Error"}</Label>
             <Label $fontSize="10px" $fontWeight="600" $height="13px">
-                {hourData.precipprob >= 0.5
+                {hourData?.precipprob >= 0.5
                     ? `${Math.round(hourData.precipprob)}%`
                     : null}
             </Label>
-            <WeatherIcon $icon={hourData.icon} width={"40px"} height={"40px"} />
-            <Label>{Math.round(hourData.temp)}°C</Label>
+            <WeatherIcon
+                $icon={hourData?.icon}
+                width={"40px"}
+                height={"40px"}
+            />
+            <Label>{Math.round(hourData?.temp ?? 0)}°C</Label>
         </HourlyLabel>
     );
 }
