@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Header = styled.header`
     background-color: ${({ theme }) => theme.header};
     width: 100%;
-    height: 70px;
+    height: 60px;
     display: flex;
     gap: 10px;
     justify-content: space-between;
@@ -17,7 +17,7 @@ export const StyledLink = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 220px;
+    max-width: 200px;
     flex-shrink: 1;
     margin-left: 10px;
     transition: background-color 0.25s ease-in-out;

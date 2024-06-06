@@ -18,7 +18,7 @@ export const Navigate = styled.nav`
         text-decoration: none;
         width: 100%;
         max-width: ${({ $isMobile }) => ($isMobile ? "100%" : "200px")};
-        height: ${({ $isMobile }) => !$isMobile && "70px"};
+        height: ${({ $isMobile }) => !$isMobile && "60px"};
         display: flex;
         flex-direction: column;
         justify-content: center;

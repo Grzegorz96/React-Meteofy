@@ -1,10 +1,17 @@
 import { POLLUTION_NAMES } from "../constants/pollutionNames";
 
+/**
+ * Generates bar chart data for air pollution.
+ * @param {Object} currentAirPollutionData The current air pollution data.
+ * @returns {Object} The bar chart data.
+ */
 export function getAirPollutionBarChartData(currentAirPollutionData) {
     return {
+        // Use a predefined array of pollution names as labels for the x-axis.
         labels: POLLUTION_NAMES,
         datasets: [
             {
+                // Array of pollution data values corresponding to the pollution names.
                 data: [
                     currentAirPollutionData?.pm1,
                     currentAirPollutionData?.pm2p5,
@@ -39,15 +46,24 @@ export function getAirPollutionBarChartData(currentAirPollutionData) {
     };
 }
 
+/**
+ * Generates filtered linear chart data for air pollution.
+ * @param {Object} dayData The daily air pollution data.
+ * @param {string} selectedDataset The selected dataset.
+ * @returns {Object} The filtered linear chart data.
+ */
 export function getAirPollutionFilteredLinearChartData(
     dayData,
     selectedDataset
 ) {
     return {
+        // Generate the labels for the chart from the datetime strings, formatted to show only hours and minutes.
         labels: dayData?.hours?.map(({ datetime }) => datetime.substring(0, 5)),
         datasets: [
             {
+                // Label for the dataset, which is the selected air pollution parameter.
                 label: selectedDataset,
+                // Generate the data points for the selected air pollution parameter.
                 data: dayData?.hours?.map(
                     ({ pm1, pm2p5, pm10, no2, so2, co, o3 }) => {
                         switch (selectedDataset) {
@@ -79,17 +95,28 @@ export function getAirPollutionFilteredLinearChartData(
     };
 }
 
+/**
+ * Generates filtered linear chart data for long-term weather.
+ * @param {Object} seasonalData The seasonal weather data.
+ * @param {Object} selectedDataset The selected dataset.
+ * @param {Object} theme The current theme.
+ * @returns {Object} The filtered linear chart data.
+ */
 export function getLongTermWeatherFilteredLinearChartData(
     seasonalData,
     selectedDataset,
     theme
 ) {
     return {
+        // Use the time array from seasonalData as labels for the x-axis.
         labels: seasonalData?.time,
         datasets: [
             {
+                // Use the label from the selected dataset.
                 label: selectedDataset.label,
+                // Use the data from seasonalData corresponding to the selected dataset's value.
                 data: seasonalData?.[selectedDataset.value]?.map((data) =>
+                    // Round each data point to the nearest integer.
                     Math.round(data)
                 ),
                 borderWidth: 1.5,
@@ -98,6 +125,7 @@ export function getLongTermWeatherFilteredLinearChartData(
                 pointHitRadius: 5,
                 borderColor: "#36a2eb",
 
+                // Create a gradient background for the chart.
                 backgroundColor: (context) => {
                     const chart = context.chart;
                     const { ctx, chartArea } = chart;
@@ -105,6 +133,7 @@ export function getLongTermWeatherFilteredLinearChartData(
                         return null;
                     }
 
+                    // Create a linear gradient from bottom to top.
                     const gradient = ctx.createLinearGradient(
                         chartArea.left,
                         chartArea.bottom,
@@ -112,11 +141,12 @@ export function getLongTermWeatherFilteredLinearChartData(
                         chartArea.top
                     );
 
+                    // Add color stops to the gradient.
                     gradient.addColorStop(0, theme.chartBackgroundStart);
                     gradient.addColorStop(1, theme.chartBackgroundEnd);
                     return gradient;
                 },
-                fill: "start",
+                fill: "start", // Fill the area under the line.
             },
         ],
     };

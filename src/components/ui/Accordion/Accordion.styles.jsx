@@ -31,7 +31,7 @@ export const FaceIcon = styled.img.attrs((props) => ({
 }))`
     height: 38px;
     height: 38px;
-    background-color: ${(props) => props.$backgroundColor ?? "red"};
+    background-color: ${(props) => props.$backgroundColor};
     border-radius: 6px;
     border: 1px solid black;
     transition: background-color 0.5s ease-in-out;

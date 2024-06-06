@@ -8,21 +8,30 @@ html, body, #root {
 }
 
 ::-webkit-scrollbar {
-      width: 12px;
+      width: 8px;
+
+      @media (max-width: 768px) {
+        display: none;
   }
+}
 
 ::-webkit-scrollbar-track {
-      background-color: #f1f1f1;
-  }
+    background-color: transparent;
+    margin-block: 3px;
+}
 
 ::-webkit-scrollbar-thumb {
-      background-color: #888;
-  }
+    background-color: transparent;
+    border-radius: 25px;
+}
+
+:hover::-webkit-scrollbar-thumb {
+    background-color: #474747;  
+}
 
 ::-webkit-scrollbar-thumb:hover {
-      background-color: #555;
+    background-color: #373737;
   }
-
 
 body {
     background: ${(props) => props.theme.primary};

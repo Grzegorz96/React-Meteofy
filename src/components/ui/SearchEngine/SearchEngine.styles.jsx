@@ -88,7 +88,7 @@ export const localInputStyles = (theme) => ({
         width: "100%",
         maxWidth: "400px",
         position: "fixed",
-        top: "70px",
+        top: "60px",
         zIndex: "2",
         display: "flex",
         justifyContent: "center",
