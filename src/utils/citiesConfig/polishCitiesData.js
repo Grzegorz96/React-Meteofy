@@ -1,3 +1,8 @@
+/**
+ * List of objects containing data for each Polish voivodeship capital city.
+ *
+ * @type {Array<{id: number, title: string, left: string, top: string, d: string}>}
+ */
 export const polishCitiesData = [
     {
         id: 3083829,

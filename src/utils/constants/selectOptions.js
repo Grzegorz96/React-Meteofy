@@ -1,3 +1,15 @@
+/**
+ * Array of select options.
+ * @typedef {Object} SelectOption
+ * @property {string} value - The value of the option.
+ * @property {string} label - The label of the option.
+ * @property {string} unit - The unit of measurement for the option.
+ */
+
+/**
+ * Array of select options.
+ * @type {SelectOption[]}
+ */
 export const selectOptions = [
     {
         value: "temperature_2m_max_member01",

@@ -1,3 +1,8 @@
+/**
+ * List of objects with the capital cities of Europe and their respective IDs.
+ *
+ * @type {Array<{id: number, name: string}>}
+ */
 export const europeCapitalsData = [
     {
         id: 3183875,

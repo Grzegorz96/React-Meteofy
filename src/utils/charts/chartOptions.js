@@ -1,8 +1,9 @@
 /**
- * Returns the chart options for an air pollution bar chart.
- * @param {string} city The city for which the chart is generated.
- * @param {object} theme The theme object containing colors and styles.
- * @returns {object} The chart options.
+ * Returns the chart options for the air pollution bar chart.
+ *
+ * @param {string} city - The city for which the chart is generated.
+ * @param {object} theme - The theme object containing colors for styling the chart.
+ * @returns {object} The chart options object.
  */
 export function getAirPollutionBarChartOptions(city, theme) {
     return {
@@ -48,9 +49,7 @@ export function getAirPollutionBarChartOptions(city, theme) {
                 color: theme.textSecondary,
                 offset: 0,
                 formatter: function (value) {
-                    return value === null || value === undefined
-                        ? "NA"
-                        : `${value} μg/m³`;
+                    return value ?? "NA";
                 },
             },
         },
@@ -59,6 +58,9 @@ export function getAirPollutionBarChartOptions(city, theme) {
             y: {
                 beginAtZero: true,
                 ticks: {
+                    callback: function (value) {
+                        return `${value} μg/m³`;
+                    },
                     color: theme.textSecondary,
                 },
             },
@@ -84,8 +86,9 @@ export function getAirPollutionBarChartOptions(city, theme) {
 }
 
 /**
- * Returns the chart options for the air pollution linear chart.
- * @param {Object} theme The theme object containing colors for the chart.
+ * Returns the chart options for an air pollution linear chart.
+ *
+ * @param {Object} theme - The theme object containing colors for styling the chart.
  * @returns {Object} The chart options object.
  */
 export const getAirPollutionlinearChartOptions = (theme) => {
@@ -153,10 +156,10 @@ export const getAirPollutionlinearChartOptions = (theme) => {
 /**
  * Returns the chart options for a long-term weather linear chart.
  *
- * @param {Object} selectedDataset The selected dataset for the chart.
- * @param {Array} selectedDateRange The selected date range for the chart.
- * @param {string} city The city for which the chart is generated.
- * @param {Object} theme The theme object for styling the chart.
+ * @param {Object} selectedDataset - The selected dataset for the chart.
+ * @param {Array} selectedDateRange - The selected date range for the chart.
+ * @param {string} city - The city for which the chart is generated.
+ * @param {Object} theme - The theme object for styling the chart.
  * @returns {Object} The chart options object.
  */
 export function getLongTermWeatherLinearChartOptions(

@@ -1,3 +1,8 @@
+/**
+ * List of objects representing offsets for world capitals.
+ *
+ * @type {Array<{ id: number, lon: number, lat: number }>}
+ */
 export const worldCapitalsOffset = [
     { id: 3492908, lon: 0.2, lat: -0.3 },
     { id: 3374036, lon: 0.1, lat: -0.8 },

@@ -6,14 +6,26 @@ import { localInputStyles } from "../components/ui/SearchEngine/SearchEngine.sty
 import { useDataWithCitiesHandler } from "../hooks/useDataWithCitiesHandler";
 import LongTermWeatherMain from "../components/longTermWeather/LongTermWeatherMain/LongTermWeatherMain";
 
+/**
+ * Functional component that handles the display and management of long-term weather data.
+ *
+ * This component utilizes the `useDataWithCitiesHandler` hook to fetch and manage data related to long-term weather.
+ * It includes a search engine component for selecting a city, and displays a loader while data is being fetched.
+ * Once the data is fetched, it renders the `LongTermWeatherMain` component to visualize the long-term weather forecast.
+ *
+ * @returns {JSX.Element} The rendered components based on the state of the data and search engine.
+ */
 export default function LongTermWeatherContainer() {
+    // State to store the selected city.
     const [selectedCity, setSelectedCity] = useState(null);
 
+    // Fetching data based on the selected city.
     const { data, setData } = useDataWithCitiesHandler(
         selectedCity,
         "longTermWeather"
     );
 
+    // Extracting only the time and member01 data from the fetched data.
     const seasonalData = useMemo(() => {
         const { daily } = data.fetchedData || {};
         if (!daily) return;

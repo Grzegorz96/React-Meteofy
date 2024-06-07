@@ -1,5 +1,10 @@
 import { startOfDay, addDays, subDays } from "date-fns";
 
+/**
+ * Returns an array of date ranges.
+ * @param {boolean} moveRangesToBottom Indicates whether to move the ranges to the bottom or left.
+ * @returns {Array} An array of date ranges.
+ */
 export const ranges = (moveRangesToBottom) => {
     return [
         {

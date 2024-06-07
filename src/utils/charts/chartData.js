@@ -2,7 +2,7 @@ import { POLLUTION_NAMES } from "../constants/pollutionNames";
 
 /**
  * Generates bar chart data for air pollution.
- * @param {Object} currentAirPollutionData The current air pollution data.
+ * @param {Object} currentAirPollutionData - The current air pollution data.
  * @returns {Object} The bar chart data.
  */
 export function getAirPollutionBarChartData(currentAirPollutionData) {
@@ -47,10 +47,11 @@ export function getAirPollutionBarChartData(currentAirPollutionData) {
 }
 
 /**
- * Generates filtered linear chart data for air pollution.
- * @param {Object} dayData The daily air pollution data.
- * @param {string} selectedDataset The selected dataset.
- * @returns {Object} The filtered linear chart data.
+ * Generates linear chart data for air pollution based on the selected dataset.
+ *
+ * @param {Object} dayData - The data for a specific day.
+ * @param {string} selectedDataset - The selected air pollution dataset.
+ * @returns {Object} The chart data object.
  */
 export function getAirPollutionFilteredLinearChartData(
     dayData,
@@ -96,11 +97,12 @@ export function getAirPollutionFilteredLinearChartData(
 }
 
 /**
- * Generates filtered linear chart data for long-term weather.
- * @param {Object} seasonalData The seasonal weather data.
- * @param {Object} selectedDataset The selected dataset.
- * @param {Object} theme The current theme.
- * @returns {Object} The filtered linear chart data.
+ * Returns the chart data for a long-term weather filtered linear chart.
+ *
+ * @param {Object} seasonalData - The seasonal data object.
+ * @param {Object} selectedDataset - The selected dataset object.
+ * @param {Object} theme - The theme object.
+ * @returns {Object} The chart data object.
  */
 export function getLongTermWeatherFilteredLinearChartData(
     seasonalData,

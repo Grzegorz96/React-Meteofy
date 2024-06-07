@@ -1,3 +1,8 @@
+/**
+ * List of objects containing the name, ids and coordinates of the world capitals.
+ *
+ * @type {Array<{id: number, name: string, coord: { lon: number, lat: number }}>}
+ */
 export const worldCapitalsData = [
     {
         id: 2507480,

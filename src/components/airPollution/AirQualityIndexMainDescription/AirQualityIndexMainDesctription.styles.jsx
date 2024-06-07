@@ -10,6 +10,10 @@ export const AirQualityIndexMainDescriptionWrapper = styled.div`
     text-align: center;
     padding: 10px;
     grid-area: airQualityIndexMainDescription;
+
+    @media (max-width: 768px) {
+        font-size: 13px;
+    }
 `;
 
 export const AirQualityIndexMainDescriptionText = styled.h3`

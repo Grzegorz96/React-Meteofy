@@ -1,5 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
+/**
+ * Global styles for the application.
+ */
 export const GlobalStyles = createGlobalStyle`
 html, body, #root {
     width: 100%;
@@ -26,12 +29,12 @@ html, body, #root {
 }
 
 :hover::-webkit-scrollbar-thumb {
-    background-color: #474747;  
+    background-color: #575757;  
 }
-
+    
 ::-webkit-scrollbar-thumb:hover {
     background-color: #373737;
-  }
+}
 
 body {
     background: ${(props) => props.theme.primary};
