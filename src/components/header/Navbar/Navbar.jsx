@@ -9,6 +9,15 @@ import {
     faListCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
+/**
+ * @component
+ * Renders the navigation component.
+ *
+ * @param {Object} props - The component props.
+ * @param {boolean} props.isMobile - Indicates if the device is mobile.
+ * @param {function} props.setIsOpen - Callback function to set the open state of the side bar.
+ * @returns {JSX.Element} The rendered navigation bar component.
+ */
 export default function Navbar({ isMobile, setIsOpen }) {
     return (
         <Navigate

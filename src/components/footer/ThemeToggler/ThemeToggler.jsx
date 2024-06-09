@@ -6,8 +6,16 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { toggleThemeMode } from "../../../state/themeDataSlice";
 
+/**
+ * @component
+ * Renders a theme toggler component.
+ *
+ * @returns {JSX.Element} The theme toggler component.
+ */
 export default function ThemeToggler() {
+    // Get the current theme mode from the Redux store.
     const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
+    // Get the dispatch function from the Redux store.
     const dispatch = useDispatch();
 
     return (

@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { animated } from "@react-spring/web";
 
+/**
+ * @component
+ * Styled SVG component for the Poland map.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const PolandMapSVG = styled(animated.svg)`
     max-height: 100%;
     max-width: 100%;
@@ -22,6 +28,11 @@ export const PolandMapSVG = styled(animated.svg)`
     }
 `;
 
+/**
+ * @component
+ * Styled component for a map item.
+ *
+ */
 export const MapItem = styled.div`
     width: 100%;
     text-align: center;
@@ -32,6 +43,12 @@ export const MapItem = styled.div`
     justify-content: center;
 `;
 
+/**
+ * @component
+ * Styled component for a wrapper containing data.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const DataWrapper = styled.div`
     background-color: ${({ theme }) => theme.textSecondary + "30"};
     border-radius: 6px;
@@ -42,6 +59,12 @@ export const DataWrapper = styled.div`
     transition: background-color 0.25s ease-in-out;
 `;
 
+/**
+ * @component
+ * Styled component for temperature text.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const Temp = styled.span`
     font-weight: bold;
     font-size: 11px;
@@ -49,6 +72,12 @@ export const Temp = styled.span`
     transition: color 0.25s ease-in-out;
 `;
 
+/**
+ * @component
+ * Styled component for text.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const Text = styled.span`
     font-weight: bold;
     font-size: 10px;
@@ -56,6 +85,12 @@ export const Text = styled.span`
     transition: color 0.25s ease-in-out;
 `;
 
+/**
+ * @component
+ * Styled component for weather icon.
+ *
+ * @prop {string} $icon - The icon name.
+ */
 export const WeatherIcon = styled.img.attrs((props) => ({
     src: `/src/assets/openWeatherIcons/${props.$icon ?? "unknown"}.png`,
 }))`

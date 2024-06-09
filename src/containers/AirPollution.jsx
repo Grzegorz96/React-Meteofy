@@ -8,6 +8,7 @@ import ForecastAirPollution from "../components/airPollution/ForecastAirPollutio
 import { localInputStyles } from "../components/ui/SearchEngine/SearchEngine.styles";
 
 /**
+ * @component
  * Functional component responsible for rendering the air pollution data.
  *
  * This component utilizes the `useDataWithCitiesHandler` hook to fetch and manage air pollution data for the selected city.

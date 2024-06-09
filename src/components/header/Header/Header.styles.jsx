@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+/**
+ * @component
+ * Styled component for the header.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const Header = styled.header`
     background-color: ${({ theme }) => theme.header};
     width: 100%;
@@ -13,6 +19,12 @@ export const Header = styled.header`
     transition: background-color 0.25s ease-in-out;
 `;
 
+/**
+ * @component
+ * Styled component for a link. This component provides styling for a link using the Link component from React Router.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const StyledLink = styled(Link)`
     display: flex;
     justify-content: center;
@@ -29,6 +41,10 @@ export const StyledLink = styled(Link)`
     }
 `;
 
+/**
+ * @component
+ * Styled component for the logo of Meteofy.
+ */
 export const Logo = styled.img.attrs({
     src: "/src/assets/images/logo-meteofy.png",
     alt: "Logo Meteofy",

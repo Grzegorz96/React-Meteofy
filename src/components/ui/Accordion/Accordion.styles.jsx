@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
 import { Accordion, AccordionItemButton } from "react-accessible-accordion";
 
+/**
+ * @component
+ * Styled component for the title.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const Title = styled.div`
     font-size: 20px;
     font-weight: 700;
@@ -8,6 +14,14 @@ export const Title = styled.div`
     transition: color 0.25s ease-in-out;
 `;
 
+/**
+ * @component
+ * Styled component for displaying weather icons.
+ *
+ * @prop {string} $icon - The name of the weather icon. Defaults to "unknown" if not provided.
+ * @prop {string} width - The width of the icon.
+ * @prop {string} height - The height of the icon.
+ */
 export const WeatherIcon = styled.img.attrs((props) => ({
     src: `/src/assets/visualCrossingWeatherIcons/${
         props.$icon ?? "unknown"
@@ -26,6 +40,13 @@ export const WeatherIcon = styled.img.attrs((props) => ({
         `}
 `;
 
+/**
+ * @component
+ * Styled component for displaying face icons.
+ *
+ * @prop {string} $icon - The name of the face icon. Defaults to "ic-face-orange" if not provided.
+ * @prop {string} $backgroundColor - The background color of the icon.
+ */
 export const FaceIcon = styled.img.attrs((props) => ({
     src: `/src/assets/airPollutionIcons/${props.$icon ?? "ic-face-orange"}.svg`,
 }))`
@@ -37,6 +58,10 @@ export const FaceIcon = styled.img.attrs((props) => ({
     transition: background-color 0.5s ease-in-out;
 `;
 
+/**
+ * @component
+ * Styled component for displaying day information.
+ */
 export const Day = styled.div`
     flex: 1 1;
     font-weight: 600;
@@ -46,6 +71,10 @@ export const Day = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for displaying description information.
+ */
 export const Description = styled.div`
     flex: 1 1;
     text-align: right;
@@ -55,11 +84,21 @@ export const Description = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for an accordion.
+ */
 export const StyledAccordion = styled(Accordion)`
     width: 90%;
     max-width: 900px;
 `;
 
+/**
+ * @component
+ * Styled component for a daily details grid.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const DailyDetailsGrid = styled.div`
     background-color: ${({ theme }) => theme.secondary};
     transition: background-color 0.25s ease-in-out;
@@ -81,6 +120,12 @@ export const DailyDetailsGrid = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for a daily details flex container.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const DailyDetailsFlex = styled.div`
     display: flex;
     flex-direction: column;
@@ -101,6 +146,10 @@ export const DailyDetailsFlex = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for a wrapper containing select buttons.
+ */
 export const SelectButtonsWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -110,6 +159,13 @@ export const SelectButtonsWrapper = styled.div`
     margin-inline: 5px;
 `;
 
+/**
+ * @component
+ * Styled button component for selecting.
+ *
+ * @prop {boolean} $active - Indicates whether the button is active or not.
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const SelectButton = styled.button`
     background-color: ${({ $active, theme }) =>
         $active ? theme.textSecondary : theme.textPrimary};
@@ -142,6 +198,10 @@ export const SelectButton = styled.button`
     }
 `;
 
+/**
+ * @component
+ * Styled component for a daily details grid item.
+ */
 export const DailyDetailsGridItem = styled.div`
     display: flex;
     align-items: center;
@@ -153,9 +213,19 @@ export const DailyDetailsGridItem = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for a label.
+ *
+ * @prop {boolean} $isGrey - Indicates whether the label should be grey.
+ * @prop {string} $fontSize - Font size of the label.
+ * @prop {string} $fontWeight - Font weight of the label.
+ * @prop {string} $height - Height of the label.
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const Label = styled.div`
     color: ${(props) =>
-        props.$grey ? props.theme.textSecondary : props.theme.textPrimary};
+        props.$isGrey ? props.theme.textSecondary : props.theme.textPrimary};
     font-size: ${(props) => props.$fontSize};
     font-weight: ${(props) => props.$fontWeight};
     height: ${(props) => props.$height};
@@ -163,6 +233,12 @@ export const Label = styled.div`
     transition: color 0.25s ease-in-out;
 `;
 
+/**
+ * @component
+ * Styled component for an accordion item button.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const StyledAccordionItemButton = styled(AccordionItemButton)`
     background-color: ${({ theme }) => theme.secondary};
     color: ${({ theme }) => theme.textPrimary};
@@ -194,6 +270,10 @@ export const StyledAccordionItemButton = styled(AccordionItemButton)`
     }
 `;
 
+/**
+ * @component
+ * Styled component for an hourly label.
+ */
 export const HourlyLabel = styled.div`
     min-width: 60px;
     height: 100%;

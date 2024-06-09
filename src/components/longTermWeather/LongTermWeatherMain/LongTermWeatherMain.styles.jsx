@@ -1,9 +1,20 @@
 import styled from "styled-components";
 import { DateRangePicker } from "rsuite";
-import { darkTheme, lightTheme } from "../../../utils/styles/theme";
 
+/**
+ * Generates custom styles for a Select component based on the provided theme.
+ *
+ * @param {Object} theme - The theme object containing style properties.
+ * @returns {Object} An object containing custom styles for the Select component.
+ */
 export const customSelectStyles = (theme) => ({
-    // Styles for each option in the dropdown menu.
+    /**
+     * Styles for individual options within the Select menu.
+     *
+     * @param {Object} provided - The default styles provided by the library.
+     * @param {Object} state - The current state of the option.
+     * @returns {Object} Custom styles for the option.
+     */
     option: (provided, state) => ({
         ...provided,
         cursor: "pointer",
@@ -17,16 +28,29 @@ export const customSelectStyles = (theme) => ({
             backgroundColor: theme.textSecondary,
         },
     }),
+    /**
+     * Styles for the Select menu.
+     *
+     * @param {Object} provided - The default styles provided by the library.
+     * @returns {Object} Custom styles for the menu.
+     */
     menu: (provided) => ({
         ...provided,
         marginTop: "15px",
         backgroundColor: theme.secondary,
         color: theme.textPrimary,
         border: `1px solid ${theme.textSecondary}`,
+        borderRadius: "6px",
         transition:
             "background-color 0.25s ease-in-out, border 0.25s ease-in-out, color 0.25s ease-in-out",
     }),
-    // Styles for the control (outer container) of the Select component.
+    /**
+     * Styles for the Select control.
+     *
+     * @param {Object} provided - The default styles provided by the library.
+     * @param {Object} state - The current state of the control.
+     * @returns {Object} Custom styles for the control.
+     */
     control: (provided, state) => ({
         ...provided,
         width: "200px",
@@ -44,6 +68,12 @@ export const customSelectStyles = (theme) => ({
             minHeight: 32,
         },
     }),
+    /**
+     * Styles for the single selected value in the Select.
+     *
+     * @param {Object} provided - The default styles provided by the library.
+     * @returns {Object} Custom styles for the single value.
+     */
     singleValue: (provided) => ({
         ...provided,
         color: theme.textPrimary,
@@ -53,12 +83,24 @@ export const customSelectStyles = (theme) => ({
             fontSize: "14px",
         },
     }),
+    /**
+     * Styles for the dropdown indicator in the Select.
+     *
+     * @param {Object} provided - The default styles provided by the library.
+     * @returns {Object} Custom styles for the dropdown indicator.
+     */
     dropdownIndicator: (provided) => ({
         ...provided,
         "@media (max-width: 768px)": {
             paddingBlock: 0,
         },
     }),
+    /**
+     * Styles for the clear indicator in the Select.
+     *
+     * @param {Object} provided - The default styles provided by the library.
+     * @returns {Object} Custom styles for the clear indicator.
+     */
     clearIndicator: (provided) => ({
         ...provided,
         "@media (max-width: 768px)": {
@@ -66,6 +108,13 @@ export const customSelectStyles = (theme) => ({
         },
     }),
 });
+
+/**
+ * @component
+ * Styled component for a wrapper element that contains linear chart, select and range date picker.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 
 export const LongTermWeatherWrapper = styled.div`
     border-radius: 6px;
@@ -87,6 +136,12 @@ export const LongTermWeatherWrapper = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for a wrapper element containing input fields.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const InputWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -98,7 +153,14 @@ export const InputWrapper = styled.div`
     transition: border-bottom 0.25s ease-in-out;
 `;
 
+/**
+ * Generates custom styles for the menu of a date range picker based on the provided theme.
+ *
+ * @param {Object} theme - The theme object containing color configurations.
+ * @returns {Object} An object containing custom styles for the menu of the date range picker.
+ */
 export const dateRangePickerMenu = (theme) => ({
+    borderRadius: "6px",
     marginTop: "15px",
     zIndex: 0,
     backgroundColor: theme.secondary,
@@ -106,6 +168,13 @@ export const dateRangePickerMenu = (theme) => ({
     transition: "background-color 0.25s ease-in-out, border 0.25s ease-in-out",
 });
 
+/**
+ * @component
+ * Styled component for a DateRangePicker component. This component extends the style of the DateRangePicker
+ * component and overrides the styles for classes inside it, depending on the theme provided.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const DateRangePickerStyled = styled(DateRangePicker)`
     max-width: 355px;
     width: 100%;

@@ -1,6 +1,7 @@
 import WorldContainer from "../containers/World";
 
 /**
+ * @component
  * Functional component that renders the WorldContainer.
  *
  * This component is responsible for rendering the WorldContainer, which handles the display

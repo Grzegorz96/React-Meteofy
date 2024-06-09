@@ -7,6 +7,7 @@ import { useDataWithCitiesHandler } from "../hooks/useDataWithCitiesHandler";
 import LongTermWeatherMain from "../components/longTermWeather/LongTermWeatherMain/LongTermWeatherMain";
 
 /**
+ * @component
  * Functional component that handles the display and management of long-term weather data.
  *
  * This component utilizes the `useDataWithCitiesHandler` hook to fetch and manage data related to long-term weather.

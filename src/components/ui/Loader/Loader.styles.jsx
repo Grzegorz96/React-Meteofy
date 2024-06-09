@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+/**
+ * @component
+ * Wrapper for the loader component.
+ */
 export const LoaderWrapper = styled.div`
     position: fixed;
     top: 50%;
@@ -12,6 +16,12 @@ export const LoaderWrapper = styled.div`
     gap: 10px;
 `;
 
+/**
+ * @component
+ * Text for the loader component.
+ *
+ * @prop {string} color - The color of the text.
+ */
 export const LoaderText = styled.span`
     font-size: 20px;
     font-weight: 600;

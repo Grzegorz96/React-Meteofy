@@ -29,6 +29,7 @@ const getCoordinates = async (city) => {
                 longitude: currentPosition.coords.longitude,
             };
         } catch (error) {
+            console.warn(error);
             return defaultCityCoords;
         }
     }

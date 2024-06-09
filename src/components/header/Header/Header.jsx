@@ -8,10 +8,20 @@ import { useNavigate } from "react-router-dom";
 import { globalInputStyles } from "../../ui/SearchEngine/SearchEngine.styles";
 import { useMediaQuery } from "react-responsive";
 
+/**
+ * @component
+ * Renders the header component.
+ *
+ * @returns {JSX.Element} The rendered header component.
+ */
 export default function HeaderComponent() {
+    // Check if the screen is mobile.
     const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+    // Get the city data from the Redux store.
     const cityData = useSelector(({ cityData }) => cityData);
+    // Get the dispatch function from the Redux store.
     const dispatch = useDispatch();
+    // Get the navigate function from the React Router.
     const navigate = useNavigate();
 
     return (

@@ -3,6 +3,12 @@ import {
     AirQualityIndexMainDescriptionText,
 } from "./AirQualityIndexMainDesctription.styles";
 
+/**
+ * @component
+ * Component for rendering the main description of the air quality index.
+ *
+ * @returns {JSX.Element} The JSX element representing the main description.
+ */
 export default function AirQualityIndexMainDescription() {
     return (
         <AirQualityIndexMainDescriptionWrapper>

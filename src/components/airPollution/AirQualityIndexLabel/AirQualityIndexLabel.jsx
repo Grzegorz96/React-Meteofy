@@ -13,7 +13,16 @@ import {
     FaceFooterDescription,
 } from "./AirQualityIndexLabel.styles";
 
+/**
+ * @component
+ * Renders the label for Air Quality Index.
+ *
+ * @param {object} props - The props object.
+ * @param {object} props.currentAirPollutionData - The current air pollution data.
+ * @returns {JSX.Element} - The Air Quality Index label component.
+ */
 export default function AirQualityIndexLabel({ currentAirPollutionData }) {
+    // Get the current AQI US data.
     const currentAqiUSData = getAqiUSData(currentAirPollutionData?.aqius);
 
     return (

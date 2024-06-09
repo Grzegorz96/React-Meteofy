@@ -6,7 +6,16 @@ import { Stars, OrbitControls } from "@react-three/drei";
 import Loader from "../../ui/Loader/Loader";
 import { darkTheme } from "../../../utils/styles/theme";
 
+/**
+ * @component
+ * Component representing a canvas with whole scene.
+ *
+ * @param {Object} props - Component props.
+ * @param {Array} props.fetchedCitiesData - Array of data for cities.
+ * @returns {JSX.Element} JSX element representing the 3D globe with stars, lights and orbit controls.
+ */
 export default function WorldGlobe({ fetchedCitiesData }) {
+    // State to manage loading state.
     const [isLoading, setIsLoading] = useState(true);
 
     return (

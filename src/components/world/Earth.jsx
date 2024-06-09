@@ -14,9 +14,20 @@ import SpecularMap from "../../assets/textures/8k-earth-specular-map.jpg";
 import { worldCapitalsOffset } from "../../utils/citiesConfig/worldCapitalsOffset";
 import { convertLatLonToCartesian } from "../../utils/formatting";
 
+/**
+ * @component
+ * Component representing the Earth globe with weather boards for cities.
+ *
+ * @param {Object} props - Component props.
+ * @param {Array} props.fetchedCitiesData - Array of data for cities.
+ * @param {Function} props.setIsLoading - Function to set loading state.
+ * @returns {JSX.Element} JSX element representing the Earth globe.
+ */
 function Earth({ fetchedCitiesData, setIsLoading }) {
     const theme = useTheme();
     const { camera, raycaster, pointer, scene } = useThree();
+
+    // Load textures for Earth rendering.
     const [colorMap, cloudsMap, normalMap, specularMap] = useTexture([
         EarthDayMap,
         EarthCloudsMap,
@@ -24,17 +35,20 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
         SpecularMap,
     ]);
 
+    // Close weather modal when theme changes.
     useEffect(() => {
         return () => {
             closeWeatherModal();
         };
     }, [theme]);
 
+    // Enable layer for camera and set loading state when component mounts
     useEffect(() => {
         camera.layers.enable(1);
         setIsLoading(false);
     }, []);
 
+    // Calculate offset for city positions and convert coords to cartesian on the globe.
     const setOffset = (capital) => {
         const cityToOffset = worldCapitalsOffset.find(
             (city) => city.id === capital?.id
@@ -51,6 +65,7 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
         );
     };
 
+    // Handle events on weather boards (click and pointer move).
     function handleEvent(evt, capital, weatherBoardRef, setHovered) {
         evt.stopPropagation();
         raycaster.setFromCamera(pointer, camera);

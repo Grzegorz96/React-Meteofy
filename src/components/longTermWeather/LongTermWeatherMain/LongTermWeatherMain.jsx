@@ -19,13 +19,26 @@ import { startOfDay, addDays, subDays } from "date-fns";
 import { useMediaQuery } from "react-responsive";
 import { useTheme } from "styled-components";
 
+/**
+ * @component
+ * Renders the main component for displaying long-term weather data.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.seasonalData - The seasonal weather data.
+ * @param {string} props.city - The name of the city.
+ * @returns {JSX.Element} The rendered component.
+ */
 function LongTermWeatherMain({ seasonalData, city }) {
+    // Get the current theme from styled-components.
     const theme = useTheme();
+    // Check if the screen width is less than 400px.
     const moveRangesToBottom = useMediaQuery({ query: "(max-width: 400px)" });
+    // Set the default selected dataset and date range.
     const [selectedDataset, setSelectedDataset] = useState(selectOptions[0]);
     const [selectedDateRange, setSelectedDateRange] =
         useState(getDefaultDateRange);
 
+    // Function to set the selected dataset.
     const changeDateRange = (value) => {
         if (value) {
             setSelectedDateRange(value);
@@ -34,6 +47,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
         }
     };
 
+    // Get the filtered data and options for the linear chart.
     const filteredData = useMemo(
         () =>
             getLongTermWeatherFilteredLinearChartData(
@@ -44,6 +58,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
         [seasonalData, selectedDataset, theme]
     );
 
+    // Get the options for the linear chart.
     const options = useMemo(
         () =>
             getLongTermWeatherLinearChartOptions(

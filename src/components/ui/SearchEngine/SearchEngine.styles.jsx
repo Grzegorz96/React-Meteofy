@@ -1,3 +1,9 @@
+/**
+ * Global input styles.
+ *
+ * @param {Object} theme - Theme object.
+ * @returns {Object} Styles object.
+ */
 export const globalInputStyles = (theme) => ({
     container: (styles) => ({
         ...styles,
@@ -82,6 +88,12 @@ export const globalInputStyles = (theme) => ({
     }),
 });
 
+/**
+ * Local input styles.
+ *
+ * @param {Object} theme - Theme object.
+ * @returns {Object} Styles object.
+ */
 export const localInputStyles = (theme) => ({
     container: (styles) => ({
         ...styles,

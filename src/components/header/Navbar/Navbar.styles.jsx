@@ -1,11 +1,25 @@
 import styled from "styled-components";
 
+/**
+ * Returns the styles for a navigation link.
+ *
+ * @param {Object} options - The options for the navigation link styles.
+ * @param {boolean} options.isActive - Indicates whether the link is active.
+ * @returns {Object} The styles for the navigation link.
+ */
 export const navLinkStyles = ({ isActive }) => {
     return {
         color: isActive ? "#00ffe5" : "#ffffff",
     };
 };
 
+/**
+ * @component
+ * Styled component for the navigation bar.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ * @prop {boolean} $isMobile - Determines the flex direction and alignment based on the device screen size.
+ */
 export const Navigate = styled.nav`
     display: flex;
     flex-direction: ${({ $isMobile }) => ($isMobile ? "column" : "row")};

@@ -35,6 +35,7 @@ const theme = {
  * @property {string} navLinkHover - The color of navigation links on hover.
  * @property {string} shadow - The shadow color.
  * @property {string} tooltip - The tooltip color.
+ * @property {string} europeMarker - The color of the marker in Europe.
  * @property {string} chartBackgroundStart - The start color of the chart background.
  * @property {string} chartBackgroundEnd - The end color of the chart background.
  */
@@ -53,6 +54,7 @@ export const darkTheme = {
     navLinkHover: "rgba(187, 134, 252, 0.7);",
     shadow: "rgb(255 255 255 / 30%)",
     tooltip: "rgba(255, 255, 255, 0.75)",
+    europeMarker: "rgba(0, 0, 0, 0.75)",
     chartBackgroundStart: "rgba(255, 255, 255, 0.01)",
     chartBackgroundEnd: "rgba(255, 255, 255, 0.5)",
 };
@@ -68,6 +70,7 @@ export const darkTheme = {
  * @property {string} navLinkHover - The color of the navigation link on hover.
  * @property {string} shadow - The color of the shadow.
  * @property {string} tooltip - The color of the tooltip.
+ * @property {string} europeMarker - The color of the marker in Europe.
  * @property {string} chartBackgroundStart - The start color of the chart background.
  * @property {string} chartBackgroundEnd - The end color of the chart background.
  */
@@ -86,6 +89,7 @@ export const lightTheme = {
     navLinkHover: "rgba(99, 0, 238, 0.7)",
     shadow: "rgb(0 0 0 / 30%)",
     tooltip: "rgba(0, 0, 0, 0.75)",
+    europeMarker: "rgba(255, 255, 255, 0.75)",
     chartBackgroundStart: "rgba(0, 0, 0, 0.01)",
     chartBackgroundEnd: "rgba(0, 0, 0, 0.5)",
 };

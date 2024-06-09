@@ -2,9 +2,9 @@ import { Outlet } from "react-router-dom";
 import HeaderComponent from "../components/header/Header/Header";
 import MainComponent from "../components/Main/Main";
 import FooterComponent from "../components/footer/Footer/Footer";
-import React from "react";
 
 /**
+ * @component
  * Main layout component for the application.
  *
  * This component serves as the main layout structure, containing a header,

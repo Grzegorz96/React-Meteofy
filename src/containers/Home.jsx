@@ -8,6 +8,7 @@ import Loader from "../components/ui/Loader/Loader";
 import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
 
 /**
+ * @component
  * Functional component responsible for rendering the home page content.
  *
  * This component utilizes the `useDataWithCitiesHandler` hook to fetch and manage weather data for the selected city.

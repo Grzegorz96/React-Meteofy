@@ -1,6 +1,7 @@
 import NotFound from "../components/NotFound/NotFound";
 
 /**
+ * @component
  * Functional component that renders the NotFound component.
  *
  * This component is responsible for rendering the NotFound component, which typically displays

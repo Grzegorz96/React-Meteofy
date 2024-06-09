@@ -15,15 +15,26 @@ import {
 import { polishCitiesData } from "../../utils/citiesConfig/polishCitiesData";
 import { useTheme } from "styled-components";
 
+/**
+ * @component
+ * Renders a map of Poland with interactive voivodeship paths.
+ *
+ * @param {Object} props - Component props.
+ * @param {Object[]} props.fetchedCitiesData - An array of city data fetched from an API.
+ * @returns {JSX.Element} The rendered component.
+ */
 export default function PolandMap({ fetchedCitiesData }) {
+    // Get the current theme from styled-components.
     const theme = useTheme();
 
+    // Close weather modal when theme changes and when unmounting component.
     useEffect(() => {
         return () => {
             closeWeatherModal();
         };
     }, [theme]);
 
+    // Animation for the map.
     const extensionAnimation = useSpring({
         from: {
             transform: "scale(0.7)",
@@ -49,10 +60,12 @@ export default function PolandMap({ fetchedCitiesData }) {
             >
                 <g>
                     {fetchedCitiesData?.map((currentCity) => {
+                        // Find city data from polishCitiesData by matching the id.
                         const cityData = polishCitiesData.find(
                             (polishCity) => polishCity.id === currentCity?.id
                         );
 
+                        // Render path element for each city if city data is found.
                         if (cityData) {
                             return (
                                 <path
@@ -80,10 +93,12 @@ export default function PolandMap({ fetchedCitiesData }) {
                 </g>
                 <g>
                     {fetchedCitiesData?.map((currentCity) => {
+                        // Find city data from polishCitiesData by matching the id.
                         const cityData = polishCitiesData.find(
                             (polishCity) => polishCity.id === currentCity?.id
                         );
 
+                        // Render weather information for each city if city data is found.
                         if (cityData) {
                             return (
                                 <foreignObject

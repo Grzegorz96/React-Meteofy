@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { animated } from "@react-spring/web";
 
+/**
+ * @component
+ * Overlay component to create a backdrop for modals.
+ */
 export const Overlay = styled.div`
     position: fixed;
     top: 0;
@@ -12,6 +16,10 @@ export const Overlay = styled.div`
     overflow: hidden;
 `;
 
+/**
+ * @component
+ * Modal component styled with animation.
+ */
 export const Modal = styled(animated.div)`
     position: absolute;
     top: 50%;
@@ -40,12 +48,20 @@ export const Modal = styled(animated.div)`
     }
 `;
 
+/**
+ * @component
+ * ModalTitle component for modal titles.
+ */
 export const ModalTitle = styled.h1`
     @media (max-width: 768px) {
         font-size: 28px;
     }
 `;
 
+/**
+ * @component
+ * ModalText component for modal text content.
+ */
 export const ModalText = styled.span`
     font-size: 20px;
     font-weight: 600;
@@ -56,6 +72,10 @@ export const ModalText = styled.span`
     }
 `;
 
+/**
+ * @component
+ * ModalButton component for modal buttons.
+ */
 export const ModalButton = styled.button`
     padding: 10px 20px;
     background-color: #7066e0;

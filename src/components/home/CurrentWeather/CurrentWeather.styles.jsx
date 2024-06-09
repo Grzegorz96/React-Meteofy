@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+/**
+ * @component
+ * Styled component containing current weather information.
+ *
+ @prop {Object} theme - The theme object containing color configurations.
+ */
 export const CurrentWeatherWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -30,6 +36,12 @@ export const CurrentWeatherWrapper = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for a wrapper element.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 const Wrapper = styled.div`
     background-color: ${({ theme }) => theme.secondary};
     transition: background-color 0.25s ease-in-out;
@@ -37,6 +49,10 @@ const Wrapper = styled.div`
     border-radius: 4px;
 `;
 
+/**
+ * @component
+ * Styled component extended a wrapper element containing temperature information.
+ */
 export const TempInfo = styled(Wrapper)`
     padding: 5px 10px;
     align-items: center;
@@ -44,6 +60,10 @@ export const TempInfo = styled(Wrapper)`
     gap: 15px;
 `;
 
+/**
+ * @component
+ * Styled component extended a wrapper element for main wrapper.
+ */
 export const MainWrapper = styled(Wrapper)`
     grid-area: main;
     align-items: center;
@@ -53,6 +73,10 @@ export const MainWrapper = styled(Wrapper)`
     gap: 5px;
 `;
 
+/**
+ * @component
+ * Styled component second wrapper element.
+ */
 export const SecondWrapper = styled.div`
     grid-area: second;
     display: grid;
@@ -67,6 +91,10 @@ export const SecondWrapper = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component extended a wrapper element containing sun information.
+ */
 export const SunInfo = styled(Wrapper)`
     flex-direction: column;
     gap: 5px;
@@ -75,6 +103,10 @@ export const SunInfo = styled(Wrapper)`
     align-items: flex-start;
 `;
 
+/**
+ * @component
+ * Styled component for sun items.
+ */
 export const SunItems = styled.div`
     display: flex;
     justify-content: space-around;
@@ -83,6 +115,10 @@ export const SunItems = styled.div`
     gap: 5px;
 `;
 
+/**
+ * @component
+ * Styled component for sun value.
+ */
 export const SunValue = styled.div`
     display: flex;
     align-items: center;
@@ -91,6 +127,10 @@ export const SunValue = styled.div`
     padding: 5px;
 `;
 
+/**
+ * @component
+ * Styled component for details wrapper.
+ */
 export const DetailsWrapper = styled.div`
     grid-area: details;
     display: grid;
@@ -106,6 +146,10 @@ export const DetailsWrapper = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component extended a wrapper element for a detail.
+ */
 export const Detail = styled(Wrapper)`
     flex-direction: column;
     justify-content: flex-start;
@@ -114,6 +158,10 @@ export const Detail = styled(Wrapper)`
     padding: 5px;
 `;
 
+/**
+ * @component
+ * Styled component for detail value.
+ */
 export const DetailValue = styled.div`
     display: flex;
     width: 100%;
@@ -123,6 +171,12 @@ export const DetailValue = styled.div`
     padding: 5px;
 `;
 
+/**
+ * @component
+ * Styled component for weather icon.
+ *
+ * @prop {string} $icon - The icon name.
+ */
 export const WeatherIcon = styled.img.attrs((props) => ({
     src: `/src/assets/visualCrossingWeatherIcons/${
         props.$icon ?? "unknown"
@@ -132,8 +186,19 @@ export const WeatherIcon = styled.img.attrs((props) => ({
     height: 80px;
 `;
 
+/**
+ * @component
+ * Styled component for text.
+ *
+ * @prop {object} theme - The theme object containing color configurations.
+ * @prop {boolean} $isGrey - Indicates whether the text should be grey.
+ * @prop {string} $fontWeight - The weight of the text.
+ * @prop {string} $fontSize - The size of the text.
+ * @prop {string} $lineHeight - The height of the text.
+ * @prop {string} $letterSpacing - The spacing of the text.
+ */
 export const Text = styled.p`
-    color: ${(props) => props.$grey && props.theme.textSecondary};
+    color: ${(props) => props.$isGrey && props.theme.textSecondary};
     font-weight: ${(props) => props.$fontWeight};
     font-size: ${(props) => props.$fontSize};
     line-height: ${(props) => props.$lineHeight};

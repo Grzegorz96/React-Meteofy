@@ -9,9 +9,19 @@ import {
 import { FaRegCircleXmark } from "react-icons/fa6";
 import { useSpring } from "@react-spring/web";
 
+/**
+ * @component
+ * Component for rendering an error modal.
+ *
+ * @param {object} props - The component props.
+ * @param {object} props.data - Data object containing error information.
+ * @param {function} props.setData - Function to update data.
+ * @returns {JSX.Element} Returns the error modal component.
+ */
 export default function ErrorModal({ data, setData }) {
     const [isOpen, setIsOpen] = useState(true);
 
+    // Animation for fading in and out from the top.
     const fadeInFromTopAnimation = useSpring({
         from: {
             opacity: isOpen ? 0 : 1,
@@ -30,6 +40,7 @@ export default function ErrorModal({ data, setData }) {
             easing: (t) => t * (2 - t),
         },
         onRest: () => {
+            // Reset error state after animation completion.
             if (!isOpen) {
                 setData({ ...data, error: null });
             }

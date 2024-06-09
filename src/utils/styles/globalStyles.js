@@ -36,6 +36,7 @@ html, body, #root {
     background-color: #373737;
 }
 
+
 body {
     background: ${(props) => props.theme.primary};
     transition: background-color 0.25s ease-in-out;
@@ -47,4 +48,9 @@ body {
     box-sizing: border-box;
     font-family: ${(props) => props.theme.fontFamily};
     -webkit-tap-highlight-color: transparent;
+    
+    @media (max-width: 768px) {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
 }`;

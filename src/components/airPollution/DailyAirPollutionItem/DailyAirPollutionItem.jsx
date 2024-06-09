@@ -21,16 +21,28 @@ import { POLLUTION_NAMES } from "../../../utils/constants/pollutionNames";
 import { getAirPollutionFilteredLinearChartData } from "../../../utils/charts/chartData";
 import { format } from "date-fns";
 
+/**
+ * @component
+ * Component for rendering a daily item for air pollution data. This component includes an accordion item with detailed information and a linear chart displaying hourly air pollution data.
+ *
+ * @param {Object} props - Component props.
+ * @param {Object} props.dayData - Data containing air pollution information for a specific day.
+ * @param {React.RefObject} props.scrollableContainerRef - Ref to the scrollable container.
+ * @returns {JSX.Element} The JSX element representing the daily air pollution item.
+ */
 export default function DailyAirPollutionItem({
     dayData,
     scrollableContainerRef,
 }) {
+    // State for the selected dataset.
     const [selectedDataset, setSelectedDataset] = useState(POLLUTION_NAMES[0]);
+    // Filter the data for the selected dataset.
     const filteredData = getAirPollutionFilteredLinearChartData(
         dayData,
         selectedDataset
     );
 
+    // Get the AQI US data.
     const aqiUSData = useMemo(
         () => getAqiUSData(dayData?.aqius),
         [dayData?.aqius]
@@ -50,7 +62,9 @@ export default function DailyAirPollutionItem({
                             : "Error"}
                     </Day>
                     <Description>{aqiUSData?.levelsOfConcern}</Description>
-                    <Label $grey>{`AQI US ${dayData?.aqius ?? "Error"}`}</Label>
+                    <Label $isGrey>{`AQI US ${
+                        dayData?.aqius ?? "Error"
+                    }`}</Label>
                 </StyledAccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>

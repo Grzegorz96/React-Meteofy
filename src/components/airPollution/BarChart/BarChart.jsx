@@ -7,10 +7,20 @@ import { getAirPollutionBarChartOptions } from "../../../utils/charts/chartOptio
 import { format } from "date-fns";
 import { useTheme } from "styled-components";
 
+/**
+ * @component
+ * Component for rendering a bar chart displaying air pollution data.
+ *
+ * @param {Object} props - Component props.
+ * @param {Object} props.currentAirPollutionData - Data containing current air pollution information.
+ * @param {string} props.city - The name of the city for which air pollution data is displayed.
+ * @returns {JSX.Element} The JSX element representing the bar chart.
+ */
 export default function AirPollutionBarChart({
     currentAirPollutionData,
     city,
 }) {
+    // Get the current theme from styled-components.
     const theme = useTheme();
 
     return (

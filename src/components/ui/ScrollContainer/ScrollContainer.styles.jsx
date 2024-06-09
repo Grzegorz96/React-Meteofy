@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+/**
+ * @component
+ * Styled container for scrollable content.
+ *
+ * @prop {Object} theme - The theme for the container.
+ */
 export const ScrollableContainer = styled.div.attrs({
     tabIndex: 0,
 })`
@@ -9,6 +15,8 @@ export const ScrollableContainer = styled.div.attrs({
     width: 100%;
     border-radius: 10px;
     transition: background-color 0.25s ease-in-out;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     &::-webkit-scrollbar {
         display: none;
@@ -20,6 +28,14 @@ export const ScrollableContainer = styled.div.attrs({
     }
 `;
 
+/**
+ * @component
+ * Styled button for navigation within the scroll container.
+ *
+ * @prop {Object} theme - The theme for the button.
+ * @prop {string} $left - The border radius for the left side.
+ * @prop {string} $right - The border radius for the right side.
+ */
 export const NavigateButton = styled.button`
     display: flex;
     align-items: center;
@@ -48,10 +64,16 @@ export const NavigateButton = styled.button`
     }
 `;
 
+/**
+ * @component
+ * Styled wrapper for the scroll container and navigation buttons.
+ *
+ * @prop {Object} theme - The theme for the ScrollWrapper.
+ */
 export const ScrollWrapper = styled.div`
     display: flex;
     gap: 5px;
-    background-color: ${(props) => props.theme.secondary};
+    background-color: ${({ theme }) => theme.secondary};
     transition: background-color 0.25s ease-in-out;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;

@@ -1,6 +1,7 @@
 import HomeContainer from "../containers/Home";
 
 /**
+ * @component
  * Functional component that renders the HomeContainer.
  *
  * This component is responsible for rendering the HomeContainer, which handles the display

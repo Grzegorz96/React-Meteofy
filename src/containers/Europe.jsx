@@ -5,6 +5,7 @@ import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
 import Loader from "../components/ui/Loader/Loader";
 
 /**
+ * @component
  * Functional component responsible for rendering the Europe map.
  *
  * This component utilizes the `useDataWithMapsHandler` hook to fetch and manage data related to European capitals.

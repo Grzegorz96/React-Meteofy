@@ -20,11 +20,19 @@ import { MdOutlineVisibility, MdDewPoint } from "react-icons/md";
 import { IoRainy, IoCloud } from "react-icons/io5";
 import { CgCompressRight } from "react-icons/cg";
 
+/**
+ * @component
+ * Renders the current weather information.
+ *
+ * @param {Object} currentWeather - The current weather data.
+ * @param {string} city - The name of the city.
+ * @returns {JSX.Element} The current weather component.
+ */
 function CurrentWeather({ currentWeather, city }) {
     return (
         <CurrentWeatherWrapper>
             <MainWrapper $gap="5px" $flexDirection="column" $width="65%">
-                <Text $fontWeight="600" $fontSize="10px" $grey>
+                <Text $fontWeight="600" $fontSize="10px" $isGrey>
                     {`Weather conditions at ${currentWeather?.datetime?.substring(
                         0,
                         5
@@ -54,7 +62,7 @@ function CurrentWeather({ currentWeather, city }) {
                     <WeatherIcon $icon={currentWeather?.icon} />
                 </TempInfo>
                 <SunInfo>
-                    <Text $fontWeight="600" $fontSize="10px" $grey>
+                    <Text $fontWeight="600" $fontSize="10px" $isGrey>
                         Sunrise & Sunset
                     </Text>
                     <SunItems>
@@ -75,7 +83,7 @@ function CurrentWeather({ currentWeather, city }) {
             </SecondWrapper>
             <DetailsWrapper>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" $grey>
+                    <Text $fontWeight="600" $fontSize="10px" $isGrey>
                         Feels like
                     </Text>
                     <DetailValue>
@@ -86,7 +94,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" $grey>
+                    <Text $fontWeight="600" $fontSize="10px" $isGrey>
                         Wind
                     </Text>
                     <DetailValue>
@@ -97,7 +105,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" $grey>
+                    <Text $fontWeight="600" $fontSize="10px" $isGrey>
                         Precipitation
                     </Text>
                     <DetailValue>
@@ -108,7 +116,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" $grey>
+                    <Text $fontWeight="600" $fontSize="10px" $isGrey>
                         Humidity
                     </Text>
                     <DetailValue>
@@ -119,7 +127,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" $grey>
+                    <Text $fontWeight="600" $fontSize="10px" $isGrey>
                         Pressure
                     </Text>
                     <DetailValue>
@@ -130,7 +138,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" $grey>
+                    <Text $fontWeight="600" $fontSize="10px" $isGrey>
                         Visibility
                     </Text>
                     <DetailValue>
@@ -141,7 +149,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" $grey>
+                    <Text $fontWeight="600" $fontSize="10px" $isGrey>
                         Dew point
                     </Text>
                     <DetailValue>
@@ -152,7 +160,7 @@ function CurrentWeather({ currentWeather, city }) {
                     </DetailValue>
                 </Detail>
                 <Detail>
-                    <Text $fontWeight="600" $fontSize="10px" $grey>
+                    <Text $fontWeight="600" $fontSize="10px" $isGrey>
                         Clouds
                     </Text>
                     <DetailValue>

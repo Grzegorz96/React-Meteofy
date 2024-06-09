@@ -1,6 +1,7 @@
 import AirPollutionContainer from "../containers/AirPollution";
 
 /**
+ * @component
  * Functional component that renders the AirPollutionContainer.
  *
  * This component is responsible for rendering the AirPollutionContainer, which

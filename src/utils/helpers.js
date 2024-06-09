@@ -24,6 +24,12 @@ export function getAqiUSData(aqiValue) {
     });
 }
 
+/**
+ * Default coordinates for a city.
+ * @type {Object}
+ * @property {number} latitude - The latitude of the city.
+ * @property {number} longitude - The longitude of the city.
+ */
 export const defaultCityCoords = {
     latitude: 52.22977,
     longitude: 21.01178,

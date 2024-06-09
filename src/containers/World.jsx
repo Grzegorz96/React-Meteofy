@@ -6,6 +6,7 @@ import Loader from "../components/ui/Loader/Loader";
 import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
 
 /**
+ * @component
  * Functional component that handles the rendering of world data.
  *
  * This component uses `useDataWithMapsHandler` to fetch and manage data related to world capitals. It displays different UI elements based on the state of the data:

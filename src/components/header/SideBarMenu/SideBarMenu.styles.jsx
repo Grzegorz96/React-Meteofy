@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+/**
+ * @component
+ * Styled component for a burger menu. Overwrites the classes inside it depending on the supplied theme object.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const StyledBurgerMenu = styled.div`
     margin-right: 10px;
 
@@ -21,7 +27,7 @@ export const StyledBurgerMenu = styled.div`
     }
 
     .bm-cross-button {
-        top: 15px !important;
+        top: 10px !important;
         right: 10px !important;
         height: 40px !important;
         width: 40px !important;
@@ -49,7 +55,7 @@ export const StyledBurgerMenu = styled.div`
     .bm-menu {
         background-color: ${({ theme }) => theme.secondary};
         transition: background-color 0.25s ease-in-out;
-        padding-top: 70px;
+        padding-top: 60px;
     }
 
     .bm-overlay {

@@ -1,15 +1,34 @@
 import { Text, Decal, useTexture, Box, useCursor } from "@react-three/drei";
 import { useRef, useLayoutEffect, useState } from "react";
 
+/**
+ * @component
+ * WeatherBoard component displays weather information for a specific location.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.position - The position of the weather board.
+ * @param {Object} props.capital - The capital object containing weather data.
+ * @param {Function} props.handleEvent - The event handler function.
+ * @returns {JSX.Element} The WeatherBoard component.
+ */
 export default function WeatherBoard({ position, capital, handleEvent }) {
+    // State to track if the weather board is hovered.
     const [hovered, setHovered] = useState(false);
+
+    // Change cursor to pointer if the weather board is hovered.
     useCursor(hovered, "pointer");
+
+    // Load texture for weather icon.
     const texture = useTexture(
         `/src/assets/openWeatherIcons/${
             capital?.weather?.[0]?.icon ?? "unknown"
         }.png`
     );
+
+    // Reference for the weather board object.
     const weatherBoardRef = useRef();
+
+    // Ensure the weather board always faces the camera.
     useLayoutEffect(() => {
         weatherBoardRef.current.lookAt(0, 0, 0);
     }, []);

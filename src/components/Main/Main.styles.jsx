@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+/**
+ * @component
+ * Styled component for the Main section of the application.
+ */
 export const Main = styled.main`
     padding: 20px;
     width: 100%;

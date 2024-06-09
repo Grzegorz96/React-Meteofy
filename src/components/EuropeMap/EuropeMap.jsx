@@ -13,17 +13,25 @@ import {
 } from "../ui/modals/WeatherModal/WeatherModal";
 import { useTheme } from "styled-components";
 
+/**
+ * @component
+ * Component for rendering a map of Europe with weather information for cities.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object[]} props.fetchedCitiesData - An array of city data fetched from an API.
+ * @returns {JSX.Element} The rendered component.
+ */
 export default function EuropeMap({ fetchedCitiesData }) {
+    // Get the current theme from styled-components.
     const theme = useTheme();
 
+    // Update the map container styles when the theme changes and close the weather modal when the component unmounts or theme changes.
     useEffect(() => {
         const mapContainer = document.querySelector(".leaflet-container");
 
         mapContainer.style.setProperty(
             "--elements-background-color",
-            theme.isDarkMode
-                ? "rgba(0, 0, 0, 0.75)"
-                : "rgba(255, 255, 255, 0.75)"
+            theme.europeMarker
         );
 
         mapContainer.style.setProperty(
@@ -38,6 +46,7 @@ export default function EuropeMap({ fetchedCitiesData }) {
         };
     }, [theme]);
 
+    // Custom marker icon for displaying weather information.
     const customMarker = (weatherIcon, temperature) => {
         return divIcon({
             className: "marker-icon",
@@ -86,6 +95,7 @@ export default function EuropeMap({ fetchedCitiesData }) {
                 chunkedLoading={true}
                 showCoverageOnHover={false}
             >
+                {/* Map over each city to render individual markers */}
                 {fetchedCitiesData?.map((city, index) => (
                     <Marker
                         eventHandlers={{

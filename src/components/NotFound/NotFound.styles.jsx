@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+/**
+ * @component
+ * A styled wrapper for the 404 Not Found page.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const NotFoundWrapper = styled.div`
     padding: 25px;
     margin: auto auto;
@@ -17,6 +23,10 @@ export const NotFoundWrapper = styled.div`
         box-shadow 0.25s ease-in-out;
 `;
 
+/**
+ * @component
+ * Styled component for the title of the 404 Not Found page.
+ */
 export const Title = styled.h1`
     text-align: center;
 
@@ -25,6 +35,12 @@ export const Title = styled.h1`
     }
 `;
 
+/**
+ * @component
+ * Styled link component for navigation in the 404 Not Found page.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const LinkStyled = styled(Link)`
     text-decoration: none;
     background-color: #7066e0;

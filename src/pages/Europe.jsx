@@ -1,6 +1,7 @@
 import EuropeContainer from "../containers/Europe";
 
 /**
+ * @component
  * Functional component that renders the EuropeContainer.
  *
  * This component is responsible for rendering the EuropeContainer, which handles the display

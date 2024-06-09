@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+/**
+ * @component
+ * Styled component for displaying air quality index information.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ *
+ */
 export const AirQualityIndex = styled.div`
     z-index: 1;
     color: ${({ theme }) => theme.textPrimary};
@@ -34,6 +41,12 @@ export const AirQualityIndex = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for the header of the air quality index section.
+ *
+ * @prop {string} $backqroundColor - The background color of the header.
+ */
 export const AirQualityIndexHeader = styled.div`
     display: flex;
     justify-content: space-between;
@@ -59,6 +72,12 @@ export const AirQualityIndexHeader = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for displaying a face image representing air pollution level.
+ *
+ * @prop {string} $icon - Name of the icon file (without extension) located in the `airPollutionIcons` directory.
+ */
 export const FaceImg = styled.img.attrs((props) => ({
     src: `/src/assets/airPollutionIcons/${props.$icon}.svg`,
 }))`
@@ -66,17 +85,32 @@ export const FaceImg = styled.img.attrs((props) => ({
     height: 80px;
 `;
 
+/**
+ * @component
+ * Styled component for displaying a label with customizable font size and weight.
+ *
+ * @prop {string} $fontSize - The font size of the label.
+ * @prop {string} $fontWeight - The font weight of the label.
+ */
 export const Label = styled.div`
     font-size: ${(props) => props.$fontSize};
     font-weight: ${(props) => props.$fontWeight};
     color: #000000;
 `;
 
+/**
+ * @component
+ * Styled component for wrapping child elements in a flex container with a column direction.
+ */
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
 `;
 
+/**
+ * @component
+ * Styled component for displaying a description of the air quality index.
+ */
 export const AirQualityIndexDescription = styled.div`
     display: flex;
     align-items: center;
@@ -92,6 +126,10 @@ export const AirQualityIndexDescription = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for displaying error information.
+ */
 export const ErrorInfo = styled.div`
     display: flex;
     justify-content: center;
@@ -104,6 +142,12 @@ export const ErrorInfo = styled.div`
     grid-row: 1 / -1;
 `;
 
+/**
+ * @component
+ * Styled component for the footer of the air quality index section.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const AirQualityIndexFooter = styled.div`
     display: grid;
     gap: 5px;
@@ -123,6 +167,14 @@ export const AirQualityIndexFooter = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for displaying a face icon in the footer of the air quality index section.
+ * 
+
+ * @prop {string} $icon - Name of the icon file (without extension) located in the `airPollutionIcons` directory.
+ * @prop {string} $backqroundColor - Background color for the icon.
+ */
 export const FaceFooter = styled.img.attrs((props) => ({
     src: `/src/assets/airPollutionIcons/${props.$icon}.svg`,
 }))`
@@ -134,6 +186,10 @@ export const FaceFooter = styled.img.attrs((props) => ({
     margin: auto;
 `;
 
+/**
+ * @component
+ * Styled component for displaying a description in the footer of the air quality index section.
+ */
 export const FaceFooterDescription = styled.div`
     font-size: 10px;
     text-align: center;

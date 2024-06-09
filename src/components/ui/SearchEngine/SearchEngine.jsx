@@ -2,12 +2,24 @@ import { AsyncPaginate } from "react-select-async-paginate";
 import { loadOptions } from "../../../services/api/fetchCities";
 import { useTheme } from "styled-components";
 
+/**
+ * @component
+ * Component representing a search engine for selecting cities asynchronously.
+ *
+ * @param {Object} props - Component props.
+ * @param {string} props.placeholder - Placeholder text for the search input.
+ * @param {Object|null} props.city - Currently selected city.
+ * @param {Function} props.handleOnChange - Function to handle onChange event.
+ * @param {Function} props.styles - Function to apply custom styles.
+ * @returns {JSX.Element} JSX element representing the search engine.
+ */
 export default function SearchEngine({
     placeholder,
     city,
     handleOnChange,
     styles,
 }) {
+    // Get the current theme from styled-components.
     const theme = useTheme();
 
     return (

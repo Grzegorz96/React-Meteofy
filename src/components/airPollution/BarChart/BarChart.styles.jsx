@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+/**
+ * @component
+ * Styled component for wrapping the air pollution bar chart.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const AirPollutionBarChartWrapper = styled.div`
     border-radius: 6px 0 0 6px;
     box-shadow: 0 0 10px 0 ${({ theme }) => theme.shadow};
@@ -14,6 +20,12 @@ export const AirPollutionBarChartWrapper = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for displaying datetime information.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const Datetime = styled.p`
     position: absolute;
     top: 3px;

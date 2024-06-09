@@ -4,6 +4,14 @@ import {
     WeatherIcon,
 } from "../../ui/Accordion/Accordion.styles";
 
+/**
+ * @component
+ * Renders an hourly weather item.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.hourData - The data for the hour.
+ * @returns {JSX.Element} The rendered HourlyWeatherItem component.
+ */
 export default function HourlyWeatherItem({ hourData }) {
     return (
         <HourlyLabel>

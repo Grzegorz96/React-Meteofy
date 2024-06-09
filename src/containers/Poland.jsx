@@ -5,6 +5,7 @@ import { useDataWithMapsHandler } from "../hooks/useDataWithMapsHandler";
 import { polishCitiesData } from "../utils/citiesConfig/polishCitiesData";
 
 /**
+ * @component
  * Functional component that handles the rendering of data for Polish cities.
  *
  * This component uses `useDataWithMapsHandler` to fetch and manage data related to Polish cities. It displays different UI elements based on the state of the data:

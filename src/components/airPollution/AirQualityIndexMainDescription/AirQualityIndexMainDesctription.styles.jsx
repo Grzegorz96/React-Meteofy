@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+/**
+ * @component
+ * Styled component for wrapping the main description of the air quality index section.
+ */
 export const AirQualityIndexMainDescriptionWrapper = styled.div`
     max-width: 1050px;
     display: flex;
@@ -16,6 +20,14 @@ export const AirQualityIndexMainDescriptionWrapper = styled.div`
     }
 `;
 
+/**
+ * @component
+ * Styled component for displaying text in the main description of the air quality index section.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ * @prop {string} $fontSize - The font size of the text.
+ * @prop {string} $marginBottom - The bottom margin of the text.
+ */
 export const AirQualityIndexMainDescriptionText = styled.h3`
     font-size: ${(props) => props.$fontSize};
     color: ${({ theme }) => theme.textPrimary};

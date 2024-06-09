@@ -1,6 +1,7 @@
 import LongTermWeatherContainer from "../containers/LongTermWeather";
 
 /**
+ * @component
  * Functional component that renders the LongTermWeatherContainer.
  *
  * This component is responsible for rendering the LongTermWeatherContainer, which handles the display

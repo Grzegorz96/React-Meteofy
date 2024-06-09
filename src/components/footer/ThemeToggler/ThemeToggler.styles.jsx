@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
+/**
+ * @component
+ * Styled component for a toggler container.
+ */
 export const TogglerContainer = styled.div`
     position: relative;
     margin-left: 5px;
     height: 16px;
 `;
 
+/**
+ * @component
+ * Styled component for a toggler input.
+ */
 export const Toggler = styled.input.attrs({
     type: "checkbox",
     id: "themeToggler",
@@ -17,6 +25,12 @@ export const Toggler = styled.input.attrs({
     }
 `;
 
+/**
+ * @component
+ * Styled component for a switcher element. This component provides styling for a switcher element used to switch between dark and light mode.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
+ */
 export const SwitcherElement = styled.label.attrs({
     htmlFor: "themeToggler",
     tabIndex: 0,

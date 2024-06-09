@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+/**
+ * @component
+ * Styled component for wrapping the current air pollution information.
+ */
 export const CurrentAirPollutionWrapper = styled.div`
     width: 100%;
     max-width: 1000px;
