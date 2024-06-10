@@ -1,6 +1,5 @@
 
-![XCs0CP01](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/1d957e13-5757-4072-b3dd-7f4a6faa81df)
-
+![logo-meteofy](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/1e4fb4e4-525f-434e-9023-46a3447b0048)
 
 # Meteofy
 
