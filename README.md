@@ -1,5 +1,6 @@
 <img src="https://github.com/Grzegorz96/React-Meteofy/assets/129303867/9e2ac7d4-7b8c-4aa6-9da2-5c47bf8dc5f8" alt="logo" width="100%" />
-<img src="https://github.com/Grzegorz96/React-Meteofy/assets/129303867/eef0514b-d53f-471d-bcf3-082093963760" alt="logo" width="100%" />
+<img src="https://github.com/Grzegorz96/React-Meteofy/assets/129303867/b84e355e-309a-47e1-92d4-2cc0b5ce781c" alt="logo" width="100%" />
+
 
 
 
