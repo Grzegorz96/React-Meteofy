@@ -1,4 +1,3 @@
-<img src="https://github.com/Grzegorz96/React-Meteofy/assets/129303867/140cec6d-ecd5-4fbb-af16-c9a0b786fae9" alt="logo" width="100%" />
 ![page-name](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/24eca629-c7ed-4a0c-a425-d6ddd24f6000)
 
 # Meteofy
