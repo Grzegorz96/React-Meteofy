@@ -57,7 +57,7 @@ c529 0 558 2 610 41 134 100 178 236 119 367 -52 116 -21 162 111 162 152 0
 </g>
 </svg>
 
-# Meteofy![logo-meteofy](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/8dcd187e-1a11-471a-ae20-68f295404a9b)
+
 
 Meteofy is an advanced weather application, crafted with React technology, offering users a wide array of features. It boasts full responsiveness and comes with two theme modes, light and dark. The program also works on multiple APIs.
 Main features:
