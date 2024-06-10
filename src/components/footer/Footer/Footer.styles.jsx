@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PageName from "../../../assets/images/page-name.svg?react";
 
 /**
  * @component
@@ -20,10 +21,13 @@ export const Footer = styled.footer`
  * @component
  * Styled component for the page name logo of Meteofy.
  */
-export const PageName = styled.img.attrs({
-    src: "/src/assets/images/page-name.png",
-    alt: "Page Name Meteofy",
-})`
+export const StyledPageName = styled(PageName)`
     height: 100%;
     width: auto;
+
+    g {
+        stroke: none;
+        fill: ${({ theme }) => theme.textPrimary};
+        transition: fill 0.25s ease-in-out;
+    }
 `;

@@ -1,4 +1,4 @@
-import { Header, Logo, StyledLink } from "./Header.styles";
+import { Header, StyledLogo, StyledLink } from "./Header.styles";
 import SideBarMenu from "../SideBarMenu/SideBarMenu";
 import SearchEngine from "../../ui/SearchEngine/SearchEngine";
 import Navbar from "../Navbar/Navbar";
@@ -27,7 +27,7 @@ export default function HeaderComponent() {
     return (
         <Header>
             <StyledLink to="/">
-                <Logo />
+                <StyledLogo />
             </StyledLink>
             <SearchEngine
                 placeholder={"Search for a city"}

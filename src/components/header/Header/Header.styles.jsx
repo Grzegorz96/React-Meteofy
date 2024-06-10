@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Logo from "../../../assets/images/logo-meteofy.svg?react";
 
 /**
  * @component
@@ -45,10 +46,13 @@ export const StyledLink = styled(Link)`
  * @component
  * Styled component for the logo of Meteofy.
  */
-export const Logo = styled.img.attrs({
-    src: "/src/assets/images/logo-meteofy.png",
-    alt: "Logo Meteofy",
-})`
+export const StyledLogo = styled(Logo)`
     height: auto;
     width: 100%;
+
+    g {
+        stroke: none;
+        fill: ${({ theme }) => theme.textPrimary};
+        transition: fill 0.25s ease-in-out;
+    }
 `;
