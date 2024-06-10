@@ -1,4 +1,4 @@
-![logo-meteofy](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/140cec6d-ecd5-4fbb-af16-c9a0b786fae9)
+<img src="[https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/49b775d7-ed61-483d-b1fe-3f35c07c3c22](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/140cec6d-ecd5-4fbb-af16-c9a0b786fae9)" alt="logo" width="100%" />
 
 # Meteofy
 Meteofy is an advanced weather application, crafted with React technology, offering users a wide array of features. It boasts full responsiveness and comes with two theme modes, light and dark. The program also works on multiple APIs.
