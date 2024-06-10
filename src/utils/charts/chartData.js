@@ -59,7 +59,9 @@ export function getAirPollutionFilteredLinearChartData(
 ) {
     return {
         // Generate the labels for the chart from the datetime strings, formatted to show only hours and minutes.
-        labels: dayData?.hours?.map(({ datetime }) => datetime.substring(0, 5)),
+        labels: dayData?.hours?.map(({ datetime }) =>
+            datetime?.substring(0, 5)
+        ),
         datasets: [
             {
                 // Label for the dataset, which is the selected air pollution parameter.

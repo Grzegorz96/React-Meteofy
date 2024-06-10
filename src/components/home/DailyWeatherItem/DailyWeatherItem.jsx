@@ -22,10 +22,10 @@ import { format } from "date-fns";
  *
  * @param {Object} props - The component props.
  * @param {Object} props.dayData - The data for the day.
- * @param {React.Ref} props.scrollableContainerRef - The reference to the scrollable container.
+ * @param {Array} props.listOfScrollContainers - List of scrollable containers.
  * @returns {JSX.Element} The rendered DailyWeatherItem component.
  */
-export default function DailyWeatherItem({ dayData, scrollableContainerRef }) {
+export default function DailyWeatherItem({ dayData, listOfScrollContainers }) {
     return (
         <AccordionItem>
             <AccordionItemHeading>
@@ -77,7 +77,7 @@ export default function DailyWeatherItem({ dayData, scrollableContainerRef }) {
                     </DailyDetailsGridItem>
                 </DailyDetailsGrid>
                 <ScrollContainer
-                    scrollableContainerRef={scrollableContainerRef}
+                    listOfScrollContainers={listOfScrollContainers}
                 >
                     {dayData?.hours?.map((hourData, index) => (
                         <HourlyWeatherItem key={index} hourData={hourData} />

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import {
     ScrollableContainer,
     NavigateButton,
@@ -12,10 +12,13 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
  *
  * @param {Object} props - Component props.
  * @param {ReactNode} props.children - Child components to be scrolled.
- * @param {React.RefObject} props.scrollableContainerRef - Reference to the scrollable container.
+ * @param {Array} props.listOfScrollContainers - List of scrollable containers.
  * @returns {JSX.Element} JSX element representing the scroll container.
  */
-export default function ScrollContainer({ children, scrollableContainerRef }) {
+export default function ScrollContainer({ children, listOfScrollContainers }) {
+    const scrollableContainerRef = useRef(null);
+    listOfScrollContainers.push(scrollableContainerRef);
+
     /**
      * Handles scrolling left when the back button is clicked.
      */

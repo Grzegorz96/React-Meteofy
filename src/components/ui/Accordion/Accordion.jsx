@@ -5,20 +5,21 @@ import { StyledAccordion, Title } from "./Accordion.styles";
  * Custom accordion component.
  *
  * @param {Object} props - The component props.
- * @param {Array} props.listOfRefs - List of references to scrollable elements.
+ * @param {Array} props.listOfScrollContainers - List of scrollable containers.
  * @param {ReactNode} props.children - Child components to be displayed.
  * @returns {JSX.Element} The accordion component.
  */
-export default function CustomAccordion({ listOfRefs, children }) {
+export default function CustomAccordion({ listOfScrollContainers, children }) {
     return (
         <StyledAccordion
             allowZeroExpanded
             onChange={(value) => {
                 if (value.length) {
-                    listOfRefs.forEach((ref) => {
-                        if (ref.current) {
-                            ref.current.style.scrollBehavior = "auto";
-                            ref.current.scrollLeft = 0;
+                    listOfScrollContainers.forEach((scrollableContainerRef) => {
+                        if (scrollableContainerRef?.current) {
+                            scrollableContainerRef.current.style.scrollBehavior =
+                                "auto";
+                            scrollableContainerRef.current.scrollLeft = 0;
                         }
                     });
                 }

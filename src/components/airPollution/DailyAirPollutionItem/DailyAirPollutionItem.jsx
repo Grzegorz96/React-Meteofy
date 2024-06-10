@@ -27,12 +27,13 @@ import { format } from "date-fns";
  *
  * @param {Object} props - Component props.
  * @param {Object} props.dayData - Data containing air pollution information for a specific day.
- * @param {React.RefObject} props.scrollableContainerRef - Ref to the scrollable container.
+ * @param {Array} props.listOfScrollContainers - List of scrollable containers.
  * @returns {JSX.Element} The JSX element representing the daily air pollution item.
  */
 export default function DailyAirPollutionItem({
     dayData,
-    scrollableContainerRef,
+    listOfScrollContainers,
+    index,
 }) {
     // State for the selected dataset.
     const [selectedDataset, setSelectedDataset] = useState(POLLUTION_NAMES[0]);
@@ -75,9 +76,18 @@ export default function DailyAirPollutionItem({
                                 $active={selectedDataset === pollutionName}
                                 key={pollutionName}
                                 onClick={() => {
-                                    scrollableContainerRef.current.style.scrollBehavior =
-                                        "smooth";
-                                    scrollableContainerRef.current.scrollLeft = 0;
+                                    if (
+                                        listOfScrollContainers[index]?.current
+                                    ) {
+                                        listOfScrollContainers[
+                                            index
+                                        ].current.style.scrollBehavior =
+                                            "smooth";
+                                        listOfScrollContainers[
+                                            index
+                                        ].current.scrollLeft = 0;
+                                    }
+
                                     setSelectedDataset(pollutionName);
                                 }}
                             >
@@ -90,7 +100,7 @@ export default function DailyAirPollutionItem({
                     </Label>
                 </DailyDetailsFlex>
                 <ScrollContainer
-                    scrollableContainerRef={scrollableContainerRef}
+                    listOfScrollContainers={listOfScrollContainers}
                 >
                     <AirPollutionLinearChart filteredData={filteredData} />
                 </ScrollContainer>

@@ -1,4 +1,4 @@
-import { memo, useRef } from "react";
+import { memo } from "react";
 import DailyAirPollutionItem from "../DailyAirPollutionItem/DailyAirPollutionItem";
 import CustomAccordion from "../../ui/Accordion/Accordion";
 
@@ -11,18 +11,17 @@ import CustomAccordion from "../../ui/Accordion/Accordion";
  * @returns {JSX.Element} The JSX element representing the forecast air pollution data.
  */
 function ForecastAirPollution({ forecastAirPollutionData }) {
-    const listOfRefs = [];
+    const listOfScrollContainers = [];
 
     return (
-        <CustomAccordion listOfRefs={listOfRefs}>
+        <CustomAccordion listOfScrollContainers={listOfScrollContainers}>
             {forecastAirPollutionData?.map((dayData, index) => {
-                const scrollableContainerRef = useRef(null);
-                listOfRefs.push(scrollableContainerRef);
                 return (
                     <DailyAirPollutionItem
                         key={index}
                         dayData={dayData}
-                        scrollableContainerRef={scrollableContainerRef}
+                        listOfScrollContainers={listOfScrollContainers}
+                        index={index}
                     />
                 );
             })}

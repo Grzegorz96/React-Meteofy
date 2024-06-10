@@ -1,4 +1,4 @@
-import { memo, useRef } from "react";
+import { memo } from "react";
 import DailyWeatherItem from "../DailyWeatherItem/DailyWeatherItem";
 import CustomAccordion from "../../ui/Accordion/Accordion";
 
@@ -11,18 +11,16 @@ import CustomAccordion from "../../ui/Accordion/Accordion";
  * @returns {JSX.Element} The forecast weather component.
  */
 function ForecastWeather({ forecastWeather }) {
-    const listOfRefs = [];
+    const listOfScrollContainers = [];
 
     return (
-        <CustomAccordion listOfRefs={listOfRefs}>
+        <CustomAccordion listOfScrollContainers={listOfScrollContainers}>
             {forecastWeather?.map((dayData, index) => {
-                const scrollableContainerRef = useRef(null);
-                listOfRefs.push(scrollableContainerRef);
                 return (
                     <DailyWeatherItem
                         key={index}
                         dayData={dayData}
-                        scrollableContainerRef={scrollableContainerRef}
+                        listOfScrollContainers={listOfScrollContainers}
                     />
                 );
             })}
