@@ -1,5 +1,5 @@
 
-![tlo](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/eaab1ab5-5384-4a22-bff4-c806a618ea69)
+![logo-meteofy](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/4961d271-5e86-4a71-b95b-40f866003954)
 
 
 # Meteofy
