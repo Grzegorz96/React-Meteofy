@@ -1,10 +1,4 @@
 <img src="https://github.com/Grzegorz96/React-Meteofy/assets/129303867/9e2ac7d4-7b8c-4aa6-9da2-5c47bf8dc5f8" alt="logo" width="100%" />
-<img src="https://github.com/Grzegorz96/React-Meteofy/assets/129303867/b84e355e-309a-47e1-92d4-2cc0b5ce781c" alt="logo" width="100%" />
-
-
-
-
-
 
 # Meteofy
 
@@ -16,3 +10,19 @@ Main features:
 - Interactive 3D globe with country capitals: Users can explore global weather conditions using an interactive 3D globe, with visible country capitals, providing a global perspective on weather conditions.
 - Long-term weather on a chart: Meteofy allows the analysis of weather data on a chart, where users can switch between different time ranges, weather types, and cities, facilitating tracking of long-term weather trends.
 - Air Pollution: Meteofy provides information on the current level of air pollution along with forecasts for the next 4 days. Users have the ability to explore air pollution levels across the entire Earth's surface.
+
+
+## Table of Contents
+- [Description of the modules](#Description-of-the-modules)
+- [Features](#Features)
+- [Technology used](#Technology-used)
+- [Installation](#Installation)
+- [Lessons learned](#Lessons-learned)
+- [Features to be implemented](#Features-to-be-implemented)
+- [Authors](#Authors)
+- [Contact](#Contact)
+- [License](#License)
+- [Screnshoots](#Screnshoots)
+
+
+## Description of the modules
