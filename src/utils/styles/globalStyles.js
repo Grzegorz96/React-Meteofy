@@ -1,7 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 /**
+ * @component
  * Global styles for the application.
+ *
+ * @prop {Object} theme - The theme object containing color configurations.
  */
 export const GlobalStyles = createGlobalStyle`
 html, body, #root {
@@ -38,7 +41,7 @@ html, body, #root {
 
 
 body {
-    background: ${(props) => props.theme.primary};
+    background: ${({ theme }) => theme.primary};
     transition: background-color 0.25s ease-in-out;
 }
 
@@ -46,7 +49,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: ${(props) => props.theme.fontFamily};
+    font-family: ${({ theme }) => theme.fontFamily};
     -webkit-tap-highlight-color: transparent;
     
     @media (max-width: 768px) {
