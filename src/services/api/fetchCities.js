@@ -69,7 +69,6 @@ export const loadOptions = async (inputValue, loadOptions, { page }) => {
                 },
             };
         } catch (error) {
-            console.error(error);
             return {
                 options: [],
                 hasMore: false,
