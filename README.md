@@ -282,10 +282,10 @@ cd React-Meteofy
 npm install
 ```
 - Get API keys from:
-https://www.visualcrossing.com
-https://rapidapi.com/wirefreethought/api/geodb-cities
-https://openweathermap.org
-https://www.geoapify.com
+#### https://www.visualcrossing.com
+#### https://rapidapi.com/wirefreethought/api/geodb-cities
+#### https://openweathermap.org
+#### https://www.geoapify.com
 - Create your own .env file in main folder and add API keys:
 ```bash
 VITE_VISUAL_CROSSING_API_KEY=your_api_key
