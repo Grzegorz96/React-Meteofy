@@ -84,7 +84,7 @@ Main features:
 /src/components/home:
 - The home folder contains subfolders with components necessary for building the application's home page, along with their associated styles.
 
-/src/components/home:
+/src/components/longTermWeather:
 - The longTermWeather folder contains subfolders with the main component for the long-term weather subpage, a line chart component, and their associated styles.
 
 /src/components/Main:
