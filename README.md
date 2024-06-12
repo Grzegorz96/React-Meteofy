@@ -293,7 +293,7 @@ VITE_GEO_DB_API_KEY=your_api_key
 VITE_OPEN_WEATHER_API_KEY=your_api_key
 VITE_GEO_APIFY_API_KEY=your_api_key
 ```
-Run the project:
+- Run the project:
 ```bash
 npm run dev
 ```
