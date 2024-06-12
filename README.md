@@ -157,71 +157,71 @@ Main features:
 
 
 ## Features
-Home Page:
+### Home Page:
 - Current, detailed weather data for cities around the world.
 - 15-day weather forecasts for cities around the world.
 - Hourly weather tracking in the forecasts.
 - Automatic display of data for the user's location.
 
-Poland Page:
+### Poland Page:
 - Interactive map of Poland divided by voivodeships.
 - Weather labels for each voivodeship capital.
 - On clicking a voivodeship, the ability to display a modal with detailed weather data for that capital.
 
-Europe Page:
+### Europe Page:
 - Map of Europe with a current temperature layer.
 - Interactive markers with weather data for each European capital city.
 - Ability to display modals with detailed data by clicking on a marker.
 - Use of marker clustering to group markers that are close to each other.
 
-World Page:
+### World Page:
 - Interactive 3D globe with the ability to rotate, zoom in, and zoom out.
 - 3D weather boards with weather data for the capitals of countries around the world.
 - Use of four types of globe textures for detailed representation.
 - Hovering over a weather board element highlights it in green.
 - Ability to click on a weather board to display a modal with detailed weather data.
 
-Long Term Weather Page:
+### Long Term Weather Page:
 - Line chart displaying long-term weather data from around the world.
 - Available data range: 92 days in the past and 274 days into the future.
 - Ability to switch between different types of weather data.
 - Automatic display of data for the user's location.
 
-Air Pollution Page:
+### Air Pollution Page:
 - Display of current air pollution data on a bar chart for locations worldwide along with the air quality index (AQI).
 - 4-day air pollution forecasts with AQI.
 - Hourly line charts for forecasts.
 - Ability to switch between different types of pollutants in forecasts.
 - Automatic display of data for the user's location.
 
-Not Found Page:
+### Not Found Page:
 - Aesthetic 404 page with a quick link to navigate back to the home page.
 
-Theme:
+### Theme:
 - Two application modes: light and dark.
 - Saving the application theme mode in the browser's local storage.
 - Automatically checking the previously set mode when launching the application; if the user launches the application for the first time, it will set the mode based on the user's default browser settings.
 
-Error Handling:
+### Error Handling:
 - Handling various types of errors through elegant, animated error modals.
 - Handling cases where the API returns data without the appropriate keys.
 
-Loader:
+### Loader:
 - Every data-fetching operation on the site is handled by a Loader for a better user experience.
 
-Responsiveness:
+### Responsiveness:
 - Full application support for all types of devices, from wide desktop monitor screens to narrow smartphone screens.
 
-Side Bar Menu:
+### Side Bar Menu:
 - Elegant side bar menu for devices narrower than 768px.
 
-Search Engine:
+### Search Engine:
 - Search engines asynchronously fetching city lists based on user-entered prefixes.
 
-Routing:
+### Routing:
 - Each application page has its own routing, allowing for navigation via links within the app and direct address input in the browser.
 
-Keyboard Application Support:
+### Keyboard Application Support:
 - The application has full keyboard support.
 
 
