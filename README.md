@@ -19,7 +19,6 @@ Main features:
 - [Technology used](#Technology-used)
 - [Installation](#Installation)
 - [Lessons learned](#Lessons-learned)
-- [Features to be implemented](#Features-to-be-implemented)
 - [Authors](#Authors)
 - [Contact](#Contact)
 - [License](#License)
