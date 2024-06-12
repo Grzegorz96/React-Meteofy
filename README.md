@@ -299,20 +299,26 @@ npm run dev
 ```
 Now the Meteofy should be running on your local server. You can now edit the code in your development environment.
 
+
 ## Lessons learned
 
+
 ## Features to be implemented
+
 
 ## Authors
 
 [@Grzegorz96](https://www.github.com/Grzegorz96)
 
+
 ## Contact
 
 E-mail: grzesstrzeszewski@gmail.com
 
+
 ## License
 
-[MIT](https://github.com/Grzegorz96/React-TeamCraft.gg/blob/master/LICENSE.md)
+[AGPL-3.0 license](https://github.com/Grzegorz96/React-Meteofy/blob/master/LICENSE.md)
+
 
 ## Screnshoots
