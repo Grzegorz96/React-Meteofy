@@ -248,10 +248,10 @@ Main features:
 - Hosting for web application: www.netlify.com
 
 **Server:** 
-- Current weather, forecast weather and air pollution data: https://www.visualcrossing.com/
-- Data about cities from maps and the globe: https://openweathermap.org/
-- Long term weather data: https://open-meteo.com/
-- Reversed geocoding: https://www.geoapify.com/
+- Current weather, forecast weather and air pollution data: https://www.visualcrossing.com
+- Data about cities from maps and the globe: https://openweathermap.org
+- Long term weather data: https://open-meteo.com
+- Reversed geocoding: https://www.geoapify.com
 - Data about cities in the search engine: https://rapidapi.com/wirefreethought/api/geodb-cities
 
 
@@ -274,7 +274,7 @@ Main features:
 ```
 - Go to the React-Meteofy directory:
 ```bash
-cd React-TeamCraft.gg
+cd React-Meteofy
 ```
 - Open the React-Meteofy on your IDE.
 - Install dependencies:
@@ -282,10 +282,10 @@ cd React-TeamCraft.gg
 npm install
 ```
 - Get API keys from:
-- https://www.visualcrossing.com/
+- https://www.visualcrossing.com
 - https://rapidapi.com/wirefreethought/api/geodb-cities
-- https://openweathermap.org/
-- https://www.geoapify.com/
+- https://openweathermap.org
+- https://www.geoapify.com
 - Create your own .env file in main folder and add API keys:
 ```bash
 VITE_VISUAL_CROSSING_API_KEY=your_api_key
