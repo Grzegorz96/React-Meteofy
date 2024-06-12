@@ -22,6 +22,7 @@ export const CurrentWeatherWrapper = styled.div`
     padding: 15px;
     gap: 10px;
     max-width: 800px;
+    width: 100%;
 
     @media (max-width: 570px) {
         grid-template-columns: 1fr;
@@ -29,10 +30,6 @@ export const CurrentWeatherWrapper = styled.div`
             "main"
             "second"
             "details";
-    }
-
-    @media (max-width: 520px) {
-        width: 100%;
     }
 `;
 
@@ -86,7 +83,7 @@ export const SecondWrapper = styled.div`
         grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 490px) {
         grid-template-columns: 1fr;
     }
 `;
