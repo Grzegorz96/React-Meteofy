@@ -301,9 +301,15 @@ Now the Meteofy should be running on your local server. You can now edit the cod
 
 
 ## Lessons learned
+Creating the Meteofy application took me about 3 months, and it was an intensive period during which I gained many new skills in working with React and explored various frontend libraries. Throughout the project, I focused on creating a user-friendly environment, paying special attention to both the appearance and functionality of the application. I encountered many challenges along the way, but I managed to overcome them all.
 
+Thanks to this project, I mastered Redux logic and structuring folders in an advanced application. I utilized various solutions in this project for sharing data between child components and different approaches for sharing application logic, including custom hooks.
 
-## Features to be implemented
+While working on Meteofy, I developed my skills in working with SVG files and generating custom SVG files. For the first time, I dealt with programming three-dimensional objects and had to delve into raycaster issues to solve related problems.
+
+I developed my own dynamic charts, allowing users to switch between different data sets on a single chart, enabling more advanced data exploration.
+
+Working on Meteofy also taught me to make more effective use of ready-made solutions offered by other libraries, rather than trying to reinvent the wheel. This allowed me to create a more advanced application in a shorter period of time.
 
 
 ## Authors
