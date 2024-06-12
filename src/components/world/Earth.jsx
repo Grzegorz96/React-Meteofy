@@ -46,6 +46,10 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
     useEffect(() => {
         camera.layers.enable(1);
         setIsLoading(false);
+
+        return () => {
+            document.body.removeAttribute("style");
+        };
     }, []);
 
     // Calculate offset for city positions and convert coords to cartesian on the globe.

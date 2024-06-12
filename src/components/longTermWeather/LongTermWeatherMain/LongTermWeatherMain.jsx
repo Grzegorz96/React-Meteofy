@@ -92,7 +92,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
                     shouldDisableDate={(date) => {
                         return (
                             date < startOfDay(subDays(new Date(), 92)) ||
-                            date > startOfDay(addDays(new Date(), 91))
+                            date > startOfDay(addDays(new Date(), 273))
                         );
                     }}
                 />
