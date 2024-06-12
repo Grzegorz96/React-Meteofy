@@ -13,6 +13,7 @@ Main features:
 
 
 ## Table of Contents
+
 - [Description of folders and modules](#Description-of-folders-and-modules)
 - [Features](#Features)
 - [Technology used](#Technology-used)
@@ -26,6 +27,7 @@ Main features:
 
 
 ## Description of folders and modules
+
 ### Core:
 /src/App.jsx:
 - App file contains the main component of a React application. It sets up the application's theme mode, provides global styles and routing functionality using React Router.
@@ -157,6 +159,7 @@ Main features:
 
 
 ## Features
+
 ### Home Page:
 - Current, detailed weather data for cities around the world.
 - 15-day weather forecasts for cities around the world.
@@ -214,6 +217,7 @@ Main features:
 
 ### Side Bar Menu:
 - Elegant side bar menu for devices narrower than 768px.
+- Automatic closing side bar menu.
 
 ### Search Engine:
 - Search engines asynchronously fetching city lists based on user-entered prefixes.
@@ -225,12 +229,90 @@ Main features:
 - The application has full keyboard support.
 
 
+## Technology used
+
+**Client:** 
+- Languages: JavaScript, HTML, CSS
+- Frontend Library: React
+- Routing: React Router
+- UI Components: RSuite, React Icons, React Spinners, SweetAlert2, SweetAlert2 React Content, FontAwesome (React FontAwesome), React Accessible Accordion, React Burger Menu
+- Styling: Styled Components, CSS
+- Image Generation: Vite Plugin SVGR
+- 3D and Animations: Three.js, @react-three/fiber, @react-three/drei, @react-spring/web
+- State Management: Redux Toolkit, React Redux
+- Charts and Graphs: Chart.js, React Chartjs 2, Chartjs Adapter Date FNS, Chartjs Plugin Datalabels
+- Maps and Geolocation: Leaflet, React Leaflet, React Leaflet Cluster
+- Data Fetching: Axios
+- Form Handling and Selects: React Select, React Select Async Paginate
+- Responsive Design: React Responsive
+- Hosting for web application: www.netlify.com
+
+**Server:** 
+- Current weather, forecast weather and air pollution data: https://www.visualcrossing.com/
+- Data about cities from maps and the globe: https://openweathermap.org/
+- Long term weather data: https://open-meteo.com/
+- Reversed geocoding: https://www.geoapify.com/
+- Data about cities in the search engine: https://rapidapi.com/wirefreethought/api/geodb-cities
 
 
+## Installation
 
+### To quickly launch the Meteofy application:
+- Enter the link: https://meteofy.netlify.app
 
+### For manually launching the application on the IDE:
+#### Requirements:
+##### Programs:
+- Web browser.
+- IDE, for example Visual Studio Code.
+- Node.js
 
+#### Instruction:
+- Download React-Meteofy repository:
+```bash
+ git clone https://github.com/Grzegorz96/React-Meteofy.git
+```
+- Go to the React-Meteofy directory:
+```bash
+cd React-TeamCraft.gg
+```
+- Open the React-Meteofy on your IDE.
+- Install dependencies:
+```bash
+npm install
+```
+- Get API keys from:
+- https://www.visualcrossing.com/
+- https://rapidapi.com/wirefreethought/api/geodb-cities
+- https://openweathermap.org/
+- https://www.geoapify.com/
+- Create your own .env file in main folder and add API keys:
+```bash
+VITE_VISUAL_CROSSING_API_KEY=your_api_key
+VITE_GEO_DB_API_KEY=your_api_key
+VITE_OPEN_WEATHER_API_KEY=your_api_key
+VITE_GEO_APIFY_API_KEY=your_api_key
+```
+Run the project:
+```bash
+npm run dev
+```
+Now the Meteofy should be running on your local server. You can now edit the code in your development environment.
 
+## Lessons learned
 
+## Features to be implemented
 
+## Authors
 
+[@Grzegorz96](https://www.github.com/Grzegorz96)
+
+## Contact
+
+E-mail: grzesstrzeszewski@gmail.com
+
+## License
+
+[MIT](https://github.com/Grzegorz96/React-TeamCraft.gg/blob/master/LICENSE.md)
+
+## Screnshoots
