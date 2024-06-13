@@ -1,4 +1,5 @@
 import { NotFoundWrapper, LinkStyled, Title } from "./NotFound.styles";
+import { useEffect, useRef } from "react";
 
 /**
  * @component
@@ -7,10 +8,19 @@ import { NotFoundWrapper, LinkStyled, Title } from "./NotFound.styles";
  * @returns {JSX.Element} The rendered NotFound component.
  */
 export default function NotFound() {
+    // Create a reference for the link element.
+    const linkRef = useRef(null);
+    // Focus on the link element when the component mounts.
+    useEffect(() => {
+        linkRef?.current?.focus();
+    }, []);
+
     return (
         <NotFoundWrapper>
             <Title>404 - Not Found!</Title>
-            <LinkStyled to="/">Go to Home</LinkStyled>
+            <LinkStyled to="/" ref={linkRef}>
+                Go to Home
+            </LinkStyled>
         </NotFoundWrapper>
     );
 }
