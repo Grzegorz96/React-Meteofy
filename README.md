@@ -2,15 +2,7 @@
 
 # Meteofy
 
-Meteofy is an advanced weather application, crafted with React technology, offering users a wide array of features. It boasts full responsiveness and comes with two theme modes, light and dark. The program also works on multiple APIs.
-Main features:
-- Current weather data and forecasts: Meteofy provides up-to-date information about the weather and forecasts for the next 15 days, allowing users to stay informed about atmospheric conditions.
-- Map of Poland with weather data: Users can view current weather data on an interactive map of Poland, with marked provincial capitals, enabling quick understanding of regional weather differences.
-- Map of Europe with weather data: Meteofy also offers the ability to check weather conditions on a map of Europe, with visible capitals of countries, which is useful for travelers or individuals interested in weather conditions in different countries.
-- Interactive 3D globe with country capitals: Users can explore global weather conditions using an interactive 3D globe, with visible country capitals, providing a global perspective on weather conditions.
-- Long-term weather on a chart: Meteofy allows the analysis of weather data on a chart, where users can switch between different time ranges, weather types, and cities, facilitating tracking of long-term weather trends.
-- Air Pollution: Meteofy provides information on the current level of air pollution along with forecasts for the next 4 days. Users have the ability to explore air pollution levels across the entire Earth's surface.
-
+Meteofy is an advanced weather application crafted with React technology, offering users a wide array of features. It boasts full responsiveness, includes both light and dark theme modes, and integrates with multiple APIs. Meteofy provides up-to-date information about the weather and forecasts for the next 15 days, allowing users to stay informed about atmospheric conditions. Users can view current weather data on an interactive map of Poland, with marked provincial capitals, enabling quick understanding of regional weather differences. The application also offers the ability to check weather conditions on a map of Europe, with visible capitals of countries, which is useful for travelers or individuals interested in weather conditions in different countries. Users can explore global weather conditions using an interactive 3D globe, with visible country capitals, providing a global perspective on weather conditions. Meteofy allows the analysis of weather data on a chart, where users can switch between different time ranges, weather types, and cities, facilitating tracking of long-term weather trends. Additionally, application provides information on the current level of air pollution along with forecasts for the next four days, data is presented in graphs, allowing users to explore air pollution levels across the entire Earth's surface.
 
 ## Table of Contents
 
@@ -236,7 +228,7 @@ Main features:
 - Routing: React Router
 - UI Components: RSuite, React Icons, React Spinners, SweetAlert2, SweetAlert2 React Content, FontAwesome (React FontAwesome), React Accessible Accordion, React Burger Menu
 - Styling: Styled Components, CSS
-- Image Generation: Vite Plugin SVGR
+- SVG Handling: Vite Plugin SVGR
 - 3D and Animations: Three.js, @react-three/fiber, @react-three/drei, @react-spring/web
 - State Management: Redux Toolkit, React Redux
 - Charts and Graphs: Chart.js, React Chartjs 2, Chartjs Adapter Date FNS, Chartjs Plugin Datalabels
@@ -327,3 +319,36 @@ E-mail: grzesstrzeszewski@gmail.com
 
 
 ## Screnshoots
+### View for desktop and laptop screens:
+##### Screenshot of the home page (dark mode)
+![home-page-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/e81f58c9-523b-4afd-b022-9d88646e3c86)
+##### Screenshot of the home page (light mode)
+![home-page-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/54524de1-095c-4410-baef-c3d0e33b3676)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
