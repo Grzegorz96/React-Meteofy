@@ -328,53 +328,55 @@ E-mail: grzesstrzeszewski@gmail.com
 ![home-page-with-accordion-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/a1af186d-7624-42c9-9fce-87226a13cd9c)
 ##### Screenshot of the home page with accordion element (light mode)
 ![home-page-with-accordion-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/bae1ec71-aa92-4a24-b78e-126d54c38edd)
-
+##### Screenshot of the poland map (dark mode)
 ![poland-map-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/37327fea-a5d4-4610-bfdb-5cf8d9d2c2a3)
-
+##### Screenshot of the poland map (light mode)
 ![poland-map-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/6414ee48-bc5f-4b62-bf36-c3ccb4ccc976)
-
+##### Screenshot of the weather modal at poland map (dark mode)
 ![weather-modal-poland-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/a1f5729b-60ec-43dd-b0c0-cc23250a6e9a)
-
+##### Screenshot of the weather modal at poland map (light mode)
 ![weather-modal-poland-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/0d3916d5-22d9-4c5b-b75c-d2b966aa5abe)
-
+##### Screenshot of the europe map (dark mode)
 ![europe-map-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/bbabddf8-ccbe-49c5-95f5-1caf01eb8dcc)
-
+##### Screenshot of the europe map (light mode)
 ![europe-map-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/b490bb3b-8940-4497-ab52-b88e621a2938)
-
+##### Screenshot of the weather modal at europe map (dark mode)
 ![weather-modal-europe-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/c78870c5-5a33-4455-9219-8c428a28f4bf)
-
+##### Screenshot of the weather modal at europe map (light mode)
 ![weather-modal-europe-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/19c56621-5728-43c5-a7f8-b4235699ec66)
-
+##### Screenshot of the world globe (dark mode)
 ![world-globe-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/8c8143e4-c531-4609-9dd6-c6414cd19c8a)
-
+##### Screenshot of the world globe (light mode)
 ![world-globe-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/c420f733-8c22-4f92-bc45-5dd0c6724ed8)
-
+##### Screenshot of the weather modal at world globe (dark mode)
 ![weather-modal-globe-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/38ea7a86-e371-4297-b81f-02389c435222)
-
+##### Screenshot of the weather modal at world globe (light mode)
 ![weather-modal-globe-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/700d273a-4b5b-4f23-9a6f-c080ab7c78eb)
-
+##### Screenshot of the long term weather chart (dark mode)
 ![long-term-weather-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/63864692-ba05-458e-8420-80d84392d16d)
-
+##### Screenshot of the long term weather chart (light mode)
 ![long-term-weather-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/e0074d5e-7ab9-4ac2-a175-79162e0147f6)
-
+##### Screenshot of the date range picker on long term weather chart (dark mode)
 ![long-term-weather-daterange-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/8561745c-8729-49f3-8d10-a1ecb04ed2e8)
-
+##### Screenshot of the date range picker on long term weather chart (light mode)
 ![long-term-weather-daterange-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/419a8638-65d8-4cda-bec3-6ae7536cdcf6)
-
+##### Screenshot of the air pollution page (dark mode)
 ![air-pollution-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/43d4b529-090f-4221-896b-ac9c0e349a68)
-
+##### Screenshot of the air pollution page (light mode)
 ![air-pollution-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/9f8b1322-eb9b-4206-bd61-2679fccad98d)
-
+##### Screenshot of the air pollution page with accordion element (dark mode)
 ![air-pollution-accordion-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/365aed4c-f888-4285-b8f7-c0398759f4e4)
-
+##### Screenshot of the air pollution page with accordion element (light mode)
 ![air-pollution-accordion-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/31246827-9b2f-4f35-b661-9d88d377e710)
-
-![error-modal-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/09788198-fa8a-4bcc-b7eb-b2acdb4fc842)
-
-![error-modal-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/335b0671-7dbf-47b5-916f-17a3d8ee8209)
-
+##### Screenshot of the search engine (dark mode)
 ![search-engine-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/2d9198a2-c5cd-4379-8f44-fb4356296679)
-
+##### Screenshot of the search engine (light mode)
 ![search-engine-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/be00d948-0449-401b-af0e-c28377e9f72d)
-
-
+##### Screenshot of the error modal (dark mode)
+![error-modal-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/09788198-fa8a-4bcc-b7eb-b2acdb4fc842)
+##### Screenshot of the error modal (light mode)
+![error-modal-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/335b0671-7dbf-47b5-916f-17a3d8ee8209)
+##### Screenshot of the not found page (dark mode)
+![not-found-page-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/64162666-159b-4971-b80a-81c7f087ab60)
+##### Screenshot of the not found page (light mode)
+![not-found-page-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/eb537fa0-5809-4a8c-a99f-25e6544e67d8)
