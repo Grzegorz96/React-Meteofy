@@ -20,7 +20,7 @@ export default function WeatherBoard({ position, capital, handleEvent }) {
 
     // Load texture for weather icon.
     const texture = useTexture(
-        `/src/assets/openWeatherIcons/${
+        `/assets/openWeatherIcons/${
             capital?.weather?.[0]?.icon ?? "unknown"
         }.png`
     );

@@ -56,7 +56,7 @@ export const AirQualityIndexHeader = styled.div`
     gap: 10px;
     align-items: center;
     padding: 10px 0;
-    background-color: ${(props) => props.$backqroundColor};
+    background-color: ${(props) => props.$backgroundColor};
     border-radius: 0 6px 0 0;
     text-align: center;
     transition: background-color 0.5s ease-in-out;
@@ -79,7 +79,7 @@ export const AirQualityIndexHeader = styled.div`
  * @prop {string} $icon - Name of the icon file (without extension) located in the `airPollutionIcons` directory.
  */
 export const FaceImg = styled.img.attrs((props) => ({
-    src: `/src/assets/airPollutionIcons/${props.$icon}.svg`,
+    src: `/assets/airPollutionIcons/${props.$icon}.svg`,
 }))`
     width: 80px;
     height: 80px;
@@ -176,7 +176,7 @@ export const AirQualityIndexFooter = styled.div`
  * @prop {string} $backqroundColor - Background color for the icon.
  */
 export const FaceFooter = styled.img.attrs((props) => ({
-    src: `/src/assets/airPollutionIcons/${props.$icon}.svg`,
+    src: `/assets/airPollutionIcons/${props.$icon}.svg`,
 }))`
     width: 40px;
     height: 40px;

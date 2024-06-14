@@ -23,9 +23,7 @@ export const Title = styled.div`
  * @prop {string} height - The height of the icon.
  */
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `/src/assets/visualCrossingWeatherIcons/${
-        props.$icon ?? "unknown"
-    }.svg`,
+    src: `/assets/visualCrossingWeatherIcons/${props.$icon ?? "unknown"}.svg`,
 }))`
     width: ${(props) => props.width};
     height: ${(props) => props.height};
@@ -48,7 +46,7 @@ export const WeatherIcon = styled.img.attrs((props) => ({
  * @prop {string} $backgroundColor - The background color of the icon.
  */
 export const FaceIcon = styled.img.attrs((props) => ({
-    src: `/src/assets/airPollutionIcons/${props.$icon ?? "ic-face-orange"}.svg`,
+    src: `/assets/airPollutionIcons/${props.$icon ?? "ic-face-orange"}.svg`,
 }))`
     height: 38px;
     height: 38px;

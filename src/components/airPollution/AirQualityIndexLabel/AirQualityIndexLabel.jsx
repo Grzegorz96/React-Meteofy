@@ -30,7 +30,7 @@ export default function AirQualityIndexLabel({ currentAirPollutionData }) {
             {currentAqiUSData ? (
                 <>
                     <AirQualityIndexHeader
-                        $backqroundColor={currentAqiUSData.aqiColor}
+                        $backgroundColor={currentAqiUSData.aqiColor}
                     >
                         <FaceImg $icon={currentAqiUSData.faceIcon} />
                         <Wrapper>

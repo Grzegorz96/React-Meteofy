@@ -175,9 +175,7 @@ export const DetailValue = styled.div`
  * @prop {string} $icon - The icon name.
  */
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `/src/assets/visualCrossingWeatherIcons/${
-        props.$icon ?? "unknown"
-    }.svg`,
+    src: `/assets/visualCrossingWeatherIcons/${props.$icon ?? "unknown"}.svg`,
 }))`
     width: 80px;
     height: 80px;

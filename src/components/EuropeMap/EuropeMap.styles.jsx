@@ -7,7 +7,7 @@ import styled from "styled-components";
  * @prop {string} $icon - The name of the weather icon.
  */
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `/src/assets/openWeatherIcons/${props.$icon ?? "unknown"}.png`,
+    src: `/assets/openWeatherIcons/${props.$icon ?? "unknown"}.png`,
 }))`
     width: 100% !important;
 `;
