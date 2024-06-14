@@ -146,7 +146,10 @@ Meteofy is an advanced weather application crafted with React technology, offeri
 
 ### Assets:
 /src/assets:
-- The assets folder houses all the graphical and styling resources used throughout the application. It includes various subfolders that organize these assets for easy access and maintenance. This centralized repository of resources ensures consistency and efficiency in the application's design and functionality.
+- In the assets folder, there are subfolders containing CSS files used in the application, textures, and application logos. These files are directly imported into the application and managed using JavaScript."
+
+/assets:
+- In the assets folder, located within the public directory, there are subfolders containing icons dynamically utilized in the application. These icons are not directly imported into the JavaScript code, but their paths are dynamically referenced within the application.
 
 
 ## Features
@@ -249,7 +252,7 @@ Meteofy is an advanced weather application crafted with React technology, offeri
 ## Installation
 
 ### To quickly launch the Meteofy application:
-- Enter the link: https://meteofy.netlify.app
+- Enter the link: https://meteofy-app.netlify.app
 
 ### For manually launching the application on the IDE:
 #### Requirements:
