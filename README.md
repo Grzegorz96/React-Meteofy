@@ -321,10 +321,10 @@ E-mail: grzesstrzeszewski@gmail.com
 ## Screnshoots
 ### View for desktop and laptop screens:
 ##### Screenshot of the home page (dark mode)
-![home-page-dark1](https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcQOO0X7mMnoYz-e9Zdc6Pe6Wz7Ow1DcvhEiaex5aSv6QJDoCtcooqA7UUbjrphvjlIc)
-![home-page-dark2](./assets/129303867/e81f58c9-523b-4afd-b022-9d88646e3c86)
+
+![home-page-dark2](/assets/129303867/54524de1-095c-4410-baef-c3d0e33b3676)
 ![home-page-dark](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/e81f58c9-523b-4afd-b022-9d88646e3c86)
-![xd](./src/assets/images/icon.png)
+
 ##### Screenshot of the home page (light mode)
 ![home-page-light](https://github.com/Grzegorz96/React-Meteofy/assets/129303867/54524de1-095c-4410-baef-c3d0e33b3676)
 ##### Screenshot of the home page with detailed forecast data (dark mode)
