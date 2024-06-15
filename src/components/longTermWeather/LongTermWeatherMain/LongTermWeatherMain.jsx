@@ -78,6 +78,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
                     options={selectOptions}
                     onChange={setSelectedDataset}
                     value={selectedDataset}
+                    isSearchable={false}
                 />
                 <DateRangePickerStyled
                     menuStyle={dateRangePickerMenu(theme)}
@@ -86,7 +87,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
                     showOneCalendar
                     character=" - "
                     ranges={ranges(moveRangesToBottom)}
-                    format="MMMM d, yyyy"
+                    format="MMMM dd, yyyy"
                     value={selectedDateRange}
                     onChange={changeDateRange}
                     shouldDisableDate={(date) => {
