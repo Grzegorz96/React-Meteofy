@@ -197,7 +197,7 @@ Meteofy is an advanced weather application crafted with React technology, offeri
 ### Theme:
 - Two application modes: light and dark.
 - Saving the application theme mode in the browser's local storage.
-- Automatically checking the previously set mode when launching the application; if the user launches the application for the first time, it will set the mode based on the user's default browser settings.
+- Automatically checking the previously set mode when launching the application, if the user launches the application for the first time, it will set the mode based on your system settings for the theme.
 
 ### Error Handling:
 - Handling various types of errors through elegant, animated error modals.
