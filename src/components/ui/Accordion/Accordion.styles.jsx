@@ -107,7 +107,7 @@ export const DailyDetailsGrid = styled.div`
     flex: 1 1;
     grid-template-columns: auto auto;
     padding: 5px 15px;
-    margin-inline: 10px;
+    margin-inline: 13px;
 
     @media (max-width: 500px) {
         grid-column-gap: 10px;
@@ -130,7 +130,7 @@ export const DailyDetailsFlex = styled.div`
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-inline: 10px;
+    margin-inline: 13px;
     padding: 5px 0;
     background-color: ${({ theme }) => theme.secondary};
     transition: background-color 0.25s ease-in-out;

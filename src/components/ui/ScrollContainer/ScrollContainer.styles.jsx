@@ -77,8 +77,8 @@ export const ScrollWrapper = styled.div`
     transition: background-color 0.25s ease-in-out;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    margin-inline: 10px;
-    width: calc(100% - 20px);
+    margin-inline: 13px;
+    width: calc(100% - 26px);
     height: 120px;
     overflow: hidden;
 
