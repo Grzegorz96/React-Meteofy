@@ -33,6 +33,8 @@ function LongTermWeatherMain({ seasonalData, city }) {
     const theme = useTheme();
     // Check if the screen width is less than 400px.
     const moveRangesToBottom = useMediaQuery({ query: "(max-width: 400px)" });
+    // Check if the screen width is less than 768px.
+    const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
     // Set the default selected dataset and date range.
     const [selectedDataset, setSelectedDataset] = useState(selectOptions[0]);
     const [selectedDateRange, setSelectedDateRange] =
@@ -81,6 +83,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
                     isSearchable={false}
                 />
                 <DateRangePickerStyled
+                    editable={isMobile ? false : true}
                     menuStyle={dateRangePickerMenu(theme)}
                     menuClassName={theme.isDarkMode ? "dark-mode-menu" : null}
                     placement="bottom"
