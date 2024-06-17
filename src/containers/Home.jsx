@@ -1,4 +1,4 @@
-import { useDataWithCitiesHandler } from "../hooks/useDataWithCitiesHandler";
+import useDataWithCitiesHandler from "../hooks/useDataWithCitiesHandler";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { resetCityData } from "../state/cityDataSlice";

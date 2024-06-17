@@ -7,7 +7,7 @@ import { fetchCitiesWeather } from "../services/api/fetchCitiesWeather";
  * @param {Array} cityObjects - An array of city objects.
  * @returns {Object} An object containing the fetched data, loading state, and error state and setter to update the data.
  */
-export const useDataWithMapsHandler = (cityObjects) => {
+const useDataWithMapsHandler = (cityObjects) => {
     const [data, setData] = useState({
         fetchedData: null,
         loading: false,
@@ -56,3 +56,5 @@ export const useDataWithMapsHandler = (cityObjects) => {
     }, []);
     return { data, setData };
 };
+
+export default useDataWithMapsHandler;

@@ -76,10 +76,7 @@ export function getAirPollutionBarChartOptions(city, theme) {
         // Setting padding for the chart.
         layout: {
             padding: {
-                top: 5,
-                left: 15,
-                right: 15,
-                bottom: 15,
+                top: 3,
             },
         },
     };

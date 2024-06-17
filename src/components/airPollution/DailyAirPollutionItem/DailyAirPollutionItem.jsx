@@ -96,7 +96,7 @@ export default function DailyAirPollutionItem({
                         ))}
                     </SelectButtonsWrapper>
                     <Label $fontWeight="600">
-                        Hourly Air Pollution (μg/m3)
+                        Hourly Air Pollution (μg/m³)
                     </Label>
                 </DailyDetailsFlex>
                 <ScrollContainer

@@ -121,7 +121,7 @@ export const LongTermWeatherWrapper = styled.div`
     box-shadow: 0 0 10px 0 ${({ theme }) => theme.shadow};
     background-color: ${({ theme }) => theme.secondary};
     transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
-    padding: 10px 20px 20px 20px;
+    padding: 10px 15px 15px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -132,7 +132,7 @@ export const LongTermWeatherWrapper = styled.div`
 
     @media (max-width: 768px) {
         margin-top: 50px;
-        padding: 10px;
+        padding: 10px 10px 5px;
     }
 `;
 

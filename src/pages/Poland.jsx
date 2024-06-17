@@ -1,4 +1,5 @@
 import PolandContainer from "../containers/Poland";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 /**
  * @component
@@ -10,5 +11,7 @@ import PolandContainer from "../containers/Poland";
  * @returns {JSX.Element} The PolandContainer component.
  */
 export default function PolandPage() {
+    // Set the document title.
+    useDocumentTitle("Meteofy - Poland");
     return <PolandContainer />;
 }

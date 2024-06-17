@@ -1,4 +1,4 @@
-import { useDataWithCitiesHandler } from "../hooks/useDataWithCitiesHandler";
+import useDataWithCitiesHandler from "../hooks/useDataWithCitiesHandler";
 import { useState, useMemo } from "react";
 import Loader from "../components/ui/Loader/Loader";
 import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";

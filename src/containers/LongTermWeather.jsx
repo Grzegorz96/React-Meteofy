@@ -3,7 +3,7 @@ import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
 import Loader from "../components/ui/Loader/Loader";
 import SearchEngine from "../components/ui/SearchEngine/SearchEngine";
 import { localInputStyles } from "../components/ui/SearchEngine/SearchEngine.styles";
-import { useDataWithCitiesHandler } from "../hooks/useDataWithCitiesHandler";
+import useDataWithCitiesHandler from "../hooks/useDataWithCitiesHandler";
 import LongTermWeatherMain from "../components/longTermWeather/LongTermWeatherMain/LongTermWeatherMain";
 
 /**

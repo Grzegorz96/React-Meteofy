@@ -63,7 +63,7 @@ const fetchDataByType = async (latitude, longitude, dataType) => {
  * @param {string} dataType - The type of data to fetch.
  * @returns {object} An object containing the fetched data, loading state, error, city and a setter to update the data.
  */
-export const useDataWithCitiesHandler = (city, dataType) => {
+const useDataWithCitiesHandler = (city, dataType) => {
     const [data, setData] = useState({
         city: null,
         fetchedData: null,
@@ -110,3 +110,5 @@ export const useDataWithCitiesHandler = (city, dataType) => {
 
     return { data, setData };
 };
+
+export default useDataWithCitiesHandler;

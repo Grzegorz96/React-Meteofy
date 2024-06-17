@@ -14,9 +14,11 @@ export const AirPollutionBarChartWrapper = styled.div`
     grid-area: airPollutionBarChart;
     height: 371px;
     position: relative;
+    padding: 10px 12px 12px;
 
     @media (max-width: 900px) {
         border-radius: 0 0 6px 6px;
+        padding: 10px 10px 5px;
     }
 `;
 
@@ -28,7 +30,7 @@ export const AirPollutionBarChartWrapper = styled.div`
  */
 export const Datetime = styled.p`
     position: absolute;
-    top: 3px;
+    top: 8px;
     left: 15px;
     font-size: 10px;
     font-weight: 600;

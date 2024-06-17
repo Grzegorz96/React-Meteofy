@@ -1,4 +1,5 @@
 import LongTermWeatherContainer from "../containers/LongTermWeather";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 /**
  * @component
@@ -10,5 +11,7 @@ import LongTermWeatherContainer from "../containers/LongTermWeather";
  * @returns {JSX.Element} The LongTermWeatherContainer component.
  */
 export default function LongTermWeatherPage() {
+    // Set the document title.
+    useDocumentTitle("Meteofy - Long Term Weather");
     return <LongTermWeatherContainer />;
 }
