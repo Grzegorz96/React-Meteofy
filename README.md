@@ -440,7 +440,7 @@ E-mail: grzesstrzeszewski@gmail.com
 ##### Screenshot of the error modal (dark mode)
 ![error-modal-dark](hhttps://raw.githubusercontent.com/Grzegorz96/React-Meteofy/master/docs/readme-images/mobile/error-modal-dark.png)
 ##### Screenshot of the error modal (light mode)
-![error-modal-light](https://raw.githubusercontent.com/Grzegorz96/React-Meteofy/master/docs/readme-images/mobile/error-modal-light-png)
+![error-modal-light](https://raw.githubusercontent.com/Grzegorz96/React-Meteofy/master/docs/readme-images/mobile/error-modal-light.png)
 ##### Screenshot of the not found page (dark mode)
 ![not-found-page-dark](https://raw.githubusercontent.com/Grzegorz96/React-Meteofy/master/docs/readme-images/mobile/not-found-page-dark.png)
 ##### Screenshot of the not found page (light mode)
