@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/Grzegorz96/React-Meteofy/master/docs/readme-images/logo.png" alt="logo" width="100%" />
+<img src="https://raw.githubusercontent.com/Grzegorz96/React-Meteofy/master/docs/readme-images/logo.png" alt="logo" width="80%" />
 
 # Meteofy
 
