@@ -13,8 +13,7 @@ import { useState, useMemo, memo } from "react";
 import { getLongTermWeatherFilteredLinearChartData } from "../../../utils/charts/chartData";
 import { getLongTermWeatherLinearChartOptions } from "../../../utils/charts/chartOptions";
 import { selectOptions } from "../../../utils/constants/selectOptions";
-import { getDefaultDateRange } from "../../../utils/helpers";
-import { ranges } from "../../../utils/constants/dateRangePickerRanges";
+import { getDefaultDateRange, getRanges } from "../../../utils/helpers";
 import { startOfDay, addDays, subDays } from "date-fns";
 import { useMediaQuery } from "react-responsive";
 import { useTheme } from "styled-components";
@@ -89,7 +88,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
                     placement="bottom"
                     showOneCalendar
                     character=" - "
-                    ranges={ranges(moveRangesToBottom)}
+                    ranges={getRanges(moveRangesToBottom)}
                     format="MMMM dd, yyyy"
                     value={selectedDateRange}
                     onChange={changeDateRange}
