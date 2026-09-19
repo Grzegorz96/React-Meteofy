@@ -5,6 +5,7 @@ import SearchEngine from '../components/ui/SearchEngine/SearchEngine';
 import { localInputStyles } from '../components/ui/SearchEngine/SearchEngine.styles';
 import useDataWithCitiesHandler from '../hooks/useDataWithCitiesHandler';
 import LongTermWeatherMain from '../components/longTermWeather/LongTermWeatherMain/LongTermWeatherMain';
+import { DATA_TYPE } from '../utils/constants/dataTypes';
 
 /**
  * @component
@@ -23,12 +24,12 @@ export default function LongTermWeatherContainer() {
   // Fetching data based on the selected city.
   const { data, setData } = useDataWithCitiesHandler(
     selectedCity,
-    'longTermWeather'
+    DATA_TYPE.longTermWeather
   );
 
   // Extracting only the time and member01 data from the fetched data.
+  const daily = data.fetchedData?.daily;
   const seasonalData = useMemo(() => {
-    const { daily } = data.fetchedData || {};
     if (!daily) return;
 
     return Object.fromEntries(
@@ -36,7 +37,7 @@ export default function LongTermWeatherContainer() {
         ([key]) => key.includes('member01') || key === 'time'
       )
     );
-  }, [data.fetchedData?.daily]);
+  }, [daily]);
 
   return (
     <>

@@ -17,7 +17,7 @@ const useDataWithMapsHandler = (cityObjects) => {
   useEffect(() => {
     const fetchData = async () => {
       // Set loading state to true when fetching data.
-      setData({ ...data, loading: true });
+      setData((prev) => ({ ...prev, loading: true }));
       try {
         // Split the cityObjects array into chunks of size 20.
         const chunkSize = 20;
@@ -53,7 +53,7 @@ const useDataWithMapsHandler = (cityObjects) => {
       }
     };
     fetchData();
-  }, []);
+  }, [cityObjects]);
   return { data, setData };
 };
 

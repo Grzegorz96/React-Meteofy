@@ -29,4 +29,5 @@ function ForecastAirPollution({ forecastAirPollutionData }) {
   );
 }
 
-export default memo(ForecastAirPollution);
+const MemoizedForecastAirPollution = memo(ForecastAirPollution);
+export default MemoizedForecastAirPollution;

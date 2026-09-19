@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import { Navigate, navLinkStyles } from './Navbar.styles';
+import { Navigate } from './Navbar.styles';
+import { navLinkStyles } from './navbar.helpers';
 import { GiPoland } from 'react-icons/gi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

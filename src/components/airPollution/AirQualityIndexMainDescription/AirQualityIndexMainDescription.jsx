@@ -13,7 +13,7 @@ export default function AirQualityIndexMainDescription() {
   return (
     <AirQualityIndexMainDescriptionWrapper>
       <AirQualityIndexMainDescriptionText $fontSize="1.3em" $marginBottom="5px">
-        WORLD'S AIR POLLUTION
+        WORLD&apos;S AIR POLLUTION
       </AirQualityIndexMainDescriptionText>
       <AirQualityIndexMainDescriptionText $fontSize="1em">
         AIR QUALITY INDEX (AQI)

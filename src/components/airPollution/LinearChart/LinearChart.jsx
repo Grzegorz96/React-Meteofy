@@ -1,4 +1,3 @@
-import { Chart as _ } from 'chart.js/auto';
 import { Line } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { getAirPollutionlinearChartOptions } from '../../../utils/charts/chartOptions';

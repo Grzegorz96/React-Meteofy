@@ -50,7 +50,7 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
     return () => {
       document.body.removeAttribute('style');
     };
-  }, []);
+  }, [camera.layers, setIsLoading]);
 
   // Calculate offset for city positions and convert coords to cartesian on the globe.
   const setOffset = (capital) => {
@@ -117,4 +117,5 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
   );
 }
 
-export default memo(Earth);
+const MemoizedEarth = memo(Earth);
+export default MemoizedEarth;

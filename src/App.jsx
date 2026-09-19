@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
  *
  * @returns {JSX.Element} The rendered app component.
  */
-function App() {
+export default function App() {
   // Get the current theme mode from the Redux store
   const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
 
@@ -22,5 +22,3 @@ function App() {
     </ThemeProvider>
   );
 }
-
-export default App;

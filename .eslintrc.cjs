@@ -13,9 +13,19 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react/jsx-no-target-blank': 'off',
+    'react/prop-types': 'off',
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
     ],
   },
+  overrides: [
+    {
+      // React Three Fiber uses Three.js props that are not valid DOM attributes.
+      files: ['src/components/world/**/*.{js,jsx}'],
+      rules: {
+        'react/no-unknown-property': 'off',
+      },
+    },
+  ],
 };

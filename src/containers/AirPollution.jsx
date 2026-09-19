@@ -6,6 +6,7 @@ import SearchEngine from '../components/ui/SearchEngine/SearchEngine';
 import CurrentAirPollution from '../components/airPollution/CurrentAirPollution/CurrentAirPollution';
 import ForecastAirPollution from '../components/airPollution/ForecastAirPollution/ForecastAirPollution';
 import { localInputStyles } from '../components/ui/SearchEngine/SearchEngine.styles';
+import { DATA_TYPE } from '../utils/constants/dataTypes';
 
 /**
  * @component
@@ -25,7 +26,7 @@ export default function AirPollutionContainer() {
   // Fetching data based on the selected city.
   const { data, setData } = useDataWithCitiesHandler(
     selectedCity,
-    'airPollution'
+    DATA_TYPE.airPollution
   );
 
   // Extracting the first four days of forecast data.

@@ -28,4 +28,5 @@ function ForecastWeather({ forecastWeather }) {
   );
 }
 
-export default memo(ForecastWeather);
+const MemoizedForecastWeather = memo(ForecastWeather);
+export default MemoizedForecastWeather;

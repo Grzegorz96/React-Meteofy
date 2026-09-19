@@ -1,5 +1,4 @@
 import AirPollutionContainer from '../containers/AirPollution';
-import useDocumentTitle from '../hooks/useDocumentTitle';
 
 /**
  * @component
@@ -11,7 +10,5 @@ import useDocumentTitle from '../hooks/useDocumentTitle';
  * @returns {JSX.Element} The AirPollutionContainer component.
  */
 export default function AirPollutionPage() {
-  // Set the document title.
-  useDocumentTitle('Meteofy - Air Pollution');
   return <AirPollutionContainer />;
 }

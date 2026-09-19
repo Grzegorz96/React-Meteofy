@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import HeaderComponent from '../components/header/Header/Header';
 import MainComponent from '../components/Main/Main';
 import FooterComponent from '../components/footer/Footer/Footer';
+import usePageTitle from '../hooks/usePageTitle';
 
 /**
  * @component
@@ -13,6 +14,8 @@ import FooterComponent from '../components/footer/Footer/Footer';
  * @returns {JSX.Element} The rendered main layout component.
  */
 export default function MainLayout() {
+  usePageTitle();
+
   return (
     <>
       <HeaderComponent />

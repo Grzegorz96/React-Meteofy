@@ -168,4 +168,5 @@ function CurrentWeather({ currentWeather, city }) {
   );
 }
 
-export default memo(CurrentWeather);
+const MemoizedCurrentWeather = memo(CurrentWeather);
+export default MemoizedCurrentWeather;

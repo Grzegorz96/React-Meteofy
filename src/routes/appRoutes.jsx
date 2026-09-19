@@ -13,11 +13,19 @@ import LongTermWeatherPage from '../pages/LongTermWeather';
  * @type {Array<{ path: string, element: JSX.Element }>}
  */
 export const appRoutes = [
-  { path: '/', element: <HomePage /> },
-  { path: '/poland', element: <PolandPage /> },
-  { path: '/europe', element: <EuropePage /> },
-  { path: '/world', element: <WorldPage /> },
-  { path: '/long-term-weather', element: <LongTermWeatherPage /> },
-  { path: '/air-pollution', element: <AirPollutionPage /> },
-  { path: '*', element: <NotFoundPage /> },
+  { path: '/', element: <HomePage />, handle: { title: 'Home' } },
+  { path: '/poland', element: <PolandPage />, handle: { title: 'Poland' } },
+  { path: '/europe', element: <EuropePage />, handle: { title: 'Europe' } },
+  { path: '/world', element: <WorldPage />, handle: { title: 'World' } },
+  {
+    path: '/long-term-weather',
+    element: <LongTermWeatherPage />,
+    handle: { title: 'Long Term Weather' },
+  },
+  {
+    path: '/air-pollution',
+    element: <AirPollutionPage />,
+    handle: { title: 'Air Pollution' },
+  },
+  { path: '*', element: <NotFoundPage />, handle: { title: 'Not Found' } },
 ];

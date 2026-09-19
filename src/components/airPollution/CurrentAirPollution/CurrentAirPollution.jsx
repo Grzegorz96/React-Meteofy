@@ -26,4 +26,5 @@ function CurrentAirPollution({ currentAirPollutionData, city }) {
   );
 }
 
-export default memo(CurrentAirPollution);
+const MemoizedCurrentAirPollution = memo(CurrentAirPollution);
+export default MemoizedCurrentAirPollution;

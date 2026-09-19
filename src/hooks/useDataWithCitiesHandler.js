@@ -4,6 +4,7 @@ import { fetchAirPollution } from '../services/api/fetchAirPollution';
 import { fetchReversedGecoding } from '../services/api/fetchReversedGeocoding';
 import { fetchLongTermWeather } from '../services/api/fetchLongTermWeather';
 import { defaultCityCoords } from '../utils/helpers';
+import { DATA_TYPE } from '../utils/constants/dataTypes';
 
 /**
  * Retrieves the coordinates (latitude and longitude) for a given city or the user's current location.
@@ -45,11 +46,11 @@ const getCoordinates = async (city) => {
  */
 const fetchDataByType = async (latitude, longitude, dataType) => {
   switch (dataType) {
-    case 'weather':
+    case DATA_TYPE.weather:
       return fetchWeather(latitude, longitude);
-    case 'airPollution':
+    case DATA_TYPE.airPollution:
       return fetchAirPollution(latitude, longitude);
-    case 'longTermWeather':
+    case DATA_TYPE.longTermWeather:
       return fetchLongTermWeather(latitude, longitude);
     default:
       throw new Error('Invalid data type');
@@ -74,7 +75,7 @@ const useDataWithCitiesHandler = (city, dataType) => {
   useEffect(() => {
     const fetchData = async () => {
       // Set loading state to true when fetching data.
-      setData({ ...data, loading: true });
+      setData((prev) => ({ ...prev, loading: true }));
 
       // Fetch data based on the provided city and data type.
       try {
@@ -106,7 +107,7 @@ const useDataWithCitiesHandler = (city, dataType) => {
       }
     };
     fetchData();
-  }, [city]);
+  }, [city, dataType]);
 
   return { data, setData };
 };

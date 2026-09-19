@@ -6,6 +6,7 @@ import CurrentWeather from '../components/home/CurrentWeather/CurrentWeather';
 import ForecastWeather from '../components/home/ForecastWeather/ForecastWeather';
 import Loader from '../components/ui/Loader/Loader';
 import ErrorModal from '../components/ui/modals/ErrorModal/ErrorModal';
+import { DATA_TYPE } from '../utils/constants/dataTypes';
 
 /**
  * @component
@@ -21,7 +22,10 @@ export default function HomeContainer() {
   const cityData = useSelector(({ cityData }) => cityData);
   const dispatch = useDispatch();
   // Fetching weather data based on the selected city.
-  const { data, setData } = useDataWithCitiesHandler(cityData, 'weather');
+  const { data, setData } = useDataWithCitiesHandler(
+    cityData,
+    DATA_TYPE.weather
+  );
 
   // Resetting Redux city data when unmounting the component.
   useEffect(() => {

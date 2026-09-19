@@ -1,4 +1,3 @@
-import React from 'react';
 import WorldGlobe from '../components/world/WorldGlobe/WorldGlobe';
 import useDataWithMapsHandler from '../hooks/useDataWithMapsHandler';
 import { worldCapitalsData } from '../utils/citiesConfig/worldCapitalsData';

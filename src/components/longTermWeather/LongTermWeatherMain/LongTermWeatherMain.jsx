@@ -2,10 +2,12 @@ import Select from 'react-select';
 import {
   LongTermWeatherWrapper,
   InputWrapper,
-  customSelectStyles,
   DateRangePickerStyled,
-  dateRangePickerMenu,
 } from './LongTermWeatherMain.styles';
+import {
+  customSelectStyles,
+  dateRangePickerMenu,
+} from './longTermWeatherMain.helpers';
 import 'rsuite/dist/rsuite-no-reset.min.css';
 import '../../../assets/CSS/rsuiteStyles/dateRangePickerStyles.css';
 import LongTermWeatherLinearChart from '../LinearChart/LinearChart';
@@ -108,4 +110,5 @@ function LongTermWeatherMain({ seasonalData, city }) {
   );
 }
 
-export default memo(LongTermWeatherMain);
+const MemoizedLongTermWeatherMain = memo(LongTermWeatherMain);
+export default MemoizedLongTermWeatherMain;
