@@ -13,11 +13,11 @@ import LongTermWeatherPage from "../pages/LongTermWeather";
  * @type {Array<{ path: string, element: JSX.Element }>}
  */
 export const appRoutes = [
-    { path: "/", element: <HomePage /> },
-    { path: "/poland", element: <PolandPage /> },
-    { path: "/europe", element: <EuropePage /> },
-    { path: "/world", element: <WorldPage /> },
-    { path: "/long-term-weather", element: <LongTermWeatherPage /> },
-    { path: "/air-pollution", element: <AirPollutionPage /> },
-    { path: "*", element: <NotFoundPage /> },
+  { path: "/", element: <HomePage /> },
+  { path: "/poland", element: <PolandPage /> },
+  { path: "/europe", element: <EuropePage /> },
+  { path: "/world", element: <WorldPage /> },
+  { path: "/long-term-weather", element: <LongTermWeatherPage /> },
+  { path: "/air-pollution", element: <AirPollutionPage /> },
+  { path: "*", element: <NotFoundPage /> },
 ];

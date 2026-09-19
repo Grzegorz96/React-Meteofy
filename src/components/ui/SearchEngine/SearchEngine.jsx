@@ -14,24 +14,24 @@ import { useTheme } from "styled-components";
  * @returns {JSX.Element} JSX element representing the search engine.
  */
 export default function SearchEngine({
-    placeholder,
-    city,
-    handleOnChange,
-    styles,
+  placeholder,
+  city,
+  handleOnChange,
+  styles,
 }) {
-    // Get the current theme from styled-components.
-    const theme = useTheme();
+  // Get the current theme from styled-components.
+  const theme = useTheme();
 
-    return (
-        <AsyncPaginate
-            menuPortalTarget={document.body}
-            placeholder={placeholder}
-            debounceTimeout={1000}
-            value={city}
-            onChange={handleOnChange}
-            styles={styles(theme)}
-            loadOptions={loadOptions}
-            additional={{ page: 1 }}
-        />
-    );
+  return (
+    <AsyncPaginate
+      menuPortalTarget={document.body}
+      placeholder={placeholder}
+      debounceTimeout={1000}
+      value={city}
+      onChange={handleOnChange}
+      styles={styles(theme)}
+      loadOptions={loadOptions}
+      additional={{ page: 1 }}
+    />
+  );
 }

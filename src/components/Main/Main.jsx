@@ -10,5 +10,5 @@ import { Main } from "./Main.styles";
  * @returns {JSX.Element} The rendered MainComponent.
  */
 export default function MainComponent({ children }) {
-    return <Main>{children}</Main>;
+  return <Main>{children}</Main>;
 }

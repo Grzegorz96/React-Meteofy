@@ -6,22 +6,22 @@ import { createSlice } from "@reduxjs/toolkit";
  * @returns {boolean} The initial theme mode (true for dark mode, false for light mode).
  */
 const getInitialThemeMode = () => {
-    const storedIsDarkMode = localStorage.getItem("isDarkMode");
+  const storedIsDarkMode = localStorage.getItem("isDarkMode");
 
-    if (storedIsDarkMode === null) {
-        const preference = window.matchMedia(
-            "(prefers-color-scheme: dark)"
-        ).matches;
+  if (storedIsDarkMode === null) {
+    const preference = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
 
-        localStorage.setItem("isDarkMode", preference);
-        return preference;
-    }
+    localStorage.setItem("isDarkMode", preference);
+    return preference;
+  }
 
-    return JSON.parse(storedIsDarkMode);
+  return JSON.parse(storedIsDarkMode);
 };
 
 const initialState = {
-    isDarkMode: getInitialThemeMode(),
+  isDarkMode: getInitialThemeMode(),
 };
 
 /**
@@ -34,14 +34,14 @@ const initialState = {
  * @property {Function} reducers.toggleThemeMode - A reducer function that toggles the theme mode.
  */
 const themeDataSlice = createSlice({
-    name: "themeData",
-    initialState,
-    reducers: {
-        toggleThemeMode: (state) => {
-            localStorage.setItem("isDarkMode", !state.isDarkMode);
-            state.isDarkMode = !state.isDarkMode;
-        },
+  name: "themeData",
+  initialState,
+  reducers: {
+    toggleThemeMode: (state) => {
+      localStorage.setItem("isDarkMode", !state.isDarkMode);
+      state.isDarkMode = !state.isDarkMode;
     },
+  },
 });
 
 export const { toggleThemeMode } = themeDataSlice.actions;

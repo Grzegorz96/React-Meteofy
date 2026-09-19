@@ -19,42 +19,42 @@ import { localInputStyles } from "../components/ui/SearchEngine/SearchEngine.sty
  * @returns {JSX.Element} The rendered components based on the state of the data and search engine.
  */
 export default function AirPollutionContainer() {
-    // State to store the selected city.
-    const [selectedCity, setSelectedCity] = useState(null);
+  // State to store the selected city.
+  const [selectedCity, setSelectedCity] = useState(null);
 
-    // Fetching data based on the selected city.
-    const { data, setData } = useDataWithCitiesHandler(
-        selectedCity,
-        "airPollution"
-    );
+  // Fetching data based on the selected city.
+  const { data, setData } = useDataWithCitiesHandler(
+    selectedCity,
+    "airPollution",
+  );
 
-    // Extracting the first four days of forecast data.
-    const forecastData = useMemo(
-        () => data.fetchedData?.days.slice(0, 4),
-        [data.fetchedData?.days]
-    );
+  // Extracting the first four days of forecast data.
+  const forecastData = useMemo(
+    () => data.fetchedData?.days.slice(0, 4),
+    [data.fetchedData?.days],
+  );
 
-    return (
-        <>
-            <SearchEngine
-                placeholder="Search AQI by city name"
-                city={selectedCity}
-                handleOnChange={(selectedOption) => {
-                    setSelectedCity(selectedOption);
-                }}
-                styles={localInputStyles}
-            />
-            {data.error && <ErrorModal data={data} setData={setData} />}
-            {data.loading && <Loader />}
-            {data.fetchedData?.days && data.city && (
-                <CurrentAirPollution
-                    currentAirPollutionData={data.fetchedData.days[0]}
-                    city={data.city}
-                />
-            )}
-            {data.fetchedData?.days && (
-                <ForecastAirPollution forecastAirPollutionData={forecastData} />
-            )}
-        </>
-    );
+  return (
+    <>
+      <SearchEngine
+        placeholder="Search AQI by city name"
+        city={selectedCity}
+        handleOnChange={(selectedOption) => {
+          setSelectedCity(selectedOption);
+        }}
+        styles={localInputStyles}
+      />
+      {data.error && <ErrorModal data={data} setData={setData} />}
+      {data.loading && <Loader />}
+      {data.fetchedData?.days && data.city && (
+        <CurrentAirPollution
+          currentAirPollutionData={data.fetchedData.days[0]}
+          city={data.city}
+        />
+      )}
+      {data.fetchedData?.days && (
+        <ForecastAirPollution forecastAirPollutionData={forecastData} />
+      )}
+    </>
+  );
 }

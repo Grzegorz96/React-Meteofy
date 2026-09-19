@@ -10,18 +10,18 @@ import Navbar from "../Navbar/Navbar";
  * @returns {JSX.Element} The rendered side bar menu component.
  */
 export default function SideBarMenu() {
-    // State to manage the open state of the side bar.
-    const [isOpen, setIsOpen] = useState(false);
+  // State to manage the open state of the side bar.
+  const [isOpen, setIsOpen] = useState(false);
 
-    return (
-        <StyledBurgerMenu>
-            <Menu
-                right
-                isOpen={isOpen}
-                onStateChange={(state) => setIsOpen(state.isOpen)}
-            >
-                <Navbar isMobile={true} setIsOpen={setIsOpen} />
-            </Menu>
-        </StyledBurgerMenu>
-    );
+  return (
+    <StyledBurgerMenu>
+      <Menu
+        right
+        isOpen={isOpen}
+        onStateChange={(state) => setIsOpen(state.isOpen)}
+      >
+        <Navbar isMobile={true} setIsOpen={setIsOpen} />
+      </Menu>
+    </StyledBurgerMenu>
+  );
 }

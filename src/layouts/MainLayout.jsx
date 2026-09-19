@@ -13,13 +13,13 @@ import FooterComponent from "../components/footer/Footer/Footer";
  * @returns {JSX.Element} The rendered main layout component.
  */
 export default function MainLayout() {
-    return (
-        <>
-            <HeaderComponent />
-            <MainComponent>
-                <Outlet />
-            </MainComponent>
-            <FooterComponent />
-        </>
-    );
+  return (
+    <>
+      <HeaderComponent />
+      <MainComponent>
+        <Outlet />
+      </MainComponent>
+      <FooterComponent />
+    </>
+  );
 }

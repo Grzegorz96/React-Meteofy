@@ -11,7 +11,7 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
  * @returns {JSX.Element} The NotFound component.
  */
 export default function NotFoundPage() {
-    // Set the document title.
-    useDocumentTitle("Meteofy - Not Found");
-    return <NotFound />;
+  // Set the document title.
+  useDocumentTitle("Meteofy - Not Found");
+  return <NotFound />;
 }

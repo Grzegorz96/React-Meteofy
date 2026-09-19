@@ -8,13 +8,13 @@ import PageName from "../../../assets/images/page-name.svg?react";
  * @prop {Object} theme - The theme object containing color configurations.
  */
 export const Footer = styled.footer`
-    background-color: ${({ theme }) => theme.footer};
-    width: 100%;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background-color 0.25s ease-in-out;
+  background-color: ${({ theme }) => theme.footer};
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.25s ease-in-out;
 `;
 
 /**
@@ -22,12 +22,12 @@ export const Footer = styled.footer`
  * Styled component for the page name logo of Meteofy.
  */
 export const StyledPageName = styled(PageName)`
-    height: 100%;
-    width: auto;
+  height: 100%;
+  width: auto;
 
-    g {
-        stroke: none;
-        fill: ${({ theme }) => theme.textPrimary};
-        transition: fill 0.25s ease-in-out;
-    }
+  g {
+    stroke: none;
+    fill: ${({ theme }) => theme.textPrimary};
+    transition: fill 0.25s ease-in-out;
+  }
 `;

@@ -14,18 +14,16 @@ import AirQualityIndexMainDescription from "../AirQualityIndexMainDescription/Ai
  * @returns {JSX.Element} The JSX element representing the current air pollution information.
  */
 function CurrentAirPollution({ currentAirPollutionData, city }) {
-    return (
-        <CurrentAirPollutionWrapper>
-            <AirQualityIndexMainDescription />
-            <AirPollutionBarChart
-                currentAirPollutionData={currentAirPollutionData}
-                city={city}
-            />
-            <AirQualityIndexLabel
-                currentAirPollutionData={currentAirPollutionData}
-            />
-        </CurrentAirPollutionWrapper>
-    );
+  return (
+    <CurrentAirPollutionWrapper>
+      <AirQualityIndexMainDescription />
+      <AirPollutionBarChart
+        currentAirPollutionData={currentAirPollutionData}
+        city={city}
+      />
+      <AirQualityIndexLabel currentAirPollutionData={currentAirPollutionData} />
+    </CurrentAirPollutionWrapper>
+  );
 }
 
 export default memo(CurrentAirPollution);

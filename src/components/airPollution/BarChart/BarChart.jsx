@@ -17,24 +17,24 @@ import { useTheme } from "styled-components";
  * @returns {JSX.Element} The JSX element representing the bar chart.
  */
 export default function AirPollutionBarChart({
-    currentAirPollutionData,
-    city,
+  currentAirPollutionData,
+  city,
 }) {
-    // Get the current theme from styled-components.
-    const theme = useTheme();
+  // Get the current theme from styled-components.
+  const theme = useTheme();
 
-    return (
-        <AirPollutionBarChartWrapper>
-            <Datetime>
-                {currentAirPollutionData?.datetime
-                    ? format(currentAirPollutionData.datetime, "MMMM d, yyyy")
-                    : "Error with getting data"}
-            </Datetime>
-            <Bar
-                data={getAirPollutionBarChartData(currentAirPollutionData)}
-                plugins={[ChartDataLabels]}
-                options={getAirPollutionBarChartOptions(city, theme)}
-            />
-        </AirPollutionBarChartWrapper>
-    );
+  return (
+    <AirPollutionBarChartWrapper>
+      <Datetime>
+        {currentAirPollutionData?.datetime
+          ? format(currentAirPollutionData.datetime, "MMMM d, yyyy")
+          : "Error with getting data"}
+      </Datetime>
+      <Bar
+        data={getAirPollutionBarChartData(currentAirPollutionData)}
+        plugins={[ChartDataLabels]}
+        options={getAirPollutionBarChartOptions(city, theme)}
+      />
+    </AirPollutionBarChartWrapper>
+  );
 }

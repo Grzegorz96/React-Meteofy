@@ -7,61 +7,61 @@ import styled from "styled-components";
  * @prop {Object} theme - The theme object containing color configurations.
  */
 export const StyledBurgerMenu = styled.div`
-    margin-right: 10px;
+  margin-right: 10px;
 
-    .bm-burger-button {
-        position: relative;
-        width: 35px;
-        height: 30px;
+  .bm-burger-button {
+    position: relative;
+    width: 35px;
+    height: 30px;
 
-        :focus-visible {
-            outline: 2px solid ${({ theme }) => theme.textPrimary};
-            outline-offset: 5px;
-            border-radius: 3px;
-        }
+    :focus-visible {
+      outline: 2px solid ${({ theme }) => theme.textPrimary};
+      outline-offset: 5px;
+      border-radius: 3px;
     }
+  }
 
-    .bm-burger-bars {
-        background-color: ${({ theme }) => theme.textPrimary};
-        transition: background-color 0.25s ease-in-out;
+  .bm-burger-bars {
+    background-color: ${({ theme }) => theme.textPrimary};
+    transition: background-color 0.25s ease-in-out;
+  }
+
+  .bm-cross-button {
+    top: 10px !important;
+    right: 10px !important;
+    height: 40px !important;
+    width: 40px !important;
+
+    :focus-visible {
+      outline: 2px solid ${({ theme }) => theme.textPrimary};
+      border-radius: 6px;
     }
+  }
 
-    .bm-cross-button {
-        top: 10px !important;
-        right: 10px !important;
-        height: 40px !important;
-        width: 40px !important;
+  .bm-cross {
+    top: -1px;
+    right: 4.5px;
+    background-color: ${({ theme }) => theme.textPrimary};
+    transition: background-color 0.25s ease-in-out;
+    height: 30px !important;
+  }
 
-        :focus-visible {
-            outline: 2px solid ${({ theme }) => theme.textPrimary};
-            border-radius: 6px;
-        }
-    }
+  .bm-menu-wrap {
+    top: 0;
+    position: fixed;
+    height: 100%;
+  }
 
-    .bm-cross {
-        top: -1px;
-        right: 4.5px;
-        background-color: ${({ theme }) => theme.textPrimary};
-        transition: background-color 0.25s ease-in-out;
-        height: 30px !important;
-    }
+  .bm-menu {
+    background-color: ${({ theme }) => theme.secondary};
+    transition: background-color 0.25s ease-in-out;
+    padding-top: 60px;
+  }
 
-    .bm-menu-wrap {
-        top: 0;
-        position: fixed;
-        height: 100%;
-    }
-
-    .bm-menu {
-        background-color: ${({ theme }) => theme.secondary};
-        transition: background-color 0.25s ease-in-out;
-        padding-top: 60px;
-    }
-
-    .bm-overlay {
-        background: ${({ theme }) => theme.overlay};
-        left: 0;
-        top: 0;
-        z-index: 1070 !important;
-    }
+  .bm-overlay {
+    background: ${({ theme }) => theme.overlay};
+    left: 0;
+    top: 0;
+    z-index: 1070 !important;
+  }
 `;

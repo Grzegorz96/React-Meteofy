@@ -14,16 +14,16 @@ import { useTheme } from "styled-components";
  * @returns {JSX.Element} The linear chart component.
  */
 export default function AirPollutionLinearChart({ filteredData }) {
-    // Get the current theme from styled-components.
-    const theme = useTheme();
+  // Get the current theme from styled-components.
+  const theme = useTheme();
 
-    return (
-        <LinearChartWrapper>
-            <Line
-                data={filteredData}
-                plugins={[ChartDataLabels]}
-                options={getAirPollutionlinearChartOptions(theme)}
-            />
-        </LinearChartWrapper>
-    );
+  return (
+    <LinearChartWrapper>
+      <Line
+        data={filteredData}
+        plugins={[ChartDataLabels]}
+        options={getAirPollutionlinearChartOptions(theme)}
+      />
+    </LinearChartWrapper>
+  );
 }

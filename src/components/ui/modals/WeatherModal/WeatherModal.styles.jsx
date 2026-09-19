@@ -5,7 +5,7 @@ import styled from "styled-components";
  * Styled component for weather icon.
  */
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `/assets/openWeatherIcons/${props.$icon ?? "unknown"}.png`,
+  src: `/assets/openWeatherIcons/${props.$icon ?? "unknown"}.png`,
 }))``;
 
 /**
@@ -13,12 +13,12 @@ export const WeatherIcon = styled.img.attrs((props) => ({
  * Styled component for the title of the weather modal.
  */
 export const Title = styled.p`
-    font-size: 30px;
-    color: ${({ $theme }) => $theme.textPrimary};
+  font-size: 30px;
+  color: ${({ $theme }) => $theme.textPrimary};
 
-    @media (max-width: 768px) {
-        font-size: 24px;
-    }
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 /**
@@ -26,8 +26,8 @@ export const Title = styled.p`
  * Styled component for the paragraph text in the weather modal.
  */
 export const Paragraph = styled.p`
-    font-size: 18px;
-    color: ${({ $theme }) => $theme.textSecondary};
+  font-size: 18px;
+  color: ${({ $theme }) => $theme.textSecondary};
 `;
 
 /**
@@ -35,10 +35,10 @@ export const Paragraph = styled.p`
  * Styled component for displaying weather information in the modal.
  */
 export const WeatherInfo = styled.div`
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    color: ${({ $theme }) => $theme.textSecondary};
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: ${({ $theme }) => $theme.textSecondary};
 `;
 
 /**
@@ -46,6 +46,6 @@ export const WeatherInfo = styled.div`
  * Styled component for displaying weather information values in the modal.
  */
 export const WeatherInfoValue = styled.span`
-    font-weight: bold;
-    color: ${({ $theme }) => $theme.textPrimary};
+  font-weight: bold;
+  color: ${({ $theme }) => $theme.textPrimary};
 `;

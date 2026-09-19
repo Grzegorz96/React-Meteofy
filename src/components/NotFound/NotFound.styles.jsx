@@ -8,19 +8,21 @@ import { Link } from "react-router-dom";
  * @prop {Object} theme - The theme object containing color configurations.
  */
 export const NotFoundWrapper = styled.div`
-    padding: 25px;
-    margin: auto auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    border-radius: 5px;
-    background-color: ${({ theme }) => theme.secondary};
-    color: ${({ theme }) => theme.textPrimary};
-    box-shadow: 0 0 10px ${({ theme }) => theme.shadow};
-    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out,
-        box-shadow 0.25s ease-in-out;
+  padding: 25px;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 5px;
+  background-color: ${({ theme }) => theme.secondary};
+  color: ${({ theme }) => theme.textPrimary};
+  box-shadow: 0 0 10px ${({ theme }) => theme.shadow};
+  transition:
+    color 0.25s ease-in-out,
+    background-color 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
 `;
 
 /**
@@ -28,11 +30,11 @@ export const NotFoundWrapper = styled.div`
  * Styled component for the title of the 404 Not Found page.
  */
 export const Title = styled.h1`
-    text-align: center;
+  text-align: center;
 
-    @media (max-width: 350px) {
-        font-size: 24px;
-    }
+  @media (max-width: 350px) {
+    font-size: 24px;
+  }
 `;
 
 /**
@@ -42,23 +44,23 @@ export const Title = styled.h1`
  * @prop {Object} theme - The theme object containing color configurations.
  */
 export const LinkStyled = styled(Link)`
-    text-decoration: none;
-    background-color: #7066e0;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    color: ${({ theme }) => theme.textPrimary};
-    transition: color 0.25s ease-in-out;
-    border: none;
-    border-radius: 5px;
-    font-weight: 500;
-    text-align: center;
+  text-decoration: none;
+  background-color: #7066e0;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: ${({ theme }) => theme.textPrimary};
+  transition: color 0.25s ease-in-out;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  text-align: center;
 
-    &:focus {
-        outline: 3px solid #7066e099;
-    }
+  &:focus {
+    outline: 3px solid #7066e099;
+  }
 
-    &:hover {
-        background-color: #655cc9;
-    }
+  &:hover {
+    background-color: #655cc9;
+  }
 `;

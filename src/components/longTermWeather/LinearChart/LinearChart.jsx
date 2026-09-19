@@ -13,11 +13,11 @@ import { currentTimePosition } from "../../../utils/charts/chartPlugins";
  * @returns {JSX.Element} The linear chart component.
  */
 export default function LongTermWeatherLinearChart({ filteredData, options }) {
-    return (
-        <Line
-            data={filteredData}
-            plugins={[currentTimePosition]}
-            options={options}
-        />
-    );
+  return (
+    <Line
+      data={filteredData}
+      plugins={[currentTimePosition]}
+      options={options}
+    />
+  );
 }

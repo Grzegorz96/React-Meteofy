@@ -11,7 +11,7 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
  * @returns {JSX.Element} The WorldContainer component.
  */
 export default function WorldPage() {
-    // Set the document title.
-    useDocumentTitle("Meteofy - World");
-    return <WorldContainer />;
+  // Set the document title.
+  useDocumentTitle("Meteofy - World");
+  return <WorldContainer />;
 }

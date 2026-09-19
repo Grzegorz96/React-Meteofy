@@ -6,9 +6,9 @@ import { useEffect } from "react";
  * @param {string} title - The title to set for the document.
  */
 const useDocumentTitle = (title) => {
-    useEffect(() => {
-        document.title = title;
-    }, []);
+  useEffect(() => {
+    document.title = title;
+  }, []);
 };
 
 export default useDocumentTitle;

@@ -1,19 +1,19 @@
 .marker-icon {
-    border-radius: 6px;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    padding-left: 4px;
-    background-color: var(--elements-background-color);
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-left: 4px;
+  background-color: var(--elements-background-color);
 
-    h3 {
-        color: var(--elements-color);
-    }
+  h3 {
+    color: var(--elements-color);
+  }
 
-    &:focus-visible {
-        outline: 2px solid #333;
-        outline-offset: 1px;
-    }
+  &:focus-visible {
+    outline: 2px solid #333;
+    outline-offset: 1px;
+  }
 }

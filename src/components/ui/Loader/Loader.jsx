@@ -12,15 +12,15 @@ import { useTheme } from "styled-components";
  * @returns {JSX.Element} Loader component.
  */
 export default function Loader({ color }) {
-    // Get the current theme from styled-components.
-    const theme = useTheme();
-    // Set the current color to the provided color or the primary text color from the theme.
-    const currentColor = color || theme.textPrimary;
+  // Get the current theme from styled-components.
+  const theme = useTheme();
+  // Set the current color to the provided color or the primary text color from the theme.
+  const currentColor = color || theme.textPrimary;
 
-    return (
-        <LoaderWrapper>
-            <ClipLoader loading={true} color={currentColor} size={100} />
-            <LoaderText color={currentColor}>Loading...</LoaderText>
-        </LoaderWrapper>
-    );
+  return (
+    <LoaderWrapper>
+      <ClipLoader loading={true} color={currentColor} size={100} />
+      <LoaderText color={currentColor}>Loading...</LoaderText>
+    </LoaderWrapper>
+  );
 }

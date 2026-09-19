@@ -8,10 +8,10 @@ import ThemeToggler from "../ThemeToggler/ThemeToggler";
  * @returns {JSX.Element} The rendered Footer component.
  */
 export default function FooterComponent() {
-    return (
-        <Footer>
-            <ThemeToggler />
-            <StyledPageName />
-        </Footer>
-    );
+  return (
+    <Footer>
+      <ThemeToggler />
+      <StyledPageName />
+    </Footer>
+  );
 }

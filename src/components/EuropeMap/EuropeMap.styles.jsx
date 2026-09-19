@@ -7,9 +7,9 @@ import styled from "styled-components";
  * @prop {string} $icon - The name of the weather icon.
  */
 export const WeatherIcon = styled.img.attrs((props) => ({
-    src: `/assets/openWeatherIcons/${props.$icon ?? "unknown"}.png`,
+  src: `/assets/openWeatherIcons/${props.$icon ?? "unknown"}.png`,
 }))`
-    width: 100% !important;
+  width: 100% !important;
 `;
 
 /**
@@ -17,5 +17,5 @@ export const WeatherIcon = styled.img.attrs((props) => ({
  * Represents a styled h3 element for temperature.
  */
 export const Temp = styled.h3`
-    text-align: center;
+  text-align: center;
 `;

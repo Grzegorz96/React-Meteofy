@@ -14,24 +14,24 @@ import { defaultCityCoords } from "../utils/helpers";
  * @returns {Object} The coordinates object containing latitude and longitude values.
  */
 const getCoordinates = async (city) => {
-    if (city) {
-        return {
-            latitude: city.value.latitude,
-            longitude: city.value.longitude,
-        };
-    } else {
-        try {
-            const currentPosition = await new Promise((resolve, reject) => {
-                navigator.geolocation.getCurrentPosition(resolve, reject);
-            });
-            return {
-                latitude: currentPosition.coords.latitude,
-                longitude: currentPosition.coords.longitude,
-            };
-        } catch (error) {
-            return defaultCityCoords;
-        }
+  if (city) {
+    return {
+      latitude: city.value.latitude,
+      longitude: city.value.longitude,
+    };
+  } else {
+    try {
+      const currentPosition = await new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject);
+      });
+      return {
+        latitude: currentPosition.coords.latitude,
+        longitude: currentPosition.coords.longitude,
+      };
+    } catch (error) {
+      return defaultCityCoords;
     }
+  }
 };
 
 /**
@@ -44,16 +44,16 @@ const getCoordinates = async (city) => {
  * @throws {Error} If an invalid data type is provided.
  */
 const fetchDataByType = async (latitude, longitude, dataType) => {
-    switch (dataType) {
-        case "weather":
-            return fetchWeather(latitude, longitude);
-        case "airPollution":
-            return fetchAirPollution(latitude, longitude);
-        case "longTermWeather":
-            return fetchLongTermWeather(latitude, longitude);
-        default:
-            throw new Error("Invalid data type");
-    }
+  switch (dataType) {
+    case "weather":
+      return fetchWeather(latitude, longitude);
+    case "airPollution":
+      return fetchAirPollution(latitude, longitude);
+    case "longTermWeather":
+      return fetchLongTermWeather(latitude, longitude);
+    default:
+      throw new Error("Invalid data type");
+  }
 };
 
 /**
@@ -64,51 +64,51 @@ const fetchDataByType = async (latitude, longitude, dataType) => {
  * @returns {object} An object containing the fetched data, loading state, error, city and a setter to update the data.
  */
 const useDataWithCitiesHandler = (city, dataType) => {
-    const [data, setData] = useState({
-        city: null,
-        fetchedData: null,
-        loading: false,
-        error: null,
-    });
+  const [data, setData] = useState({
+    city: null,
+    fetchedData: null,
+    loading: false,
+    error: null,
+  });
 
-    useEffect(() => {
-        const fetchData = async () => {
-            // Set loading state to true when fetching data.
-            setData({ ...data, loading: true });
+  useEffect(() => {
+    const fetchData = async () => {
+      // Set loading state to true when fetching data.
+      setData({ ...data, loading: true });
 
-            // Fetch data based on the provided city and data type.
-            try {
-                const { latitude, longitude } = await getCoordinates(city);
-                const [fetchedData, cityName] = await Promise.all([
-                    fetchDataByType(latitude, longitude, dataType),
-                    !city && fetchReversedGecoding(latitude, longitude),
-                ]);
+      // Fetch data based on the provided city and data type.
+      try {
+        const { latitude, longitude } = await getCoordinates(city);
+        const [fetchedData, cityName] = await Promise.all([
+          fetchDataByType(latitude, longitude, dataType),
+          !city && fetchReversedGecoding(latitude, longitude),
+        ]);
 
-                // Update the state with the fetched data.
-                setData({
-                    city: city
-                        ? city.label
-                        : `${
-                              cityName?.results?.[0]?.city
-                          }, ${cityName?.results?.[0]?.country_code.toUpperCase()}`,
-                    fetchedData,
-                    loading: false,
-                    error: null,
-                });
-            } catch (error) {
-                // Handle errors when fetching data.
-                setData({
-                    city: null,
-                    fetchedData: null,
-                    loading: false,
-                    error: error.message,
-                });
-            }
-        };
-        fetchData();
-    }, [city]);
+        // Update the state with the fetched data.
+        setData({
+          city: city
+            ? city.label
+            : `${
+                cityName?.results?.[0]?.city
+              }, ${cityName?.results?.[0]?.country_code.toUpperCase()}`,
+          fetchedData,
+          loading: false,
+          error: null,
+        });
+      } catch (error) {
+        // Handle errors when fetching data.
+        setData({
+          city: null,
+          fetchedData: null,
+          loading: false,
+          error: error.message,
+        });
+      }
+    };
+    fetchData();
+  }, [city]);
 
-    return { data, setData };
+  return { data, setData };
 };
 
 export default useDataWithCitiesHandler;

@@ -11,22 +11,22 @@ import CustomAccordion from "../../ui/Accordion/Accordion";
  * @returns {JSX.Element} The JSX element representing the forecast air pollution data.
  */
 function ForecastAirPollution({ forecastAirPollutionData }) {
-    const listOfScrollContainers = [];
+  const listOfScrollContainers = [];
 
-    return (
-        <CustomAccordion listOfScrollContainers={listOfScrollContainers}>
-            {forecastAirPollutionData?.map((dayData, index) => {
-                return (
-                    <DailyAirPollutionItem
-                        key={index}
-                        dayData={dayData}
-                        listOfScrollContainers={listOfScrollContainers}
-                        index={index}
-                    />
-                );
-            })}
-        </CustomAccordion>
-    );
+  return (
+    <CustomAccordion listOfScrollContainers={listOfScrollContainers}>
+      {forecastAirPollutionData?.map((dayData, index) => {
+        return (
+          <DailyAirPollutionItem
+            key={index}
+            dayData={dayData}
+            listOfScrollContainers={listOfScrollContainers}
+            index={index}
+          />
+        );
+      })}
+    </CustomAccordion>
+  );
 }
 
 export default memo(ForecastAirPollution);

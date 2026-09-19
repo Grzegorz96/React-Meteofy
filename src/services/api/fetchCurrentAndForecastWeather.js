@@ -9,17 +9,17 @@ import { API_DATA } from "../../utils/constants/api/visualCrossingWeatherApiData
  * @returns {Object} The options object for making the API request.
  */
 const viasualCrossingWeatherOptions = (latitude, longitude) => ({
-    method: "GET",
-    url: `${API_DATA.url}/${latitude},${longitude}`,
-    params: {
-        key: import.meta.env.VITE_VISUAL_CROSSING_API_KEY,
-        unitGroup: API_DATA.units.metric,
-        include: "days,hours,current",
-        contentType: "json",
-        iconSet: "icons2",
-        elements:
-            "datetime,temp,tempmax,tempmin,precipprob,windspeed,feelslike,conditions,icon,sunrise,sunset,humidity,pressure,visibility,dew,cloudcover",
-    },
+  method: "GET",
+  url: `${API_DATA.url}/${latitude},${longitude}`,
+  params: {
+    key: import.meta.env.VITE_VISUAL_CROSSING_API_KEY,
+    unitGroup: API_DATA.units.metric,
+    include: "days,hours,current",
+    contentType: "json",
+    iconSet: "icons2",
+    elements:
+      "datetime,temp,tempmax,tempmin,precipprob,windspeed,feelslike,conditions,icon,sunrise,sunset,humidity,pressure,visibility,dew,cloudcover",
+  },
 });
 
 /**
@@ -31,12 +31,12 @@ const viasualCrossingWeatherOptions = (latitude, longitude) => ({
  * @throws {Error} If there is an error while fetching the weather data.
  */
 export const fetchWeather = async (latitude, longitude) => {
-    try {
-        const response = await axios.request(
-            viasualCrossingWeatherOptions(latitude, longitude)
-        );
-        return response.data;
-    } catch (error) {
-        throw new Error(`Error getting weather data: ${error.message}`);
-    }
+  try {
+    const response = await axios.request(
+      viasualCrossingWeatherOptions(latitude, longitude),
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(`Error getting weather data: ${error.message}`);
+  }
 };

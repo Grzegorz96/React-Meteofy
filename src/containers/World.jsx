@@ -17,16 +17,16 @@ import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
  * @returns {JSX.Element} The rendered components based on the state of the data.
  */
 export default function WorldContainer() {
-    // Fetching data for world capitals.
-    const { data, setData } = useDataWithMapsHandler(worldCapitalsData);
+  // Fetching data for world capitals.
+  const { data, setData } = useDataWithMapsHandler(worldCapitalsData);
 
-    return (
-        <>
-            {data.error && <ErrorModal data={data} setData={setData} />}
-            {data.loading && <Loader />}
-            {data.fetchedData?.list && (
-                <WorldGlobe fetchedCitiesData={data.fetchedData.list} />
-            )}
-        </>
-    );
+  return (
+    <>
+      {data.error && <ErrorModal data={data} setData={setData} />}
+      {data.loading && <Loader />}
+      {data.fetchedData?.list && (
+        <WorldGlobe fetchedCitiesData={data.fetchedData.list} />
+      )}
+    </>
+  );
 }

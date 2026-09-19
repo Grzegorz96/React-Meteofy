@@ -11,7 +11,7 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
  * @returns {JSX.Element} The HomeContainer component.
  */
 export default function HomePage() {
-    // Set the document title.
-    useDocumentTitle("Meteofy - Home");
-    return <HomeContainer />;
+  // Set the document title.
+  useDocumentTitle("Meteofy - Home");
+  return <HomeContainer />;
 }

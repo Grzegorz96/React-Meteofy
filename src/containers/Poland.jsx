@@ -16,16 +16,16 @@ import { polishCitiesData } from "../utils/citiesConfig/polishCitiesData";
  * @returns {JSX.Element} The rendered components based on the state of the data.
  */
 export default function PolandContainer() {
-    // Fetching data for Polish cities.
-    const { data, setData } = useDataWithMapsHandler(polishCitiesData);
+  // Fetching data for Polish cities.
+  const { data, setData } = useDataWithMapsHandler(polishCitiesData);
 
-    return (
-        <>
-            {data.error && <ErrorModal data={data} setData={setData} />}
-            {data.loading && <Loader />}
-            {data.fetchedData?.list && (
-                <PolandMap fetchedCitiesData={data.fetchedData.list} />
-            )}
-        </>
-    );
+  return (
+    <>
+      {data.error && <ErrorModal data={data} setData={setData} />}
+      {data.loading && <Loader />}
+      {data.fetchedData?.list && (
+        <PolandMap fetchedCitiesData={data.fetchedData.list} />
+      )}
+    </>
+  );
 }

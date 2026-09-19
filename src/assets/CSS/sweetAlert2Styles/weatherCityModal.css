@@ -1,21 +1,21 @@
 .modal-icon {
-    border: none;
-    margin: 24px auto;
+  border: none;
+  margin: 24px auto;
 }
 
 .modal-title {
-    padding-top: 10px;
-    text-align: center;
+  padding-top: 10px;
+  text-align: center;
 }
 
 .modal-html-container {
-    max-width: 200px;
-    width: 100%;
-    margin: 15px auto 5px !important;
-    border: 2px solid #818181;
-    border-radius: 6px;
+  max-width: 200px;
+  width: 100%;
+  margin: 15px auto 5px !important;
+  border: 2px solid #818181;
+  border-radius: 6px;
 }
 
 .modal-popup {
-    padding: 15px;
+  padding: 15px;
 }

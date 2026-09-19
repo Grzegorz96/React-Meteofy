@@ -11,21 +11,21 @@ import CustomAccordion from "../../ui/Accordion/Accordion";
  * @returns {JSX.Element} The forecast weather component.
  */
 function ForecastWeather({ forecastWeather }) {
-    const listOfScrollContainers = [];
+  const listOfScrollContainers = [];
 
-    return (
-        <CustomAccordion listOfScrollContainers={listOfScrollContainers}>
-            {forecastWeather?.map((dayData, index) => {
-                return (
-                    <DailyWeatherItem
-                        key={index}
-                        dayData={dayData}
-                        listOfScrollContainers={listOfScrollContainers}
-                    />
-                );
-            })}
-        </CustomAccordion>
-    );
+  return (
+    <CustomAccordion listOfScrollContainers={listOfScrollContainers}>
+      {forecastWeather?.map((dayData, index) => {
+        return (
+          <DailyWeatherItem
+            key={index}
+            dayData={dayData}
+            listOfScrollContainers={listOfScrollContainers}
+          />
+        );
+      })}
+    </CustomAccordion>
+  );
 }
 
 export default memo(ForecastWeather);

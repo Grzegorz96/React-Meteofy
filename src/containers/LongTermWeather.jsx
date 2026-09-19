@@ -17,45 +17,42 @@ import LongTermWeatherMain from "../components/longTermWeather/LongTermWeatherMa
  * @returns {JSX.Element} The rendered components based on the state of the data and search engine.
  */
 export default function LongTermWeatherContainer() {
-    // State to store the selected city.
-    const [selectedCity, setSelectedCity] = useState(null);
+  // State to store the selected city.
+  const [selectedCity, setSelectedCity] = useState(null);
 
-    // Fetching data based on the selected city.
-    const { data, setData } = useDataWithCitiesHandler(
-        selectedCity,
-        "longTermWeather"
+  // Fetching data based on the selected city.
+  const { data, setData } = useDataWithCitiesHandler(
+    selectedCity,
+    "longTermWeather",
+  );
+
+  // Extracting only the time and member01 data from the fetched data.
+  const seasonalData = useMemo(() => {
+    const { daily } = data.fetchedData || {};
+    if (!daily) return;
+
+    return Object.fromEntries(
+      Object.entries(daily).filter(
+        ([key]) => key.includes("member01") || key === "time",
+      ),
     );
+  }, [data.fetchedData?.daily]);
 
-    // Extracting only the time and member01 data from the fetched data.
-    const seasonalData = useMemo(() => {
-        const { daily } = data.fetchedData || {};
-        if (!daily) return;
-
-        return Object.fromEntries(
-            Object.entries(daily).filter(
-                ([key]) => key.includes("member01") || key === "time"
-            )
-        );
-    }, [data.fetchedData?.daily]);
-
-    return (
-        <>
-            <SearchEngine
-                placeholder="Search long term weather by city name"
-                city={selectedCity}
-                handleOnChange={(selectedOption) => {
-                    setSelectedCity(selectedOption);
-                }}
-                styles={localInputStyles}
-            />
-            {data.error && <ErrorModal data={data} setData={setData} />}
-            {data.loading && <Loader />}
-            {data.fetchedData?.daily && data.city && (
-                <LongTermWeatherMain
-                    seasonalData={seasonalData}
-                    city={data.city}
-                />
-            )}
-        </>
-    );
+  return (
+    <>
+      <SearchEngine
+        placeholder="Search long term weather by city name"
+        city={selectedCity}
+        handleOnChange={(selectedOption) => {
+          setSelectedCity(selectedOption);
+        }}
+        styles={localInputStyles}
+      />
+      {data.error && <ErrorModal data={data} setData={setData} />}
+      {data.loading && <Loader />}
+      {data.fetchedData?.daily && data.city && (
+        <LongTermWeatherMain seasonalData={seasonalData} city={data.city} />
+      )}
+    </>
+  );
 }

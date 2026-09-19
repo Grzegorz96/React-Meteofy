@@ -9,9 +9,9 @@ import { appRoutes } from "./appRoutes";
  * @returns {Object} The created router object.
  */
 export const router = createBrowserRouter([
-    {
-        path: "",
-        element: <MainLayout />,
-        children: appRoutes,
-    },
+  {
+    path: "",
+    element: <MainLayout />,
+    children: appRoutes,
+  },
 ]);

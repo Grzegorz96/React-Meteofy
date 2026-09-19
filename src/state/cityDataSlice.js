@@ -13,12 +13,12 @@ const initialState = null;
  * @property {Function} reducers.resetCityData - Reducer function for resetting city data.
  */
 const cityDataSlice = createSlice({
-    name: "cityData",
-    initialState,
-    reducers: {
-        setCityData: (state, { payload }) => payload,
-        resetCityData: () => initialState,
-    },
+  name: "cityData",
+  initialState,
+  reducers: {
+    setCityData: (state, { payload }) => payload,
+    resetCityData: () => initialState,
+  },
 });
 
 export const { setCityData, resetCityData } = cityDataSlice.actions;

@@ -14,16 +14,16 @@ import Loader from "../components/ui/Loader/Loader";
  * @returns {JSX.Element} The rendered components based on the state of the data.
  */
 export default function EuropeContainer() {
-    // Fetching data for europe capitals.
-    const { data, setData } = useDataWithMapsHandler(europeCapitalsData);
+  // Fetching data for europe capitals.
+  const { data, setData } = useDataWithMapsHandler(europeCapitalsData);
 
-    return (
-        <>
-            {data.error && <ErrorModal data={data} setData={setData} />}
-            {data.loading && <Loader />}
-            {data.fetchedData?.list && (
-                <EuropeMap fetchedCitiesData={data.fetchedData.list} />
-            )}
-        </>
-    );
+  return (
+    <>
+      {data.error && <ErrorModal data={data} setData={setData} />}
+      {data.loading && <Loader />}
+      {data.fetchedData?.list && (
+        <EuropeMap fetchedCitiesData={data.fetchedData.list} />
+      )}
+    </>
+  );
 }
