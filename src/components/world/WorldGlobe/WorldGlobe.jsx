@@ -1,10 +1,10 @@
-import { Suspense, useState } from "react";
-import { CanvasContainer } from "./WorldGlobe.styles";
-import { Canvas } from "@react-three/fiber";
-import Earth from "../Earth";
-import { Stars, OrbitControls } from "@react-three/drei";
-import Loader from "../../ui/Loader/Loader";
-import { darkTheme } from "../../../utils/styles/theme";
+import { Suspense, useState } from 'react';
+import { CanvasContainer } from './WorldGlobe.styles';
+import { Canvas } from '@react-three/fiber';
+import Earth from '../Earth';
+import { Stars, OrbitControls } from '@react-three/drei';
+import Loader from '../../ui/Loader/Loader';
+import { darkTheme } from '../../../utils/styles/theme';
 
 /**
  * @component
@@ -25,7 +25,7 @@ export default function WorldGlobe({ fetchedCitiesData }) {
         <Canvas>
           <Suspense fallback={null}>
             <ambientLight intensity={1} />
-            <directionalLight position={[0, 0, 5]} color={"#f6f3ea"} />
+            <directionalLight position={[0, 0, 5]} color={'#f6f3ea'} />
             <Stars
               radius={300}
               depth={60}

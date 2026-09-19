@@ -13,7 +13,7 @@ export function getAirPollutionBarChartOptions(city, theme) {
       tooltip: {
         callbacks: {
           title: function () {
-            return `${"Air Pollution Data:"}`;
+            return `${'Air Pollution Data:'}`;
           },
           label: function (context) {
             return `${context.label}: ${context.parsed.y} μg/m³`;
@@ -39,17 +39,17 @@ export function getAirPollutionBarChartOptions(city, theme) {
       },
       // Configuration of data labels.
       datalabels: {
-        anchor: "end",
-        align: "top",
+        anchor: 'end',
+        align: 'top',
         clamp: true,
         font: {
-          weight: "bold",
+          weight: 'bold',
           size: 12,
         },
         color: theme.textSecondary,
         offset: 0,
         formatter: function (value) {
-          return value ?? "NA";
+          return value ?? 'NA';
         },
       },
     },
@@ -116,11 +116,11 @@ export const getAirPollutionlinearChartOptions = (theme) => {
       },
       // Configuration of data labels.
       datalabels: {
-        anchor: "end",
-        align: "top",
+        anchor: 'end',
+        align: 'top',
         clamp: true,
         font: {
-          weight: "bold",
+          weight: 'bold',
           size: 12,
         },
         offset: -3,
@@ -138,7 +138,7 @@ export const getAirPollutionlinearChartOptions = (theme) => {
         ticks: {
           font: {
             size: 10,
-            weight: "bold",
+            weight: 'bold',
           },
           color: theme.textSecondary,
         },
@@ -163,7 +163,7 @@ export function getLongTermWeatherLinearChartOptions(
   selectedDataset,
   selectedDateRange,
   city,
-  theme,
+  theme
 ) {
   return {
     // Configuration for line tension.
@@ -178,9 +178,9 @@ export function getLongTermWeatherLinearChartOptions(
         ticks: {
           callback: function (value) {
             return `${value}${
-              selectedDataset.unit === "°C"
+              selectedDataset.unit === '°C'
                 ? selectedDataset.unit
-                : " " + selectedDataset.unit
+                : ' ' + selectedDataset.unit
             }`;
           },
           color: theme.textSecondary,
@@ -188,10 +188,10 @@ export function getLongTermWeatherLinearChartOptions(
         beginAtZero: true,
       },
       x: {
-        type: "time",
+        type: 'time',
         time: {
-          unit: "month",
-          tooltipFormat: "MMMM d, yyyy",
+          unit: 'month',
+          tooltipFormat: 'MMMM d, yyyy',
         },
         beginAtZero: true,
         ticks: {
@@ -219,9 +219,9 @@ export function getLongTermWeatherLinearChartOptions(
         callbacks: {
           label: function (context) {
             return `${context.dataset.label}: ${context.parsed.y}${
-              selectedDataset.unit === "°C"
+              selectedDataset.unit === '°C'
                 ? selectedDataset.unit
-                : " " + selectedDataset.unit
+                : ' ' + selectedDataset.unit
             }`;
           },
         },

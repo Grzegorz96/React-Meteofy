@@ -1,5 +1,5 @@
-import NotFound from "../components/NotFound/NotFound";
-import useDocumentTitle from "../hooks/useDocumentTitle";
+import NotFound from '../components/NotFound/NotFound';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 /**
  * @component
@@ -12,6 +12,6 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
  */
 export default function NotFoundPage() {
   // Set the document title.
-  useDocumentTitle("Meteofy - Not Found");
+  useDocumentTitle('Meteofy - Not Found');
   return <NotFound />;
 }

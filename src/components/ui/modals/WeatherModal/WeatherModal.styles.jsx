@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 /**
  * @component
  * Styled component for weather icon.
  */
 export const WeatherIcon = styled.img.attrs((props) => ({
-  src: `/assets/openWeatherIcons/${props.$icon ?? "unknown"}.png`,
+  src: `/assets/openWeatherIcons/${props.$icon ?? 'unknown'}.png`,
 }))``;
 
 /**

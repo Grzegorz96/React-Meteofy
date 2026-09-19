@@ -1,6 +1,6 @@
-import { memo } from "react";
-import DailyAirPollutionItem from "../DailyAirPollutionItem/DailyAirPollutionItem";
-import CustomAccordion from "../../ui/Accordion/Accordion";
+import { memo } from 'react';
+import DailyAirPollutionItem from '../DailyAirPollutionItem/DailyAirPollutionItem';
+import CustomAccordion from '../../ui/Accordion/Accordion';
 
 /**
  * @component

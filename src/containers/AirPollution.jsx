@@ -1,11 +1,11 @@
-import useDataWithCitiesHandler from "../hooks/useDataWithCitiesHandler";
-import { useState, useMemo } from "react";
-import Loader from "../components/ui/Loader/Loader";
-import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
-import SearchEngine from "../components/ui/SearchEngine/SearchEngine";
-import CurrentAirPollution from "../components/airPollution/CurrentAirPollution/CurrentAirPollution";
-import ForecastAirPollution from "../components/airPollution/ForecastAirPollution/ForecastAirPollution";
-import { localInputStyles } from "../components/ui/SearchEngine/SearchEngine.styles";
+import useDataWithCitiesHandler from '../hooks/useDataWithCitiesHandler';
+import { useState, useMemo } from 'react';
+import Loader from '../components/ui/Loader/Loader';
+import ErrorModal from '../components/ui/modals/ErrorModal/ErrorModal';
+import SearchEngine from '../components/ui/SearchEngine/SearchEngine';
+import CurrentAirPollution from '../components/airPollution/CurrentAirPollution/CurrentAirPollution';
+import ForecastAirPollution from '../components/airPollution/ForecastAirPollution/ForecastAirPollution';
+import { localInputStyles } from '../components/ui/SearchEngine/SearchEngine.styles';
 
 /**
  * @component
@@ -25,13 +25,13 @@ export default function AirPollutionContainer() {
   // Fetching data based on the selected city.
   const { data, setData } = useDataWithCitiesHandler(
     selectedCity,
-    "airPollution",
+    'airPollution'
   );
 
   // Extracting the first four days of forecast data.
   const forecastData = useMemo(
     () => data.fetchedData?.days.slice(0, 4),
-    [data.fetchedData?.days],
+    [data.fetchedData?.days]
   );
 
   return (

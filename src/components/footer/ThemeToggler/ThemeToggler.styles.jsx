@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 /**
  * @component
@@ -15,8 +15,8 @@ export const TogglerContainer = styled.div`
  * Styled component for a toggler input.
  */
 export const Toggler = styled.input.attrs({
-  type: "checkbox",
-  id: "themeToggler",
+  type: 'checkbox',
+  id: 'themeToggler',
 })`
   display: none;
 
@@ -32,10 +32,10 @@ export const Toggler = styled.input.attrs({
  * @prop {Object} theme - The theme object containing color configurations.
  */
 export const SwitcherElement = styled.label.attrs({
-  htmlFor: "themeToggler",
+  htmlFor: 'themeToggler',
   tabIndex: 0,
-  role: "switch",
-  "aria-label": "Switch between dark and light mode",
+  role: 'switch',
+  'aria-label': 'Switch between dark and light mode',
 })`
   display: flex;
   align-items: center;
@@ -46,7 +46,7 @@ export const SwitcherElement = styled.label.attrs({
   transition: outline-color 0.25s ease-in-out;
 
   &::before {
-    content: "";
+    content: '';
     height: 100%;
     width: 40px;
     border-radius: 1em;
@@ -55,7 +55,7 @@ export const SwitcherElement = styled.label.attrs({
   }
 
   &::after {
-    content: "";
+    content: '';
     height: 12px;
     width: 12px;
     border-radius: 1em;

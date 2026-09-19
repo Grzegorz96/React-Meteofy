@@ -1,13 +1,13 @@
-import { NavLink } from "react-router-dom";
-import { Navigate, navLinkStyles } from "./Navbar.styles";
-import { GiPoland } from "react-icons/gi";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink } from 'react-router-dom';
+import { Navigate, navLinkStyles } from './Navbar.styles';
+import { GiPoland } from 'react-icons/gi';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGlobe,
   faEarthEurope,
   faCalendarDays,
   faListCheck,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 /**
  * @component

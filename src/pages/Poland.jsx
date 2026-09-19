@@ -1,5 +1,5 @@
-import PolandContainer from "../containers/Poland";
-import useDocumentTitle from "../hooks/useDocumentTitle";
+import PolandContainer from '../containers/Poland';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 /**
  * @component
@@ -12,6 +12,6 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
  */
 export default function PolandPage() {
   // Set the document title.
-  useDocumentTitle("Meteofy - Poland");
+  useDocumentTitle('Meteofy - Poland');
   return <PolandContainer />;
 }

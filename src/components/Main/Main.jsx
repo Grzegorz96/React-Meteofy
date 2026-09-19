@@ -1,5 +1,5 @@
-import React from "react";
-import { Main } from "./Main.styles";
+import React from 'react';
+import { Main } from './Main.styles';
 
 /**
  * @component

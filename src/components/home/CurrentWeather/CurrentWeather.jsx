@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo } from 'react';
 import {
   CurrentWeatherWrapper,
   MainWrapper,
@@ -12,13 +12,13 @@ import {
   SunInfo,
   SunItems,
   SunValue,
-} from "./CurrentWeather.styles";
-import { FaTemperatureHalf, FaWind } from "react-icons/fa6";
-import { WiHumidity } from "react-icons/wi";
-import { FiSunset, FiSunrise } from "react-icons/fi";
-import { MdOutlineVisibility, MdDewPoint } from "react-icons/md";
-import { IoRainy, IoCloud } from "react-icons/io5";
-import { CgCompressRight } from "react-icons/cg";
+} from './CurrentWeather.styles';
+import { FaTemperatureHalf, FaWind } from 'react-icons/fa6';
+import { WiHumidity } from 'react-icons/wi';
+import { FiSunset, FiSunrise } from 'react-icons/fi';
+import { MdOutlineVisibility, MdDewPoint } from 'react-icons/md';
+import { IoRainy, IoCloud } from 'react-icons/io5';
+import { CgCompressRight } from 'react-icons/cg';
 
 /**
  * @component
@@ -33,10 +33,7 @@ function CurrentWeather({ currentWeather, city }) {
     <CurrentWeatherWrapper>
       <MainWrapper $gap="5px" $flexDirection="column" $width="65%">
         <Text $fontWeight="600" $fontSize="10px" $isGrey>
-          {`Weather conditions at ${currentWeather?.datetime?.substring(
-            0,
-            5,
-          )} local time`}
+          {`Weather conditions at ${currentWeather?.datetime?.substring(0, 5)} local time`}
         </Text>
         <Text
           $fontWeight="600"
@@ -47,7 +44,7 @@ function CurrentWeather({ currentWeather, city }) {
           {city}
         </Text>
         <Text $fontWeight="300" $fontSize="12px" $lineHeight="1">
-          {currentWeather?.conditions ?? "Error with getting data"}
+          {currentWeather?.conditions ?? 'Error with getting data'}
         </Text>
       </MainWrapper>
       <SecondWrapper>

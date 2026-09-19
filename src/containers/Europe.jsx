@@ -1,8 +1,8 @@
-import EuropeMap from "../components/EuropeMap/EuropeMap";
-import useDataWithMapsHandler from "../hooks/useDataWithMapsHandler";
-import { europeCapitalsData } from "../utils/citiesConfig/europeCapitalsData";
-import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
-import Loader from "../components/ui/Loader/Loader";
+import EuropeMap from '../components/EuropeMap/EuropeMap';
+import useDataWithMapsHandler from '../hooks/useDataWithMapsHandler';
+import { europeCapitalsData } from '../utils/citiesConfig/europeCapitalsData';
+import ErrorModal from '../components/ui/modals/ErrorModal/ErrorModal';
+import Loader from '../components/ui/Loader/Loader';
 
 /**
  * @component

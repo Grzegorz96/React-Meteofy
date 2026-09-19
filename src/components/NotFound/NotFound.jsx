@@ -1,5 +1,5 @@
-import { NotFoundWrapper, LinkStyled, Title } from "./NotFound.styles";
-import { useEffect, useRef } from "react";
+import { NotFoundWrapper, LinkStyled, Title } from './NotFound.styles';
+import { useEffect, useRef } from 'react';
 
 /**
  * @component

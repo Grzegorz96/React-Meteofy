@@ -1,5 +1,5 @@
-import axios from "axios";
-import { API_DATA } from "../../utils/constants/api/geoApifyApiData";
+import axios from 'axios';
+import { API_DATA } from '../../utils/constants/api/geoApifyApiData';
 
 /**
  * Returns the options object for reversed geocoding API request.
@@ -9,13 +9,13 @@ import { API_DATA } from "../../utils/constants/api/geoApifyApiData";
  * @returns {Object} The options object for the API request.
  */
 const reversedGeocodingOptions = (latitude, longitude) => ({
-  method: "GET",
+  method: 'GET',
   url: API_DATA.urls.reversedGeocoding,
   params: {
     lat: latitude,
     lon: longitude,
     apiKey: import.meta.env.VITE_GEO_APIFY_API_KEY,
-    format: "json",
+    format: 'json',
   },
 });
 
@@ -30,7 +30,7 @@ const reversedGeocodingOptions = (latitude, longitude) => ({
 export const fetchReversedGecoding = async (latitude, longitude) => {
   try {
     const response = await axios.request(
-      reversedGeocodingOptions(latitude, longitude),
+      reversedGeocodingOptions(latitude, longitude)
     );
     return response.data;
   } catch (error) {

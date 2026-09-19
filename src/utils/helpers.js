@@ -1,5 +1,5 @@
-import { aqiUSData } from "./constants/aqiUSData";
-import { startOfDay, addDays, subDays } from "date-fns";
+import { aqiUSData } from './constants/aqiUSData';
+import { startOfDay, addDays, subDays } from 'date-fns';
 
 /**
  * Retrieves the AQI US data based on the given AQI value.
@@ -67,34 +67,34 @@ export const requestCityDelay = {
 export const getRanges = (moveRangesToBottom) => {
   return [
     {
-      label: "last 7 Days",
+      label: 'last 7 Days',
       value: [startOfDay(subDays(new Date(), 6)), startOfDay(new Date())],
-      placement: moveRangesToBottom ? "bottom" : "left",
+      placement: moveRangesToBottom ? 'bottom' : 'left',
     },
     {
-      label: "last 30 Days",
+      label: 'last 30 Days',
       value: [startOfDay(subDays(new Date(), 29)), startOfDay(new Date())],
-      placement: moveRangesToBottom ? "bottom" : "left",
+      placement: moveRangesToBottom ? 'bottom' : 'left',
     },
     {
-      label: "last 90 Days",
+      label: 'last 90 Days',
       value: [startOfDay(subDays(new Date(), 89)), startOfDay(new Date())],
-      placement: moveRangesToBottom ? "bottom" : "left",
+      placement: moveRangesToBottom ? 'bottom' : 'left',
     },
     {
-      label: "next 7 Days",
+      label: 'next 7 Days',
       value: [startOfDay(new Date()), startOfDay(addDays(new Date(), 6))],
-      placement: moveRangesToBottom ? "bottom" : "left",
+      placement: moveRangesToBottom ? 'bottom' : 'left',
     },
     {
-      label: "next 30 Days",
+      label: 'next 30 Days',
       value: [startOfDay(new Date()), startOfDay(addDays(new Date(), 29))],
-      placement: moveRangesToBottom ? "bottom" : "left",
+      placement: moveRangesToBottom ? 'bottom' : 'left',
     },
     {
-      label: "next 90 Days",
+      label: 'next 90 Days',
       value: [startOfDay(new Date()), startOfDay(addDays(new Date(), 89))],
-      placement: moveRangesToBottom ? "bottom" : "left",
+      placement: moveRangesToBottom ? 'bottom' : 'left',
     },
   ];
 };

@@ -1,5 +1,5 @@
-import WorldContainer from "../containers/World";
-import useDocumentTitle from "../hooks/useDocumentTitle";
+import WorldContainer from '../containers/World';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 /**
  * @component
@@ -12,6 +12,6 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
  */
 export default function WorldPage() {
   // Set the document title.
-  useDocumentTitle("Meteofy - World");
+  useDocumentTitle('Meteofy - World');
   return <WorldContainer />;
 }

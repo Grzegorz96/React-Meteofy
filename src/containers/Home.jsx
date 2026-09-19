@@ -1,11 +1,11 @@
-import useDataWithCitiesHandler from "../hooks/useDataWithCitiesHandler";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { resetCityData } from "../state/cityDataSlice";
-import CurrentWeather from "../components/home/CurrentWeather/CurrentWeather";
-import ForecastWeather from "../components/home/ForecastWeather/ForecastWeather";
-import Loader from "../components/ui/Loader/Loader";
-import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
+import useDataWithCitiesHandler from '../hooks/useDataWithCitiesHandler';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { resetCityData } from '../state/cityDataSlice';
+import CurrentWeather from '../components/home/CurrentWeather/CurrentWeather';
+import ForecastWeather from '../components/home/ForecastWeather/ForecastWeather';
+import Loader from '../components/ui/Loader/Loader';
+import ErrorModal from '../components/ui/modals/ErrorModal/ErrorModal';
 
 /**
  * @component
@@ -21,7 +21,7 @@ export default function HomeContainer() {
   const cityData = useSelector(({ cityData }) => cityData);
   const dispatch = useDispatch();
   // Fetching weather data based on the selected city.
-  const { data, setData } = useDataWithCitiesHandler(cityData, "weather");
+  const { data, setData } = useDataWithCitiesHandler(cityData, 'weather');
 
   // Resetting Redux city data when unmounting the component.
   useEffect(() => {

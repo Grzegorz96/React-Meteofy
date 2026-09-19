@@ -1,5 +1,5 @@
-import axios from "axios";
-import { API_DATA } from "../../utils/constants/api/openMeteoApiData";
+import axios from 'axios';
+import { API_DATA } from '../../utils/constants/api/openMeteoApiData';
 
 /**
  * Creates options for making a GET request to the OpenMeteo API.
@@ -9,15 +9,15 @@ import { API_DATA } from "../../utils/constants/api/openMeteoApiData";
  * @returns {object} The options object for the GET request.
  */
 const openMeteoOptions = (latitude, longitude) => ({
-  method: "GET",
+  method: 'GET',
   url: API_DATA.url,
   params: {
     latitude: latitude,
     longitude: longitude,
-    past_days: "92",
-    forecast_days: "274",
+    past_days: '92',
+    forecast_days: '274',
     daily:
-      "temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max",
+      'temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max',
   },
 });
 

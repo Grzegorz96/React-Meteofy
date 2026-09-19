@@ -1,22 +1,22 @@
-import Select from "react-select";
+import Select from 'react-select';
 import {
   LongTermWeatherWrapper,
   InputWrapper,
   customSelectStyles,
   DateRangePickerStyled,
   dateRangePickerMenu,
-} from "./LongTermWeatherMain.styles";
-import "rsuite/dist/rsuite-no-reset.min.css";
-import "../../../assets/CSS/rsuiteStyles/dateRangePickerStyles.css";
-import LongTermWeatherLinearChart from "../LinearChart/LinearChart";
-import { useState, useMemo, memo } from "react";
-import { getLongTermWeatherFilteredLinearChartData } from "../../../utils/charts/chartData";
-import { getLongTermWeatherLinearChartOptions } from "../../../utils/charts/chartOptions";
-import { selectOptions } from "../../../utils/constants/selectOptions";
-import { getDefaultDateRange, getRanges } from "../../../utils/helpers";
-import { startOfDay, addDays, subDays } from "date-fns";
-import { useMediaQuery } from "react-responsive";
-import { useTheme } from "styled-components";
+} from './LongTermWeatherMain.styles';
+import 'rsuite/dist/rsuite-no-reset.min.css';
+import '../../../assets/CSS/rsuiteStyles/dateRangePickerStyles.css';
+import LongTermWeatherLinearChart from '../LinearChart/LinearChart';
+import { useState, useMemo, memo } from 'react';
+import { getLongTermWeatherFilteredLinearChartData } from '../../../utils/charts/chartData';
+import { getLongTermWeatherLinearChartOptions } from '../../../utils/charts/chartOptions';
+import { selectOptions } from '../../../utils/constants/selectOptions';
+import { getDefaultDateRange, getRanges } from '../../../utils/helpers';
+import { startOfDay, addDays, subDays } from 'date-fns';
+import { useMediaQuery } from 'react-responsive';
+import { useTheme } from 'styled-components';
 
 /**
  * @component
@@ -31,9 +31,9 @@ function LongTermWeatherMain({ seasonalData, city }) {
   // Get the current theme from styled-components.
   const theme = useTheme();
   // Check if the screen width is less than 400px.
-  const moveRangesToBottom = useMediaQuery({ query: "(max-width: 400px)" });
+  const moveRangesToBottom = useMediaQuery({ query: '(max-width: 400px)' });
   // Check if the screen width is less than 768px.
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   // Set the default selected dataset and date range.
   const [selectedDataset, setSelectedDataset] = useState(selectOptions[0]);
   const [selectedDateRange, setSelectedDateRange] =
@@ -54,9 +54,9 @@ function LongTermWeatherMain({ seasonalData, city }) {
       getLongTermWeatherFilteredLinearChartData(
         seasonalData,
         selectedDataset,
-        theme,
+        theme
       ),
-    [seasonalData, selectedDataset, theme],
+    [seasonalData, selectedDataset, theme]
   );
 
   // Get the options for the linear chart.
@@ -66,9 +66,9 @@ function LongTermWeatherMain({ seasonalData, city }) {
         selectedDataset,
         selectedDateRange,
         city,
-        theme,
+        theme
       ),
-    [selectedDataset, selectedDateRange, city, theme],
+    [selectedDataset, selectedDateRange, city, theme]
   );
 
   return (
@@ -84,7 +84,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
         <DateRangePickerStyled
           editable={isMobile ? false : true}
           menuStyle={dateRangePickerMenu(theme)}
-          menuClassName={theme.isDarkMode ? "dark-mode-menu" : null}
+          menuClassName={theme.isDarkMode ? 'dark-mode-menu' : null}
           placement="bottom"
           showOneCalendar
           character=" - "

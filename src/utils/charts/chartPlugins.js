@@ -1,6 +1,6 @@
 export const currentTimePosition = {
   // Define an ID for this plugin.
-  id: "currentTimePosition",
+  id: 'currentTimePosition',
 
   /**
    * This method is called after the datasets are drawn on the chart.
@@ -19,14 +19,14 @@ export const currentTimePosition = {
   afterDatasetsDraw(
     { ctx, chartArea: { top, bottom }, scales: { x } },
     args,
-    options,
+    options
   ) {
     // Save the current state of the drawing context.
     ctx.save();
     // Begin a new path for drawing.
     ctx.beginPath();
     // Set the stroke style (color of the line) from options, default to black if not provided.
-    ctx.strokeStyle = options.color || "black";
+    ctx.strokeStyle = options.color || 'black';
     // Set the line width from options, default to 1 if not provided.
     ctx.lineWidth = options.lineThickness || 1;
     // Get the current date and set its time to 00:00:00:0000.

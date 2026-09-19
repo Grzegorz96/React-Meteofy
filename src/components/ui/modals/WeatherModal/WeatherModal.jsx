@@ -4,10 +4,10 @@ import {
   WeatherInfo,
   WeatherInfoValue,
   Title,
-} from "./WeatherModal.styles";
-import "../../../../assets/CSS/sweetAlert2Styles/weatherCityModal.css";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
+} from './WeatherModal.styles';
+import '../../../../assets/CSS/sweetAlert2Styles/weatherCityModal.css';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 /**
  * Opens a modal displaying weather information for a city.
@@ -21,14 +21,14 @@ export const openWeatherModal = (city, theme) => {
 
   // Open the SweetAlert modal with customized options.
   MySwal.fire({
-    width: "400px",
+    width: '400px',
     background: theme.secondary,
     heightAuto: false,
     iconHtml: <WeatherIcon $icon={city?.weather?.[0]?.icon} />,
     title: (
       <>
         <Title $theme={theme}>
-          {`${city?.name ?? "Error"} ${Math.round(city?.main?.temp ?? 0)}°C`}
+          {`${city?.name ?? 'Error'} ${Math.round(city?.main?.temp ?? 0)}°C`}
         </Title>
         <Paragraph $theme={theme}>{city?.weather?.[0]?.description}</Paragraph>
       </>
@@ -76,10 +76,10 @@ export const openWeatherModal = (city, theme) => {
     },
     customClass: {
       // Define custom CSS classes for different modal elements.
-      title: "modal-title",
-      htmlContainer: "modal-html-container",
-      icon: "modal-icon",
-      popup: "modal-popup",
+      title: 'modal-title',
+      htmlContainer: 'modal-html-container',
+      icon: 'modal-icon',
+      popup: 'modal-popup',
     },
   });
 };

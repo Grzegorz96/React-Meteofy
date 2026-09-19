@@ -1,17 +1,17 @@
-import { useEffect } from "react";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
-import { divIcon } from "leaflet";
-import { WeatherIcon, Temp } from "./EuropeMap.styles";
-import MarkerClusterGroup from "react-leaflet-cluster";
-import { renderToString } from "react-dom/server";
-import "leaflet/dist/leaflet.css";
-import "../../assets/CSS/reactLeafletStyles/customMarkerIcon.css";
-import "../../assets/CSS/reactLeafletStyles/customControlZoom.css";
+import { useEffect } from 'react';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import { divIcon } from 'leaflet';
+import { WeatherIcon, Temp } from './EuropeMap.styles';
+import MarkerClusterGroup from 'react-leaflet-cluster';
+import { renderToString } from 'react-dom/server';
+import 'leaflet/dist/leaflet.css';
+import '../../assets/CSS/reactLeafletStyles/customMarkerIcon.css';
+import '../../assets/CSS/reactLeafletStyles/customControlZoom.css';
 import {
   openWeatherModal,
   closeWeatherModal,
-} from "../ui/modals/WeatherModal/WeatherModal";
-import { useTheme } from "styled-components";
+} from '../ui/modals/WeatherModal/WeatherModal';
+import { useTheme } from 'styled-components';
 
 /**
  * @component
@@ -27,19 +27,19 @@ export default function EuropeMap({ fetchedCitiesData }) {
 
   // Update the map container styles when the theme changes and close the weather modal when the component unmounts or theme changes.
   useEffect(() => {
-    const mapContainer = document.querySelector(".leaflet-container");
+    const mapContainer = document.querySelector('.leaflet-container');
 
     mapContainer.style.setProperty(
-      "--elements-background-color",
-      theme.europeMarker,
+      '--elements-background-color',
+      theme.europeMarker
     );
 
     mapContainer.style.setProperty(
-      "--elements-hover-background-color",
-      theme.backgroundFocus,
+      '--elements-hover-background-color',
+      theme.backgroundFocus
     );
 
-    mapContainer.style.setProperty("--elements-color", theme.textPrimary);
+    mapContainer.style.setProperty('--elements-color', theme.textPrimary);
 
     return () => {
       closeWeatherModal();
@@ -49,14 +49,14 @@ export default function EuropeMap({ fetchedCitiesData }) {
   // Custom marker icon for displaying weather information.
   const customMarker = (weatherIcon, temperature) => {
     return divIcon({
-      className: "marker-icon",
+      className: 'marker-icon',
       iconSize: [60, 40],
       iconAnchor: [30, 60],
       html: renderToString(
         <>
           <Temp>{Math.round(temperature)}°</Temp>
           <WeatherIcon $icon={weatherIcon} />
-        </>,
+        </>
       ),
     });
   };
@@ -64,12 +64,12 @@ export default function EuropeMap({ fetchedCitiesData }) {
   return (
     <MapContainer
       style={{
-        height: "100%",
-        width: "100%",
-        position: "absolute",
-        top: "0",
-        left: "0",
-        overflow: "hidden",
+        height: '100%',
+        width: '100%',
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        overflow: 'hidden',
       }}
       minZoom={4}
       maxZoom={13}
@@ -98,7 +98,7 @@ export default function EuropeMap({ fetchedCitiesData }) {
             eventHandlers={{
               click: () => openWeatherModal(city, theme),
               keydown: (e) => {
-                if (e.originalEvent.key === "Enter") {
+                if (e.originalEvent.key === 'Enter') {
                   e.originalEvent.preventDefault();
                   openWeatherModal(city, theme);
                 }

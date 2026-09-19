@@ -1,5 +1,5 @@
-import axios from "axios";
-import { API_DATA } from "../../utils/constants/api/openWeatherApiData";
+import axios from 'axios';
+import { API_DATA } from '../../utils/constants/api/openWeatherApiData';
 
 /**
  * Generates options object for making a request to the OpenWeather API.
@@ -8,13 +8,13 @@ import { API_DATA } from "../../utils/constants/api/openWeatherApiData";
  * @returns {Object} Options object for making the API request.
  */
 const openWeatherOptions = (cityObjects) => ({
-  method: "GET",
+  method: 'GET',
   url: API_DATA.url,
   params: {
     appid: import.meta.env.VITE_OPEN_WEATHER_API_KEY,
     units: API_DATA.units.metric,
-    id: cityObjects.map((city) => city.id).join(","),
-    contentType: "json",
+    id: cityObjects.map((city) => city.id).join(','),
+    contentType: 'json',
   },
 });
 

@@ -2,9 +2,9 @@ import {
   TogglerContainer,
   Toggler,
   SwitcherElement,
-} from "./ThemeToggler.styles";
-import { useSelector, useDispatch } from "react-redux";
-import { toggleThemeMode } from "../../../state/themeDataSlice";
+} from './ThemeToggler.styles';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleThemeMode } from '../../../state/themeDataSlice';
 
 /**
  * @component
@@ -28,7 +28,7 @@ export default function ThemeToggler() {
       />
       <SwitcherElement
         onKeyDown={(e) => {
-          if (e.key === "Enter") {
+          if (e.key === 'Enter') {
             dispatch(toggleThemeMode());
           }
         }}

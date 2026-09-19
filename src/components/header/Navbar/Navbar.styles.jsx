@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 /**
  * Returns the styles for a navigation link.
@@ -9,7 +9,7 @@ import styled from "styled-components";
  */
 export const navLinkStyles = ({ isActive }) => {
   return {
-    color: isActive ? "#00ffe5" : "#ffffff",
+    color: isActive ? '#00ffe5' : '#ffffff',
   };
 };
 
@@ -22,8 +22,8 @@ export const navLinkStyles = ({ isActive }) => {
  */
 export const Navigate = styled.nav`
   display: flex;
-  flex-direction: ${({ $isMobile }) => ($isMobile ? "column" : "row")};
-  align-items: ${({ $isMobile }) => $isMobile && "center"};
+  flex-direction: ${({ $isMobile }) => ($isMobile ? 'column' : 'row')};
+  align-items: ${({ $isMobile }) => $isMobile && 'center'};
   max-width: 1000px;
   width: 100%;
   flex-shrink: 3;
@@ -31,8 +31,8 @@ export const Navigate = styled.nav`
   a {
     text-decoration: none;
     width: 100%;
-    max-width: ${({ $isMobile }) => ($isMobile ? "100%" : "200px")};
-    height: ${({ $isMobile }) => !$isMobile && "60px"};
+    max-width: ${({ $isMobile }) => ($isMobile ? '100%' : '200px')};
+    height: ${({ $isMobile }) => !$isMobile && '60px'};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,12 +59,12 @@ export const Navigate = styled.nav`
     }
 
     &.active::before {
-      content: "";
+      content: '';
       background-color: #03dac6;
       position: absolute;
-      height: ${({ $isMobile }) => ($isMobile ? "100%" : "5px")};
-      width: ${({ $isMobile }) => ($isMobile ? "5px" : "100%")};
-      ${({ $isMobile }) => ($isMobile ? "left: 0;" : "bottom: 0;")}
+      height: ${({ $isMobile }) => ($isMobile ? '100%' : '5px')};
+      width: ${({ $isMobile }) => ($isMobile ? '5px' : '100%')};
+      ${({ $isMobile }) => ($isMobile ? 'left: 0;' : 'bottom: 0;')}
     }
 
     @media (max-width: 1000px) {

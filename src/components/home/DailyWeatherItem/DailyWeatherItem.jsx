@@ -6,15 +6,15 @@ import {
   DailyDetailsGrid,
   DailyDetailsGridItem,
   Label,
-} from "../../ui/Accordion/Accordion.styles";
+} from '../../ui/Accordion/Accordion.styles';
 import {
   AccordionItem,
   AccordionItemPanel,
   AccordionItemHeading,
-} from "react-accessible-accordion";
-import ScrollContainer from "../../ui/ScrollContainer/ScrollContainer";
-import HourlyWeatherItem from "../HourlyWeatherItem/HourlyWeatherItem";
-import { format } from "date-fns";
+} from 'react-accessible-accordion';
+import ScrollContainer from '../../ui/ScrollContainer/ScrollContainer';
+import HourlyWeatherItem from '../HourlyWeatherItem/HourlyWeatherItem';
+import { format } from 'date-fns';
 
 /**
  * @component
@@ -30,13 +30,13 @@ export default function DailyWeatherItem({ dayData, listOfScrollContainers }) {
     <AccordionItem>
       <AccordionItemHeading>
         <StyledAccordionItemButton>
-          <WeatherIcon $icon={dayData?.icon} width={"30px"} height={"30px"} />
+          <WeatherIcon $icon={dayData?.icon} width={'30px'} height={'30px'} />
           <Day>
             {dayData?.datetime
-              ? format(dayData.datetime, "MM-dd EEEE")
-              : "Error"}
+              ? format(dayData.datetime, 'MM-dd EEEE')
+              : 'Error'}
           </Day>
-          <Description>{dayData?.conditions ?? "Error"}</Description>
+          <Description>{dayData?.conditions ?? 'Error'}</Description>
           <Label $isGrey>
             {Math.round(dayData?.tempmax ?? 0)}°C/
             {Math.round(dayData?.tempmin ?? 0)}°C

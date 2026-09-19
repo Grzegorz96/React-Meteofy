@@ -1,5 +1,5 @@
-import axios from "axios";
-import { API_DATA } from "../../utils/constants/api/visualCrossingWeatherApiData";
+import axios from 'axios';
+import { API_DATA } from '../../utils/constants/api/visualCrossingWeatherApiData';
 
 /**
  * Returns the options object for making a request to the Visual Crossing Weather API.
@@ -9,16 +9,16 @@ import { API_DATA } from "../../utils/constants/api/visualCrossingWeatherApiData
  * @returns {Object} The options object for making the API request.
  */
 const viasualCrossingWeatherOptions = (latitude, longitude) => ({
-  method: "GET",
+  method: 'GET',
   url: `${API_DATA.url}/${latitude},${longitude}`,
   params: {
     key: import.meta.env.VITE_VISUAL_CROSSING_API_KEY,
     unitGroup: API_DATA.units.metric,
-    include: "days,hours,current",
-    contentType: "json",
-    iconSet: "icons2",
+    include: 'days,hours,current',
+    contentType: 'json',
+    iconSet: 'icons2',
     elements:
-      "datetime,temp,tempmax,tempmin,precipprob,windspeed,feelslike,conditions,icon,sunrise,sunset,humidity,pressure,visibility,dew,cloudcover",
+      'datetime,temp,tempmax,tempmin,precipprob,windspeed,feelslike,conditions,icon,sunrise,sunset,humidity,pressure,visibility,dew,cloudcover',
   },
 });
 
@@ -33,7 +33,7 @@ const viasualCrossingWeatherOptions = (latitude, longitude) => ({
 export const fetchWeather = async (latitude, longitude) => {
   try {
     const response = await axios.request(
-      viasualCrossingWeatherOptions(latitude, longitude),
+      viasualCrossingWeatherOptions(latitude, longitude)
     );
     return response.data;
   } catch (error) {

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 /**
  * @component
@@ -21,25 +21,25 @@ export const AirQualityIndex = styled.div`
   display: grid;
   row-gap: 10px;
   grid-template-areas:
-    "airQualityIndexHeader"
-    "airQualityIndexDescription"
-    "airQualityIndexFooter";
+    'airQualityIndexHeader'
+    'airQualityIndexDescription'
+    'airQualityIndexFooter';
 
   @media (max-width: 900px) {
     row-gap: 0px;
     border-radius: 6px 6px 0 0;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-      "airQualityIndexHeader airQualityIndexFooter"
-      "airQualityIndexDescription airQualityIndexFooter";
+      'airQualityIndexHeader airQualityIndexFooter'
+      'airQualityIndexDescription airQualityIndexFooter';
   }
 
   @media (max-width: 545px) {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "airQualityIndexHeader"
-      "airQualityIndexDescription"
-      "airQualityIndexFooter";
+      'airQualityIndexHeader'
+      'airQualityIndexDescription'
+      'airQualityIndexFooter';
   }
 `;
 

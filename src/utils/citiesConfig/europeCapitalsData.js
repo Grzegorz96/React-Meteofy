@@ -6,210 +6,210 @@
 export const europeCapitalsData = [
   {
     id: 3183875,
-    name: "Tirana",
+    name: 'Tirana',
   },
   {
     id: 3041563,
-    name: "Andorra la Vella",
+    name: 'Andorra la Vella',
   },
   {
     id: 2761369,
-    name: "Vienna",
+    name: 'Vienna',
   },
   {
     id: 625144,
-    name: "Minsk",
+    name: 'Minsk',
   },
   {
     id: 2800866,
-    name: "Brussels",
+    name: 'Brussels',
   },
   {
     id: 3191281,
-    name: "Sarajevo",
+    name: 'Sarajevo',
   },
   {
     id: 727011,
-    name: "Sofia",
+    name: 'Sofia',
   },
   {
     id: 3186886,
-    name: "Zagreb",
+    name: 'Zagreb',
   },
   {
     id: 146268,
-    name: "Nicosia",
+    name: 'Nicosia',
   },
   {
     id: 3067696,
-    name: "Prague",
+    name: 'Prague',
   },
   {
     id: 2618425,
-    name: "Copenhagen",
+    name: 'Copenhagen',
   },
   {
     id: 588409,
-    name: "Tallinn",
+    name: 'Tallinn',
   },
   {
     id: 2611396,
-    name: "Tórshavn",
+    name: 'Tórshavn',
   },
   {
     id: 658225,
-    name: "Helsinki",
+    name: 'Helsinki',
   },
   {
     id: 2988507,
-    name: "Paris",
+    name: 'Paris',
   },
   {
     id: 2950159,
-    name: "Berlin",
+    name: 'Berlin',
   },
   {
     id: 2411585,
-    name: "Gibraltar",
+    name: 'Gibraltar',
   },
   {
     id: 264371,
-    name: "Athens",
+    name: 'Athens',
   },
   {
     id: 3042287,
-    name: "St Peter Port",
+    name: 'St Peter Port',
   },
   {
     id: 3054643,
-    name: "Budapest",
+    name: 'Budapest',
   },
   {
     id: 3413829,
-    name: "Reykjavík",
+    name: 'Reykjavík',
   },
   {
     id: 2964574,
-    name: "Dublin",
+    name: 'Dublin',
   },
   {
     id: 3042237,
-    name: "Douglas",
+    name: 'Douglas',
   },
   {
     id: 3169070,
-    name: "Rome",
+    name: 'Rome',
   },
   {
     id: 3042091,
-    name: "Saint Helier",
+    name: 'Saint Helier',
   },
   {
     id: 786714,
-    name: "Pristina",
+    name: 'Pristina',
   },
   {
     id: 456172,
-    name: "Riga",
+    name: 'Riga',
   },
   {
     id: 3042030,
-    name: "Vaduz",
+    name: 'Vaduz',
   },
   {
     id: 593116,
-    name: "Vilnius",
+    name: 'Vilnius',
   },
   {
     id: 2960316,
-    name: "Luxembourg",
+    name: 'Luxembourg',
   },
   {
     id: 785842,
-    name: "Skopje",
+    name: 'Skopje',
   },
   {
     id: 2562305,
-    name: "Valletta",
+    name: 'Valletta',
   },
   {
     id: 618426,
-    name: "Chişinău",
+    name: 'Chişinău',
   },
   {
     id: 2993458,
-    name: "Monaco",
+    name: 'Monaco',
   },
   {
     id: 3193044,
-    name: "Podgorica",
+    name: 'Podgorica',
   },
   {
     id: 2759794,
-    name: "Amsterdam",
+    name: 'Amsterdam',
   },
   {
     id: 3143244,
-    name: "Oslo",
+    name: 'Oslo',
   },
   {
     id: 6695624,
-    name: "Warszawa",
+    name: 'Warszawa',
   },
   {
     id: 2267057,
-    name: "Lisbon",
+    name: 'Lisbon',
   },
   {
     id: 683506,
-    name: "Bucharest",
+    name: 'Bucharest',
   },
   {
     id: 524901,
-    name: "Moscow",
+    name: 'Moscow',
   },
   {
     id: 3168070,
-    name: "San Marino",
+    name: 'San Marino',
   },
   {
     id: 792680,
-    name: "Belgrade",
+    name: 'Belgrade',
   },
   {
     id: 3060972,
-    name: "Bratislava",
+    name: 'Bratislava',
   },
   {
     id: 3196359,
-    name: "Ljubljana",
+    name: 'Ljubljana',
   },
   {
     id: 3117735,
-    name: "Madrid",
+    name: 'Madrid',
   },
   {
     id: 2729907,
-    name: "Longyearbyen",
+    name: 'Longyearbyen',
   },
   {
     id: 2673730,
-    name: "Stockholm",
+    name: 'Stockholm',
   },
   {
     id: 7285212,
-    name: "Berne",
+    name: 'Berne',
   },
   {
     id: 703448,
-    name: "Kiev",
+    name: 'Kiev',
   },
   {
     id: 2643743,
-    name: "London",
+    name: 'London',
   },
   {
     id: 6691831,
-    name: "Vatican",
+    name: 'Vatican',
   },
 ];

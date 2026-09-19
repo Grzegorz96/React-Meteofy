@@ -1,4 +1,4 @@
-import { POLLUTION_NAMES } from "../constants/pollutionNames";
+import { POLLUTION_NAMES } from '../constants/pollutionNames';
 
 /**
  * Generates bar chart data for air pollution.
@@ -22,22 +22,22 @@ export function getAirPollutionBarChartData(currentAirPollutionData) {
           currentAirPollutionData?.o3,
         ],
         backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-          "rgba(156, 194, 19, 0.2)",
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(156, 194, 19, 0.2)',
         ],
         borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-          "rgba(156, 194, 19, 1)",
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(156, 194, 19, 1)',
         ],
         borderWidth: 1,
         borderRadius: 5,
@@ -55,7 +55,7 @@ export function getAirPollutionBarChartData(currentAirPollutionData) {
  */
 export function getAirPollutionFilteredLinearChartData(
   dayData,
-  selectedDataset,
+  selectedDataset
 ) {
   return {
     // Generate the labels for the chart from the datetime strings, formatted to show only hours and minutes.
@@ -67,19 +67,19 @@ export function getAirPollutionFilteredLinearChartData(
         // Generate the data points for the selected air pollution parameter.
         data: dayData?.hours?.map(({ pm1, pm2p5, pm10, no2, so2, co, o3 }) => {
           switch (selectedDataset) {
-            case "PM1":
+            case 'PM1':
               return pm1;
-            case "PM2.5":
+            case 'PM2.5':
               return pm2p5;
-            case "PM10":
+            case 'PM10':
               return pm10;
-            case "NO2":
+            case 'NO2':
               return no2;
-            case "SO2":
+            case 'SO2':
               return so2;
-            case "CO":
+            case 'CO':
               return co;
-            case "O3":
+            case 'O3':
               return o3;
             default:
               return null;
@@ -105,7 +105,7 @@ export function getAirPollutionFilteredLinearChartData(
 export function getLongTermWeatherFilteredLinearChartData(
   seasonalData,
   selectedDataset,
-  theme,
+  theme
 ) {
   return {
     // Use the time array from seasonalData as labels for the x-axis.
@@ -117,13 +117,13 @@ export function getLongTermWeatherFilteredLinearChartData(
         // Use the data from seasonalData corresponding to the selected dataset's value.
         data: seasonalData?.[selectedDataset.value]?.map((data) =>
           // Round each data point to the nearest integer.
-          Math.round(data),
+          Math.round(data)
         ),
         borderWidth: 1.5,
         pointRadius: 1.5,
         pointHoverRadius: 5,
         pointHitRadius: 5,
-        borderColor: "#36a2eb",
+        borderColor: '#36a2eb',
 
         // Create a gradient background for the chart.
         backgroundColor: (context) => {
@@ -138,7 +138,7 @@ export function getLongTermWeatherFilteredLinearChartData(
             chartArea.left,
             chartArea.bottom,
             chartArea.left,
-            chartArea.top,
+            chartArea.top
           );
 
           // Add color stops to the gradient.
@@ -146,7 +146,7 @@ export function getLongTermWeatherFilteredLinearChartData(
           gradient.addColorStop(1, theme.chartBackgroundEnd);
           return gradient;
         },
-        fill: "start", // Fill the area under the line.
+        fill: 'start', // Fill the area under the line.
       },
     ],
   };

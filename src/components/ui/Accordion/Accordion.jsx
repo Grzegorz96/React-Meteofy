@@ -1,4 +1,4 @@
-import { StyledAccordion, Title } from "./Accordion.styles";
+import { StyledAccordion, Title } from './Accordion.styles';
 
 /**
  * @component
@@ -17,7 +17,7 @@ export default function CustomAccordion({ listOfScrollContainers, children }) {
         if (value.length) {
           listOfScrollContainers.forEach((scrollableContainerRef) => {
             if (scrollableContainerRef?.current) {
-              scrollableContainerRef.current.style.scrollBehavior = "auto";
+              scrollableContainerRef.current.style.scrollBehavior = 'auto';
               scrollableContainerRef.current.scrollLeft = 0;
             }
           });

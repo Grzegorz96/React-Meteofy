@@ -1,9 +1,9 @@
-import { RouterProvider } from "react-router-dom";
-import { router } from "./routes/router.jsx";
-import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./utils/styles/globalStyles.js";
-import { darkTheme, lightTheme } from "./utils/styles/theme.js";
-import { useSelector } from "react-redux";
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes/router.jsx';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './utils/styles/globalStyles.js';
+import { darkTheme, lightTheme } from './utils/styles/theme.js';
+import { useSelector } from 'react-redux';
 
 /**
  * The main component of the application.

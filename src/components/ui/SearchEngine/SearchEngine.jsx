@@ -1,6 +1,6 @@
-import { AsyncPaginate } from "react-select-async-paginate";
-import { loadOptions } from "../../../services/api/fetchCities";
-import { useTheme } from "styled-components";
+import { AsyncPaginate } from 'react-select-async-paginate';
+import { loadOptions } from '../../../services/api/fetchCities';
+import { useTheme } from 'styled-components';
 
 /**
  * @component

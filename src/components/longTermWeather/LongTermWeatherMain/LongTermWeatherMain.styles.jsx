@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { DateRangePicker } from "rsuite";
+import styled from 'styled-components';
+import { DateRangePicker } from 'rsuite';
 
 /**
  * Generates custom styles for a Select component based on the provided theme.
@@ -17,14 +17,14 @@ export const customSelectStyles = (theme) => ({
    */
   option: (provided, state) => ({
     ...provided,
-    cursor: "pointer",
-    color: state.isSelected ? theme.textPrimary : "none",
+    cursor: 'pointer',
+    color: state.isSelected ? theme.textPrimary : 'none',
     backgroundColor:
       state.isFocused || state.isSelected
         ? theme.textSecondary
         : provided.backgroundColor,
 
-    ":active": {
+    ':active': {
       backgroundColor: theme.textSecondary,
     },
   }),
@@ -36,13 +36,13 @@ export const customSelectStyles = (theme) => ({
    */
   menu: (provided) => ({
     ...provided,
-    marginTop: "15px",
+    marginTop: '15px',
     backgroundColor: theme.secondary,
     color: theme.textPrimary,
     border: `1px solid ${theme.textSecondary}`,
-    borderRadius: "6px",
+    borderRadius: '6px',
     transition:
-      "background-color 0.25s ease-in-out, border 0.25s ease-in-out, color 0.25s ease-in-out",
+      'background-color 0.25s ease-in-out, border 0.25s ease-in-out, color 0.25s ease-in-out',
   }),
   /**
    * Styles for the Select control.
@@ -53,18 +53,16 @@ export const customSelectStyles = (theme) => ({
    */
   control: (provided, state) => ({
     ...provided,
-    width: "200px",
-    borderRadius: "6px",
-    cursor: "pointer",
+    width: '200px',
+    borderRadius: '6px',
+    cursor: 'pointer',
     backgroundColor: theme.secondary,
-    border: "none",
-    boxShadow: `0px ${state.isFocused ? "0px 0px 3px" : "0px 0px 2px"} ${
-      theme.textSecondary
-    }`,
+    border: 'none',
+    boxShadow: `0px ${state.isFocused ? '0px 0px 3px' : '0px 0px 2px'} ${theme.textSecondary}`,
     transition:
-      "background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out",
+      'background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out',
 
-    "@media (max-width: 768px)": {
+    '@media (max-width: 768px)': {
       minHeight: 32,
     },
   }),
@@ -77,10 +75,10 @@ export const customSelectStyles = (theme) => ({
   singleValue: (provided) => ({
     ...provided,
     color: theme.textPrimary,
-    transition: "color 0.25s ease-in-out",
-    fontSize: "16px",
-    "@media (max-width: 768px)": {
-      fontSize: "14px",
+    transition: 'color 0.25s ease-in-out',
+    fontSize: '16px',
+    '@media (max-width: 768px)': {
+      fontSize: '14px',
     },
   }),
   /**
@@ -91,7 +89,7 @@ export const customSelectStyles = (theme) => ({
    */
   dropdownIndicator: (provided) => ({
     ...provided,
-    "@media (max-width: 768px)": {
+    '@media (max-width: 768px)': {
       paddingBlock: 0,
     },
   }),
@@ -103,7 +101,7 @@ export const customSelectStyles = (theme) => ({
    */
   clearIndicator: (provided) => ({
     ...provided,
-    "@media (max-width: 768px)": {
+    '@media (max-width: 768px)': {
       paddingBlock: 0,
     },
   }),
@@ -162,12 +160,12 @@ export const InputWrapper = styled.div`
  * @returns {Object} An object containing custom styles for the menu of the date range picker.
  */
 export const dateRangePickerMenu = (theme) => ({
-  borderRadius: "6px",
-  marginTop: "15px",
+  borderRadius: '6px',
+  marginTop: '15px',
   zIndex: 0,
   backgroundColor: theme.secondary,
   border: `1px solid ${theme.textSecondary}`,
-  transition: "background-color 0.25s ease-in-out, border 0.25s ease-in-out",
+  transition: 'background-color 0.25s ease-in-out, border 0.25s ease-in-out',
 });
 
 /**

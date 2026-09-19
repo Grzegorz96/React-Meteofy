@@ -1,6 +1,6 @@
-import { createBrowserRouter } from "react-router-dom";
-import MainLayout from "../layouts/MainLayout";
-import { appRoutes } from "./appRoutes";
+import { createBrowserRouter } from 'react-router-dom';
+import MainLayout from '../layouts/MainLayout';
+import { appRoutes } from './appRoutes';
 
 /**
  * Router configuration for the application.
@@ -10,7 +10,7 @@ import { appRoutes } from "./appRoutes";
  */
 export const router = createBrowserRouter([
   {
-    path: "",
+    path: '',
     element: <MainLayout />,
     children: appRoutes,
   },

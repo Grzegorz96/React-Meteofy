@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { fetchWeather } from "../services/api/fetchCurrentAndForecastWeather";
-import { fetchAirPollution } from "../services/api/fetchAirPollution";
-import { fetchReversedGecoding } from "../services/api/fetchReversedGeocoding";
-import { fetchLongTermWeather } from "../services/api/fetchLongTermWeather";
-import { defaultCityCoords } from "../utils/helpers";
+import { useState, useEffect } from 'react';
+import { fetchWeather } from '../services/api/fetchCurrentAndForecastWeather';
+import { fetchAirPollution } from '../services/api/fetchAirPollution';
+import { fetchReversedGecoding } from '../services/api/fetchReversedGeocoding';
+import { fetchLongTermWeather } from '../services/api/fetchLongTermWeather';
+import { defaultCityCoords } from '../utils/helpers';
 
 /**
  * Retrieves the coordinates (latitude and longitude) for a given city or the user's current location.
@@ -45,14 +45,14 @@ const getCoordinates = async (city) => {
  */
 const fetchDataByType = async (latitude, longitude, dataType) => {
   switch (dataType) {
-    case "weather":
+    case 'weather':
       return fetchWeather(latitude, longitude);
-    case "airPollution":
+    case 'airPollution':
       return fetchAirPollution(latitude, longitude);
-    case "longTermWeather":
+    case 'longTermWeather':
       return fetchLongTermWeather(latitude, longitude);
     default:
-      throw new Error("Invalid data type");
+      throw new Error('Invalid data type');
   }
 };
 

@@ -1,7 +1,7 @@
 import {
   AirQualityIndexMainDescriptionWrapper,
   AirQualityIndexMainDescriptionText,
-} from "./AirQualityIndexMainDesctription.styles";
+} from './AirQualityIndexMainDesctription.styles';
 
 /**
  * @component

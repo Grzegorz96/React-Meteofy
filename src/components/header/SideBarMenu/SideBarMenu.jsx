@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { slide as Menu } from "react-burger-menu";
-import { StyledBurgerMenu } from "./SideBarMenu.styles";
-import Navbar from "../Navbar/Navbar";
+import { useState } from 'react';
+import { slide as Menu } from 'react-burger-menu';
+import { StyledBurgerMenu } from './SideBarMenu.styles';
+import Navbar from '../Navbar/Navbar';
 
 /**
  * @component

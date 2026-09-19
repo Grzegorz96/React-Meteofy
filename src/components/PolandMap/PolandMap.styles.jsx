@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { animated } from "@react-spring/web";
+import styled from 'styled-components';
+import { animated } from '@react-spring/web';
 
 /**
  * @component
@@ -52,7 +52,7 @@ export const MapItem = styled.div`
  * @prop {Object} theme - The theme object containing color configurations.
  */
 export const DataWrapper = styled.div`
-  background-color: ${({ theme }) => theme.textSecondary + "30"};
+  background-color: ${({ theme }) => theme.textSecondary + '30'};
   border-radius: 6px;
   padding-left: 6px;
   display: flex;
@@ -94,7 +94,7 @@ export const Text = styled.span`
  * @prop {string} $icon - The icon name.
  */
 export const WeatherIcon = styled.img.attrs((props) => ({
-  src: `/assets/openWeatherIcons/${props.$icon ?? "unknown"}.png`,
+  src: `/assets/openWeatherIcons/${props.$icon ?? 'unknown'}.png`,
 }))`
   width: 28px;
 `;

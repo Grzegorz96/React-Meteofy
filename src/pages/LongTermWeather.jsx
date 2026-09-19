@@ -1,5 +1,5 @@
-import LongTermWeatherContainer from "../containers/LongTermWeather";
-import useDocumentTitle from "../hooks/useDocumentTitle";
+import LongTermWeatherContainer from '../containers/LongTermWeather';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 /**
  * @component
@@ -12,6 +12,6 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
  */
 export default function LongTermWeatherPage() {
   // Set the document title.
-  useDocumentTitle("Meteofy - Long Term Weather");
+  useDocumentTitle('Meteofy - Long Term Weather');
   return <LongTermWeatherContainer />;
 }

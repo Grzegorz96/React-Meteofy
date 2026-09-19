@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 /**
  * @component
@@ -10,9 +10,9 @@ export const CurrentWeatherWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
-    "main main second"
-    "main main second"
-    "details details details";
+    'main main second'
+    'main main second'
+    'details details details';
   border-radius: 6px;
   box-shadow: 0 0 10px 0 ${({ theme }) => theme.shadow};
   color: ${({ theme }) => theme.textPrimary};
@@ -29,9 +29,9 @@ export const CurrentWeatherWrapper = styled.div`
   @media (max-width: 570px) {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "main"
-      "second"
-      "details";
+      'main'
+      'second'
+      'details';
   }
 `;
 
@@ -177,7 +177,7 @@ export const DetailValue = styled.div`
  * @prop {string} $icon - The icon name.
  */
 export const WeatherIcon = styled.img.attrs((props) => ({
-  src: `/assets/visualCrossingWeatherIcons/${props.$icon ?? "unknown"}.svg`,
+  src: `/assets/visualCrossingWeatherIcons/${props.$icon ?? 'unknown'}.svg`,
 }))`
   width: 80px;
   height: 80px;

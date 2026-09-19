@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Overlay,
   Modal,
   ModalText,
   ModalButton,
   ModalTitle,
-} from "./ErrorModal.styles";
-import { FaRegCircleXmark } from "react-icons/fa6";
-import { useSpring } from "@react-spring/web";
+} from './ErrorModal.styles';
+import { FaRegCircleXmark } from 'react-icons/fa6';
+import { useSpring } from '@react-spring/web';
 
 /**
  * @component
@@ -25,11 +25,11 @@ export default function ErrorModal({ data, setData }) {
   const fadeInFromTopAnimation = useSpring({
     from: {
       opacity: isOpen ? 0 : 1,
-      transform: isOpen ? "translate(-50%, -200%)" : "translate(-50%, -50%)",
+      transform: isOpen ? 'translate(-50%, -200%)' : 'translate(-50%, -50%)',
     },
     to: {
       opacity: isOpen ? 1 : 0,
-      transform: isOpen ? "translate(-50%, -50%)" : "translate(-50%, -200%)",
+      transform: isOpen ? 'translate(-50%, -50%)' : 'translate(-50%, -200%)',
     },
     config: {
       duration: 700,
@@ -56,7 +56,7 @@ export default function ErrorModal({ data, setData }) {
           onClick={() => setIsOpen(false)}
           autoFocus
           onKeyDown={(e) => {
-            if (e.key === "Tab") {
+            if (e.key === 'Tab') {
               e.preventDefault();
             }
           }}

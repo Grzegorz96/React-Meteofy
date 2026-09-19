@@ -1,5 +1,5 @@
-import { Text, Decal, useTexture, Box, useCursor } from "@react-three/drei";
-import { useRef, useLayoutEffect, useState } from "react";
+import { Text, Decal, useTexture, Box, useCursor } from '@react-three/drei';
+import { useRef, useLayoutEffect, useState } from 'react';
 
 /**
  * @component
@@ -16,11 +16,11 @@ export default function WeatherBoard({ position, capital, handleEvent }) {
   const [hovered, setHovered] = useState(false);
 
   // Change cursor to pointer if the weather board is hovered.
-  useCursor(hovered, "pointer");
+  useCursor(hovered, 'pointer');
 
   // Load texture for weather icon.
   const texture = useTexture(
-    `/assets/openWeatherIcons/${capital?.weather?.[0]?.icon ?? "unknown"}.png`,
+    `/assets/openWeatherIcons/${capital?.weather?.[0]?.icon ?? 'unknown'}.png`
   );
 
   // Reference for the weather board object.
@@ -47,7 +47,7 @@ export default function WeatherBoard({ position, capital, handleEvent }) {
       name={`weather-board-${capital?.name}`}
     >
       <meshStandardMaterial
-        color={hovered ? "#1dbb25" : "#81832c"}
+        color={hovered ? '#1dbb25' : '#81832c'}
         transparent
         opacity={0.6}
       />
@@ -71,7 +71,7 @@ export default function WeatherBoard({ position, capital, handleEvent }) {
       <Text
         layers={1}
         name="temp-text"
-        color={"#f6f3ea"}
+        color={'#f6f3ea'}
         fontSize={0.025}
         maxWidth={1}
         lineHeight={0.02}
@@ -83,14 +83,14 @@ export default function WeatherBoard({ position, capital, handleEvent }) {
       <Text
         layers={1}
         name="city-text"
-        color={"#f6f3ea"}
+        color={'#f6f3ea'}
         fontSize={0.018}
         maxWidth={1}
         lineHeight={0.02}
         position={[0, -0.025, -0.003]}
         rotation={[0, Math.PI, 0]}
       >
-        {capital?.name ?? "Error"}
+        {capital?.name ?? 'Error'}
       </Text>
     </Box>
   );

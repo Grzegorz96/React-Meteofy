@@ -1,9 +1,9 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo } from 'react';
 import {
   AccordionItem,
   AccordionItemPanel,
   AccordionItemHeading,
-} from "react-accessible-accordion";
+} from 'react-accessible-accordion';
 import {
   Day,
   StyledAccordionItemButton,
@@ -13,13 +13,13 @@ import {
   SelectButtonsWrapper,
   SelectButton,
   DailyDetailsFlex,
-} from "../../ui/Accordion/Accordion.styles";
-import { getAqiUSData } from "../../../utils/helpers";
-import ScrollContainer from "../../ui/ScrollContainer/ScrollContainer";
-import AirPollutionLinearChart from "../LinearChart/LinearChart";
-import { POLLUTION_NAMES } from "../../../utils/constants/pollutionNames";
-import { getAirPollutionFilteredLinearChartData } from "../../../utils/charts/chartData";
-import { format } from "date-fns";
+} from '../../ui/Accordion/Accordion.styles';
+import { getAqiUSData } from '../../../utils/helpers';
+import ScrollContainer from '../../ui/ScrollContainer/ScrollContainer';
+import AirPollutionLinearChart from '../LinearChart/LinearChart';
+import { POLLUTION_NAMES } from '../../../utils/constants/pollutionNames';
+import { getAirPollutionFilteredLinearChartData } from '../../../utils/charts/chartData';
+import { format } from 'date-fns';
 
 /**
  * @component
@@ -40,13 +40,13 @@ export default function DailyAirPollutionItem({
   // Filter the data for the selected dataset.
   const filteredData = getAirPollutionFilteredLinearChartData(
     dayData,
-    selectedDataset,
+    selectedDataset
   );
 
   // Get the AQI US data.
   const aqiUSData = useMemo(
     () => getAqiUSData(dayData?.aqius),
-    [dayData?.aqius],
+    [dayData?.aqius]
   );
 
   return (
@@ -59,11 +59,11 @@ export default function DailyAirPollutionItem({
           />
           <Day>
             {dayData?.datetime
-              ? format(dayData.datetime, "MM-dd EEEE")
-              : "Error"}
+              ? format(dayData.datetime, 'MM-dd EEEE')
+              : 'Error'}
           </Day>
           <Description>{aqiUSData?.levelsOfConcern}</Description>
-          <Label $isGrey>{`AQI US ${dayData?.aqius ?? "Error"}`}</Label>
+          <Label $isGrey>{`AQI US ${dayData?.aqius ?? 'Error'}`}</Label>
         </StyledAccordionItemButton>
       </AccordionItemHeading>
       <AccordionItemPanel>
@@ -76,7 +76,7 @@ export default function DailyAirPollutionItem({
                 onClick={() => {
                   if (listOfScrollContainers[index]?.current) {
                     listOfScrollContainers[index].current.style.scrollBehavior =
-                      "smooth";
+                      'smooth';
                     listOfScrollContainers[index].current.scrollLeft = 0;
                   }
 

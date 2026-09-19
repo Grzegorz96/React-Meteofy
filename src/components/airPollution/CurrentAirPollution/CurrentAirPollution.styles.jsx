@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 /**
  * @component
@@ -10,9 +10,9 @@ export const CurrentAirPollutionWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
-    "airQualityIndexMainDescription airQualityIndexMainDescription airQualityIndexMainDescription"
-    "airPollutionBarChart airPollutionBarChart airQualityIndex"
-    "airPollutionBarChart airPollutionBarChart airQualityIndex";
+    'airQualityIndexMainDescription airQualityIndexMainDescription airQualityIndexMainDescription'
+    'airPollutionBarChart airPollutionBarChart airQualityIndex'
+    'airPollutionBarChart airPollutionBarChart airQualityIndex';
 
   row-gap: 10px;
   margin-top: 30px;
@@ -21,8 +21,8 @@ export const CurrentAirPollutionWrapper = styled.div`
     grid-template-columns: 100%;
     row-gap: 0px;
     grid-template-areas:
-      "airQualityIndexMainDescription"
-      "airQualityIndex"
-      "airPollutionBarChart";
+      'airQualityIndexMainDescription'
+      'airQualityIndex'
+      'airPollutionBarChart';
   }
 `;

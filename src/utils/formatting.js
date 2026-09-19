@@ -1,4 +1,4 @@
-import * as THREE from "three";
+import * as THREE from 'three';
 
 /**
  * Converts latitude and longitude coordinates to Cartesian coordinates.

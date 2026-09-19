@@ -1,10 +1,10 @@
-import { useState, useMemo } from "react";
-import ErrorModal from "../components/ui/modals/ErrorModal/ErrorModal";
-import Loader from "../components/ui/Loader/Loader";
-import SearchEngine from "../components/ui/SearchEngine/SearchEngine";
-import { localInputStyles } from "../components/ui/SearchEngine/SearchEngine.styles";
-import useDataWithCitiesHandler from "../hooks/useDataWithCitiesHandler";
-import LongTermWeatherMain from "../components/longTermWeather/LongTermWeatherMain/LongTermWeatherMain";
+import { useState, useMemo } from 'react';
+import ErrorModal from '../components/ui/modals/ErrorModal/ErrorModal';
+import Loader from '../components/ui/Loader/Loader';
+import SearchEngine from '../components/ui/SearchEngine/SearchEngine';
+import { localInputStyles } from '../components/ui/SearchEngine/SearchEngine.styles';
+import useDataWithCitiesHandler from '../hooks/useDataWithCitiesHandler';
+import LongTermWeatherMain from '../components/longTermWeather/LongTermWeatherMain/LongTermWeatherMain';
 
 /**
  * @component
@@ -23,7 +23,7 @@ export default function LongTermWeatherContainer() {
   // Fetching data based on the selected city.
   const { data, setData } = useDataWithCitiesHandler(
     selectedCity,
-    "longTermWeather",
+    'longTermWeather'
   );
 
   // Extracting only the time and member01 data from the fetched data.
@@ -33,8 +33,8 @@ export default function LongTermWeatherContainer() {
 
     return Object.fromEntries(
       Object.entries(daily).filter(
-        ([key]) => key.includes("member01") || key === "time",
-      ),
+        ([key]) => key.includes('member01') || key === 'time'
+      )
     );
   }, [data.fetchedData?.daily]);
 

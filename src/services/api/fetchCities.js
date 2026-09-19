@@ -1,6 +1,6 @@
-import axios from "axios";
-import { API_DATA } from "../../utils/constants/api/geoDbApiData";
-import { requestCityDelay } from "../../utils/helpers";
+import axios from 'axios';
+import { API_DATA } from '../../utils/constants/api/geoDbApiData';
+import { requestCityDelay } from '../../utils/helpers';
 
 /**
  * Returns the options object for making a GET request to fetch cities from the API.
@@ -10,18 +10,18 @@ import { requestCityDelay } from "../../utils/helpers";
  * @returns {Object} The options object for the API request.
  */
 const geoApiOptions = (inputValue, page) => ({
-  method: "GET",
+  method: 'GET',
   url: API_DATA.urls.cities,
   headers: {
-    "X-RapidAPI-Key": import.meta.env.VITE_GEO_DB_API_KEY,
-    "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
+    'X-RapidAPI-Key': import.meta.env.VITE_GEO_DB_API_KEY,
+    'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com',
   },
   params: {
     namePrefix: inputValue,
-    types: "CITY",
+    types: 'CITY',
     offset: `${10 * (page - 1)}`,
-    limit: "10",
-    sort: "-population",
+    limit: '10',
+    sort: '-population',
   },
 });
 

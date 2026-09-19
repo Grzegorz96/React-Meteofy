@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { Accordion, AccordionItemButton } from "react-accessible-accordion";
+import styled, { css } from 'styled-components';
+import { Accordion, AccordionItemButton } from 'react-accessible-accordion';
 
 /**
  * @component
@@ -23,13 +23,13 @@ export const Title = styled.div`
  * @prop {string} height - The height of the icon.
  */
 export const WeatherIcon = styled.img.attrs((props) => ({
-  src: `/assets/visualCrossingWeatherIcons/${props.$icon ?? "unknown"}.svg`,
+  src: `/assets/visualCrossingWeatherIcons/${props.$icon ?? 'unknown'}.svg`,
 }))`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
 
   ${(props) =>
-    props.width === "40px" &&
+    props.width === '40px' &&
     css`
       @media (max-width: 550px) {
         width: 30px;
@@ -46,7 +46,7 @@ export const WeatherIcon = styled.img.attrs((props) => ({
  * @prop {string} $backgroundColor - The background color of the icon.
  */
 export const FaceIcon = styled.img.attrs((props) => ({
-  src: `/assets/airPollutionIcons/${props.$icon ?? "ic-face-orange"}.svg`,
+  src: `/assets/airPollutionIcons/${props.$icon ?? 'ic-face-orange'}.svg`,
 }))`
   height: 38px;
   height: 38px;
@@ -165,10 +165,8 @@ export const SelectButtonsWrapper = styled.div`
  * @prop {Object} theme - The theme object containing color configurations.
  */
 export const SelectButton = styled.button`
-  background-color: ${({ $active, theme }) =>
-    $active ? theme.textSecondary : theme.textPrimary};
-  color: ${({ $active, theme }) =>
-    $active ? theme.textPrimary : theme.primary};
+  background-color: ${({ $active, theme }) => ($active ? theme.textSecondary : theme.textPrimary)};
+  color: ${({ $active, theme }) => ($active ? theme.textPrimary : theme.primary)};
   border: 2px solid ${({ theme }) => theme.secondary};
   transition:
     background-color 0.25s ease-in-out,
@@ -224,8 +222,7 @@ export const DailyDetailsGridItem = styled.div`
  * @prop {Object} theme - The theme object containing color configurations.
  */
 export const Label = styled.div`
-  color: ${(props) =>
-    props.$isGrey ? props.theme.textSecondary : props.theme.textPrimary};
+  color: ${(props) => (props.$isGrey ? props.theme.textSecondary : props.theme.textPrimary)};
   font-size: ${(props) => props.$fontSize};
   font-weight: ${(props) => props.$fontWeight};
   height: ${(props) => props.$height};

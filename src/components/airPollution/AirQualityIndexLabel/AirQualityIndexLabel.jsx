@@ -1,5 +1,5 @@
-import { getAqiUSData } from "../../../utils/helpers";
-import { aqiUSData } from "../../../utils/constants/aqiUSData";
+import { getAqiUSData } from '../../../utils/helpers';
+import { aqiUSData } from '../../../utils/constants/aqiUSData';
 import {
   AirQualityIndex,
   AirQualityIndexHeader,
@@ -11,7 +11,7 @@ import {
   AirQualityIndexFooter,
   FaceFooter,
   FaceFooterDescription,
-} from "./AirQualityIndexLabel.styles";
+} from './AirQualityIndexLabel.styles';
 
 /**
  * @component

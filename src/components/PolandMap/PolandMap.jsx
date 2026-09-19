@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 import {
   PolandMapSVG,
   MapItem,
@@ -6,14 +6,14 @@ import {
   Temp,
   DataWrapper,
   Text,
-} from "./PolandMap.styles";
-import { useSpring } from "@react-spring/web";
+} from './PolandMap.styles';
+import { useSpring } from '@react-spring/web';
 import {
   openWeatherModal,
   closeWeatherModal,
-} from "../ui/modals/WeatherModal/WeatherModal";
-import { polishCitiesData } from "../../utils/citiesConfig/polishCitiesData";
-import { useTheme } from "styled-components";
+} from '../ui/modals/WeatherModal/WeatherModal';
+import { polishCitiesData } from '../../utils/citiesConfig/polishCitiesData';
+import { useTheme } from 'styled-components';
 
 /**
  * @component
@@ -37,12 +37,12 @@ export default function PolandMap({ fetchedCitiesData }) {
   // Animation for the map.
   const extensionAnimation = useSpring({
     from: {
-      transform: "scale(0.7)",
+      transform: 'scale(0.7)',
     },
     to: async (next) => {
-      await next({ transform: "scale(1.05)" });
-      await next({ transform: "scale(0.95)" });
-      await next({ transform: "scale(1)" });
+      await next({ transform: 'scale(1.05)' });
+      await next({ transform: 'scale(0.95)' });
+      await next({ transform: 'scale(1)' });
     },
     config: {
       duration: 300,
@@ -61,7 +61,7 @@ export default function PolandMap({ fetchedCitiesData }) {
         {fetchedCitiesData?.map((currentCity) => {
           // Find city data from polishCitiesData by matching the id.
           const cityData = polishCitiesData.find(
-            (polishCity) => polishCity.id === currentCity?.id,
+            (polishCity) => polishCity.id === currentCity?.id
           );
 
           // Render path element for each city if city data is found.
@@ -75,7 +75,7 @@ export default function PolandMap({ fetchedCitiesData }) {
                 d={cityData.d}
                 onClick={() => openWeatherModal(currentCity, theme)}
                 onKeyDown={(e) => {
-                  if (e.key === "Enter") {
+                  if (e.key === 'Enter') {
                     e.preventDefault();
                     openWeatherModal(currentCity, theme);
                   }
@@ -89,7 +89,7 @@ export default function PolandMap({ fetchedCitiesData }) {
         {fetchedCitiesData?.map((currentCity) => {
           // Find city data from polishCitiesData by matching the id.
           const cityData = polishCitiesData.find(
-            (polishCity) => polishCity.id === currentCity?.id,
+            (polishCity) => polishCity.id === currentCity?.id
           );
 
           // Render weather information for each city if city data is found.
@@ -98,7 +98,7 @@ export default function PolandMap({ fetchedCitiesData }) {
               <foreignObject
                 key={cityData.id}
                 style={{
-                  pointerEvents: "none",
+                  pointerEvents: 'none',
                 }}
                 x={cityData.left}
                 y={cityData.top}
@@ -110,7 +110,7 @@ export default function PolandMap({ fetchedCitiesData }) {
                     <Temp>{Math.round(currentCity?.main?.temp ?? 0)}°</Temp>
                     <WeatherIcon $icon={currentCity?.weather?.[0]?.icon} />
                   </DataWrapper>
-                  <Text>{currentCity?.name ?? "Error"}</Text>
+                  <Text>{currentCity?.name ?? 'Error'}</Text>
                 </MapItem>
               </foreignObject>
             );

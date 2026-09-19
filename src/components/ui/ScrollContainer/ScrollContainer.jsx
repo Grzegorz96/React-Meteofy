@@ -1,10 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 import {
   ScrollableContainer,
   NavigateButton,
   ScrollWrapper,
-} from "./ScrollContainer.styles";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+} from './ScrollContainer.styles';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
 /**
  * @component
@@ -24,7 +24,7 @@ export default function ScrollContainer({ children, listOfScrollContainers }) {
    */
   function handleBackButtonClick() {
     const scrollableContainer = scrollableContainerRef.current;
-    scrollableContainer.style.scrollBehavior = "smooth";
+    scrollableContainer.style.scrollBehavior = 'smooth';
     scrollableContainer.scrollLeft -= 400;
   }
 
@@ -33,7 +33,7 @@ export default function ScrollContainer({ children, listOfScrollContainers }) {
    */
   function handleNextButtonClick() {
     const scrollableContainer = scrollableContainerRef.current;
-    scrollableContainer.style.scrollBehavior = "smooth";
+    scrollableContainer.style.scrollBehavior = 'smooth';
     scrollableContainer.scrollLeft += 400;
   }
 
@@ -45,14 +45,14 @@ export default function ScrollContainer({ children, listOfScrollContainers }) {
      */
     const handleWheelScroll = (evt) => {
       evt.preventDefault();
-      scrollableContainer.style.scrollBehavior = "auto";
+      scrollableContainer.style.scrollBehavior = 'auto';
       scrollableContainer.scrollLeft += evt.deltaY;
     };
-    scrollableContainer.addEventListener("wheel", handleWheelScroll, {
+    scrollableContainer.addEventListener('wheel', handleWheelScroll, {
       passive: false,
     });
     return () => {
-      scrollableContainer.removeEventListener("wheel", handleWheelScroll);
+      scrollableContainer.removeEventListener('wheel', handleWheelScroll);
     };
   }, []);
 

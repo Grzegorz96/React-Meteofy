@@ -1,5 +1,5 @@
-import EuropeContainer from "../containers/Europe";
-import useDocumentTitle from "../hooks/useDocumentTitle";
+import EuropeContainer from '../containers/Europe';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 /**
  * @component
@@ -12,6 +12,6 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
  */
 export default function EuropePage() {
   // Set the document title.
-  useDocumentTitle("Meteofy - Europe");
+  useDocumentTitle('Meteofy - Europe');
   return <EuropeContainer />;
 }

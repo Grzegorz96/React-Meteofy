@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = null;
 
@@ -13,7 +13,7 @@ const initialState = null;
  * @property {Function} reducers.resetCityData - Reducer function for resetting city data.
  */
 const cityDataSlice = createSlice({
-  name: "cityData",
+  name: 'cityData',
   initialState,
   reducers: {
     setCityData: (state, { payload }) => payload,

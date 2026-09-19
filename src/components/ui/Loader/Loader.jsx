@@ -1,7 +1,7 @@
-import React from "react";
-import { ClipLoader } from "react-spinners";
-import { LoaderWrapper, LoaderText } from "./Loader.styles";
-import { useTheme } from "styled-components";
+import React from 'react';
+import { ClipLoader } from 'react-spinners';
+import { LoaderWrapper, LoaderText } from './Loader.styles';
+import { useTheme } from 'styled-components';
 
 /**
  * @component

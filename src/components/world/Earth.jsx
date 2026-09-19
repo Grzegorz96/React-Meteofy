@@ -1,18 +1,18 @@
-import { useEffect, memo } from "react";
-import { useThree } from "@react-three/fiber";
-import { useTexture, Sphere } from "@react-three/drei";
-import { useTheme } from "styled-components";
-import WeatherBoard from "./WeatherBoard";
+import { useEffect, memo } from 'react';
+import { useThree } from '@react-three/fiber';
+import { useTexture, Sphere } from '@react-three/drei';
+import { useTheme } from 'styled-components';
+import WeatherBoard from './WeatherBoard';
 import {
   openWeatherModal,
   closeWeatherModal,
-} from "../ui/modals/WeatherModal/WeatherModal";
-import EarthDayMap from "../../assets/textures/8k-earth-day-map.jpg";
-import EarthCloudsMap from "../../assets/textures/8k-earth-clouds.jpg";
-import NormalMap from "../../assets/textures/8k-earth-normal-map.jpg";
-import SpecularMap from "../../assets/textures/8k-earth-specular-map.jpg";
-import { worldCapitalsOffset } from "../../utils/citiesConfig/worldCapitalsOffset";
-import { convertLatLonToCartesian } from "../../utils/formatting";
+} from '../ui/modals/WeatherModal/WeatherModal';
+import EarthDayMap from '../../assets/textures/8k-earth-day-map.jpg';
+import EarthCloudsMap from '../../assets/textures/8k-earth-clouds.jpg';
+import NormalMap from '../../assets/textures/8k-earth-normal-map.jpg';
+import SpecularMap from '../../assets/textures/8k-earth-specular-map.jpg';
+import { worldCapitalsOffset } from '../../utils/citiesConfig/worldCapitalsOffset';
+import { convertLatLonToCartesian } from '../../utils/formatting';
 
 /**
  * @component
@@ -48,14 +48,14 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
     setIsLoading(false);
 
     return () => {
-      document.body.removeAttribute("style");
+      document.body.removeAttribute('style');
     };
   }, []);
 
   // Calculate offset for city positions and convert coords to cartesian on the globe.
   const setOffset = (capital) => {
     const cityToOffset = worldCapitalsOffset.find(
-      (city) => city.id === capital?.id,
+      (city) => city.id === capital?.id
     );
     return convertLatLonToCartesian(
       cityToOffset?.lat
@@ -65,7 +65,7 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
       cityToOffset?.lon
         ? capital?.coord?.lon + cityToOffset.lon
         : capital?.coord?.lon,
-      3.01,
+      3.01
     );
   };
 
@@ -78,9 +78,9 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
       intersects.length > 0 &&
       intersects[0].object === weatherBoardRef.current
     ) {
-      if (evt.type === "click") {
+      if (evt.type === 'click') {
         openWeatherModal(capital, theme);
-      } else if (evt.type === "pointermove") {
+      } else if (evt.type === 'pointermove') {
         setHovered(true);
       }
     }

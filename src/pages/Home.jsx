@@ -1,5 +1,5 @@
-import HomeContainer from "../containers/Home";
-import useDocumentTitle from "../hooks/useDocumentTitle";
+import HomeContainer from '../containers/Home';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 /**
  * @component
@@ -12,6 +12,6 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
  */
 export default function HomePage() {
   // Set the document title.
-  useDocumentTitle("Meteofy - Home");
+  useDocumentTitle('Meteofy - Home');
   return <HomeContainer />;
 }
