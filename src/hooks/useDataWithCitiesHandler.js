@@ -5,7 +5,7 @@ import {
   fetchReversedGecoding,
   fetchLongTermWeather,
 } from '../services/api';
-import { defaultCityCoords } from '../utils/helpers';
+import { DEFAULT_CITY_COORDS } from '../utils/helpers';
 import { DATA_TYPE } from '../utils/constants';
 
 /**
@@ -32,7 +32,7 @@ const getCoordinates = async (city) => {
         longitude: currentPosition.coords.longitude,
       };
     } catch (error) {
-      return defaultCityCoords;
+      return DEFAULT_CITY_COORDS;
     }
   }
 };

@@ -14,7 +14,7 @@ import LongTermWeatherLinearChart from '../LinearChart/LinearChart';
 import { useState, useMemo, memo } from 'react';
 import { getLongTermWeatherFilteredLinearChartData } from '../../../utils/charts/chartData';
 import { getLongTermWeatherLinearChartOptions } from '../../../utils/charts/chartOptions';
-import { selectOptions } from '../../../utils/constants';
+import { SELECT_OPTIONS } from '../../../utils/constants';
 import { getDefaultDateRange, getRanges } from '../../../utils/helpers';
 import { startOfDay, addDays, subDays } from 'date-fns';
 import { useMediaQuery } from 'react-responsive';
@@ -37,7 +37,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
   // Check if the screen width is less than 768px.
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   // Set the default selected dataset and date range.
-  const [selectedDataset, setSelectedDataset] = useState(selectOptions[0]);
+  const [selectedDataset, setSelectedDataset] = useState(SELECT_OPTIONS[0]);
   const [selectedDateRange, setSelectedDateRange] =
     useState(getDefaultDateRange);
 
@@ -78,7 +78,7 @@ function LongTermWeatherMain({ seasonalData, city }) {
       <InputWrapper>
         <Select
           styles={customSelectStyles(theme)}
-          options={selectOptions}
+          options={SELECT_OPTIONS}
           onChange={setSelectedDataset}
           value={selectedDataset}
           isSearchable={false}

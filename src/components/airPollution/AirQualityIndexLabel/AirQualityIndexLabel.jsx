@@ -1,5 +1,5 @@
 import { getAqiUSData } from '../../../utils/helpers';
-import { aqiUSData } from '../../../utils/constants';
+import { AQI_US_DATA } from '../../../utils/constants';
 import {
   AirQualityIndex,
   AirQualityIndexHeader,
@@ -52,68 +52,68 @@ export default function AirQualityIndexLabel({ currentAirPollutionData }) {
           <AirQualityIndexFooter>
             <Wrapper>
               <FaceFooter
-                $icon={aqiUSData[0].faceIcon}
-                $backqroundColor={aqiUSData[0].aqiColor}
+                $icon={AQI_US_DATA[0].faceIcon}
+                $backqroundColor={AQI_US_DATA[0].aqiColor}
               />
               <FaceFooterDescription>
-                {`${aqiUSData[0].aqiUSLevel[0]}-${aqiUSData[0].aqiUSLevel[1]}`}
+                {`${AQI_US_DATA[0].aqiUSLevel[0]}-${AQI_US_DATA[0].aqiUSLevel[1]}`}
                 <br />
-                {aqiUSData[0].levelsOfConcern}
+                {AQI_US_DATA[0].levelsOfConcern}
               </FaceFooterDescription>
             </Wrapper>
             <Wrapper>
               <FaceFooter
-                $icon={aqiUSData[1].faceIcon}
-                $backqroundColor={aqiUSData[1].aqiColor}
+                $icon={AQI_US_DATA[1].faceIcon}
+                $backqroundColor={AQI_US_DATA[1].aqiColor}
               />
               <FaceFooterDescription>
-                {`${aqiUSData[1].aqiUSLevel[0]}-${aqiUSData[1].aqiUSLevel[1]}`}
+                {`${AQI_US_DATA[1].aqiUSLevel[0]}-${AQI_US_DATA[1].aqiUSLevel[1]}`}
                 <br />
-                {aqiUSData[1].levelsOfConcern}
+                {AQI_US_DATA[1].levelsOfConcern}
               </FaceFooterDescription>
             </Wrapper>
             <Wrapper>
               <FaceFooter
-                $icon={aqiUSData[2].faceIcon}
-                $backqroundColor={aqiUSData[2].aqiColor}
+                $icon={AQI_US_DATA[2].faceIcon}
+                $backqroundColor={AQI_US_DATA[2].aqiColor}
               />
               <FaceFooterDescription>
-                {`${aqiUSData[2].aqiUSLevel[0]}-${aqiUSData[2].aqiUSLevel[1]}`}
+                {`${AQI_US_DATA[2].aqiUSLevel[0]}-${AQI_US_DATA[2].aqiUSLevel[1]}`}
                 <br />
-                {aqiUSData[2].levelsOfConcern}
+                {AQI_US_DATA[2].levelsOfConcern}
               </FaceFooterDescription>
             </Wrapper>
             <Wrapper>
               <FaceFooter
-                $icon={aqiUSData[3].faceIcon}
-                $backqroundColor={aqiUSData[3].aqiColor}
+                $icon={AQI_US_DATA[3].faceIcon}
+                $backqroundColor={AQI_US_DATA[3].aqiColor}
               />
               <FaceFooterDescription>
-                {`${aqiUSData[3].aqiUSLevel[0]}-${aqiUSData[3].aqiUSLevel[1]}`}
+                {`${AQI_US_DATA[3].aqiUSLevel[0]}-${AQI_US_DATA[3].aqiUSLevel[1]}`}
                 <br />
-                {aqiUSData[3].levelsOfConcern}
+                {AQI_US_DATA[3].levelsOfConcern}
               </FaceFooterDescription>
             </Wrapper>
             <Wrapper>
               <FaceFooter
-                $icon={aqiUSData[4].faceIcon}
-                $backqroundColor={aqiUSData[4].aqiColor}
+                $icon={AQI_US_DATA[4].faceIcon}
+                $backqroundColor={AQI_US_DATA[4].aqiColor}
               />
               <FaceFooterDescription>
-                {`${aqiUSData[4].aqiUSLevel[0]}-${aqiUSData[4].aqiUSLevel[1]}`}
+                {`${AQI_US_DATA[4].aqiUSLevel[0]}-${AQI_US_DATA[4].aqiUSLevel[1]}`}
                 <br />
-                {aqiUSData[4].levelsOfConcern}
+                {AQI_US_DATA[4].levelsOfConcern}
               </FaceFooterDescription>
             </Wrapper>
             <Wrapper>
               <FaceFooter
-                $icon={aqiUSData[5].faceIcon}
-                $backqroundColor={aqiUSData[5].aqiColor}
+                $icon={AQI_US_DATA[5].faceIcon}
+                $backqroundColor={AQI_US_DATA[5].aqiColor}
               />
               <FaceFooterDescription>
-                {`${aqiUSData[5].aqiUSLevel[0]}-500`}
+                {`${AQI_US_DATA[5].aqiUSLevel[0]}-500`}
                 <br />
-                {aqiUSData[5].levelsOfConcern}
+                {AQI_US_DATA[5].levelsOfConcern}
               </FaceFooterDescription>
             </Wrapper>
           </AirQualityIndexFooter>

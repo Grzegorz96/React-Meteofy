@@ -24,7 +24,7 @@ import {
  *
  * @type {AQIUSData[]}
  */
-export const aqiUSData = [
+export const AQI_US_DATA = [
   {
     aqiColor: '#00e400',
     aqiUSLevel: [0, 50],

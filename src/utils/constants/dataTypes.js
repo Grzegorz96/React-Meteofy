@@ -11,7 +11,7 @@
  * @type {DataType}
  */
 export const DATA_TYPE = {
-  weather: 'weather',
-  airPollution: 'airPollution',
-  longTermWeather: 'longTermWeather',
+  weather: 'WEATHER',
+  airPollution: 'AIR_POLLUTION',
+  longTermWeather: 'LONG_TERM_WEATHER',
 };

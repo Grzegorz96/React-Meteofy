@@ -7,7 +7,7 @@ import {
   AirPollutionPage,
   LongTermWeatherPage,
 } from '../pages';
-import { ROUTES } from '../utils/constants';
+import { ROUTES, PAGE_TITLES } from '../utils/constants';
 
 /**
  * Array of routes for the application.
@@ -16,31 +16,39 @@ import { ROUTES } from '../utils/constants';
  * @type {Array<{ path: string, element: JSX.Element }>}
  */
 export const appRoutes = [
-  { path: ROUTES.home, element: <HomePage />, handle: { title: 'Home' } },
+  {
+    path: ROUTES.home,
+    element: <HomePage />,
+    handle: { title: PAGE_TITLES.home },
+  },
   {
     path: ROUTES.poland,
     element: <PolandPage />,
-    handle: { title: 'Poland' },
+    handle: { title: PAGE_TITLES.poland },
   },
   {
     path: ROUTES.europe,
     element: <EuropePage />,
-    handle: { title: 'Europe' },
+    handle: { title: PAGE_TITLES.europe },
   },
-  { path: ROUTES.world, element: <WorldPage />, handle: { title: 'World' } },
+  {
+    path: ROUTES.world,
+    element: <WorldPage />,
+    handle: { title: PAGE_TITLES.world },
+  },
   {
     path: ROUTES.longTermWeather,
     element: <LongTermWeatherPage />,
-    handle: { title: 'Long Term Weather' },
+    handle: { title: PAGE_TITLES.longTermWeather },
   },
   {
     path: ROUTES.airPollution,
     element: <AirPollutionPage />,
-    handle: { title: 'Air Pollution' },
+    handle: { title: PAGE_TITLES.airPollution },
   },
   {
     path: ROUTES.notFound,
     element: <NotFoundPage />,
-    handle: { title: 'Not Found' },
+    handle: { title: PAGE_TITLES.notFound },
   },
 ];

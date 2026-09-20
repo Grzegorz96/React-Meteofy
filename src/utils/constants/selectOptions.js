@@ -10,7 +10,7 @@
  * Array of select options.
  * @type {SelectOption[]}
  */
-export const selectOptions = [
+export const SELECT_OPTIONS = [
   {
     value: 'temperature_2m_max_member01',
     label: 'Max temperature',

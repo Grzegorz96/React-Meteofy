@@ -1,4 +1,4 @@
-import { aqiUSData } from './constants/aqiUSData';
+import { AQI_US_DATA } from './constants/aqiUSData';
 import { startOfDay, addDays, subDays } from 'date-fns';
 
 /**
@@ -11,15 +11,15 @@ export function getAqiUSData(aqiValue) {
     return null;
   }
 
-  const lastIndex = aqiUSData.length - 1;
+  const lastIndex = AQI_US_DATA.length - 1;
 
   // Check if the AQI value is greater than the highest value in the data.
-  if (aqiValue >= aqiUSData[lastIndex].aqiUSLevel[0]) {
-    return aqiUSData[lastIndex];
+  if (aqiValue >= AQI_US_DATA[lastIndex].aqiUSLevel[0]) {
+    return AQI_US_DATA[lastIndex];
   }
 
   // Find the AQI data that matches the given value.
-  return aqiUSData.find((data) => {
+  return AQI_US_DATA.find((data) => {
     return aqiValue >= data.aqiUSLevel[0] && aqiValue <= data.aqiUSLevel[1];
   });
 }
@@ -30,7 +30,7 @@ export function getAqiUSData(aqiValue) {
  * @property {number} latitude - The latitude of the city.
  * @property {number} longitude - The longitude of the city.
  */
-export const defaultCityCoords = {
+export const DEFAULT_CITY_COORDS = {
   latitude: 52.22977,
   longitude: 21.01178,
 };
