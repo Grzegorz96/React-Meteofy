@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import HeaderComponent from '../components/header/Header/Header';
 import MainComponent from '../components/Main/Main';
 import FooterComponent from '../components/footer/Footer/Footer';
-import usePageTitle from '../hooks/usePageTitle';
+import { usePageTitle, useResetCityOnLeaveHome } from '../hooks';
 
 /**
  * @component
@@ -15,6 +15,7 @@ import usePageTitle from '../hooks/usePageTitle';
  */
 export default function MainLayout() {
   usePageTitle();
+  useResetCityOnLeaveHome();
 
   return (
     <>

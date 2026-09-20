@@ -1,4 +1,3 @@
-import useDataWithCitiesHandler from '../hooks/useDataWithCitiesHandler';
 import { useState, useMemo } from 'react';
 import Loader from '../components/ui/Loader/Loader';
 import ErrorModal from '../components/ui/modals/ErrorModal/ErrorModal';
@@ -6,20 +5,16 @@ import SearchEngine from '../components/ui/SearchEngine/SearchEngine';
 import CurrentAirPollution from '../components/airPollution/CurrentAirPollution/CurrentAirPollution';
 import ForecastAirPollution from '../components/airPollution/ForecastAirPollution/ForecastAirPollution';
 import { localInputStyles } from '../components/ui/SearchEngine/SearchEngine.styles';
-import { DATA_TYPE } from '../utils/constants/dataTypes';
+import { DATA_TYPE } from '../utils/constants';
+import { useDataWithCitiesHandler } from '../hooks';
 
 /**
  * @component
- * Functional component responsible for rendering the air pollution data.
+ * Air pollution page: current and forecast AQI for a selected city.
  *
- * This component utilizes the `useDataWithCitiesHandler` hook to fetch and manage air pollution data for the selected city.
- * It renders the search engine component for selecting a city, and displays a loader while data is being fetched.
- * Once the data is fetched, it renders the `CurrentAirPollution` component to visualize the current air pollution conditions,
- * and the `ForecastAirPollution` component to visualize the forecasted air pollution conditions.
- *
- * @returns {JSX.Element} The rendered components based on the state of the data and search engine.
+ * @returns {JSX.Element} The rendered air pollution page.
  */
-export default function AirPollutionContainer() {
+export default function AirPollutionPage() {
   // State to store the selected city.
   const [selectedCity, setSelectedCity] = useState(null);
 

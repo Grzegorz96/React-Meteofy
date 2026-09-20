@@ -1,5 +1,5 @@
 import { AsyncPaginate } from 'react-select-async-paginate';
-import { loadOptions } from '../../../services/api/fetchCities';
+import { loadOptions } from '../../../services/api';
 import { useTheme } from 'styled-components';
 
 /**

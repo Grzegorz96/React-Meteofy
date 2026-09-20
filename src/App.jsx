@@ -1,5 +1,5 @@
 import { RouterProvider } from 'react-router-dom';
-import { router } from './routes/router.jsx';
+import { router } from './routes';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './utils/styles/globalStyles.js';
 import { darkTheme, lightTheme } from './utils/styles/theme.js';
@@ -18,7 +18,7 @@ export default function App() {
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <GlobalStyles /> {/* Apply global styles */}
-      <RouterProvider router={router} /> {/* Provide the router */}
+      <RouterProvider router={router} future={{ v7_startTransition: true }} />
     </ThemeProvider>
   );
 }

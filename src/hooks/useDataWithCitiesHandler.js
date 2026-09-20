@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import { fetchWeather } from '../services/api/fetchCurrentAndForecastWeather';
-import { fetchAirPollution } from '../services/api/fetchAirPollution';
-import { fetchReversedGecoding } from '../services/api/fetchReversedGeocoding';
-import { fetchLongTermWeather } from '../services/api/fetchLongTermWeather';
+import {
+  fetchWeather,
+  fetchAirPollution,
+  fetchReversedGecoding,
+  fetchLongTermWeather,
+} from '../services/api';
 import { defaultCityCoords } from '../utils/helpers';
-import { DATA_TYPE } from '../utils/constants/dataTypes';
+import { DATA_TYPE } from '../utils/constants';
 
 /**
  * Retrieves the coordinates (latitude and longitude) for a given city or the user's current location.
@@ -64,7 +66,7 @@ const fetchDataByType = async (latitude, longitude, dataType) => {
  * @param {string} dataType - The type of data to fetch.
  * @returns {object} An object containing the fetched data, loading state, error, city and a setter to update the data.
  */
-const useDataWithCitiesHandler = (city, dataType) => {
+export const useDataWithCitiesHandler = (city, dataType) => {
   const [data, setData] = useState({
     city: null,
     fetchedData: null,
@@ -111,5 +113,3 @@ const useDataWithCitiesHandler = (city, dataType) => {
 
   return { data, setData };
 };
-
-export default useDataWithCitiesHandler;

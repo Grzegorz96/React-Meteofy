@@ -1,5 +1,6 @@
 import { NotFoundWrapper, LinkStyled, Title } from './NotFound.styles';
 import { useEffect, useRef } from 'react';
+import { ROUTES } from '../../utils/constants';
 
 /**
  * @component
@@ -18,7 +19,7 @@ export default function NotFound() {
   return (
     <NotFoundWrapper>
       <Title>404 - Not Found!</Title>
-      <LinkStyled to="/" ref={linkRef}>
+      <LinkStyled to={ROUTES.home} ref={linkRef}>
         Go to Home
       </LinkStyled>
     </NotFoundWrapper>

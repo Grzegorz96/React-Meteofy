@@ -3,10 +3,11 @@ import SideBarMenu from '../SideBarMenu/SideBarMenu';
 import SearchEngine from '../../ui/SearchEngine/SearchEngine';
 import Navbar from '../Navbar/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCityData } from '../../../state/cityDataSlice';
+import { setCityData } from '../../../state';
 import { useNavigate } from 'react-router-dom';
 import { globalInputStyles } from '../../ui/SearchEngine/SearchEngine.styles';
 import { useMediaQuery } from 'react-responsive';
+import { ROUTES } from '../../../utils/constants';
 
 /**
  * @component
@@ -26,7 +27,7 @@ export default function HeaderComponent() {
 
   return (
     <Header>
-      <StyledLink to="/">
+      <StyledLink to={ROUTES.home}>
         <StyledLogo />
       </StyledLink>
       <SearchEngine
@@ -34,7 +35,7 @@ export default function HeaderComponent() {
         city={cityData}
         handleOnChange={(searchedData) => {
           dispatch(setCityData(searchedData));
-          navigate('/');
+          navigate(ROUTES.home);
         }}
         styles={globalInputStyles}
       />

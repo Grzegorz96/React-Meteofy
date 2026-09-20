@@ -1,38 +1,26 @@
-import useDataWithCitiesHandler from '../hooks/useDataWithCitiesHandler';
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { resetCityData } from '../state/cityDataSlice';
+import { useSelector } from 'react-redux';
 import CurrentWeather from '../components/home/CurrentWeather/CurrentWeather';
 import ForecastWeather from '../components/home/ForecastWeather/ForecastWeather';
 import Loader from '../components/ui/Loader/Loader';
 import ErrorModal from '../components/ui/modals/ErrorModal/ErrorModal';
-import { DATA_TYPE } from '../utils/constants/dataTypes';
+import { DATA_TYPE } from '../utils/constants';
+import { useDataWithCitiesHandler } from '../hooks';
 
 /**
  * @component
- * Functional component responsible for rendering the home page content.
+ * Home page: current and forecast weather for the selected city.
  *
- * This component utilizes the `useDataWithCitiesHandler` hook to fetch and manage weather data for the selected city.
- * It also uses Redux to manage city data and dispatches a reset action when unmounting.
- *
- * @returns {JSX.Element} The rendered components based on the state of the data.
+ * @returns {JSX.Element} The rendered home page.
  */
-export default function HomeContainer() {
-  // Fetching city data from Redux store.
+export default function HomePage() {
+  // Fetching city data from Redux store
   const cityData = useSelector(({ cityData }) => cityData);
-  const dispatch = useDispatch();
+
   // Fetching weather data based on the selected city.
   const { data, setData } = useDataWithCitiesHandler(
     cityData,
     DATA_TYPE.weather
   );
-
-  // Resetting Redux city data when unmounting the component.
-  useEffect(() => {
-    return () => {
-      dispatch(resetCityData());
-    };
-  }, [dispatch]);
 
   return (
     <>

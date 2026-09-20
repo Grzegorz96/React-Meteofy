@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import cityDataReducer from '../state/cityDataSlice';
-import themeDataReducer from '../state/themeDataSlice';
+import { cityDataReducer, themeDataReducer } from '../state';
 
 /**
  * The Redux store for managing the application state.

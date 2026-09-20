@@ -1,10 +1,13 @@
-import HomePage from '../pages/Home';
-import PolandPage from '../pages/Poland';
-import EuropePage from '../pages/Europe';
-import WorldPage from '../pages/World';
-import NotFoundPage from '../pages/NotFound';
-import AirPollutionPage from '../pages/AirPollution';
-import LongTermWeatherPage from '../pages/LongTermWeather';
+import {
+  HomePage,
+  PolandPage,
+  EuropePage,
+  WorldPage,
+  NotFoundPage,
+  AirPollutionPage,
+  LongTermWeatherPage,
+} from '../pages';
+import { ROUTES } from '../utils/constants';
 
 /**
  * Array of routes for the application.
@@ -13,19 +16,31 @@ import LongTermWeatherPage from '../pages/LongTermWeather';
  * @type {Array<{ path: string, element: JSX.Element }>}
  */
 export const appRoutes = [
-  { path: '/', element: <HomePage />, handle: { title: 'Home' } },
-  { path: '/poland', element: <PolandPage />, handle: { title: 'Poland' } },
-  { path: '/europe', element: <EuropePage />, handle: { title: 'Europe' } },
-  { path: '/world', element: <WorldPage />, handle: { title: 'World' } },
+  { path: ROUTES.home, element: <HomePage />, handle: { title: 'Home' } },
   {
-    path: '/long-term-weather',
+    path: ROUTES.poland,
+    element: <PolandPage />,
+    handle: { title: 'Poland' },
+  },
+  {
+    path: ROUTES.europe,
+    element: <EuropePage />,
+    handle: { title: 'Europe' },
+  },
+  { path: ROUTES.world, element: <WorldPage />, handle: { title: 'World' } },
+  {
+    path: ROUTES.longTermWeather,
     element: <LongTermWeatherPage />,
     handle: { title: 'Long Term Weather' },
   },
   {
-    path: '/air-pollution',
+    path: ROUTES.airPollution,
     element: <AirPollutionPage />,
     handle: { title: 'Air Pollution' },
   },
-  { path: '*', element: <NotFoundPage />, handle: { title: 'Not Found' } },
+  {
+    path: ROUTES.notFound,
+    element: <NotFoundPage />,
+    handle: { title: 'Not Found' },
+  },
 ];

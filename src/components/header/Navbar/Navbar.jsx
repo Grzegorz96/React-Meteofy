@@ -9,6 +9,7 @@ import {
   faCalendarDays,
   faListCheck,
 } from '@fortawesome/free-solid-svg-icons';
+import { ROUTES } from '../../../utils/constants';
 
 /**
  * @component
@@ -25,23 +26,23 @@ export default function Navbar({ isMobile, setIsOpen }) {
       $isMobile={isMobile}
       onClick={isMobile ? () => setIsOpen(false) : null}
     >
-      <NavLink to="/poland" style={navLinkStyles}>
+      <NavLink to={ROUTES.poland} style={navLinkStyles}>
         <GiPoland />
         Poland
       </NavLink>
-      <NavLink to="/europe" style={navLinkStyles}>
+      <NavLink to={ROUTES.europe} style={navLinkStyles}>
         <FontAwesomeIcon icon={faEarthEurope} />
         Europe
       </NavLink>
-      <NavLink to="/world" style={navLinkStyles}>
+      <NavLink to={ROUTES.world} style={navLinkStyles}>
         <FontAwesomeIcon icon={faGlobe} />
         World
       </NavLink>
-      <NavLink to="/long-term-weather" style={navLinkStyles}>
+      <NavLink to={ROUTES.longTermWeather} style={navLinkStyles}>
         <FontAwesomeIcon icon={faCalendarDays} />
         Long term weather
       </NavLink>
-      <NavLink to="/air-pollution" style={navLinkStyles}>
+      <NavLink to={ROUTES.airPollution} style={navLinkStyles}>
         <FontAwesomeIcon icon={faListCheck} />
         Air pollution
       </NavLink>

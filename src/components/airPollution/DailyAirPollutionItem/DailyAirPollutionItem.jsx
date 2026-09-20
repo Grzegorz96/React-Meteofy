@@ -17,7 +17,7 @@ import {
 import { getAqiUSData } from '../../../utils/helpers';
 import ScrollContainer from '../../ui/ScrollContainer/ScrollContainer';
 import AirPollutionLinearChart from '../LinearChart/LinearChart';
-import { POLLUTION_NAMES } from '../../../utils/constants/pollutionNames';
+import { POLLUTION_NAMES } from '../../../utils/constants';
 import { getAirPollutionFilteredLinearChartData } from '../../../utils/charts/chartData';
 import { format } from 'date-fns';
 

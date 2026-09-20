@@ -14,7 +14,7 @@ import LongTermWeatherLinearChart from '../LinearChart/LinearChart';
 import { useState, useMemo, memo } from 'react';
 import { getLongTermWeatherFilteredLinearChartData } from '../../../utils/charts/chartData';
 import { getLongTermWeatherLinearChartOptions } from '../../../utils/charts/chartOptions';
-import { selectOptions } from '../../../utils/constants/selectOptions';
+import { selectOptions } from '../../../utils/constants';
 import { getDefaultDateRange, getRanges } from '../../../utils/helpers';
 import { startOfDay, addDays, subDays } from 'date-fns';
 import { useMediaQuery } from 'react-responsive';

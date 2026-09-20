@@ -3,21 +3,17 @@ import ErrorModal from '../components/ui/modals/ErrorModal/ErrorModal';
 import Loader from '../components/ui/Loader/Loader';
 import SearchEngine from '../components/ui/SearchEngine/SearchEngine';
 import { localInputStyles } from '../components/ui/SearchEngine/SearchEngine.styles';
-import useDataWithCitiesHandler from '../hooks/useDataWithCitiesHandler';
 import LongTermWeatherMain from '../components/longTermWeather/LongTermWeatherMain/LongTermWeatherMain';
-import { DATA_TYPE } from '../utils/constants/dataTypes';
+import { DATA_TYPE } from '../utils/constants';
+import { useDataWithCitiesHandler } from '../hooks';
 
 /**
  * @component
- * Functional component that handles the display and management of long-term weather data.
+ * Long-term weather page: seasonal forecast for a selected city.
  *
- * This component utilizes the `useDataWithCitiesHandler` hook to fetch and manage data related to long-term weather.
- * It includes a search engine component for selecting a city, and displays a loader while data is being fetched.
- * Once the data is fetched, it renders the `LongTermWeatherMain` component to visualize the long-term weather forecast.
- *
- * @returns {JSX.Element} The rendered components based on the state of the data and search engine.
+ * @returns {JSX.Element} The rendered long-term weather page.
  */
-export default function LongTermWeatherContainer() {
+export default function LongTermWeatherPage() {
   // State to store the selected city.
   const [selectedCity, setSelectedCity] = useState(null);
 
@@ -27,8 +23,10 @@ export default function LongTermWeatherContainer() {
     DATA_TYPE.longTermWeather
   );
 
-  // Extracting only the time and member01 data from the fetched data.
+  // Extracting the daily data.
   const daily = data.fetchedData?.daily;
+
+  // Extracting the seasonal data.
   const seasonalData = useMemo(() => {
     if (!daily) return;
 
