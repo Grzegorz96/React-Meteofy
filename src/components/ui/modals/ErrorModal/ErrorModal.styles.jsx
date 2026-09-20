@@ -1,5 +1,26 @@
-import styled from 'styled-components';
-import { animated } from '@react-spring/web';
+import styled, { css, keyframes } from 'styled-components';
+
+const slideInFromTop = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(-50%, -200%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+`;
+
+const slideOutToTop = keyframes`
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -200%);
+  }
+`;
 
 /**
  * @component
@@ -13,14 +34,13 @@ export const Overlay = styled.div`
   height: 100%;
   background-color: ${({ theme }) => theme.overlay};
   z-index: 9999;
-  overflow: hidden;
 `;
 
 /**
  * @component
  * Modal component styled with animation.
  */
-export const Modal = styled(animated.div)`
+export const Modal = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -39,6 +59,14 @@ export const Modal = styled(animated.div)`
   border-radius: 5px;
   max-width: 550px;
   width: 90%;
+  animation: ${({ $isOpen }) =>
+    $isOpen
+      ? css`
+          ${slideInFromTop} 0.7s ease-out forwards
+        `
+      : css`
+          ${slideOutToTop} 0.7s ease-out forwards
+        `};
 
   svg {
     font-size: 90px;
