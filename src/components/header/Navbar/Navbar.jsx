@@ -17,15 +17,12 @@ import { ROUTES } from '../../../utils/constants';
  *
  * @param {Object} props - The component props.
  * @param {boolean} props.isMobile - Indicates if the device is mobile.
- * @param {function} props.setIsOpen - Callback function to set the open state of the side bar.
+ * @param {function} [props.onClose] - Closes the mobile side bar after a nav link is clicked.
  * @returns {JSX.Element} The rendered navigation bar component.
  */
-export default function Navbar({ isMobile, setIsOpen }) {
+export default function Navbar({ isMobile, onClose }) {
   return (
-    <Navigate
-      $isMobile={isMobile}
-      onClick={isMobile ? () => setIsOpen(false) : null}
-    >
+    <Navigate $isMobile={isMobile} onClick={isMobile ? onClose : undefined}>
       <NavLink to={ROUTES.poland} style={navLinkStyles}>
         <GiPoland />
         Poland
