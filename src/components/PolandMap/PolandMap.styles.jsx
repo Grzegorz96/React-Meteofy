@@ -1,5 +1,22 @@
-import styled from 'styled-components';
-import { animated } from '@react-spring/web';
+import styled, { keyframes } from 'styled-components';
+
+const popIn = keyframes`
+  0% {
+    transform: scale(0.7);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  33.333% {
+    transform: scale(1.05);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  66.666% {
+    transform: scale(0.95);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
 
 /**
  * @component
@@ -7,10 +24,13 @@ import { animated } from '@react-spring/web';
  *
  * @prop {Object} theme - The theme object containing color configurations.
  */
-export const PolandMapSVG = styled(animated.svg)`
+export const PolandMapSVG = styled.svg`
   max-height: 100%;
   max-width: 100%;
   margin: auto;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ${popIn} 900ms linear forwards;
 
   path {
     stroke: ${({ theme }) => theme.textSecondary};
@@ -94,7 +114,7 @@ export const Text = styled.span`
  * @prop {string} $icon - The icon name.
  */
 export const WeatherIcon = styled.img.attrs((props) => ({
-  src: `/assets/openWeatherIcons/${props.$icon ?? 'unknown'}.png`,
+  src: `/assets/openMeteoIcons/${props.$icon ?? 'unknown'}.png`,
 }))`
   width: 28px;
 `;

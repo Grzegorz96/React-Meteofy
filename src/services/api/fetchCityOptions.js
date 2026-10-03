@@ -11,17 +11,17 @@ import { requestCityDelay } from '../../utils/helpers';
  */
 const geoApiOptions = (inputValue, page) => ({
   method: 'GET',
-  url: API_DATA.urls.cities,
+  url: API_DATA.url,
   headers: {
     'X-RapidAPI-Key': import.meta.env.VITE_GEO_DB_API_KEY,
-    'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com',
+    'X-RapidAPI-Host': API_DATA.host,
   },
   params: {
     namePrefix: inputValue,
-    types: 'CITY',
-    offset: `${10 * (page - 1)}`,
-    limit: '10',
-    sort: '-population',
+    types: API_DATA.types,
+    offset: API_DATA.limit * (page - 1),
+    limit: API_DATA.limit,
+    sort: API_DATA.sort,
   },
 });
 
@@ -29,12 +29,12 @@ const geoApiOptions = (inputValue, page) => ({
  * Loads options for a select input asynchronously.
  *
  * @param {string} inputValue - The input value entered by the user.
- * @param {function} loadOptions - The function to load options.
+ * @param {function} _loadOptions - The function to load options.
  * @param {object} options - Additional options.
  * @param {number} options.page - The current page number.
  * @returns {Promise<object>} A promise that resolves to an object containing the loaded options.
  */
-export const loadOptions = async (inputValue, loadOptions, { page }) => {
+export const fetchCityOptions = async (inputValue, _loadOptions, { page }) => {
   const currentTime = Date.now();
   if (
     // Check if the time elapsed since the last request is greater than the minimum request interval.
@@ -60,7 +60,7 @@ export const loadOptions = async (inputValue, loadOptions, { page }) => {
         }),
         hasMore:
           response.data.metadata.totalCount -
-            (response.data.metadata.currentOffset + 10) >
+            (response.data.metadata.currentOffset + API_DATA.limit) >
           0,
         additional: {
           page: page + 1,

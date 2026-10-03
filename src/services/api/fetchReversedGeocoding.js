@@ -10,12 +10,12 @@ import { API_DATA } from '../../utils/constants/api/geoApifyApiData';
  */
 const reversedGeocodingOptions = (latitude, longitude) => ({
   method: 'GET',
-  url: API_DATA.urls.reversedGeocoding,
+  url: API_DATA.url,
   params: {
     lat: latitude,
     lon: longitude,
     apiKey: import.meta.env.VITE_GEO_APIFY_API_KEY,
-    format: 'json',
+    format: API_DATA.format,
   },
 });
 

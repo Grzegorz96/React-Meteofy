@@ -11,8 +11,8 @@ import EarthDayMap from '../../assets/textures/8k-earth-day-map.jpg';
 import EarthCloudsMap from '../../assets/textures/8k-earth-clouds.jpg';
 import NormalMap from '../../assets/textures/8k-earth-normal-map.jpg';
 import SpecularMap from '../../assets/textures/8k-earth-specular-map.jpg';
-import { worldCapitalsOffset } from '../../utils/citiesConfig/worldCapitalsOffset';
-import { convertLatLonToCartesian } from '../../utils/formatting';
+import { worldCapitalsData } from '../../utils/citiesConfig/worldCapitalsData';
+import { convertLatLonToCartesian } from '../../utils/formatters';
 
 /**
  * @component
@@ -52,19 +52,18 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
     };
   }, [camera.layers, setIsLoading]);
 
-  // Calculate offset for city positions and convert coords to cartesian on the globe.
-  const setOffset = (capital) => {
-    const cityToOffset = worldCapitalsOffset.find(
-      (city) => city.id === capital?.id
+  // Shift overlapping capitals, then convert coordinates to a point on the globe.
+  const toBoardPosition = (capital) => {
+    const cityData = worldCapitalsData.find(
+      (city) =>
+        city.name === capital?.name &&
+        city.coord.lat === capital?.coord?.lat &&
+        city.coord.lon === capital?.coord?.lon
     );
-    return convertLatLonToCartesian(
-      cityToOffset?.lat
-        ? capital?.coord?.lat + cityToOffset.lat
-        : capital?.coord?.lat,
 
-      cityToOffset?.lon
-        ? capital?.coord?.lon + cityToOffset.lon
-        : capital?.coord?.lon,
+    return convertLatLonToCartesian(
+      (capital?.coord?.lat ?? 0) + (cityData?.boardOffset?.lat ?? 0),
+      (capital?.coord?.lon ?? 0) + (cityData?.boardOffset?.lon ?? 0),
       3.01
     );
   };
@@ -104,10 +103,10 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
           metalness={0.3}
           roughness={0.7}
         />
-        {fetchedCitiesData?.map((capital, index) => (
+        {fetchedCitiesData?.map((capital) => (
           <WeatherBoard
-            key={capital?.id ?? index}
-            position={setOffset(capital)}
+            key={`${capital?.name}-${capital?.coord?.lat}-${capital?.coord?.lon}`}
+            position={toBoardPosition(capital)}
             capital={capital}
             handleEvent={handleEvent}
           />

@@ -1,34 +1,86 @@
 import axios from 'axios';
-import { API_DATA } from '../../utils/constants/api/openWeatherApiData';
+import { API_DATA } from '../../utils/constants/api/openMeteoApiData';
+import { toWeatherIcon, toWeatherDescription } from '../../utils/formatters';
 
 /**
- * Generates options object for making a request to the OpenWeather API.
+ * Maps one Open-Meteo `current` block onto the city shown on the maps.
  *
- * @param {Array<Object>} cityObjects - An array of city objects.
- * @returns {Object} Options object for making the API request.
+ * @param {{ name: string, coord: { lat: number, lon: number } }} city
+ * @param {Object} current
+ * @returns {Object}
  */
-const openWeatherOptions = (cityObjects) => ({
-  method: 'GET',
-  url: API_DATA.url,
-  params: {
-    appid: import.meta.env.VITE_OPEN_WEATHER_API_KEY,
-    units: API_DATA.units.metric,
-    id: cityObjects.map((city) => city.id).join(','),
-    contentType: 'json',
+const toCityWeather = (city, current = {}) => ({
+  name: city.name,
+  coord: city.coord,
+  main: {
+    temp: current.temperature_2m,
+    feelsLike: current.apparent_temperature,
+    humidity: current.relative_humidity_2m,
+    pressure: current.pressure_msl,
+    windSpeed: current.wind_speed_10m,
+    cloudCover: current.cloud_cover,
+    description: toWeatherDescription(current.weather_code),
+    icon: toWeatherIcon(current.weather_code, current.is_day),
   },
 });
 
 /**
- * Fetches weather data for multiple cities.
+ * Checks that a map city has a name and finite coordinates.
  *
- * @param {Array} cityObjects - An array of city objects.
- * @returns {Promise} A promise that resolves to the weather data.
- * @throws {Error} If there is an error getting the weather data.
+ * @param {Object} city
+ * @returns {{ name: string, coord: { lat: number, lon: number } }}
+ */
+const toLocation = (city) => {
+  if (
+    !city.name ||
+    !Number.isFinite(city.coord?.lat) ||
+    !Number.isFinite(city.coord?.lon)
+  ) {
+    throw new Error(`Missing coordinates for ${city.name || 'a map city'}`);
+  }
+
+  return {
+    name: city.name,
+    coord: city.coord,
+  };
+};
+
+/**
+ * Creates options for the Open-Meteo forecast request.
+ * One request covers every location.
+ *
+ * @param {Array<{ coord: { lat: number, lon: number } }>} locations
+ * @returns {Object} The options object for the GET request.
+ */
+const openMeteoOptions = (locations) => ({
+  method: 'GET',
+  url: API_DATA.forecast.url,
+  params: {
+    latitude: locations.map((city) => city.coord.lat).join(','),
+    longitude: locations.map((city) => city.coord.lon).join(','),
+    current: API_DATA.forecast.current,
+    forecast_days: API_DATA.forecast.forecastDays,
+  },
+});
+
+/**
+ * Fetches current weather for the given cities from Open-Meteo.
+ * One request covers every city in `cityObjects`.
+ *
+ * @param {Array<Object>} cityObjects
+ * @returns {Promise<Object[]>}
  */
 export const fetchCitiesWeather = async (cityObjects) => {
+  const locations = cityObjects.map(toLocation);
+
   try {
-    const response = await axios.request(openWeatherOptions(cityObjects));
-    return response.data;
+    const response = await axios.request(openMeteoOptions(locations));
+
+    const rows = Array.isArray(response.data) ? response.data : [response.data];
+
+    return rows.map((row, index) =>
+      toCityWeather(locations[index], row.current)
+    );
   } catch (error) {
     throw new Error(`Error getting weather data: ${error.message}`);
   }

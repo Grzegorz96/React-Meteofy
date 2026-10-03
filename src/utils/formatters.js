@@ -1,4 +1,8 @@
 import * as THREE from 'three';
+import {
+  WEATHER_CODE_DESCRIPTION,
+  WEATHER_CODE_ICON,
+} from './constants/weatherCodes';
 
 /**
  * Converts latitude and longitude coordinates to Cartesian coordinates.
@@ -15,4 +19,29 @@ export function convertLatLonToCartesian(lat, lon, radius) {
   var y = radius * Math.cos(phi);
 
   return new THREE.Vector3(x, y, z);
+}
+
+/**
+ * @param {number} weatherCode
+ * @param {number} isDay 1 = day, 0 = night
+ * @returns {string}
+ */
+export function toWeatherIcon(weatherCode, isDay) {
+  const group = WEATHER_CODE_ICON[weatherCode];
+
+  if (group == null) {
+    return 'unknown';
+  }
+
+  const suffix = isDay === 0 ? 'n' : 'd';
+
+  return `${group}${suffix}`;
+}
+
+/**
+ * @param {number} weatherCode
+ * @returns {string}
+ */
+export function toWeatherDescription(weatherCode) {
+  return WEATHER_CODE_DESCRIPTION[weatherCode] ?? 'unknown';
 }

@@ -297,7 +297,7 @@ Meteofy is an advanced weather application crafted with React technology, offeri
 - UI Components: RSuite, React Icons, React Spinners, SweetAlert2, SweetAlert2 React Content, FontAwesome (React FontAwesome), React Accessible Accordion, React Burger Menu
 - Styling: Styled Components, CSS
 - SVG Handling: Vite Plugin SVGR
-- 3D and Animations: Three.js, @react-three/fiber, @react-three/drei, @react-spring/web
+- 3D and Animations: Three.js, @react-three/fiber, @react-three/drei
 - State Management: Redux Toolkit, React Redux
 - Charts and Graphs: Chart.js, React Chartjs 2, Chartjs Adapter Date FNS, Chartjs Plugin Datalabels
 - Maps and Geolocation: Leaflet, React Leaflet, React Leaflet Cluster

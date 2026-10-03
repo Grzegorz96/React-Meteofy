@@ -25,17 +25,6 @@ export function getAqiUSData(aqiValue) {
 }
 
 /**
- * Default coordinates for a city.
- * @type {Object}
- * @property {number} latitude - The latitude of the city.
- * @property {number} longitude - The longitude of the city.
- */
-export const DEFAULT_CITY_COORDS = {
-  latitude: 52.22977,
-  longitude: 21.01178,
-};
-
-/**
  * Returns the default date range.
  * @returns {Array<Date>} An array containing the start and end dates of the default range.
  */

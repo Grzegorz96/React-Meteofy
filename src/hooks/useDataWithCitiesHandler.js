@@ -5,7 +5,7 @@ import {
   fetchReversedGecoding,
   fetchLongTermWeather,
 } from '../services/api';
-import { DEFAULT_CITY_COORDS } from '../utils/helpers';
+import { DEFAULT_CITY_COORDS } from '../utils/constants/defaultCityCoords';
 import { DATA_TYPE } from '../utils/constants';
 
 /**
@@ -14,7 +14,7 @@ import { DATA_TYPE } from '../utils/constants';
  * If the user's location cannot be retrieved, it returns default city coordinates.
  *
  * @param {Object} city - The city object containing latitude and longitude values.
- * @returns {Object} The coordinates object containing latitude and longitude values.
+ * @returns {Promise<{ latitude: number, longitude: number }>} The coordinates object containing latitude and longitude values.
  */
 const getCoordinates = async (city) => {
   if (city) {

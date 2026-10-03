@@ -8,17 +8,16 @@ import { API_DATA } from '../../utils/constants/api/visualCrossingWeatherApiData
  * @param {number} longitude - The longitude of the location.
  * @returns {Object} The options object for making the API request.
  */
-const viasualCrossingWeatherOptions = (latitude, longitude) => ({
+const visualCrossingWeatherOptions = (latitude, longitude) => ({
   method: 'GET',
   url: `${API_DATA.url}/${latitude},${longitude}`,
   params: {
     key: import.meta.env.VITE_VISUAL_CROSSING_API_KEY,
     unitGroup: API_DATA.units.metric,
-    include: 'days,hours,current',
-    contentType: 'json',
-    iconSet: 'icons2',
-    elements:
-      'datetime,temp,tempmax,tempmin,precipprob,windspeed,feelslike,conditions,icon,sunrise,sunset,humidity,pressure,visibility,dew,cloudcover',
+    include: API_DATA.currentAndForecast.include,
+    contentType: API_DATA.currentAndForecast.contentType,
+    iconSet: API_DATA.currentAndForecast.iconSet,
+    elements: API_DATA.currentAndForecast.elements,
   },
 });
 
@@ -33,7 +32,7 @@ const viasualCrossingWeatherOptions = (latitude, longitude) => ({
 export const fetchWeather = async (latitude, longitude) => {
   try {
     const response = await axios.request(
-      viasualCrossingWeatherOptions(latitude, longitude)
+      visualCrossingWeatherOptions(latitude, longitude)
     );
     return response.data;
   } catch (error) {

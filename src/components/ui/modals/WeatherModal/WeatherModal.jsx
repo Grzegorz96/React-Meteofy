@@ -24,13 +24,13 @@ export const openWeatherModal = (city, theme) => {
     width: '400px',
     background: theme.secondary,
     heightAuto: false,
-    iconHtml: <WeatherIcon $icon={city?.weather?.[0]?.icon} />,
+    iconHtml: <WeatherIcon $icon={city?.main?.icon} />,
     title: (
       <>
         <Title $theme={theme}>
           {`${city?.name ?? 'Error'} ${Math.round(city?.main?.temp ?? 0)}°C`}
         </Title>
-        <Paragraph $theme={theme}>{city?.weather?.[0]?.description}</Paragraph>
+        <Paragraph $theme={theme}>{city?.main?.description}</Paragraph>
       </>
     ),
     html: (
@@ -38,7 +38,7 @@ export const openWeatherModal = (city, theme) => {
         <WeatherInfo $theme={theme}>
           feels like:
           <WeatherInfoValue $theme={theme}>
-            {`${Math.round(city?.main?.feels_like ?? 0)}°C`}
+            {`${Math.round(city?.main?.feelsLike ?? 0)}°C`}
           </WeatherInfoValue>
         </WeatherInfo>
         <WeatherInfo $theme={theme}>
@@ -50,21 +50,19 @@ export const openWeatherModal = (city, theme) => {
         <WeatherInfo $theme={theme}>
           wind:
           <WeatherInfoValue $theme={theme}>
-            {`${Math.round((city?.wind?.speed ?? 0) * 3.6)}
-                                 km/h`}
+            {`${Math.round(city?.main?.windSpeed ?? 0)} km/h`}
           </WeatherInfoValue>
         </WeatherInfo>
         <WeatherInfo $theme={theme}>
           pressure:
           <WeatherInfoValue $theme={theme}>
-            {`${Math.round(city?.main?.pressure ?? 0)}
-                                 hPa`}
+            {`${Math.round(city?.main?.pressure ?? 0)} hPa`}
           </WeatherInfoValue>
         </WeatherInfo>
         <WeatherInfo $theme={theme}>
           clouds:
           <WeatherInfoValue $theme={theme}>
-            {`${Math.round(city?.clouds?.all ?? 0)}%`}
+            {`${Math.round(city?.main?.cloudCover ?? 0)}%`}
           </WeatherInfoValue>
         </WeatherInfo>
       </>

@@ -1,5 +1,5 @@
 import { AsyncPaginate } from 'react-select-async-paginate';
-import { loadOptions } from '../../../services/api';
+import { fetchCityOptions } from '../../../services/api';
 import { useTheme } from 'styled-components';
 
 /**
@@ -30,7 +30,7 @@ export default function SearchEngine({
       value={city}
       onChange={handleOnChange}
       styles={styles(theme)}
-      loadOptions={loadOptions}
+      loadOptions={fetchCityOptions}
       additional={{ page: 1 }}
     />
   );

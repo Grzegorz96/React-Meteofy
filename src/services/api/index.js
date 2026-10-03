@@ -1,4 +1,4 @@
-export { loadOptions } from './fetchCities';
+export { fetchCityOptions } from './fetchCityOptions';
 export { fetchAirPollution } from './fetchAirPollution';
 export { fetchLongTermWeather } from './fetchLongTermWeather';
 export { fetchReversedGecoding } from './fetchReversedGeocoding';

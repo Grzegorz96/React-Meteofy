@@ -18,8 +18,8 @@ export default function PolandPage() {
     <>
       {data.error && <ErrorModal data={data} setData={setData} />}
       {data.loading && <Loader />}
-      {data.fetchedData?.list && (
-        <PolandMap fetchedCitiesData={data.fetchedData.list} />
+      {data.fetchedData && (
+        <PolandMap fetchedCitiesData={data.fetchedData} />
       )}
     </>
   );

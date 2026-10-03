@@ -12,8 +12,11 @@
   max-width: 200px;
   width: 100%;
   margin: 15px auto 5px !important;
+  padding: 0;
   border: 2px solid #818181;
   border-radius: 6px;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .modal-popup {

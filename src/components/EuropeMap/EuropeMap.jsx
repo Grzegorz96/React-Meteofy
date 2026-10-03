@@ -104,9 +104,9 @@ export default function EuropeMap({ fetchedCitiesData }) {
                 }
               },
             }}
-            key={city?.id ?? index}
+            key={city?.name ?? index}
             position={[city?.coord?.lat ?? 0, city?.coord?.lon ?? 0]}
-            icon={customMarker(city?.weather?.[0]?.icon, city?.main?.temp ?? 0)}
+            icon={customMarker(city?.main?.icon, city?.main?.temp ?? 0)}
           />
         ))}
       </MarkerClusterGroup>

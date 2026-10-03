@@ -14,9 +14,9 @@ const viasualCrossingWeatherOptions = (latitude, longitude) => ({
   params: {
     key: import.meta.env.VITE_VISUAL_CROSSING_API_KEY,
     unitGroup: API_DATA.units.metric,
-    include: 'days,hours',
-    contentType: 'json',
-    elements: 'datetime,pm1,pm2p5,pm10,o3,no2,so2,co,aqius,aqieur',
+    include: API_DATA.airPollution.include,
+    contentType: API_DATA.airPollution.contentType,
+    elements: API_DATA.airPollution.elements,
   },
 });
 

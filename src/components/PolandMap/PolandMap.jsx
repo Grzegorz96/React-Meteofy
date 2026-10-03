@@ -7,7 +7,6 @@ import {
   DataWrapper,
   Text,
 } from './PolandMap.styles';
-import { useSpring } from '@react-spring/web';
 import {
   openWeatherModal,
   closeWeatherModal,
@@ -34,34 +33,16 @@ export default function PolandMap({ fetchedCitiesData }) {
     };
   }, [theme]);
 
-  // Animation for the map.
-  const extensionAnimation = useSpring({
-    from: {
-      transform: 'scale(0.7)',
-    },
-    to: async (next) => {
-      await next({ transform: 'scale(1.05)' });
-      await next({ transform: 'scale(0.95)' });
-      await next({ transform: 'scale(1)' });
-    },
-    config: {
-      duration: 300,
-      easing: (t) => t * (2 - t),
-    },
-  });
-
   return (
     <PolandMapSVG
-      style={extensionAnimation}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 440 420"
       preserveAspectRatio="xMidYMid meet"
     >
       <g>
         {fetchedCitiesData?.map((currentCity) => {
-          // Find city data from polishCitiesData by matching the id.
           const cityData = polishCitiesData.find(
-            (polishCity) => polishCity.id === currentCity?.id
+            (polishCity) => polishCity.name === currentCity?.name
           );
 
           // Render path element for each city if city data is found.
@@ -69,8 +50,7 @@ export default function PolandMap({ fetchedCitiesData }) {
             return (
               <path
                 tabIndex={0}
-                key={cityData.id}
-                id={cityData.id}
+                key={cityData.name}
                 title={cityData.title}
                 d={cityData.d}
                 onClick={() => openWeatherModal(currentCity, theme)}
@@ -87,16 +67,15 @@ export default function PolandMap({ fetchedCitiesData }) {
       </g>
       <g>
         {fetchedCitiesData?.map((currentCity) => {
-          // Find city data from polishCitiesData by matching the id.
           const cityData = polishCitiesData.find(
-            (polishCity) => polishCity.id === currentCity?.id
+            (polishCity) => polishCity.name === currentCity?.name
           );
 
           // Render weather information for each city if city data is found.
           if (cityData) {
             return (
               <foreignObject
-                key={cityData.id}
+                key={cityData.name}
                 style={{
                   pointerEvents: 'none',
                 }}
@@ -108,7 +87,7 @@ export default function PolandMap({ fetchedCitiesData }) {
                 <MapItem>
                   <DataWrapper>
                     <Temp>{Math.round(currentCity?.main?.temp ?? 0)}°</Temp>
-                    <WeatherIcon $icon={currentCity?.weather?.[0]?.icon} />
+                    <WeatherIcon $icon={currentCity?.main?.icon} />
                   </DataWrapper>
                   <Text>{currentCity?.name ?? 'Error'}</Text>
                 </MapItem>

@@ -1,11 +1,11 @@
 /**
- * API data for GeoDB.
- * @namespace API_DATA
- * @property {object} urls - URLs for different API endpoints.
- * @property {string} urls.cities - URL for the cities endpoint.
+ * GeoDB Cities endpoint used by the city search.
+ * @see https://rapidapi.com/wirefreethought/api/geodb-cities
  */
 export const API_DATA = {
-  urls: {
-    cities: 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities',
-  },
+  url: 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities',
+  host: 'wft-geo-db.p.rapidapi.com',
+  types: 'CITY',
+  limit: 10,
+  sort: '-population',
 };

@@ -18,8 +18,8 @@ export default function EuropePage() {
     <>
       {data.error && <ErrorModal data={data} setData={setData} />}
       {data.loading && <Loader />}
-      {data.fetchedData?.list && (
-        <EuropeMap fetchedCitiesData={data.fetchedData.list} />
+      {data.fetchedData && (
+        <EuropeMap fetchedCitiesData={data.fetchedData} />
       )}
     </>
   );

@@ -10,14 +10,13 @@ import { API_DATA } from '../../utils/constants/api/openMeteoApiData';
  */
 const openMeteoOptions = (latitude, longitude) => ({
   method: 'GET',
-  url: API_DATA.url,
+  url: API_DATA.seasonal.url,
   params: {
-    latitude: latitude,
-    longitude: longitude,
-    past_days: '396',
-    forecast_days: '217',
-    daily:
-      'temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max',
+    latitude,
+    longitude,
+    past_days: API_DATA.seasonal.pastDays,
+    forecast_days: API_DATA.seasonal.forecastDays,
+    daily: API_DATA.seasonal.daily,
   },
 });
 
