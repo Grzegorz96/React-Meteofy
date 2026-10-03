@@ -16,7 +16,7 @@ const cityDataSlice = createSlice({
   name: 'cityData',
   initialState,
   reducers: {
-    setCityData: (state, { payload }) => payload,
+    setCityData: (_state, { payload }) => payload,
     resetCityData: () => initialState,
   },
 });
