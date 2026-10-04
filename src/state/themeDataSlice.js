@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const THEME_DATA_KEY = 'meteofy-is-dark-theme';
+export const THEME_DATA_KEY = 'meteofy-is-dark-theme';
 
 /**
  * Reads the saved theme. Only the strings "true" and "false" are accepted.
@@ -37,7 +37,6 @@ const themeDataSlice = createSlice({
   initialState,
   reducers: {
     toggleThemeMode: (state) => {
-      localStorage.setItem(THEME_DATA_KEY, !state.isDarkMode);
       state.isDarkMode = !state.isDarkMode;
     },
   },
