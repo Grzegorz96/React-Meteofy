@@ -15,6 +15,7 @@ import { useState, useMemo, memo } from 'react';
 import { getLongTermWeatherFilteredLinearChartData } from '../../../utils/charts/chartData';
 import { getLongTermWeatherLinearChartOptions } from '../../../utils/charts/chartOptions';
 import { SELECT_OPTIONS } from '../../../utils/constants';
+import { API_DATA } from '../../../utils/constants/api/openMeteoApiData';
 import { getDefaultDateRange, getRanges } from '../../../utils/helpers';
 import { startOfDay, addDays, subDays } from 'date-fns';
 import { useMediaQuery } from 'react-responsive';
@@ -95,10 +96,14 @@ function LongTermWeatherMain({ seasonalData, city }) {
           value={selectedDateRange}
           onChange={changeDateRange}
           shouldDisableDate={(date) => {
-            return (
-              date < startOfDay(subDays(new Date(), 92)) ||
-              date > startOfDay(addDays(new Date(), 273))
+            const firstDay = startOfDay(
+              subDays(new Date(), API_DATA.seasonal.pastDays)
             );
+            const lastDay = startOfDay(
+              addDays(new Date(), API_DATA.seasonal.forecastDays - 1)
+            );
+
+            return date < firstDay || date > lastDay;
           }}
         />
       </InputWrapper>
