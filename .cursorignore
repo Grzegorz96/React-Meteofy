@@ -1,0 +1,14 @@
+# Dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+.vite/
+
+# Secrets and logs
+.env
+.env.*
+*.log
+
+# Lockfile and coverage
+package-lock.json
+coverage/

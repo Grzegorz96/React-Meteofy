@@ -1,23 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const THEME_DATA_KEY = 'meteofy-is-dark-theme';
+
 /**
- * Retrieves the initial theme mode based on the user's preference or the stored value in localStorage.
- * If no preference is found in localStorage, it checks the user's system preference for dark mode.
+ * Reads the saved theme. Only the strings "true" and "false" are accepted.
+ * A missing or broken value falls back to the system preference and is saved.
  * @returns {boolean} The initial theme mode (true for dark mode, false for light mode).
  */
 const getInitialThemeMode = () => {
-  const storedIsDarkMode = localStorage.getItem('isDarkMode');
+  const storedIsDarkMode = localStorage.getItem(THEME_DATA_KEY);
 
-  if (storedIsDarkMode === null) {
-    const preference = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
+  if (storedIsDarkMode === 'true') return true;
+  if (storedIsDarkMode === 'false') return false;
 
-    localStorage.setItem('isDarkMode', preference);
-    return preference;
-  }
+  const preference = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  return JSON.parse(storedIsDarkMode);
+  localStorage.setItem(THEME_DATA_KEY, preference);
+  return preference;
 };
 
 const initialState = {
@@ -38,7 +37,7 @@ const themeDataSlice = createSlice({
   initialState,
   reducers: {
     toggleThemeMode: (state) => {
-      localStorage.setItem('isDarkMode', !state.isDarkMode);
+      localStorage.setItem(THEME_DATA_KEY, !state.isDarkMode);
       state.isDarkMode = !state.isDarkMode;
     },
   },
