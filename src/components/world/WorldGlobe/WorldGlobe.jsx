@@ -38,11 +38,10 @@ export default function WorldGlobe({ fetchedCitiesData }) {
               maxDistance={8}
               minDistance={3.5}
               enableZoom={true}
-              enablePan={true}
+              enablePan={false}
               enableRotate={true}
               zoomSpeed={0.5}
               rotateSpeed={0.2}
-              panSpeed={0.3}
               target={[0, 0, 0]}
             />
             <Earth
