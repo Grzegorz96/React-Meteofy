@@ -14,6 +14,5 @@ export const API_DATA = {
     url: 'https://api.open-meteo.com/v1/forecast',
     current:
       'temperature_2m,relative_humidity_2m,apparent_temperature,is_day,weather_code,cloud_cover,pressure_msl,wind_speed_10m',
-    forecastDays: 1,
   },
 };

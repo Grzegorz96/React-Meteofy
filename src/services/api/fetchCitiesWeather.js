@@ -59,7 +59,6 @@ const openMeteoOptions = (locations) => ({
     latitude: locations.map((city) => city.coord.lat).join(','),
     longitude: locations.map((city) => city.coord.lon).join(','),
     current: API_DATA.forecast.current,
-    forecast_days: API_DATA.forecast.forecastDays,
   },
 });
 
