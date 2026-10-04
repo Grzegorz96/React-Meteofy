@@ -10,7 +10,7 @@ import { API_DATA } from '../../utils/constants/api/visualCrossingWeatherApiData
  */
 const viasualCrossingWeatherOptions = (latitude, longitude) => ({
   method: 'GET',
-  url: `${API_DATA.url}/${latitude},${longitude}`,
+  url: `${API_DATA.url}/${latitude},${longitude}/${API_DATA.airPollution.period}`,
   params: {
     key: import.meta.env.VITE_VISUAL_CROSSING_API_KEY,
     unitGroup: API_DATA.units.metric,

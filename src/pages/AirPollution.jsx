@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import Loader from '../components/ui/Loader/Loader';
 import ErrorModal from '../components/ui/modals/ErrorModal/ErrorModal';
 import SearchEngine from '../components/ui/SearchEngine/SearchEngine';
@@ -24,12 +24,6 @@ export default function AirPollutionPage() {
     DATA_TYPE.airPollution
   );
 
-  // Extracting the first four days of forecast data.
-  const forecastData = useMemo(
-    () => data.fetchedData?.days.slice(0, 4),
-    [data.fetchedData?.days]
-  );
-
   return (
     <>
       <SearchEngine
@@ -42,14 +36,16 @@ export default function AirPollutionPage() {
       />
       {data.error && <ErrorModal data={data} setData={setData} />}
       {data.loading && <Loader />}
-      {data.fetchedData?.days && data.city && (
+      {data.fetchedData?.currentConditions && data.city && (
         <CurrentAirPollution
-          currentAirPollutionData={data.fetchedData.days[0]}
+          currentAirPollutionData={data.fetchedData.currentConditions}
           city={data.city}
         />
       )}
       {data.fetchedData?.days && (
-        <ForecastAirPollution forecastAirPollutionData={forecastData} />
+        <ForecastAirPollution
+          forecastAirPollutionData={data.fetchedData.days}
+        />
       )}
     </>
   );

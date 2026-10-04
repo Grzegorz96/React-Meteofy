@@ -31,7 +31,7 @@ export function getAirPollutionBarChartOptions(city, theme) {
       // Configuration of the chart title.
       title: {
         display: true,
-        text: `Air Pollution in ${city}`,
+        text: city,
         font: {
           size: 20,
         },

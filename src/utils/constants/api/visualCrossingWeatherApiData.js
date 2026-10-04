@@ -10,6 +10,7 @@
  * @property {string} airPollution.include - Sections included in the response.
  * @property {string} airPollution.contentType - Response format.
  * @property {string} airPollution.elements - Fields requested from the API.
+ * @property {string} airPollution.period - Dynamic date period in the request path.
  * @property {Object} currentAndForecast - Query params for the current and forecast request.
  * @property {string} currentAndForecast.include - Sections included in the response.
  * @property {string} currentAndForecast.contentType - Response format.
@@ -29,9 +30,11 @@ export const API_DATA = {
     standard: 'standard',
   },
   airPollution: {
-    include: 'days,hours',
+    include: 'days,hours,current',
     contentType: 'json',
     elements: 'datetime,pm1,pm2p5,pm10,o3,no2,so2,co,aqius,aqieur',
+    // Today plus the next 4 days: the window with complete hourly AQI.
+    period: 'next4days',
   },
   currentAndForecast: {
     include: 'days,hours,current',

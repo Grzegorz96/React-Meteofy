@@ -33,7 +33,9 @@ function CurrentWeather({ currentWeather, city }) {
     <CurrentWeatherWrapper>
       <MainWrapper $gap="5px" $flexDirection="column" $width="65%">
         <Text $fontWeight="600" $fontSize="10px" $isGrey>
-          {`Weather conditions at ${currentWeather?.datetime?.substring(0, 5)} local time`}
+          {currentWeather?.datetime
+            ? `Weather conditions at ${currentWeather.datetime.substring(0, 5)} local time`
+            : 'Error with getting data'}
         </Text>
         <Text
           $fontWeight="600"

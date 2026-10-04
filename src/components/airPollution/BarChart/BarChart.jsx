@@ -3,7 +3,6 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { AirPollutionBarChartWrapper, Datetime } from './BarChart.styles';
 import { getAirPollutionBarChartData } from '../../../utils/charts/chartData';
 import { getAirPollutionBarChartOptions } from '../../../utils/charts/chartOptions';
-import { format } from 'date-fns';
 import { useTheme } from 'styled-components';
 
 /**
@@ -26,7 +25,7 @@ export default function AirPollutionBarChart({
     <AirPollutionBarChartWrapper>
       <Datetime>
         {currentAirPollutionData?.datetime
-          ? format(currentAirPollutionData.datetime, 'MMMM d, yyyy')
+          ? `Air quality at ${currentAirPollutionData.datetime.substring(0, 5)} local time`
           : 'Error with getting data'}
       </Datetime>
       <Bar
