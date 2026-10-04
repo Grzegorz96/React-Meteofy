@@ -7,47 +7,47 @@ import {
   AirPollutionPage,
   LongTermWeatherPage,
 } from '../pages';
-import { ROUTES, PAGE_TITLES } from '../utils/constants';
+import { ROUTES, PAGE_TITLES, toLayoutPath } from '../utils/constants';
 
 /**
- * Array of routes for the application.
- * Each route object contains a path and an element component.
+ * Child routes rendered inside the layout at `/`.
+ * Home is the index route. The other paths are relative to that layout.
  *
- * @type {Array<{ path: string, element: JSX.Element }>}
+ * @type {Array<{ index?: boolean, path?: string, element: JSX.Element, handle: { title: string } }>}
  */
 export const appRoutes = [
   {
-    path: ROUTES.home,
+    index: true,
     element: <HomePage />,
     handle: { title: PAGE_TITLES.home },
   },
   {
-    path: ROUTES.poland,
+    path: toLayoutPath(ROUTES.poland),
     element: <PolandPage />,
     handle: { title: PAGE_TITLES.poland },
   },
   {
-    path: ROUTES.europe,
+    path: toLayoutPath(ROUTES.europe),
     element: <EuropePage />,
     handle: { title: PAGE_TITLES.europe },
   },
   {
-    path: ROUTES.world,
+    path: toLayoutPath(ROUTES.world),
     element: <WorldPage />,
     handle: { title: PAGE_TITLES.world },
   },
   {
-    path: ROUTES.longTermWeather,
+    path: toLayoutPath(ROUTES.longTermWeather),
     element: <LongTermWeatherPage />,
     handle: { title: PAGE_TITLES.longTermWeather },
   },
   {
-    path: ROUTES.airPollution,
+    path: toLayoutPath(ROUTES.airPollution),
     element: <AirPollutionPage />,
     handle: { title: PAGE_TITLES.airPollution },
   },
   {
-    path: ROUTES.notFound,
+    path: toLayoutPath(ROUTES.notFound),
     element: <NotFoundPage />,
     handle: { title: PAGE_TITLES.notFound },
   },

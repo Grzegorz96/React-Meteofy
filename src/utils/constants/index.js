@@ -1,5 +1,5 @@
 export { DATA_TYPE } from './dataTypes';
-export { ROUTES } from './routes';
+export { ROUTES, toLayoutPath } from './routes';
 export { PAGE_TITLES } from './pageTitles';
 export { POLLUTION_NAMES } from './pollutionNames';
 export { AQI_US_DATA } from './aqiUSData';

@@ -11,7 +11,8 @@
  */
 
 /**
- * Application route paths.
+ * Absolute URLs for links and for `location.pathname`.
+ * Home is `/` because that route is the layout index, not a path segment.
  * @type {Routes}
  */
 export const ROUTES = {
@@ -21,5 +22,14 @@ export const ROUTES = {
   world: '/world',
   longTermWeather: '/long-term-weather',
   airPollution: '/air-pollution',
-  notFound: '*',
+  notFound: '/*',
 };
+
+/**
+ * Child `path` under the layout route `/`.
+ * `/poland` becomes `poland`. `*` is unchanged.
+ *
+ * @param {string} route
+ * @returns {string}
+ */
+export const toLayoutPath = (route) => route.replace(/^\//, '');

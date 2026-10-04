@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { MainLayout } from '../layouts';
+import { ROUTES } from '../utils/constants';
 import { appRoutes } from './appRoutes';
 
 /**
@@ -10,7 +11,7 @@ import { appRoutes } from './appRoutes';
 export const router = createBrowserRouter(
   [
     {
-      path: '',
+      path: ROUTES.home,
       element: <MainLayout />,
       children: appRoutes,
     },
