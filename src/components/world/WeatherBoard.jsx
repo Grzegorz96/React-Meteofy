@@ -1,4 +1,4 @@
-import { Text, Decal, useTexture, Box } from '@react-three/drei';
+import { Text, Decal, useTexture, Box, useCursor } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useRef, useLayoutEffect, useState } from 'react';
 import { useTheme } from 'styled-components';
@@ -17,8 +17,10 @@ import { openWeatherModal } from '../ui/modals/WeatherModal/WeatherModal';
 export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
   const theme = useTheme();
   const { gl } = useThree();
-  // State to track if the weather board is hovered (tile color only).
+  // Hover drives both tile highlight and pointer cursor.
   const [isHovered, setIsHovered] = useState(false);
+
+  useCursor(isHovered, 'pointer', '', gl.domElement);
 
   // Load texture for weather icon.
   const texture = useTexture(
@@ -33,11 +35,6 @@ export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
     weatherBoardRef.current.lookAt(0, 0, 0);
   }, []);
 
-  // Pointer on the board; clear inline cursor so CSS grab/grabbing can take over.
-  function setBoardCursor(isActive) {
-    gl.domElement.style.cursor = isActive ? 'pointer' : '';
-  }
-
   // Open the weather modal only for the frontmost board.
   function handleBoardClick(evt) {
     evt.stopPropagation();
@@ -46,34 +43,23 @@ export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
   }
 
   // Highlight only the frontmost board, and not while the globe is being dragged.
-  // Touch has no persistent hover — skip so tiles do not stick highlighted.
   function handleBoardHover(evt) {
     evt.stopPropagation();
-    if (evt.pointerType === 'touch') return;
     if (gl.domElement.matches(':active')) return;
     if (!isFrontmostBoard(weatherBoardRef)) return;
-    setBoardCursor(true);
     setIsHovered(true);
   }
 
-  // After a mouse drag ends on the board, pointerover does not fire again — recover hover here.
-  // On touch, clear hover: pointerout often does not fire after a tap.
+  // After a drag ends on the board, pointerover does not fire again — recover hover here.
   function handleBoardPointerUp(evt) {
     evt.stopPropagation();
-    if (evt.pointerType === 'touch') {
-      setBoardCursor(false);
-      setIsHovered(false);
-      return;
-    }
     if (!isFrontmostBoard(weatherBoardRef)) return;
-    setBoardCursor(true);
     setIsHovered(true);
   }
 
   // Clear hover when the pointer leaves the board.
   function handleBoardHoverOut(evt) {
     evt.stopPropagation();
-    setBoardCursor(false);
     setIsHovered(false);
   }
 
