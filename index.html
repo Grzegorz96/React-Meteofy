@@ -11,6 +11,23 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meteofy</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('meteofy-is-dark-theme');
+          var isDark =
+            stored === 'true' ||
+            (stored !== 'false' &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.style.backgroundColor = isDark
+            ? '#121212'
+            : '#ffffff';
+          document.documentElement.style.colorScheme = isDark
+            ? 'dark'
+            : 'light';
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

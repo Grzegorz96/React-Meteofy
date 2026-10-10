@@ -1,4 +1,4 @@
-import { useEffect, memo } from 'react';
+import { useEffect, useCallback, useRef, memo } from 'react';
 import { useThree } from '@react-three/fiber';
 import { useTexture, Sphere } from '@react-three/drei';
 import { useTheme } from 'styled-components';
@@ -11,6 +11,9 @@ import SpecularMap from '../../assets/textures/8k-earth-specular-map.jpg';
 import { worldCapitalsData } from '../../utils/citiesConfig/worldCapitalsData';
 import { convertLatLonToCartesian } from '../../utils/formatters';
 
+/** Fallback if a board Text never syncs (e.g. font failure). */
+const LOADING_TIMEOUT_MS = 10000;
+
 /**
  * @component
  * Component representing the Earth globe with weather boards for cities.
@@ -22,7 +25,7 @@ import { convertLatLonToCartesian } from '../../utils/formatters';
  */
 function Earth({ fetchedCitiesData, setIsLoading }) {
   const theme = useTheme();
-  const { camera, raycaster, pointer, scene } = useThree();
+  const { camera, raycaster, pointer, scene, gl } = useThree();
 
   // Load textures for Earth rendering.
   const [colorMap, cloudsMap, normalMap, specularMap] = useTexture([
@@ -32,6 +35,29 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
     SpecularMap,
   ]);
 
+  const totalBoards = fetchedCitiesData?.length ?? 0;
+  const readyBoards = useRef(0);
+  const hasFinished = useRef(false);
+
+  // Upload textures to the GPU, wait for a couple of rendered frames, then hide the loader.
+  const finishLoading = useCallback(() => {
+    if (hasFinished.current) return;
+    hasFinished.current = true;
+
+    [colorMap, cloudsMap, normalMap, specularMap].forEach((texture) =>
+      gl.initTexture(texture)
+    );
+
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => setIsLoading(false))
+    );
+  }, [gl, colorMap, cloudsMap, normalMap, specularMap, setIsLoading]);
+
+  const handleBoardReady = useCallback(() => {
+    readyBoards.current += 1;
+    if (readyBoards.current >= totalBoards) finishLoading();
+  }, [totalBoards, finishLoading]);
+
   // Close weather modal when theme changes.
   useEffect(() => {
     return () => {
@@ -39,11 +65,17 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
     };
   }, [theme]);
 
-  // Enable label layer and hide the globe loader once Earth is mounted.
+  // Enable label layer; with no boards there is nothing to wait for.
   useEffect(() => {
     camera.layers.enable(1);
-    setIsLoading(false);
-  }, [camera.layers, setIsLoading]);
+    if (totalBoards === 0) finishLoading();
+  }, [camera.layers, totalBoards, finishLoading]);
+
+  // Safety net if a Text never syncs.
+  useEffect(() => {
+    const timeoutId = setTimeout(finishLoading, LOADING_TIMEOUT_MS);
+    return () => clearTimeout(timeoutId);
+  }, [finishLoading]);
 
   // Shift overlapping capitals, then convert coordinates to a point on the globe.
   const toBoardPosition = (capital) => {
@@ -92,6 +124,7 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
             position={toBoardPosition(capital)}
             capital={capital}
             isFrontmostBoard={isFrontmostBoard}
+            onReady={handleBoardReady}
           />
         ))}
       </Sphere>

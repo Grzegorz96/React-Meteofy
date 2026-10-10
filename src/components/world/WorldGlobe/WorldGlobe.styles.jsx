@@ -12,6 +12,8 @@ export const CanvasContainer = styled.div`
   left: 0;
   overflow: hidden;
   background-color: #01040c;
+  opacity: ${({ $isLoading }) => ($isLoading ? 0 : 1)};
+  transition: opacity 0.4s ease;
 
   canvas {
     cursor: grab;

@@ -6,20 +6,15 @@ import { useTheme } from 'styled-components';
  * @component
  * Loader component to display a loading spinner with optional text.
  *
- * @param {Object} props - Component props.
- * @param {string} props.color - Optional color for the loader spinner and text.
  * @returns {JSX.Element} Loader component.
  */
-export default function Loader({ color }) {
-  // Get the current theme from styled-components.
-  const theme = useTheme();
-  // Set the current color to the provided color or the primary text color from the theme.
-  const currentColor = color || theme.textPrimary;
+export default function Loader() {
+  const { textPrimary } = useTheme();
 
   return (
     <LoaderWrapper>
-      <ClipLoader loading={true} color={currentColor} size={100} />
-      <LoaderText color={currentColor}>Loading...</LoaderText>
+      <ClipLoader loading={true} color={textPrimary} size={100} />
+      <LoaderText color={textPrimary}>Loading...</LoaderText>
     </LoaderWrapper>
   );
 }

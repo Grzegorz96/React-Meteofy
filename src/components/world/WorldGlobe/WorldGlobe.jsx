@@ -4,7 +4,6 @@ import { Canvas } from '@react-three/fiber';
 import Earth from '../Earth';
 import { Stars, OrbitControls } from '@react-three/drei';
 import Loader from '../../ui/Loader/Loader';
-import { darkTheme } from '../../../utils/styles/theme';
 
 /**
  * @component
@@ -20,8 +19,8 @@ export default function WorldGlobe({ fetchedCitiesData }) {
 
   return (
     <>
-      {isLoading && <Loader color={darkTheme.textPrimary} />}
-      <CanvasContainer>
+      {isLoading && <Loader />}
+      <CanvasContainer $isLoading={isLoading}>
         <Canvas>
           <Suspense fallback={null}>
             <ambientLight intensity={1} />

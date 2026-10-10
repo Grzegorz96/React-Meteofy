@@ -12,9 +12,15 @@ import { openWeatherModal } from '../ui/modals/WeatherModal/WeatherModal';
  * @param {Object} props.position - The position of the weather board.
  * @param {Object} props.capital - The capital object containing weather data.
  * @param {Function} props.isFrontmostBoard - Checks if this board is under the pointer.
+ * @param {Function} [props.onReady] - Called once both Text labels on this board have synced.
  * @returns {JSX.Element} The WeatherBoard component.
  */
-export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
+export default function WeatherBoard({
+  position,
+  capital,
+  isFrontmostBoard,
+  onReady,
+}) {
   const theme = useTheme();
   const { gl } = useThree();
   // Hover drives both tile highlight and pointer cursor.
@@ -30,10 +36,20 @@ export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
   // Reference for the weather board object.
   const weatherBoardRef = useRef();
 
+  // Tracks which texts on this board finished syncing (troika is async).
+  const syncedParts = useRef(new Set());
+
   // Ensure the weather board always faces the camera.
   useLayoutEffect(() => {
     weatherBoardRef.current.lookAt(0, 0, 0);
   }, []);
+
+  // Report board readiness once both temp and city texts have synced.
+  function reportSynced(part) {
+    if (syncedParts.current.has(part)) return;
+    syncedParts.current.add(part);
+    if (syncedParts.current.size === 2) onReady?.();
+  }
 
   // Open the weather modal only for the frontmost board.
   function handleBoardClick(evt) {
@@ -90,6 +106,7 @@ export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
         />
       </Decal>
       <Text
+        onSync={() => reportSynced('temp')}
         layers={1}
         name="temp-text"
         color={'#f6f3ea'}
@@ -102,6 +119,7 @@ export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
         {Math.round(capital?.main?.temp ?? 0)}°
       </Text>
       <Text
+        onSync={() => reportSynced('city')}
         layers={1}
         name="city-text"
         color={'#f6f3ea'}
