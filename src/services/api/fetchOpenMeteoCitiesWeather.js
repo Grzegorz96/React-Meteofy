@@ -52,7 +52,7 @@ const toLocation = (city) => {
  * @param {Array<{ coord: { lat: number, lon: number } }>} locations
  * @returns {Object} The options object for the GET request.
  */
-const openMeteoOptions = (locations) => ({
+const openMeteoForecastOptions = (locations) => ({
   method: 'GET',
   url: API_DATA.forecast.url,
   params: {
@@ -69,11 +69,11 @@ const openMeteoOptions = (locations) => ({
  * @param {Array<Object>} cityObjects
  * @returns {Promise<Object[]>}
  */
-export const fetchCitiesWeather = async (cityObjects) => {
+export const fetchOpenMeteoCitiesWeather = async (cityObjects) => {
   const locations = cityObjects.map(toLocation);
 
   try {
-    const response = await axios.request(openMeteoOptions(locations));
+    const response = await axios.request(openMeteoForecastOptions(locations));
 
     const rows = Array.isArray(response.data) ? response.data : [response.data];
 

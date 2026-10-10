@@ -3,13 +3,13 @@ import { API_DATA } from '../../utils/constants/api/geoDbApiData';
 import { requestCityDelay } from '../../utils/helpers';
 
 /**
- * Returns the options object for making a GET request to fetch cities from the API.
+ * Creates options for the GeoDB Cities search request.
  *
  * @param {string} inputValue - The input value to filter cities by name.
  * @param {number} page - The page number of the results to fetch.
  * @returns {Object} The options object for the API request.
  */
-const geoApiOptions = (inputValue, page) => ({
+const geoDbCitiesOptions = (inputValue, page) => ({
   method: 'GET',
   url: API_DATA.url,
   headers: {
@@ -26,7 +26,7 @@ const geoApiOptions = (inputValue, page) => ({
 });
 
 /**
- * Loads options for a select input asynchronously.
+ * Loads city options for the search select from GeoDB Cities.
  *
  * @param {string} inputValue - The input value entered by the user.
  * @param {function} _loadOptions - The function to load options.
@@ -34,7 +34,11 @@ const geoApiOptions = (inputValue, page) => ({
  * @param {number} options.page - The current page number.
  * @returns {Promise<object>} A promise that resolves to an object containing the loaded options.
  */
-export const fetchCityOptions = async (inputValue, _loadOptions, { page }) => {
+export const fetchGeoDbCityOptions = async (
+  inputValue,
+  _loadOptions,
+  { page }
+) => {
   const currentTime = Date.now();
   if (
     // Check if the time elapsed since the last request is greater than the minimum request interval.
@@ -45,7 +49,9 @@ export const fetchCityOptions = async (inputValue, _loadOptions, { page }) => {
       // Update the last request time.
       requestCityDelay.lastRequestTime = currentTime;
       // Make the API request.
-      const response = await axios.request(geoApiOptions(inputValue, page));
+      const response = await axios.request(
+        geoDbCitiesOptions(inputValue, page)
+      );
 
       // Return the options object.
       return {

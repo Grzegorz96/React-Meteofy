@@ -2,13 +2,13 @@ import axios from 'axios';
 import { API_DATA } from '../../utils/constants/api/visualCrossingWeatherApiData';
 
 /**
- * Returns the options object for fetching air pollution data from Visual Crossing Weather API.
+ * Creates options for the Visual Crossing air pollution request.
  *
  * @param {number} latitude - The latitude of the location.
  * @param {number} longitude - The longitude of the location.
  * @returns {Object} The options object for making the API request.
  */
-const viasualCrossingWeatherOptions = (latitude, longitude) => ({
+const visualCrossingAirPollutionOptions = (latitude, longitude) => ({
   method: 'GET',
   url: `${API_DATA.url}/${latitude},${longitude}/${API_DATA.airPollution.period}`,
   params: {
@@ -21,17 +21,17 @@ const viasualCrossingWeatherOptions = (latitude, longitude) => ({
 });
 
 /**
- * Fetches air pollution data for a given latitude and longitude.
+ * Fetches air pollution data from Visual Crossing for a given location.
  *
  * @param {number} latitude - The latitude of the location.
  * @param {number} longitude - The longitude of the location.
  * @returns {Promise<Object>} A promise that resolves to the air pollution data.
  * @throws {Error} If there is an error while fetching the data.
  */
-export const fetchAirPollution = async (latitude, longitude) => {
+export const fetchVisualCrossingAirPollution = async (latitude, longitude) => {
   try {
     const response = await axios.request(
-      viasualCrossingWeatherOptions(latitude, longitude)
+      visualCrossingAirPollutionOptions(latitude, longitude)
     );
     return response.data;
   } catch (error) {

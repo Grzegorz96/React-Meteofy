@@ -2,7 +2,7 @@ import axios from 'axios';
 import { API_DATA } from '../../utils/constants/api/visualCrossingWeatherApiData';
 
 /**
- * Returns the options object for making a request to the Visual Crossing Weather API.
+ * Creates options for the Visual Crossing current and forecast request.
  *
  * @param {number} latitude - The latitude of the location.
  * @param {number} longitude - The longitude of the location.
@@ -22,14 +22,14 @@ const visualCrossingWeatherOptions = (latitude, longitude) => ({
 });
 
 /**
- * Fetches the current and forecast weather data for the given latitude and longitude.
+ * Fetches current and forecast weather from Visual Crossing.
  *
  * @param {number} latitude - The latitude of the location.
  * @param {number} longitude - The longitude of the location.
  * @returns {Promise<Object>} A promise that resolves to the weather data.
  * @throws {Error} If there is an error while fetching the weather data.
  */
-export const fetchWeather = async (latitude, longitude) => {
+export const fetchVisualCrossingWeather = async (latitude, longitude) => {
   try {
     const response = await axios.request(
       visualCrossingWeatherOptions(latitude, longitude)

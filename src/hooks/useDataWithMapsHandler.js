@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchCitiesWeather } from '../services/api';
+import { fetchOpenMeteoCitiesWeather } from '../services/api';
 
 /**
  * Custom hook that fetches weather data for multiple cities and handles the data using maps.
@@ -18,7 +18,7 @@ export const useDataWithMapsHandler = (cityObjects) => {
     const fetchData = async () => {
       setData((prev) => ({ ...prev, loading: true }));
       try {
-        const fetchedData = await fetchCitiesWeather(cityObjects);
+        const fetchedData = await fetchOpenMeteoCitiesWeather(cityObjects);
 
         setData({ fetchedData, loading: false, error: null });
       } catch (error) {

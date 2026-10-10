@@ -1,5 +1,5 @@
 import { AsyncPaginate } from 'react-select-async-paginate';
-import { fetchCityOptions } from '../../../services/api';
+import { fetchGeoDbCityOptions } from '../../../services/api';
 import { useTheme } from 'styled-components';
 
 /**
@@ -30,7 +30,7 @@ export default function SearchEngine({
       value={city}
       onChange={handleOnChange}
       styles={styles(theme)}
-      loadOptions={fetchCityOptions}
+      loadOptions={fetchGeoDbCityOptions}
       additional={{ page: 1 }}
     />
   );
