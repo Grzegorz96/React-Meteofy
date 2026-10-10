@@ -38,7 +38,6 @@ export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
   // Open the weather modal only for the frontmost board.
   function handleBoardClick(evt) {
     evt.stopPropagation();
-    setIsHovered(false);
     if (!isFrontmostBoard(weatherBoardRef)) return;
     openWeatherModal(capital, theme);
   }
@@ -48,13 +47,6 @@ export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
     evt.stopPropagation();
     if (evt.pointerType !== 'mouse') return;
     if (gl.domElement.matches(':active')) return;
-    if (!isFrontmostBoard(weatherBoardRef)) return;
-    setIsHovered(true);
-  }
-
-  // After a drag ends on the board, pointerover does not fire again — recover hover here.
-  function handleBoardPointerUp(evt) {
-    evt.stopPropagation();
     if (!isFrontmostBoard(weatherBoardRef)) return;
     setIsHovered(true);
   }
@@ -70,7 +62,6 @@ export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
       ref={weatherBoardRef}
       onClick={handleBoardClick}
       onPointerOver={handleBoardHover}
-      onPointerUp={handleBoardPointerUp}
       onPointerOut={handleBoardHoverOut}
       args={[0.12, 0.08, 0.005]}
       position={position}
