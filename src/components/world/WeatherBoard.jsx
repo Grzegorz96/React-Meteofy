@@ -36,45 +36,25 @@ export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
   }, []);
 
   // Open the weather modal only for the frontmost board.
-  // function handleBoardClick(evt) {
-  //   evt.stopPropagation();
-  //   if (!isFrontmostBoard(weatherBoardRef)) return;
-  //   openWeatherModal(capital, theme);
-  // }
   function handleBoardClick(evt) {
     evt.stopPropagation();
-    setIsHovered(false); // czyść też po kliknięciu (modal przejmuje uwagę)
+    setIsHovered(false);
     if (!isFrontmostBoard(weatherBoardRef)) return;
     openWeatherModal(capital, theme);
   }
 
-  // Highlight only the frontmost board, and not while the globe is being dragged.
-  // function handleBoardHover(evt) {
-  //   evt.stopPropagation();
-  //   if (gl.domElement.matches(':active')) return;
-  //   if (!isFrontmostBoard(weatherBoardRef)) return;
-  //   setIsHovered(true);
-  // }
+  // Highlight only for mouse on the frontmost board, and not while dragging.
   function handleBoardHover(evt) {
     evt.stopPropagation();
-    if (evt.pointerType !== 'mouse') return; // dotyk nie ma hovera
+    if (evt.pointerType !== 'mouse') return;
     if (gl.domElement.matches(':active')) return;
     if (!isFrontmostBoard(weatherBoardRef)) return;
     setIsHovered(true);
   }
 
   // After a drag ends on the board, pointerover does not fire again — recover hover here.
-  // function handleBoardPointerUp(evt) {
-  //   evt.stopPropagation();
-  //   if (!isFrontmostBoard(weatherBoardRef)) return;
-  //   setIsHovered(true);
-  // }
   function handleBoardPointerUp(evt) {
     evt.stopPropagation();
-    if (evt.pointerType !== 'mouse') {
-      setIsHovered(false); // po puszczeniu palca zdejmij podświetlenie
-      return;
-    }
     if (!isFrontmostBoard(weatherBoardRef)) return;
     setIsHovered(true);
   }
