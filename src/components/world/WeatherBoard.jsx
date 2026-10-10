@@ -46,17 +46,25 @@ export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
   }
 
   // Highlight only the frontmost board, and not while the globe is being dragged.
+  // Touch has no persistent hover — skip so tiles do not stick highlighted.
   function handleBoardHover(evt) {
     evt.stopPropagation();
+    if (evt.pointerType === 'touch') return;
     if (gl.domElement.matches(':active')) return;
     if (!isFrontmostBoard(weatherBoardRef)) return;
     setBoardCursor(true);
     setIsHovered(true);
   }
 
-  // After a drag ends on the board, pointerover does not fire again — recover hover here.
+  // After a mouse drag ends on the board, pointerover does not fire again — recover hover here.
+  // On touch, clear hover: pointerout often does not fire after a tap.
   function handleBoardPointerUp(evt) {
     evt.stopPropagation();
+    if (evt.pointerType === 'touch') {
+      setBoardCursor(false);
+      setIsHovered(false);
+      return;
+    }
     if (!isFrontmostBoard(weatherBoardRef)) return;
     setBoardCursor(true);
     setIsHovered(true);
