@@ -87,3 +87,20 @@ export const getRanges = (moveRangesToBottom) => {
     },
   ];
 };
+
+/**
+ * Blurs the focused element when it sits inside `container`.
+ * Avoids Chrome warning when a parent gets `aria-hidden` while a descendant keeps focus.
+ *
+ * @param {Element | null | undefined} container
+ */
+export const releaseFocusWithin = (container) => {
+  const activeElement = document.activeElement;
+
+  if (
+    activeElement instanceof HTMLElement &&
+    container?.contains(activeElement)
+  ) {
+    activeElement.blur();
+  }
+};

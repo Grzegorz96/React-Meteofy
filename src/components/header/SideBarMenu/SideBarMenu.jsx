@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import { StyledBurgerMenu } from './SideBarMenu.styles';
 import Navbar from '../Navbar/Navbar';
+import { releaseFocusWithin } from '../../../utils/helpers';
 
 /**
  * @component
@@ -14,27 +15,14 @@ export default function SideBarMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
 
-  // Chrome warns if .bm-menu-wrap gets aria-hidden while a descendant still has focus.
-  const releaseMenuFocus = useCallback(() => {
-    const menuWrap = containerRef.current?.querySelector('.bm-menu-wrap');
-    const activeElement = document.activeElement;
-
-    if (
-      activeElement instanceof HTMLElement &&
-      menuWrap?.contains(activeElement)
-    ) {
-      activeElement.blur();
-    }
-  }, []);
-
   const openMenu = useCallback(() => {
     setIsOpen(true);
   }, []);
 
   const closeMenu = useCallback(() => {
-    releaseMenuFocus();
+    releaseFocusWithin(containerRef.current?.querySelector('.bm-menu-wrap'));
     setIsOpen(false);
-  }, [releaseMenuFocus]);
+  }, []);
 
   return (
     <StyledBurgerMenu ref={containerRef}>

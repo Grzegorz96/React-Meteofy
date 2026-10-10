@@ -335,7 +335,7 @@ export const worldCapitalsData = [
   {
     name: 'Brades',
     coord: { lon: -62.213, lat: 16.7918 },
-    boardOffset: { lon: 0.05, lat: 0.4 },
+    boardOffset: { lon: 0.05, lat: 0.3 },
   },
   { name: 'Rabat', coord: { lon: -6.84006, lat: 33.991112 } },
   {

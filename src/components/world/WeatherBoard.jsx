@@ -1,5 +1,8 @@
-import { Text, Decal, useTexture, Box, useCursor } from '@react-three/drei';
+import { Text, Decal, useTexture, Box } from '@react-three/drei';
+import { useThree } from '@react-three/fiber';
 import { useRef, useLayoutEffect, useState } from 'react';
+import { useTheme } from 'styled-components';
+import { openWeatherModal } from '../ui/modals/WeatherModal/WeatherModal';
 
 /**
  * @component
@@ -8,15 +11,14 @@ import { useRef, useLayoutEffect, useState } from 'react';
  * @param {Object} props - The component props.
  * @param {Object} props.position - The position of the weather board.
  * @param {Object} props.capital - The capital object containing weather data.
- * @param {Function} props.handleEvent - The event handler function.
+ * @param {Function} props.isFrontmostBoard - Checks if this board is under the pointer.
  * @returns {JSX.Element} The WeatherBoard component.
  */
-export default function WeatherBoard({ position, capital, handleEvent }) {
-  // State to track if the weather board is hovered.
-  const [hovered, setHovered] = useState(false);
-
-  // Change cursor to pointer if the weather board is hovered.
-  useCursor(hovered, 'pointer');
+export default function WeatherBoard({ position, capital, isFrontmostBoard }) {
+  const theme = useTheme();
+  const { gl } = useThree();
+  // State to track if the weather board is hovered (tile color only).
+  const [isHovered, setIsHovered] = useState(false);
 
   // Load texture for weather icon.
   const texture = useTexture(
@@ -31,23 +33,55 @@ export default function WeatherBoard({ position, capital, handleEvent }) {
     weatherBoardRef.current.lookAt(0, 0, 0);
   }, []);
 
+  // Pointer on the board; clear inline cursor so CSS grab/grabbing can take over.
+  function setBoardCursor(isActive) {
+    gl.domElement.style.cursor = isActive ? 'pointer' : '';
+  }
+
+  // Open the weather modal only for the frontmost board.
+  function handleBoardClick(evt) {
+    evt.stopPropagation();
+    if (!isFrontmostBoard(weatherBoardRef)) return;
+    openWeatherModal(capital, theme);
+  }
+
+  // Highlight only the frontmost board, and not while the globe is being dragged.
+  function handleBoardHover(evt) {
+    evt.stopPropagation();
+    if (gl.domElement.matches(':active')) return;
+    if (!isFrontmostBoard(weatherBoardRef)) return;
+    setBoardCursor(true);
+    setIsHovered(true);
+  }
+
+  // After a drag ends on the board, pointerover does not fire again — recover hover here.
+  function handleBoardPointerUp(evt) {
+    evt.stopPropagation();
+    if (!isFrontmostBoard(weatherBoardRef)) return;
+    setBoardCursor(true);
+    setIsHovered(true);
+  }
+
+  // Clear hover when the pointer leaves the board.
+  function handleBoardHoverOut(evt) {
+    evt.stopPropagation();
+    setBoardCursor(false);
+    setIsHovered(false);
+  }
+
   return (
     <Box
       ref={weatherBoardRef}
-      onClick={(evt) => handleEvent(evt, capital, weatherBoardRef, setHovered)}
-      onPointerOver={(evt) =>
-        handleEvent(evt, capital, weatherBoardRef, setHovered)
-      }
-      onPointerOut={(evt) => {
-        evt.stopPropagation();
-        setHovered(false);
-      }}
+      onClick={handleBoardClick}
+      onPointerOver={handleBoardHover}
+      onPointerUp={handleBoardPointerUp}
+      onPointerOut={handleBoardHoverOut}
       args={[0.12, 0.08, 0.005]}
       position={position}
       name={`weather-board-${capital?.name}`}
     >
       <meshStandardMaterial
-        color={hovered ? '#1dbb25' : '#81832c'}
+        color={isHovered ? '#1dbb25' : '#81832c'}
         transparent
         opacity={0.6}
       />

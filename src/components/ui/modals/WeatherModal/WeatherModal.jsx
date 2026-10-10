@@ -8,6 +8,7 @@ import {
 import '../../../../assets/CSS/sweetAlert2Styles/weatherCityModal.css';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import { releaseFocusWithin } from '../../../../utils/helpers';
 
 /**
  * Opens a modal displaying weather information for a city.
@@ -24,6 +25,7 @@ export const openWeatherModal = (city, theme) => {
     width: '400px',
     background: theme.secondary,
     heightAuto: false,
+    returnFocus: false,
     iconHtml: <WeatherIcon $icon={city?.main?.icon} />,
     title: (
       <>
@@ -67,6 +69,15 @@ export const openWeatherModal = (city, theme) => {
         </WeatherInfo>
       </>
     ),
+    // SweetAlert sets aria-hidden on #root right after willOpen — blur first.
+    willOpen: () => {
+      const root = document.getElementById('root');
+      releaseFocusWithin(root);
+      root?.setAttribute('inert', '');
+    },
+    didClose: () => {
+      document.getElementById('root')?.removeAttribute('inert');
+    },
     didOpen: () => {
       // Customize the confirm button style after the modal is opened.
       const confirmButton = Swal.getConfirmButton();

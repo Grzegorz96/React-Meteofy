@@ -3,10 +3,7 @@ import { useThree } from '@react-three/fiber';
 import { useTexture, Sphere } from '@react-three/drei';
 import { useTheme } from 'styled-components';
 import WeatherBoard from './WeatherBoard';
-import {
-  openWeatherModal,
-  closeWeatherModal,
-} from '../ui/modals/WeatherModal/WeatherModal';
+import { closeWeatherModal } from '../ui/modals/WeatherModal/WeatherModal';
 import EarthDayMap from '../../assets/textures/8k-earth-day-map.jpg';
 import EarthCloudsMap from '../../assets/textures/8k-earth-clouds.jpg';
 import NormalMap from '../../assets/textures/8k-earth-normal-map.jpg';
@@ -42,14 +39,10 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
     };
   }, [theme]);
 
-  // Enable layer for camera and set loading state when component mounts
+  // Enable label layer and hide the globe loader once Earth is mounted.
   useEffect(() => {
     camera.layers.enable(1);
     setIsLoading(false);
-
-    return () => {
-      document.body.removeAttribute('style');
-    };
   }, [camera.layers, setIsLoading]);
 
   // Shift overlapping capitals, then convert coordinates to a point on the globe.
@@ -68,21 +61,11 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
     );
   };
 
-  // Handle events on weather boards (click and pointer move).
-  function handleEvent(evt, capital, weatherBoardRef, setHovered) {
-    evt.stopPropagation();
+  // True when this board is the closest hit under the pointer.
+  function isFrontmostBoard(weatherBoardRef) {
     raycaster.setFromCamera(pointer, camera);
-    const intersects = raycaster.intersectObjects(scene.children, true);
-    if (
-      intersects.length > 0 &&
-      intersects[0].object === weatherBoardRef.current
-    ) {
-      if (evt.type === 'click') {
-        openWeatherModal(capital, theme);
-      } else if (evt.type === 'pointermove') {
-        setHovered(true);
-      }
-    }
+    const [hit] = raycaster.intersectObjects(scene.children, true);
+    return hit?.object === weatherBoardRef.current;
   }
 
   return (
@@ -108,7 +91,7 @@ function Earth({ fetchedCitiesData, setIsLoading }) {
             key={`${capital?.name}-${capital?.coord?.lat}-${capital?.coord?.lon}`}
             position={toBoardPosition(capital)}
             capital={capital}
-            handleEvent={handleEvent}
+            isFrontmostBoard={isFrontmostBoard}
           />
         ))}
       </Sphere>

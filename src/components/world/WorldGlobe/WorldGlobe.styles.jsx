@@ -12,4 +12,12 @@ export const CanvasContainer = styled.div`
   left: 0;
   overflow: hidden;
   background-color: #01040c;
+
+  canvas {
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
 `;
