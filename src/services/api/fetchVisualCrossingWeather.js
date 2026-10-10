@@ -14,10 +14,10 @@ const visualCrossingWeatherOptions = (latitude, longitude) => ({
   params: {
     key: import.meta.env.VITE_VISUAL_CROSSING_API_KEY,
     unitGroup: API_DATA.units.metric,
-    include: API_DATA.currentAndForecast.include,
-    contentType: API_DATA.currentAndForecast.contentType,
-    iconSet: API_DATA.currentAndForecast.iconSet,
-    elements: API_DATA.currentAndForecast.elements,
+    include: API_DATA.forecast.include,
+    contentType: API_DATA.forecast.contentType,
+    iconSet: API_DATA.forecast.iconSet,
+    elements: API_DATA.forecast.elements,
   },
 });
 

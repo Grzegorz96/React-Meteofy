@@ -11,11 +11,11 @@
  * @property {string} airPollution.contentType - Response format.
  * @property {string} airPollution.elements - Fields requested from the API.
  * @property {string} airPollution.period - Dynamic date period in the request path.
- * @property {Object} currentAndForecast - Query params for the current and forecast request.
- * @property {string} currentAndForecast.include - Sections included in the response.
- * @property {string} currentAndForecast.contentType - Response format.
- * @property {string} currentAndForecast.iconSet - Icon set used in the response.
- * @property {string} currentAndForecast.elements - Fields requested from the API.
+ * @property {Object} forecast - Query params for the current and forecast request.
+ * @property {string} forecast.include - Sections included in the response.
+ * @property {string} forecast.contentType - Response format.
+ * @property {string} forecast.iconSet - Icon set used in the response.
+ * @property {string} forecast.elements - Fields requested from the API.
  */
 
 /**
@@ -36,7 +36,7 @@ export const API_DATA = {
     // Today plus the next 4 days: the window with complete hourly AQI.
     period: 'next4days',
   },
-  currentAndForecast: {
+  forecast: {
     include: 'days,hours,current',
     contentType: 'json',
     iconSet: 'icons2',
