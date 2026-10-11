@@ -1,119 +1,3 @@
-// import { useState, useEffect } from 'react';
-// import {
-//   fetchVisualCrossingWeather,
-//   fetchVisualCrossingAirPollution,
-//   fetchGeoApifyReverseGeocoding,
-//   fetchOpenMeteoSeasonalWeather,
-// } from '../services/api';
-// import { DEFAULT_CITY_COORDS } from '../utils/constants/defaultCityCoords';
-// import { DATA_TYPE } from '../utils/constants';
-
-// /**
-//  * Retrieves the coordinates (latitude and longitude) for a given city or the user's current location.
-//  * If a city is provided, it returns the coordinates of that city. Otherwise, it attempts to retrieve the user's current location.
-//  * If the user's location cannot be retrieved, it returns default city coordinates.
-//  *
-//  * @param {Object} city - The city object containing latitude and longitude values.
-//  * @returns {Promise<{ latitude: number, longitude: number }>} The coordinates object containing latitude and longitude values.
-//  */
-// const getCoordinates = async (city) => {
-//   if (city) {
-//     return {
-//       latitude: city.value.latitude,
-//       longitude: city.value.longitude,
-//     };
-//   } else {
-//     try {
-//       const currentPosition = await new Promise((resolve, reject) => {
-//         navigator.geolocation.getCurrentPosition(resolve, reject);
-//       });
-//       return {
-//         latitude: currentPosition.coords.latitude,
-//         longitude: currentPosition.coords.longitude,
-//       };
-//     } catch (error) {
-//       return DEFAULT_CITY_COORDS;
-//     }
-//   }
-// };
-
-// /**
-//  * Fetches data based on the given latitude, longitude, and data type.
-//  *
-//  * @param {number} latitude - The latitude of the location.
-//  * @param {number} longitude - The longitude of the location.
-//  * @param {string} dataType - The type of data to fetch.
-//  * @returns {Promise<any>} A promise that resolves to the fetched data.
-//  * @throws {Error} If an invalid data type is provided.
-//  */
-// const fetchDataByType = async (latitude, longitude, dataType) => {
-//   switch (dataType) {
-//     case DATA_TYPE.weather:
-//       return fetchVisualCrossingWeather(latitude, longitude);
-//     case DATA_TYPE.airPollution:
-//       return fetchVisualCrossingAirPollution(latitude, longitude);
-//     case DATA_TYPE.longTermWeather:
-//       return fetchOpenMeteoSeasonalWeather(latitude, longitude);
-//     default:
-//       throw new Error('Invalid data type');
-//   }
-// };
-
-// /**
-//  * Custom hook that handles fetching data for a given city and data type.
-//  *
-//  * @param {string} city - The city for which to fetch the data.
-//  * @param {string} dataType - The type of data to fetch.
-//  * @returns {object} An object containing the fetched data, loading state, error, city and a setter to update the data.
-//  */
-// export const useDataWithCitiesHandler = (city, dataType) => {
-//   const [data, setData] = useState({
-//     city: null,
-//     fetchedData: null,
-//     loading: false,
-//     error: null,
-//   });
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       // Set loading state to true when fetching data.
-//       setData((prev) => ({ ...prev, loading: true }));
-
-//       // Fetch data based on the provided city and data type.
-//       try {
-//         const { latitude, longitude } = await getCoordinates(city);
-//         const [fetchedData, cityName] = await Promise.all([
-//           fetchDataByType(latitude, longitude, dataType),
-//           !city && fetchGeoApifyReverseGeocoding(latitude, longitude),
-//         ]);
-
-//         // Update the state with the fetched data.
-//         setData({
-//           city: city
-//             ? city.label
-//             : `${
-//                 cityName?.results?.[0]?.city
-//               }, ${cityName?.results?.[0]?.country_code.toUpperCase()}`,
-//           fetchedData,
-//           loading: false,
-//           error: null,
-//         });
-//       } catch (error) {
-//         // Handle errors when fetching data.
-//         setData({
-//           city: null,
-//           fetchedData: null,
-//           loading: false,
-//           error: error.message,
-//         });
-//       }
-//     };
-//     fetchData();
-//   }, [city, dataType]);
-
-//   return { data, setData };
-// };
-
 import { useState, useEffect } from 'react';
 import {
   fetchVisualCrossingWeather,
@@ -236,8 +120,10 @@ export const useDataWithCitiesHandler = (city, dataType) => {
 
       try {
         const { latitude, longitude } = await getCoordinates(city);
-        console.log('latitude', latitude);
-        console.log('longitude', longitude);
+
+        // City changed (or unmount) while waiting for geolocation — skip API calls.
+        if (isCancelled) return;
+
         const [fetchedData, cityName] = await Promise.all([
           fetchDataByType(latitude, longitude, dataType),
           !city && fetchGeoApifyReverseGeocoding(latitude, longitude),
@@ -245,10 +131,15 @@ export const useDataWithCitiesHandler = (city, dataType) => {
 
         if (isCancelled) return;
 
+        const place = cityName?.results?.[0];
+        const label = city
+          ? city.label
+          : place?.city
+            ? `${place.city}, ${place.country_code?.toUpperCase()}`
+            : 'Unknown location';
+
         setData({
-          city: city
-            ? city.label
-            : `${cityName?.results?.[0]?.city}, ${cityName?.results?.[0]?.country_code?.toUpperCase()}`,
+          city: label,
           fetchedData,
           loading: false,
           error: null,
