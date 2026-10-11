@@ -98,5 +98,3 @@ export const closeWeatherModal = () => {
   // Close the SweetAlert modal.
   MySwal.close();
 };
-
-//test commit
