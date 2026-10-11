@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/logo.svg" alt="logo" width="100%" />
+<img src="https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/logo.svg" alt="logo" width="100%" />
 
 # Meteofy
 
@@ -408,250 +408,250 @@ E-mail: grzesstrzeszewski@gmail.com
 
 ##### Screenshot of the home page (dark mode)
 
-![home-page-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/home-page-dark.png)
+![home-page-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/home-page-dark.png)
 
 ##### Screenshot of the home page (light mode)
 
-![home-page-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/home-page-light.png)
+![home-page-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/home-page-light.png)
 
 ##### Screenshot of the home page with detailed forecast data (dark mode)
 
-![home-page-with-accordion-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/home-page-with-accordion-dark.png)
+![home-page-with-accordion-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/home-page-with-accordion-dark.png)
 
 ##### Screenshot of the home page with detailed forecast data (light mode)
 
-![home-page-with-accordion-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/home-page-with-accordion-light.png)
+![home-page-with-accordion-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/home-page-with-accordion-light.png)
 
 ##### Screenshot of the poland map (dark mode)
 
-![poland-map-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/poland-map-dark.png)
+![poland-map-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/poland-map-dark.png)
 
 ##### Screenshot of the poland map (light mode)
 
-![poland-map-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/poland-map-light.png)
+![poland-map-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/poland-map-light.png)
 
 ##### Screenshot of the weather modal at poland map (dark mode)
 
-![weather-modal-poland-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/weather-modal-poland-dark.png)
+![weather-modal-poland-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/weather-modal-poland-dark.png)
 
 ##### Screenshot of the weather modal at poland map (light mode)
 
-![weather-modal-poland-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/weather-modal-poland-light.png)
+![weather-modal-poland-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/weather-modal-poland-light.png)
 
 ##### Screenshot of the europe map (dark mode)
 
-![europe-map-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/europe-map-dark.png)
+![europe-map-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/europe-map-dark.png)
 
 ##### Screenshot of the europe map (light mode)
 
-![europe-map-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/europe-map-light.png)
+![europe-map-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/europe-map-light.png)
 
 ##### Screenshot of the weather modal at europe map (dark mode)
 
-![weather-modal-europe-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/weather-modal-europe-dark.png)
+![weather-modal-europe-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/weather-modal-europe-dark.png)
 
 ##### Screenshot of the weather modal at europe map (light mode)
 
-![weather-modal-europe-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/weather-modal-europe-light.png)
+![weather-modal-europe-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/weather-modal-europe-light.png)
 
 ##### Screenshot of the world globe (dark mode)
 
-![world-globe-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/world-globe-dark.png)
+![world-globe-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/world-globe-dark.png)
 
 ##### Screenshot of the world globe (light mode)
 
-![world-globe-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/world-globe-light.png)
+![world-globe-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/world-globe-light.png)
 
 ##### Screenshot of the weather modal at world globe (dark mode)
 
-![weather-modal-globe-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/weather-modal-globe-dark.png)
+![weather-modal-globe-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/weather-modal-globe-dark.png)
 
 ##### Screenshot of the weather modal at world globe (light mode)
 
-![weather-modal-globe-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/weather-modal-globe-light.png)
+![weather-modal-globe-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/weather-modal-globe-light.png)
 
 ##### Screenshot of the long term weather chart (dark mode)
 
-![long-term-weather-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/long-term-weather-dark.png)
+![long-term-weather-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/long-term-weather-dark.png)
 
 ##### Screenshot of the long term weather chart (light mode)
 
-![long-term-weather-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/long-term-weather-light.png)
+![long-term-weather-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/long-term-weather-light.png)
 
 ##### Screenshot of the date range picker on long term weather chart (dark mode)
 
-![long-term-weather-daterange-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/long-term-weather-daterange-dark.png)
+![long-term-weather-daterange-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/long-term-weather-daterange-dark.png)
 
 ##### Screenshot of the date range picker on long term weather chart (light mode)
 
-![long-term-weather-daterange-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/long-term-weather-daterange-light.png)
+![long-term-weather-daterange-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/long-term-weather-daterange-light.png)
 
 ##### Screenshot of the air pollution page (dark mode)
 
-![air-pollution-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/air-pollution-dark.png)
+![air-pollution-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/air-pollution-dark.png)
 
 ##### Screenshot of the air pollution page (light mode)
 
-![air-pollution-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/air-pollution-light.png)
+![air-pollution-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/air-pollution-light.png)
 
 ##### Screenshot of the air pollution page with detailed forecast data (dark mode)
 
-![air-pollution-accordion-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/air-pollution-accordion-dark.png)
+![air-pollution-accordion-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/air-pollution-accordion-dark.png)
 
 ##### Screenshot of the air pollution page with detailed forecast data (light mode)
 
-![air-pollution-accordion-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/air-pollution-accordion-light.png)
+![air-pollution-accordion-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/air-pollution-accordion-light.png)
 
 ##### Screenshot of the search engine (dark mode)
 
-![search-engine-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/search-engine-dark.png)
+![search-engine-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/search-engine-dark.png)
 
 ##### Screenshot of the search engine (light mode)
 
-![search-engine-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/search-engine-light.png)
+![search-engine-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/search-engine-light.png)
 
 ##### Screenshot of the error modal (dark mode)
 
-![error-modal-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/error-modal-dark.png)
+![error-modal-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/error-modal-dark.png)
 
 ##### Screenshot of the error modal (light mode)
 
-![error-modal-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/error-modal-light.png)
+![error-modal-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/error-modal-light.png)
 
 ##### Screenshot of the not found page (dark mode)
 
-![not-found-page-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/not-found-page-dark.png)
+![not-found-page-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/not-found-page-dark.png)
 
 ##### Screenshot of the not found page (light mode)
 
-![not-found-page-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/pc/not-found-page-light.png)
+![not-found-page-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/pc/not-found-page-light.png)
 
 ### View for mobile devices:
 
 ##### Screenshot of the home page (dark mode)
 
-![home-page-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/home-page-dark.png)
+![home-page-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/home-page-dark.png)
 
 ##### Screenshot of the home page (light mode)
 
-![home-page-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/home-page-light.png)
+![home-page-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/home-page-light.png)
 
 ##### Screenshot of the home page with detailed forecast data (dark mode)
 
-![home-page-with-accordion-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/home-page-with-accordion-dark.png)
+![home-page-with-accordion-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/home-page-with-accordion-dark.png)
 
 ##### Screenshot of the home page with detailed forecast data (light mode)
 
-![home-page-with-accordion-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/home-page-with-accordion-light.png)
+![home-page-with-accordion-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/home-page-with-accordion-light.png)
 
 ##### Screenshot of the poland map (dark mode)
 
-![poland-map-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/poland-map-dark.png)
+![poland-map-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/poland-map-dark.png)
 
 ##### Screenshot of the poland map (light mode)
 
-![poland-map-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/poland-map-light.png)
+![poland-map-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/poland-map-light.png)
 
 ##### Screenshot of the weather modal at poland map (dark mode)
 
-![weather-modal-poland-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/weather-modal-poland-dark.png)
+![weather-modal-poland-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/weather-modal-poland-dark.png)
 
 ##### Screenshot of the weather modal at poland map (light mode)
 
-![weather-modal-poland-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/weather-modal-poland-light.png)
+![weather-modal-poland-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/weather-modal-poland-light.png)
 
 ##### Screenshot of the europe map (dark mode)
 
-![europe-map-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/europe-map-dark.png)
+![europe-map-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/europe-map-dark.png)
 
 ##### Screenshot of the europe map (light mode)
 
-![europe-map-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/europe-map-light.png)
+![europe-map-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/europe-map-light.png)
 
 ##### Screenshot of the weather modal at europe map (dark mode)
 
-![weather-modal-europe-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/weather-modal-europe-dark.png)
+![weather-modal-europe-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/weather-modal-europe-dark.png)
 
 ##### Screenshot of the weather modal at europe map (light mode)
 
-![weather-modal-europe-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/weather-modal-europe-light.png)
+![weather-modal-europe-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/weather-modal-europe-light.png)
 
 ##### Screenshot of the world globe (dark mode)
 
-![world-globe-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/world-globe-dark.png)
+![world-globe-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/world-globe-dark.png)
 
 ##### Screenshot of the world globe (light mode)
 
-![world-globe-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/world-globe-light.png)
+![world-globe-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/world-globe-light.png)
 
 ##### Screenshot of the weather modal at world globe (dark mode)
 
-![weather-modal-world-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/weather-modal-world-dark.png)
+![weather-modal-world-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/weather-modal-world-dark.png)
 
 ##### Screenshot of the weather modal at world globe (light mode)
 
-![weather-modal-world-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/weather-modal-world-light.png)
+![weather-modal-world-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/weather-modal-world-light.png)
 
 ##### Screenshot of the long term weather chart (dark mode)
 
-![long-term-weather-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/long-term-weather-dark.png)
+![long-term-weather-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/long-term-weather-dark.png)
 
 ##### Screenshot of the long term weather chart (light mode)
 
-![long-term-weather-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/long-term-weather-light.png)
+![long-term-weather-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/long-term-weather-light.png)
 
 ##### Screenshot of the date range picker on long term weather chart (dark mode)
 
-![long-term-weather-daterange-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/long-term-weather-daterange-dark.png)
+![long-term-weather-daterange-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/long-term-weather-daterange-dark.png)
 
 ##### Screenshot of the date range picker on long term weather chart (light mode)
 
-![long-term-weather-daterange-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/long-term-weather-daterange-light.png)
+![long-term-weather-daterange-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/long-term-weather-daterange-light.png)
 
 ##### Screenshot of the air pollution page (dark mode)
 
-![air-pollution-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/air-pollution-dark.png)
+![air-pollution-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/air-pollution-dark.png)
 
 ##### Screenshot of the air pollution page (light mode)
 
-![air-pollution-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/air-pollution-light.png)
+![air-pollution-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/air-pollution-light.png)
 
 ##### Screenshot of the air pollution page with detailed forecast data (dark mode)
 
-![air-pollution-accordion-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/air-pollution-accordion-dark.png)
+![air-pollution-accordion-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/air-pollution-accordion-dark.png)
 
 ##### Screenshot of the air pollution page with detailed forecast data (light mode)
 
-![air-pollution-accordion-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/air-pollution-accordion-light.png)
+![air-pollution-accordion-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/air-pollution-accordion-light.png)
 
 ##### Screenshot of the search engine (dark mode)
 
-![search-engine-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/search-engine-dark.png)
+![search-engine-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/search-engine-dark.png)
 
 ##### Screenshot of the search engine (light mode)
 
-![search-engine-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/search-engine-light.png)
+![search-engine-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/search-engine-light.png)
 
 ##### Screenshot of the error modal (dark mode)
 
-![error-modal-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/error-modal-dark.png)
+![error-modal-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/error-modal-dark.png)
 
 ##### Screenshot of the error modal (light mode)
 
-![error-modal-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/error-modal-light.png)
+![error-modal-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/error-modal-light.png)
 
 ##### Screenshot of the not found page (dark mode)
 
-![not-found-page-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/not-found-page-dark.png)
+![not-found-page-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/not-found-page-dark.png)
 
 ##### Screenshot of the not found page (light mode)
 
-![not-found-page-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/not-found-page-light.png)
+![not-found-page-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/not-found-page-light.png)
 
 ##### Screenshot of the side bar menu (light mode)
 
-![side-bar-menu-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/side-bar-menu-dark.png)
+![side-bar-menu-dark](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/side-bar-menu-dark.png)
 
 ##### Screenshot of the side bar menu (light mode)
 
-![side-bar-menu-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/readme-images/mobile/side-bar-menu-light.png)
+![side-bar-menu-light](https://raw.githubusercontent.com/Grzegorz96/meteofy/master/docs/releases/v1.0.0/screenshots/mobile/side-bar-menu-light.png)
