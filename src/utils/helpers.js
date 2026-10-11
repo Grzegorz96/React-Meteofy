@@ -104,3 +104,38 @@ export const releaseFocusWithin = (container) => {
     activeElement.blur();
   }
 };
+
+/**
+ * Sets or clears `inert` on `#root` (for overlays rendered outside the app root).
+ *
+ * @param {boolean} isInert
+ */
+export const setRootInert = (isInert) => {
+  const root = document.getElementById('root');
+  if (!root) return;
+
+  if (isInert) {
+    releaseFocusWithin(root);
+    root.setAttribute('inert', '');
+  } else {
+    root.removeAttribute('inert');
+  }
+};
+
+/**
+ * Locks `#root` with `inert` + `aria-hidden` for custom modals (not SweetAlert).
+ *
+ * @param {boolean} isLocked
+ */
+export const setRootLocked = (isLocked) => {
+  const root = document.getElementById('root');
+  if (!root) return;
+
+  setRootInert(isLocked);
+
+  if (isLocked) {
+    root.setAttribute('aria-hidden', 'true');
+  } else {
+    root.removeAttribute('aria-hidden');
+  }
+};

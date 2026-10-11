@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { FocusTrap } from 'focus-trap-react';
 import {
   Overlay,
@@ -8,6 +9,7 @@ import {
   ModalTitle,
 } from './ErrorModal.styles';
 import { FaRegCircleXmark } from 'react-icons/fa6';
+import { setRootLocked } from '../../../../utils/helpers';
 
 /**
  * @component
@@ -21,6 +23,12 @@ import { FaRegCircleXmark } from 'react-icons/fa6';
 export default function ErrorModal({ data, setData }) {
   const [isOpen, setIsOpen] = useState(true);
 
+  // Portal outside #root so locking the app tree does not disable this modal.
+  useEffect(() => {
+    setRootLocked(true);
+    return () => setRootLocked(false);
+  }, []);
+
   const handleClose = () => {
     setIsOpen(false);
   };
@@ -31,13 +39,14 @@ export default function ErrorModal({ data, setData }) {
     }
   };
 
-  return (
+  return createPortal(
     <FocusTrap
       active={isOpen}
       focusTrapOptions={{
         initialFocus: '#error-modal-ok',
         fallbackFocus: '#error-modal',
-        escapeDeactivates: false,
+        escapeDeactivates: true,
+        onDeactivate: handleClose,
         allowOutsideClick: true,
         returnFocusOnDeactivate: true,
         tabbableOptions: { displayCheck: 'none' },
@@ -46,18 +55,22 @@ export default function ErrorModal({ data, setData }) {
       <Overlay onClick={handleClose}>
         <Modal
           id="error-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="error-modal-title"
           $isOpen={isOpen}
           onAnimationEnd={handleAnimationEnd}
           onClick={(e) => e.stopPropagation()}
         >
           <FaRegCircleXmark />
-          <ModalTitle>Error!</ModalTitle>
+          <ModalTitle id="error-modal-title">Error!</ModalTitle>
           <ModalText>{data.error}</ModalText>
           <ModalButton id="error-modal-ok" onClick={handleClose}>
             OK
           </ModalButton>
         </Modal>
       </Overlay>
-    </FocusTrap>
+    </FocusTrap>,
+    document.body
   );
 }
