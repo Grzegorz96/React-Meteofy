@@ -1,8 +1,8 @@
-import { useCallback, useRef, useState } from 'react';
+import { useState } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import { StyledBurgerMenu } from './SideBarMenu.styles';
 import Navbar from '../Navbar/Navbar';
-import { releaseFocusWithin } from '../../../utils/helpers';
+import { FocusTrap } from 'focus-trap-react';
 
 /**
  * @component
@@ -13,22 +13,26 @@ import { releaseFocusWithin } from '../../../utils/helpers';
 export default function SideBarMenu() {
   // State to manage the open state of the side bar.
   const [isOpen, setIsOpen] = useState(false);
-  const containerRef = useRef(null);
 
-  const openMenu = useCallback(() => {
-    setIsOpen(true);
-  }, []);
-
-  const closeMenu = useCallback(() => {
-    releaseFocusWithin(containerRef.current?.querySelector('.bm-menu-wrap'));
-    setIsOpen(false);
-  }, []);
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
 
   return (
-    <StyledBurgerMenu ref={containerRef}>
-      <Menu right isOpen={isOpen} onOpen={openMenu} onClose={closeMenu}>
-        <Navbar isMobile onClose={closeMenu} />
-      </Menu>
-    </StyledBurgerMenu>
+    <FocusTrap
+      active={isOpen}
+      focusTrapOptions={{
+        allowOutsideClick: true,
+        escapeDeactivates: false,
+        returnFocusOnDeactivate: true,
+        fallbackFocus: '.bm-menu-wrap',
+        tabbableOptions: { displayCheck: 'none' },
+      }}
+    >
+      <StyledBurgerMenu>
+        <Menu right isOpen={isOpen} onOpen={handleOpen} onClose={handleClose}>
+          <Navbar isMobile onClose={handleClose} />
+        </Menu>
+      </StyledBurgerMenu>
+    </FocusTrap>
   );
 }

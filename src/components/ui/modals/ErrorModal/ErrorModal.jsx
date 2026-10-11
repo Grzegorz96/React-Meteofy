@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FocusTrap } from 'focus-trap-react';
 import {
   Overlay,
   Modal,
@@ -31,27 +32,32 @@ export default function ErrorModal({ data, setData }) {
   };
 
   return (
-    <Overlay onClick={handleClose}>
-      <Modal
-        $isOpen={isOpen}
-        onAnimationEnd={handleAnimationEnd}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <FaRegCircleXmark />
-        <ModalTitle>Error!</ModalTitle>
-        <ModalText>{data.error}</ModalText>
-        <ModalButton
-          onClick={handleClose}
-          autoFocus
-          onKeyDown={(e) => {
-            if (e.key === 'Tab') {
-              e.preventDefault();
-            }
-          }}
+    <FocusTrap
+      active={isOpen}
+      focusTrapOptions={{
+        initialFocus: '#error-modal-ok',
+        fallbackFocus: '#error-modal',
+        escapeDeactivates: false,
+        allowOutsideClick: true,
+        returnFocusOnDeactivate: true,
+        tabbableOptions: { displayCheck: 'none' },
+      }}
+    >
+      <Overlay onClick={handleClose}>
+        <Modal
+          id="error-modal"
+          $isOpen={isOpen}
+          onAnimationEnd={handleAnimationEnd}
+          onClick={(e) => e.stopPropagation()}
         >
-          OK
-        </ModalButton>
-      </Modal>
-    </Overlay>
+          <FaRegCircleXmark />
+          <ModalTitle>Error!</ModalTitle>
+          <ModalText>{data.error}</ModalText>
+          <ModalButton id="error-modal-ok" onClick={handleClose}>
+            OK
+          </ModalButton>
+        </Modal>
+      </Overlay>
+    </FocusTrap>
   );
 }

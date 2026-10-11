@@ -1,8 +1,8 @@
 import { THEME_DATA_KEY, toggleThemeMode } from './themeDataSlice';
 
 /**
- * Saves the theme after `toggleThemeMode` updates the store.
- * The reducer only flips `isDarkMode`.
+ * Redux middleware that, on `toggleThemeMode`, saves `isDarkMode` to
+ * localStorage and syncs `color-scheme` on `<html>` with the new mode.
  *
  * @param {Object} store - The Redux store.
  * @returns {Function} The middleware.
@@ -11,7 +11,11 @@ export const themeStorageMiddleware = (store) => (next) => (action) => {
   const result = next(action);
 
   if (toggleThemeMode.match(action)) {
-    localStorage.setItem(THEME_DATA_KEY, store.getState().themeData.isDarkMode);
+    const { isDarkMode } = store.getState().themeData;
+    localStorage.setItem(THEME_DATA_KEY, isDarkMode);
+
+    const { style } = document.documentElement;
+    style.colorScheme = isDarkMode ? 'dark' : 'light';
   }
 
   return result;

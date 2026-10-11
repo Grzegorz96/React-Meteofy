@@ -8,15 +8,15 @@ export const THEME_DATA_KEY = 'meteofy-is-dark-theme';
  * @returns {boolean} The initial theme mode (true for dark mode, false for light mode).
  */
 const getInitialThemeMode = () => {
-  const storedIsDarkMode = localStorage.getItem(THEME_DATA_KEY);
+  try {
+    const storedIsDarkMode = localStorage.getItem(THEME_DATA_KEY);
 
-  if (storedIsDarkMode === 'true') return true;
-  if (storedIsDarkMode === 'false') return false;
-
-  const preference = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  localStorage.setItem(THEME_DATA_KEY, preference);
-  return preference;
+    if (storedIsDarkMode === 'true') return true;
+    if (storedIsDarkMode === 'false') return false;
+  } catch (e) {
+    console.warn('Error getting initial theme mode:', e);
+  }
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
 };
 
 const initialState = {

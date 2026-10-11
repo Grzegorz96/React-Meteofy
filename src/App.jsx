@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './utils/styles/globalStyles.js';
 import { darkTheme, lightTheme } from './utils/styles/theme.js';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 /**
  * The main component of the application.
@@ -14,6 +15,10 @@ import { useSelector } from 'react-redux';
 export default function App() {
   // Get the current theme mode from the Redux store
   const isDarkMode = useSelector(({ themeData }) => themeData.isDarkMode);
+
+  useEffect(() => {
+    document.documentElement.style.removeProperty('background-color');
+  }, []);
 
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
