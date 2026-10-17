@@ -230,9 +230,9 @@ Screenshots are organized by device type and feature, with light and dark theme 
 
 ![World Globe — Light Theme](docs/releases/v1.0.0/screenshots/pc/world-globe-light.png)
 
-![Weather Modal — World Globe — Dark Theme](docs/releases/v1.0.0/screenshots/pc/weather-modal-globe-dark.png)
+![Weather Modal — World — Dark Theme](docs/releases/v1.0.0/screenshots/pc/weather-modal-world-dark.png)
 
-![Weather Modal — World Globe — Light Theme](docs/releases/v1.0.0/screenshots/pc/weather-modal-globe-light.png)
+![Weather Modal — World — Light Theme](docs/releases/v1.0.0/screenshots/pc/weather-modal-world-light.png)
 
 #### Long-term Weather
 
